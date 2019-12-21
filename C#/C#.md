@@ -183,10 +183,10 @@ C#程序是一组类型声明。
 1. 多变量声明中的变量必须类型相同
 2. 变量名必须用逗号分隔，可以在变量名后包含初始化语句
 
-```c#
+~~~c#
 int var3=7,var4,var5=3;
 double var6,var7=6.52;
-```
+~~~
 
 ## 静态类型和dynamic关键字
 
@@ -229,12 +229,12 @@ double var6,var7=6.52;
 - 类的成员
 - 类的特征
 
-```c#
+~~~c#
 class MyExcellentClass //类声明
 {
 	成员声明
 }
-```
+~~~
 
 ### 类成员
 
@@ -244,9 +244,11 @@ class MyExcellentClass //类声明
 
   - 可以被写入、读取
 
-  - ```c#
+   - ~~~c#
+
     int Identifier;  //int:类型  Identifier:字段名
-    ```
+
+  ~~~
 
   - 字段初始化值必须是编译时可确定的，如果没有初始化语句，字段的值会被编译器设为默认值，由字段类型决定默认值。
 
@@ -261,16 +263,24 @@ class MyExcellentClass //类声明
     - 参数列表：至少由一对空的圆括号组成，如果有参数，将被列在圆括号中间
     - 方法体：由一对大括号组成，大括号内包含执行代码
 
-  - ```c#
+  ~~~c#
+  
     class SimpleClass
+
     {
+
         void PrintNums()
+
         {
             Console.WriteLine("1");
+
             Console.WriteLine("2");
+
         }
+
     }
-    ```
+
+   ~~~
 
   - C#没有全局函数声明在类型声明的外部。
 
@@ -299,13 +309,13 @@ class MyExcellentClass //类声明
 	- 哪种类型的数据可以传递给方法或从方法返回，以及应如何处理这些数据
 - 方法体：包含可执行的语句序列
 
-```
+  ~~~c#
 Int MyMethod ( int part1, string part2 )   \\\方法头  int:返回类型。MyMethod：方法名称   （int ）：参数列表
 {                       \\\方法体
-	语句1
-	语句2
+		语句1
+		语句2
 }
-```
+~~~
 
 ### 方法体
 
