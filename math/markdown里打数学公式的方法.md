@@ -1,5 +1,9 @@
 # Markdown输入数学公式
 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 ## 插入方式
 
 ### 行间插入或左对齐
