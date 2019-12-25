@@ -12,7 +12,7 @@ namespace simple //sign space name
 {
     class Program //name a class
     {
-        static void Main()  //name a function call main
+        static void Main()  //name a function call main static:static静态的，不变的，在某个类中只有一个，不会因实例化对象的不同而不同。
         {
             Console.WriteLine("Hi,there.");
         }
@@ -471,5 +471,68 @@ class MyClass
     PrintSum(5,someInt);  //5:表达式 someInt:int类型变量
     ```
 
+
+### 值参数
+
+值参数，指通过将实参的值复制到形参的方式把数据传递给方法。
+
+值参数的实参不一定是变量，它可以是任何能计算成相应数据类型的表达式。
+
+在把变量用作实参之前，变量必须被赋值。
+
+```c#
+class MyClass
+{
+  public int Val = 20;
+}
+
+class Program
+{
+  static void MyMethod( MyClass f1, int f2)
+  {
+    f1.Val = f1.Val + 5;
+    f2 = f2 + 5;
+    Console.WriteLine("f1.Val:{0},f2:{1}",f1.Val, f2);
+  }
+  
+  static void Main()
+  {
+    MyClass a1 = new MyClass();
+    int a2 = 10;
     
+    MyMethod(a1, a2);
+    Console.WriteLine("f1.Val:{0},f2:{1}",a1.Val,a2);
+  }
+}
+```
+
+### 引用参数
+
+- 使用引用参数时，必须在方法的**声明**和**调用**中都使用 ref 修饰符。
+- 实参必须是变量，在用作实参前必须被赋值。
+
+```c#
+class MyClass
+{
+  public int Val = 20;
+}
+
+class Program
+{
+  static void MyMethod(ref MyClass f1,ref int f2) //声明方法
+  {
+    f1.Val = f1.Val + 5;
+    f2 = f2 + 5;
+    Console.WriteLine("f1.Val:{0},f2:{1}",f1.Val,f2);
+  }
+  
+  static void Main()
+  {
+    MyClass a1 = new MyClass();
+    in a2 = 10;
+    MyMethod(ref a1,ref a2);    //调用方法
+    Console.WriteLine("f1.Val:{0},f2:{1}",f1.Val,f2);
+  }
+}
+```
 
