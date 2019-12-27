@@ -542,3 +542,48 @@ class Program
 - 实参必须是变量，不能是其他类型的表达式
 -  在方法内部，输出参数在能够被读取之前必须被赋值，所以参数的初始值是无用 的，也没必要在方法调用前为实参赋值
 - 在方法返回之前，方法内部贯穿的任何可能路径都必须为所有输出参数进行一次赋值
+
+```c#
+class MyClass
+{
+    public int Val = 20;
+}
+
+class Program
+{
+    static void MyMethod(out MyClass f1, out int f2)
+    {
+        f1 = new MyClass();
+        f1.Val = 25;
+        f2 = 15;
+    }
+    
+    static void Main()
+    {
+        MyClass a1 = null;
+        int a2;
+        MyMethod(out a1, out a2);
+    }
+}
+```
+
+### 参数数组
+
+参数数组允许零个或多个实参对应一个特殊的形参。
+
+- 在数据类型前使用params修饰符
+  - 值参数的声明和调用都不带修饰符
+  - 引用参数和输出参数在两个地方都需要修饰符
+  - params在声明中需要修饰符
+  - params在调用中**不允许**有修饰符
+- 在数据类型后放置一组空的方括号 [ ]
+- 数组是一组整齐的相同类型的数据项
+- 数组使用一个数字索引进行访问
+- 数组是一个引用类型
+
+```c#
+void ListInts( params int[] inVals ) //params:修饰符 int[]：int型参数数组 inVals:参数名称
+```
+
+
+
