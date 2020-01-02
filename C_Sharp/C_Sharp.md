@@ -365,7 +365,59 @@ int Identifier;  //int:类型  Identifier:字段名
   }
   ```
 
+
+### 实例构造函数
+
+实例构造函数是一个特殊的方法。
+
+- 构造函数用于初始化类实例的状态
+- 如果希望能从类的外部创建类的实例，需要将构造函数声明为 public 。
+- 构造函数的名称和类名相同
+- 构造函数不能有返回值
+
+```c#
+class Class1  
+{
+  int Id;  //定义一个int字段
+  string Name;  //定义一个string字段
   
+  public Class1()  //构造函数0，（）不带参数
+  {
+    Id = 28;
+    Name = "Nemo";
+  }
+  public Class1(int val)  //构造函数1，（）带int参数
+  {
+    Id = val;
+    Name = "Nemo";
+  }
+  public Class1(String name,int d)  //构造函数2，（）带string和int参数
+  {
+    Name = name;
+    Id = d;
+  }
+  public void SoundOff()
+  {
+    Console.WriteLine("Name{0},Id{1}",Name,Id);
+  }
+}
+
+class Program
+{
+  static void Main()
+  {
+    Class1 a = new Class1(),   //调用构造函数0，注意逗号
+    			 b = new Class1(7),  //调用构造函数1，注意逗号
+    			 c = new Class1("Bill",64);  //调用构造函数2
+    
+    a.SoundOff();  //Name Nemo, Id 28  显示原设置的值
+    b.SoundOff();  //Name Nemo, Id 7   显示调用时（）里的值，调用中没有值用设置里的值替代
+    c.SoundOff();  //Name Bill, Id 64  显示调用时（）里的值
+  }
+}
+```
+
+
 
 ## 方法
 
