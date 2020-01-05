@@ -36,5 +36,8 @@ public class BasicController : MonoBehaviour
 ```
 
 - 把skybox加到camera下，可以把自定义的skybox材质放进去，在不影响编辑模式的skybox前提下显示自定义skybox
-- 
+
+
+
+Then push it!
 
