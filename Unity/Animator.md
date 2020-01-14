@@ -1,13 +1,27 @@
-## 动画控制
+# 动画控制
 
-### 动作
+## 创建人物动画
+
+- 在人物角色下创建 Animator 组件
+- 在 Assets 下创建 Animation - Player 文件夹，在文件夹中创建 Animator Controller 
+- 把新建的 Controller 拖到人物角色下的 Controller 下绑定
+- window - Animation ( cmd + 6 ) 调出动画窗口，创建新动画
+- 把分割好的动画图片一次性拖到时间轴上，点击最左和最右两个 keyframe 拖拽可以平均拉长（先把图片的Pixel Per Unit 调整到16 ）
+- 在 window - Animator 中把 idle 和 run 做连接
+  - 点击箭头，从 idle 到 run：先在animator 视窗里增加一个变量（例如 running ），再在 inspector - Conditions 中调用 running ，“当 running greater than 0.1, then change state”
+  - **animator里的变量命名规范最好统一**
+  - 如果需要状态马上变化，把 Has Exit Time 去勾，Transition Duration 设置为 0 
+  - 另一个设置为 when running is less than 0.1, then change state.
+  - 在角色的控制脚本中声明 animator，绑定控制器
+
+## 动作
 
 - **IDLE：待命状态**
   - defalt 状态，静止状态，可以做呼吸动画
 - **walk**
 - **run**
 
-### 骨骼绑定
+## 骨骼绑定
 
 - 方式
   - 使用assets的模型改造
