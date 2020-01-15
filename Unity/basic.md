@@ -26,6 +26,6 @@
 - 处理镜头跟随出背景边界问题：
   - 在 Extensions 下选择 Cinemachine Confiner
   - 给 background 添加一个 Polygon Collider 2D 多边形对撞机
-    - 勾选 Is Trigger：表示
+    - 勾选 Is Trigger：表示?
   - 在 CM vcam1 - Cinemachine Confiner -Bounding Shape 2D 中选择 background
 
