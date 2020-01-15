@@ -16,5 +16,16 @@
 - Player 要碰撞要添加刚体 rigidbody 和 碰撞体 Collider，地面也要添加碰撞体 tilemap collider
 - Player 在空中翻转：Rigidbody 2D - Constraints - Freeze Rotation z ：打勾，冻结z轴旋转
 
+## 镜头跟踪
 
+使用插件 Cinemachine - Create 2D Camera-CM vcam1
+
+- 设置 follow - player
+- Dead Zone：设置镜头不会移动的区域
+- Screen X/Y：设置角色偏移屏幕多远
+- 处理镜头跟随出背景边界问题：
+  - 在 Extensions 下选择 Cinemachine Confiner
+  - 给 background 添加一个 Polygon Collider 2D 多边形对撞机
+    - 勾选 Is Trigger：表示
+  - 在 CM vcam1 - Cinemachine Confiner -Bounding Shape 2D 中选择 background
 
