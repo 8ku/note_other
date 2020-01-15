@@ -18,7 +18,7 @@
 
 ## 镜头跟踪
 
-使用插件 Cinemachine - Create 2D Camera-CM vcam1
+使用插件 Cinemachine - Create 2D Camera - CM vcam1
 
 - 设置 follow - player
 - Dead Zone：设置镜头不会移动的区域
