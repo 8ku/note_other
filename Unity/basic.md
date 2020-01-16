@@ -1,5 +1,10 @@
 # 基本概念
 
+## Unity官方文档离线版打开方式
+
+- [从官网下载离线版文档](https://docs.unity3d.com/Manual/UnityManual.html)，左侧 Unity User Manual - Offline documentation
+- 把本地保存路径复制，在浏览器打开，在最后补上 index.html
+
 ## HUD Head-Up Display
 
 抬头显示，指在屏幕上显示游戏相关信息
