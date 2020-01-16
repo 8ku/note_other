@@ -21,7 +21,24 @@
 
   ```python
   city_housing_dataframe = pd.read_csv("path", sep = ",")
-  city_housing_dataframe.describe() #show results
+  city_housing_dataframe.describe() #show statistics
   ```
 
-  
+- show head
+
+  ```python
+  city_housing_dataframe.head()
+  ```
+
+- show graphic
+
+  ```python
+  city_housing_dataframe.hist('column name') #hist:直方图
+  ```
+
+- [访问数据](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html)
+
+## [NumPy](https://numpy.org/devdocs/)
+
+用于进行科学计算的工具包。
+
