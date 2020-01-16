@@ -1,2 +1,5 @@
 theme: jekyll-theme-hacker
 markdown: kramdown
+mathjax_autoNumber: true
+mermaid: true
+chart: true
