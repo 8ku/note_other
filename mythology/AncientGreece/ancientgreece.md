@@ -1,3 +1,11 @@
+---
+layout: article
+title: Document - Writing Posts
+mathjax: true
+mermaid: true
+---
+
+
 ```mermaid
 graph TD
 a(cow) --> b(d)
