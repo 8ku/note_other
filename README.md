@@ -7,18 +7,21 @@
   - [bolt](https://8ku.github.io/note_other/bolt/bolt)
   - [Unit_note ](https://8ku.github.io/note_other/bolt/Unit_note)
 
-- C_Sharp
+- Code
 
-  - [C_Sharp](https://8ku.github.io/note_other/C_Sharp/C_Sharp)
-  - [Unity_C_Sharp](https://8ku.github.io/note_other/C_Sharp/Unity_C_Sharp)
+  - Python
+    - [Python](https://8ku.github.io/note_other/Python/Python)
+    - [pandas](https://8ku.github.io/note_other/Python/pandas)
+  - C_Sharp
+    - [C_Sharp](https://8ku.github.io/note_other/C_Sharp/C_Sharp)
+    - [Unity_C_Sharp](https://8ku.github.io/note_other/C_Sharp/Unity_C_Sharp)
+  - Unity
 
-- Unity
-
-  - [Prefab](https://8ku.github.io/note_other/Unity/Prefab)
-  - [Animator](https://8ku.github.io/note_other/Unity/Animator)
-  - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
-  - [basic](https://8ku.github.io/note_other/Unity/basic)
-  - [Physice](https://8ku.github.io/note_other/Unity/Physics)
+    - [Prefab](https://8ku.github.io/note_other/Unity/Prefab)
+    - [Animator](https://8ku.github.io/note_other/Unity/Animator)
+    - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
+    - [basic](https://8ku.github.io/note_other/Unity/basic)
+    - [Physice](https://8ku.github.io/note_other/Unity/Physics)
 
 - math
 
@@ -43,6 +46,11 @@
   - [女权运动时间轴](https://8ku.github.io/note_other/WomensHistory/feminism_timeline.html)
   - [全球性别差异化报告](https://8ku.github.io/note_other/WomensHistory/GlobalGenderGap)
   
+- Mythology
+
+  - [AncientGreece](https://8ku.github.io/note_other/mythology/AncientGreece/ancientgreece)
+  - [Nordic](https://8ku.github.io/note_other/mythology/Nordic/nordic)
+
   
 
 ### 规则

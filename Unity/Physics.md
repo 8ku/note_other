@@ -13,5 +13,7 @@
   - Kinematic 动力学上的
   - Static 静态的
 
+### Conllider
 
+- isTrigger ：means is the collier a trigger? if yes, it doesn’s hit a collision. 
 
