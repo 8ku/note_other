@@ -3,6 +3,7 @@
 ## 创建人物动画
 
 - 在人物角色下创建 Animator 组件
+  - 或者 直接创建一个 Animation ，拖到角色下，会自动生成一个 Animator 
 - 在 Assets 下创建 Animation - Player 文件夹，在文件夹中创建 Animator Controller 
 - 把新建的 Controller 拖到人物角色下的 Controller 下绑定
 - window - Animation ( cmd + 6 ) 调出动画窗口，创建新动画
