@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
 - 不需要带Main方法
 
+###  MonoBahaviour
+
+MonoBahaviour 是所有Unity 脚本的基类。
+
 ### 使用Debug来显示操作情况
 
 ```c#
@@ -37,6 +41,16 @@ public class BasicController : MonoBehaviour
 ```
 
 - 把skybox加到camera下，可以把自定义的skybox材质放进去，在不影响编辑模式的skybox前提下显示自定义skybox
+
+- **Debug 和 Print 的区别**：Debug 是单独的类，Print 是 MonoBehaviour 的一个成员
+
+- Debug的种类：
+
+  - Debug.Log：普通输出
+  - Debug.LogWarning：黄色高亮icn
+  - Debug.LogError：红色高亮icn
+
+  
 
 ## 移动，跳跃，动画
 
