@@ -22,6 +22,7 @@
     - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
     - [basic](https://8ku.github.io/note_other/Unity/basic)
     - [Physice](https://8ku.github.io/note_other/Unity/Physics)
+    - [GUI](https://8ku.github.io/note_other/Unity/GUI)
 
 - math
 
