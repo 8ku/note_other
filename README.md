@@ -30,6 +30,7 @@
   - [贝叶斯推断](https://8ku.github.io/note_other/math/贝叶斯推断)
   - [数学符号表](https://8ku.github.io/note_other/math/数学符号表)
   - [机器学习](https://8ku.github.io/note_other/math/机器学习)
+  - [物理学](https://8ku.github.io/note_other/math/物理学)
 
 - RegularExpression
 
