@@ -5,3 +5,4 @@
 - 注释：ctrl + k +c
 - 取消注释：ctrl + k + u
 - 排版：ctrl + k + f
+- 代码格式化（MAC）：ctrl + i

@@ -34,3 +34,6 @@
     - 勾选 Is Trigger：表示?
   - 在 CM vcam1 - Cinemachine Confiner -Bounding Shape 2D 中选择 background
 
+## 设置游戏按键
+
+- Edit -  Project Settings - Input - 右键复制一组按键设定
