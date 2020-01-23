@@ -37,3 +37,7 @@
 ## 设置游戏按键
 
 - Edit -  Project Settings - Input - 右键复制一组按键设定
+
+## 光效
+
+- 2D 光效包：Lightweight RP
