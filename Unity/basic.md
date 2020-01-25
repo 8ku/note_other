@@ -41,3 +41,10 @@
 ## 光效
 
 - 2D 光效包：Lightweight RP
+- 光源是3D 的，如果看不到光效，看下 Z 轴的位置
+
+## 音效
+
+- Audio Listener：声音接收器
+- Audio Source：音源
+- Audio Clips：音频片段

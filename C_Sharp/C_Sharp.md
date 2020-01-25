@@ -764,5 +764,11 @@ class Program
 void ListInts( params int[] inVals ) //params:修饰符 int[]：int型参数数组 inVals:参数名称
 ```
 
+- 构造一个数组
 
+  ```c#
+  int[] hps = new int[10];  // 创建一个有10个元素的数组
+  ```
+
+  
 
