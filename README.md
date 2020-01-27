@@ -53,7 +53,7 @@
   - [AncientGreece](https://8ku.github.io/note_other/mythology/AncientGreece/ancientgreece)
   - [Nordic](https://8ku.github.io/note_other/mythology/Nordic/nordic)
 
-  
+- GameHistory
 
 ### 规则
 

@@ -12,3 +12,7 @@
 | 查找                                          | find                          |
 | 显示当前目录                                  | pwd (print working directory) |
 
+## 不能打开应用的解决方法
+
+- 应用程序 - 右键：显示包内容 - Contents - MacOS 
+- 终端：`chmod +x ‘拖入1’ ` 回车执行

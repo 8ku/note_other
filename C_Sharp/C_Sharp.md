@@ -265,7 +265,7 @@ int Identifier;  //int:类型  Identifier:字段名
 
   - 方法的组成：
 
-    - 返回类型，如果一个方法不返回值，返回类型被指定为void
+    - 返回类型，**如果一个方法不返回值，返回类型被指定为void**
     - 名称：方法的名称
     - 参数列表：至少由一对空的圆括号组成，如果有参数，将被列在圆括号中间
     - 方法体：由一对大括号组成，大括号内包含执行代码
@@ -553,6 +553,8 @@ class MyClass
 }
 ```
 
+
+
 ### 返回值
 
 方法可以向调用代码返回一个值。
@@ -588,6 +590,8 @@ class Program
   }
 }
 ```
+
+
 
 ### 返回语句和 void 方法
 
@@ -761,14 +765,106 @@ class Program
 - 数组是一个引用类型
 
 ```c#
-void ListInts( params int[] inVals ) //params:修饰符 int[]：int型参数数组 inVals:参数名称
+void ListInts( params int[] inVals ) // params:修饰符 int[]：int型参数数组 inVals:参数名称
 ```
 
 - 构造一个数组
 
   ```c#
   int[] hps = new int[10];  // 创建一个有10个元素的数组
+  int [] hps = new int[4]{1,2,3,6}; // 创建一个有4个元素的数组并赋值
+  ```
+```c#
+// 遍历数组
+for(int i = 0; i < 4; i++) // 需要先知道数组长度
+  {
+    print(hps[i]);
+  }
+```
+
+  ```c#
+  for(int i = 0; i < hps.length; i++) // 用数组的长度来遍历，不需要事先知道数组长度
+  {
+    print(hps[i]);
+  }
   ```
 
+## 枚举
+
+枚举是一组命名整型常量。枚举列表中的每个符号代表一个整数值，一个比它前面的符号大的整数值。默认情况下，第一个枚举符号的值是 0。
+
+枚举字段可以是汉字，英文，**但不能是数字**。
+
+如果给枚举值赋值，下一个值会+1.
+
+```c#
+enum RoleType  //写在类的外面，可以直接调用
+{
+	man = 4,
+	woman,
+	child
+}
+
+public class test : MonoBehaviour
+{
+	void Start()
+  {
+    int rw = (int)Roletype.woman;
+    print(rw); // 输出 5，为 4(man) +1 
+  }
+}
+```
+
+### 把枚举单独做成库--未完成
+
+```c#
+using UnityEngine;
+using System.Collections;
+
+public enum HeroType
+{
+  Soldier,
+  Master,
+  Assissan,
+  Tank
+}
+
+public class HeroType:MonoBehaviour
+{
   
+}
+```
+
+
+
+## Switch/if 语句
+
+效率比较：分支少时，if 比 switch 效率高，反之 switch 效率高。
+
+switch 只能判断单个值，不能判断范围，如果条件为范围，不能用 switch 。
+
+```c#
+switch(表达式/变量)
+{
+  case 值1:语句块1;
+    break;
+  case 值2:语句块2;
+    break;
+  default:语句块3;
+    break;
+}
+```
+
+```c#
+if(条件)
+{
+  语句1；
+}
+else
+{
+  语句2；
+}
+```
+
+
 

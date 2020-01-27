@@ -1,6 +1,6 @@
 Unity中的C#语法
 
-基本格式：
+## 基本格式
 
 ~~~c#
 using System.Collections;
@@ -8,20 +8,90 @@ using UnityEngige;
 // PlayController :脚本名
 public class PlayerController : MonoBehaviour 
 {
-	void Start() {
-        
-    }
-    void Update() {
-        
-    }
+  //只会执行一次，一般用来初始化
+	void Start() 
+  {
+    
+  }
+    void Update() 
+   {
+      
+   }
 }
 ~~~
 
 - 不需要带Main方法
 
+- 要访问类中的值，值必须是公开的
+
+  ```c#
+  public class someting:MonoBehaviour
+  {
+    void Start()
+    {
+      Enemy enemy = new Enemy(); //调用类时需要先实例化
+      print(enemy.name); //可访问到 name 字段，不能访问到 hp 字段
+      enemy.Move(); //调用方法时直接写，不需要打印，只有字段才用打印
+    }
+  }
+  
+  class Enemy
+  {
+    public string name;
+    int hp; //默认是私有的，不显示，也不可从外部调用
+    public void Move() //方法如果不 public 外部无法调用
+    {
+      Debug.Log(name + "move"); // 方法可调用同一个类下的字段，print是 MonoBehavious 中的方法，自定义类不包含 print 方法，不能使用 print
+    }
+  }
+  ```
+
+### 命名空间和类
+
+可自定义命名空间和类，并在代码中引用
+
+```c#
+using MyGame; //声明命名空间
+
+public class Player:MonoBehaviour
+{
+  void Start()
+  {
+    GameData gd = new GameData(); //实例化自定义命名空间 MyGame 中的自定义类 GameData
+    print(gd.name); //输出实例化 GameData 中的字段
+    gd.FunctionName(); //输出实例化 GameData 中的方法
+  }
+}
+
+namespace MyGame //定义命名空间
+{
+  class GameData //定义类
+  {
+     public void FunctionName() //定义方法
+     {
+        Debug.Log("output");
+     }
+    int hp;
+    string name;
+  }
+}
+```
+
+
+
+### 代码中消除空行-使用正则
+
+shift + cmd + f ：^\s*\n ，勾选“正则表达式搜索”，点击“替换”
+
+\s ：空白字符
+
+\n：换行符
+
 ###  MonoBahaviour
 
 MonoBahaviour 是所有Unity 脚本的基类。
+
+
 
 ### 使用Debug来显示操作情况
 
@@ -117,6 +187,8 @@ void SwitchAnime()
 }
 ```
 
+
+
 ## 镜头跟踪
 
 ```c#
@@ -126,3 +198,141 @@ void Update()
     transform.position = new Vector3(player.position.x, player.position.y, -10f);
 }
 ```
+
+
+
+## for/while 循环销毁子物体
+
+```c#
+void Start()
+{
+	// Transform 是 Unity 的一种内置类型，获得这个主体下的所有子级
+  Transform[] children = transform.GetComponentsInChildren<Transform>();
+
+  for(int i = 0; i< children.Length; i++) // 遍历子级的长度
+      {
+        if (children[i] != transform) //如果子级中不包含本体，如果不写这一句，会把父级一起销毁
+        {
+          GameObject.Destroy(children[i].gameObject); //销毁子级
+        }
+      }
+}
+```
+
+while 语句：
+
+```c#
+void Start()
+{
+  Transform[] children = transform.GetComponentsInChildren<Transform>();
+  
+  int i = 0;
+  while(i < children.Length)
+  {
+    if (children[i] != transform) 
+        {
+          GameObject.Destroy(children[i].gameObject); //销毁子级
+        }
+    		i++;
+  }
+}
+```
+
+### foreach 循环
+
+也称为只读循环，相比 for 循环更简洁，只能遍历，不能修改值。
+
+```c#
+public class HeroType : MonoBehaviour
+{
+    void Start()
+    {
+        Transform[] children = transform.GetComponentsInChildren<Transform>();
+
+        foreach(Transform i in children)
+        {
+            if (i != transform)
+            {
+                Destroy(i.gameObject);
+            }
+        }
+    }
+}
+```
+
+
+
+## 访问组件，启用/禁用组件
+
+### 获取本物体/子物体中的组件
+
+通过 transform 组件获取物体，因为所有物体都有 transform 组件，所以可以用 transform 代表物体本身
+
+```c#
+ Transform t = GetComponent<Transform>(); //Transform:组件类型,transform 是内置组件，可以不用用 get 来访问
+
+Transform t = GetComponentInChildren<Transform>(); //获取子物件组件
+```
+
+获取子物体
+
+```c#
+transform.Find("子级/孙级");
+```
+
+
+
+
+
+### 获取其他物体及组件
+
+1. 获取物体 game object
+
+```c#
+public GameObject someone;  //先定义一个参数，把要获取的物体拖拽进来
+
+void Start()
+{
+  someone.GetComponent<Rigidbody2D>(); //获取物体组件
+}
+```
+
+2. 获取组件及脚本
+
+```c#
+public class somethin; //找脚本就直接定义脚本，找组件就定义组件，组件必须存在 
+
+void Start()
+{
+  somethin.子类(); //获取脚本中的东西
+}
+```
+
+3. 通过 gameObject 的 Find 方法查找物体，如果有多个同名物品，只会返回第一个，效率很低，不推荐使用
+
+```c#
+GameObject go = GameObject.Find("Main Camera");
+```
+
+4. 通过标签查找物体
+
+```c#
+GameObject go = GameObject.FindWithTag("Player"); //根据 tag 名称返回active 的第一个结果
+GameObject go = GameObject.FindGameObjectsWithTag("Player"); //返回这个 Tag 的列表，顺序随机
+foreach(GameObject i in go){print(i);} //可以用 foreach 来查看找到的项
+```
+
+
+
+### 启用/禁用组件
+
+只有视图面板上可以勾选的组件可以被启/禁用
+
+```c#
+void Start()
+{
+  BoxCollider2D coll = GetComponent<BoxCollider2D>(); //获取物体组件
+  coll.enabled =  false; //禁用组件
+}
+```
+
