@@ -336,3 +336,21 @@ void Start()
 }
 ```
 
+
+
+## 实例化
+
+```c#
+public GameObject bullet; //建一个游戏物体，把要实例化的物体拖拽进来
+
+GameObject.Instantiate( bullet, transform.position, transform.rotation); // instantiate:实例化，第一个值：实例化的原对象
+```
+
+
+
+## Input
+
+```c#
+Input.GetMouseButtonDown(0); //0:鼠标左键，1：鼠标右键，2：鼠标中键
+```
+
