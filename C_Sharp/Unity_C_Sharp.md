@@ -1,4 +1,4 @@
-Unity中的C#语法
+# Unity中的C#语法
 
 ## 基本格式
 
@@ -280,10 +280,6 @@ Transform t = GetComponentInChildren<Transform>(); //获取子物件组件
 transform.Find("子级/孙级");
 ```
 
-
-
-
-
 ### 获取其他物体及组件
 
 1. 获取物体 game object
@@ -297,14 +293,18 @@ void Start()
 }
 ```
 
-2. 获取组件及脚本
+2. 获取组件及脚本 
+
+   查询 Unity 核心模块：文档 `UnityEngine.CoreModule`
 
 ```c#
 public class somethin; //找脚本就直接定义脚本，找组件就定义组件，组件必须存在 
+private Transform something; //transform 是 Unity 的核心模块，可以直接定义
 
 void Start()
 {
   somethin.子类(); //获取脚本中的东西
+  something = GameObject.Find("gameObject_name").transform;
 }
 ```
 
@@ -321,8 +321,6 @@ GameObject go = GameObject.FindWithTag("Player"); //根据 tag 名称返回activ
 GameObject go = GameObject.FindGameObjectsWithTag("Player"); //返回这个 Tag 的列表，顺序随机
 foreach(GameObject i in go){print(i);} //可以用 foreach 来查看找到的项
 ```
-
-
 
 ### 启用/禁用组件
 
@@ -343,7 +341,16 @@ void Start()
 ```c#
 public GameObject bullet; //建一个游戏物体，把要实例化的物体拖拽进来
 
-GameObject.Instantiate( bullet, transform.position, transform.rotation); // instantiate:实例化，第一个值：实例化的原对象
+void Update()
+{
+  newBullet(); //调用实例
+}
+
+
+void newBullet()
+{
+  bu = GameObject.Instantiate( bullet, transform.position, transform.rotation); // instantiate:实例化，第一个值：实例化的原对象
+}
 ```
 
 
@@ -353,4 +360,72 @@ GameObject.Instantiate( bullet, transform.position, transform.rotation); // inst
 ```c#
 Input.GetMouseButtonDown(0); //0:鼠标左键，1：鼠标右键，2：鼠标中键
 ```
+
+
+
+## 位置及跟随运动
+
+- 设置一个物体和另一个物体有一段距离时停止运动
+
+  ```c#
+  private Transform b;
+  
+  void Start()
+  {
+    b = GameObject.Find("target").transform;
+  }
+  
+  a = b.position; // 先取得 b 的位置
+  a.y -= 1.5f; // a 的 y (或 x ) - a和 b 的距离
+  
+  transform.position = Vector3.MoveTowards(transform.position, a, speed * Time.deltaTime); //使用 MoveTowards 方法
+  ```
+
+- 跟随运动
+
+  ```c#
+  transform.parent = b; //指定物体为父级
+  ```
+
+
+
+## 碰撞
+
+```c#
+private void OnTriggerEnter2D(Collider2D collision)
+{
+  
+}
+```
+
+## 显示分数
+
+```c#
+using UnityEngine.UI; // 要用 text 组件显示分数 ，text 在 UI Module 下
+
+public Text scoreText; // 定义一个变量放 text 组件
+private int scores; // 定义一个变量接收分数计数
+void Update()
+{
+   if (Input.GetMouseButtonDown(0)) // 每按一次鼠标
+   {
+     scores++; // 分数+1
+     scoreText.text = scores.ToString(); //把 scores 中存的值显示在 scoreText 上。
+   }
+  
+}
+```
+
+## 重载场景
+
+```c#
+using UnityEngine.SceneManagement; //需要调用场景管理 Module
+
+void Update()
+{
+  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+}
+```
+
+
 

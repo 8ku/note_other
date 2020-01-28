@@ -73,3 +73,7 @@ transform 经常用于代表物体本身，脚本中直接用 transform.position
 ### FixUpdate
 
 固定帧，Unity 中的 FixUpdate 默认固定帧为 50 FPS ，即 Time.fixeddeltaTime 固定为0.02。如果游戏（玩家）电脑更新频率为 25Hz，游戏每刷新1帧要调用2次 FixUpdate ，如果玩家电脑为 100Hz ，游戏每刷新 2 帧调用 1 次 FixUpdate。
+
+## GameManager
+
+- 脚本名直接叫 GameManager 时，脚本的图标会变化，一个场景只能有一个 GameManager
