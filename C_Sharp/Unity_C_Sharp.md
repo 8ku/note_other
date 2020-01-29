@@ -191,13 +191,37 @@ void SwitchAnime()
 
 ## 镜头跟踪
 
+1. 2D
+
 ```c#
-public Transform player;
+public Transform player; // 取得跟随对象的位置
+
 void Update()
 {
     transform.position = new Vector3(player.position.x, player.position.y, -10f);
 }
 ```
+
+2. 3D
+
+脚本挂在相机上
+
+```c#
+public Transform player; // 取得跟随对象的位置
+
+private Vector3 offset; // 设置初始距离
+
+void Start()
+{
+  offset = transform.position - player.position; //初始化时得到相机和跟随对象的距离
+}
+void Update()
+{
+    transform.position = offset + hero.position; // 移动时相机的位置 = 跟随对象的位置 + 两者的距离
+}
+```
+
+
 
 
 
@@ -392,11 +416,26 @@ Input.GetMouseButtonDown(0); //0:鼠标左键，1：鼠标右键，2：鼠标中
 ## 碰撞
 
 ```c#
-private void OnTriggerEnter2D(Collider2D collision)
+private void OnCollisionEnter(Collider2D collision)
 {
-  
+  print(collision.collider.name); //获取碰撞物体的名字
 }
 ```
+
+
+
+## 触发区域
+
+```c#
+private void OnTriggerEnter(Collider other)
+    {
+        print("opps! " + other.name); //获取碰到的触发物体的名字
+    }
+```
+
+
+
+
 
 ## 显示分数
 

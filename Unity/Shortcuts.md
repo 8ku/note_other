@@ -4,6 +4,7 @@
 - 按 cmd 移动物体，按1个单位移动
 - 场景背景设置：Windows-Rendering-Lighting Settings
 - 注释：ctrl + k +c
+- 顶点捕捉：v
 - 取消注释：ctrl + k + u
 - 排版：ctrl + k + f
 - 代码格式化（MAC）：ctrl + i

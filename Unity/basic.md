@@ -9,6 +9,19 @@
 
 抬头显示，指在屏幕上显示游戏相关信息
 
+## Unity系统单位
+
+系统单位为米。
+
+|            | 内部米 | 导入 Unity 后尺寸 | 与 Unity 单位比例 |
+| ---------- | ------ | ----------------- | ----------------- |
+| 3Ds Max    | 1      | 0.01              | 100:1             |
+| Maya       | 1      | 100               | 1:100             |
+| Cinema 4D  | 1      | 100               | 1:100             |
+| Light Wave | 1      | 0.01              | 100:1             |
+
+
+
 ## 2d tile技巧
 
 - 设置图片 Pixels per unit 为16，sprite mode 为 mulitple ，用 sprite editor 切割好图片（如果是素材的话）
@@ -77,3 +90,18 @@ transform 经常用于代表物体本身，脚本中直接用 transform.position
 ## GameManager
 
 - 脚本名直接叫 GameManager 时，脚本的图标会变化，一个场景只能有一个 GameManager
+
+## 3D
+
+- 节省性能： ` Window - Rendering - Lighting Settings` 里的 ` Auto Generate` 去掉勾选
+
+## 法线贴图 Normal Map - 凹凸贴图
+
+二维纹理有两个维度 u 和 v ，因为3维中 X Y Z 已经被使用为坐标，所以用 U 和 V 来表示3D 环境下2维贴图的坐标。
+
+U：x 轴
+
+V：y 轴
+
+法线贴图用于储存贴图的高度信息，有了高度信息即可用 2D 贴图产生 3D 的立体效果。 
+
