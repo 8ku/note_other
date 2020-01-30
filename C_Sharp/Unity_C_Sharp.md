@@ -466,5 +466,50 @@ void Update()
 }
 ```
 
+## 时间
+
+### Time
+
+- ` Time.timeScale` 控制动作的快慢，0为暂停，1为匀速，>1为加速 , <1 为减速，不可<0
+
+- 默认单位为1米，一帧调用一次 Update，则1帧运动1米，一秒60帧则1秒运动60米，使用 ` *Time.deltaTime` 是 * 每帧使用的秒数，根据电脑性能，如果 FPS 为60 ，则 Time.deltaTime 为 0.0167
+
+- ` Time.realtimeSinceStartup` ：用于测试性能耗费时间。
+
+  ```c#
+  float time1 = Time.realtimeSinceStartup;
+  for (int i = 0; i< 10; i++)
+  {
+    Method1();
+  }
+  float time2 = Time.realtimeSinceStartup;
+  Debug.Log(time2 - time1);
+  ```
+
+## 发送消息
+
+1.  ` GameObject.BroadcastMessage` ：给一个对象及其所有子对象发送消息（脚本挂在父物体上）
+
+```c#
+// 发消息的对象
+public GameObject Receiver; //需要先指定一个接收者
+
+void Start()
+{
+  Receiver.BroadcastMessage("ApplyDamage");
+}
+```
 
 
+
+```c#
+// 接收消息的对象
+
+void ApplyDamage() // 直接引用方法
+{
+  print("received!");
+}
+```
+
+2. `GameObject.SendMessage` ：只给当前接收者发送消息，不会同时给子物体发送。
+3. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
