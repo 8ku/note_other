@@ -32,7 +32,16 @@ public class PlayerController : MonoBehaviour
       Enemy enemy = new Enemy(); //调用类时需要先实例化
       print(enemy.name); //可访问到 name 字段，不能访问到 hp 字段
       enemy.Move(); //调用方法时直接写，不需要打印，只有字段才用打印
+      Invoke("Move", 2.0f); // 直接调用方法，在2秒之后调用
+      InvokeRepeating("Move",4.0f,2.0f); // 4秒之后调用，每2秒调用一次
     }
+    
+    void Update()
+      {
+          // Cancel all Invoke calls
+          if (Input.GetButton("Fire1"))
+              CancelInvoke(); //可以在开始时调用方法，在 Update 中监听按键，取消调用所有方法 Cancels all Invoke calls
+      }  
   }
   
   class Enemy
@@ -238,6 +247,7 @@ void Start()
         if (children[i] != transform) //如果子级中不包含本体，如果不写这一句，会把父级一起销毁
         {
           GameObject.Destroy(children[i].gameObject); //销毁子级
+          break;//可以用 break 来打断或中断循环
         }
       }
 }
@@ -513,3 +523,44 @@ void ApplyDamage() // 直接引用方法
 
 2. `GameObject.SendMessage` ：只给当前接收者发送消息，不会同时给子物体发送。
 3. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
+
+## 协程 Coroutine
+
+- 在执行其他方法时同时执行其他方法的方法。
+- 协程方法可以暂停。
+- 使用 ` yield return ` 来停止并返回参数。
+
+```c#
+public class time : MonoBehaviour
+{
+    public GameObject cube; //指定一个游戏物体
+  
+    void Update() //在 Update 方法中调用
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) //当按下空格键时，开启协程
+        {
+            StartCoroutine("Fade"); // 调用方法,使用方法名，开启和关闭必须使用同样的规则，例如都用方法名
+        }
+      	if (Input.GetKeyDown(KeyCode.D))
+        {
+          StopCoroutine("Fade"); //按下 D 停止调用协程，使用方法名，停止协程不能直接使用方法
+        }
+      
+    }
+    IEnumerator Fade()  //定义方法
+    {
+        for (; ; ) //死循环
+        {
+            Color c = cube.GetComponent<Renderer>().material.color;
+            Color newColor = Color.Lerp(c, Color.red, 0.02f); //使用插值 lerp
+            cube.GetComponent<Renderer>().material.color = newColor;
+            yield return new WaitForSeconds(0.1f); //暂停0.1秒
+            if (Mathf.Abs(Color.red.g - newColor.g) <= 0.01f) //如果颜色已经变为目标颜色红色
+            {
+                break; //则退出循环
+            }
+        }
+    }
+}
+```
+
