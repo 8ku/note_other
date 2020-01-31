@@ -88,13 +88,20 @@ namespace MyGame //定义命名空间
 
 
 
-### 代码中消除空行-使用正则
+### 结构体 struct
 
-shift + cmd + f ：^\s*\n ，勾选“正则表达式搜索”，点击“替换”
+结构体和类（class）不同，结构体中的值不能单独修改，要整体赋值。例如
 
-\s ：空白字符
+```c#
+transform.position = new Vector3(3, 3, 3);
+transform.position.x = 10; //报错，不能直接修改值
 
-\n：换行符
+Vector3 pos = transform.position; //新建一个值来储存结构体信息
+pos.x = 10; //修改值
+transform.position = pos; //把值整体更新到结构体中
+```
+
+
 
 ###  MonoBahaviour
 
@@ -387,12 +394,32 @@ void newBullet()
 }
 ```
 
+## normalized 归一化
+
+把值转化为最大值为1的范围内。为了简化运算，优化性能。
+
+Current vector is unchanged .
+
+```c#
+Vector2 direction = new Vector2(x,y).normalized;
+Move(direction);
+```
+
+
+
 
 
 ## Input
 
 ```c#
 Input.GetMouseButtonDown(0); //0:鼠标左键，1：鼠标右键，2：鼠标中键
+```
+
+
+
+```c#
+// 用按键给物体的运动加速
+cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
 ```
 
 
@@ -564,3 +591,22 @@ public class time : MonoBehaviour
 }
 ```
 
+## Math的应用
+
+- Clamp：范围值，如果当前值大于范围最小值，取最小，当前值大于范围最大值，取最大。
+
+  ```c#
+  private int hp = 100;
+  void TakeDamage()
+  {
+    hp = Mathf.Clamp(hp, 0, 100); //当 hp 小于0，返回0；hp 大于100，返回100
+  }
+  ```
+
+- Ceil：向上取整
+- Floor：向下取整
+- Pow（f, p）：取 f 的 p 次方
+- Sqrt ：返回 x 的平方根
+- PingPong/Repeat（t , length）：值 t 在 0 ~ length 范围内循环，如果需要从 x ~ length 之间运动，` x + Mathf.PingPong(t, length-x);
+- Lerp（a, b , t ）：a 开始值，b 结束值（b>a），t 插值（t = 0，返回 a；t=1，返回b） 先快后慢。
+- MoveTowards（current，target，maxdelta）：匀速接近或远离目标，maxdelta 步值
