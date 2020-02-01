@@ -310,7 +310,7 @@ public class HeroType : MonoBehaviour
 通过 transform 组件获取物体，因为所有物体都有 transform 组件，所以可以用 transform 代表物体本身
 
 ```c#
- Transform t = GetComponent<Transform>(); //Transform:组件类型,transform 是内置组件，可以不用用 get 来访问
+Transform t = GetComponent<Transform>(); //Transform:组件类型,transform 是内置组件，可以不用用 get 来访问
 
 Transform t = GetComponentInChildren<Transform>(); //获取子物件组件
 ```
@@ -396,7 +396,7 @@ void newBullet()
 
 ## normalized 归一化
 
-把值转化为最大值为1的范围内。为了简化运算，优化性能。
+把当前值转化为（0，1）内的值。为了简化运算，优化性能。
 
 Current vector is unchanged .
 
@@ -427,6 +427,12 @@ cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
 ## 位置及跟随运动
 
 - 设置一个物体和另一个物体有一段距离时停止运动
+
+- Vector的方向：
+
+  - 假设 a > b （a(3,4,5),b(2,2,1)）
+  - a - b ：b 向 a 运动
+  - b - a：a 向 b 运动
 
   ```c#
   private Transform b;
@@ -470,7 +476,49 @@ private void OnTriggerEnter(Collider other)
     }
 ```
 
+## Random 随机数
 
+- ` Random.Range(min,max);  `
+  - int : Return a random integer number between `min` [inclusive] and `max` [exclusive]
+  - float：Return a random float number between  ` min `  [inclusive] and ` max ` [inclusive]
+
+```c#
+public class ExampleClass : MonoBehaviour
+{
+    public GameObject prefab;
+    // Instantiate the Prefab somewhere between -10.0 and 10.0 on the x-z plane
+    void Start()
+    {
+        Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
+        Instantiate(prefab, position, Quaternion.identity);
+    }
+}
+```
+
+- ` Random.InitState(int seed);  `
+
+```c#
+private float[] noiseValues;
+    void Start()
+    {
+        Random.InitState(10); //10 seed, if don't set ,Unity will random as it own rule.
+      	// Random.InitState((int)System.DateTime.Now.Ticks); // get the system time and force change frome long to int, not necessary
+        noiseValues = new float[5]; //5 line
+        for (int i = 0; i < noiseValues.Length; i++)
+        {
+            noiseValues[i] = Random.value; //Random.value is return a random number between 0.0[inclusive] and 1.0[inclusive]
+            Debug.Log(noiseValues[i]);
+        }
+    }
+```
+
+- ` Random.insideUnitCircle ` 在一个半径为1的圆的范围内随机生成
+
+  ```c#
+  transform.position = Random.insideUnitCircle * 5;
+  ```
+
+- ` Random.insideUnitSphere ` 在一个半径为1的球体内随机生成
 
 
 
@@ -492,7 +540,7 @@ void Update()
 }
 ```
 
-## 重载场景
+## 重载/切换场景
 
 ```c#
 using UnityEngine.SceneManagement; //需要调用场景管理 Module
@@ -502,6 +550,46 @@ void Update()
   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
 ```
+
+- 显示场景加载进度 ` SceneManager.LoadSceneAsync `
+
+```c#
+using UnityEngine.SceneManagement;
+public class Example : MonoBehaviour
+{
+    void Update()
+    {
+        // Press the space key to start coroutine
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Use a coroutine to load the Scene in the background
+            StartCoroutine(LoadYourAsyncScene());
+        }
+    }
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Scene2");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+}
+```
+
+
+
+
+
+
 
 ## 时间
 
@@ -610,3 +698,181 @@ public class time : MonoBehaviour
 - PingPong/Repeat（t , length）：值 t 在 0 ~ length 范围内循环，如果需要从 x ~ length 之间运动，` x + Mathf.PingPong(t, length-x);
 - Lerp（a, b , t ）：a 开始值，b 结束值（b>a），t 插值（t = 0，返回 a；t=1，返回b） 先快后慢。
 - MoveTowards（current，target，maxdelta）：匀速接近或远离目标，maxdelta 步值
+
+## Quaternion 四元数
+
+用于改变旋转的角度。
+
+```c#
+public Transform cube;
+// 设置物体的角度方法1:直接使用欧拉角
+cube.eulerAngles = new Vector3(45, 45, 45);
+// 设置物体的角度方法2：把欧拉角转为四元数
+cube.rotation = Quaternion.Euler(new Vector3(45, 45, 45)); 
+```
+
+- LookRotation：让控制角色面向目标
+
+```c#
+public Transform Player;
+public Transform Enemy;
+
+void  Update()
+{
+  Vector3 direction = Enemy.position - Player.position; //从 Player 朝向 Enemy 的向量
+  direction.y = 0; //如果需要锁定某个轴的旋转
+  Player.rotation = Quaternion.LookRotation(dircetion);
+  
+}
+```
+
+- Slerp：球面插值，在插值中加入曲率，更平缓
+
+```c#
+private void Update()
+    {
+        Vector3 direction = Player.position - Enemy.position; //注意方向
+        Quaternion target = Quaternion.LookRotation(direction);
+        Player.rotation = Quaternion.Slerp(Player.rotation, target, Time.deltaTime);
+    }
+```
+
+## Rigidbody
+
+### Move and rotation
+
+- 用 rigidbody 控制物体的移动和旋转要比 Transform 更快，如果物体有刚体时
+
+```c#
+public Rigidbody Player; //定义 rigidbody
+Rigidbody Player; //也可以不 public rigidbody
+Vector3 v3;
+
+void Start()
+{
+  Player.position = new Vector3(2,2,3); //直接设置 rigidbody 的位置
+  v3 = new Vector3(0,100,0);
+  Player = GetComponent<Rigidbody>(); //如果不public 获取，则需要在内部指定
+  
+}
+
+void Update()
+{
+  player.MovePosition(player.transform.position + Vector3.forward * Time.deltaTime); // 持续移动物体推荐使用 MovePosition ，MovePosition 会给移动增加插值，使移动更平滑，如果需要直接移动，使用 position 
+  Quaternion deltaRotation = Quaternion.Euler(v3 * Time.deltaTime); // Rigidbody 的 rotation 是一个 Quaternion
+  player.MoveRotation(player.rotation * deltaRotation);//持续旋转物体使用 MoveRotation,此处为 让物体围绕世界坐标的 y 轴旋转
+  
+  
+}
+```
+
+### AddForce( Vector3 , ForceMode ) ;
+
+给运动添加力，力符合力学定律。
+
+```c#
+public int/float force;
+public Rigidbody Player;
+
+void Update()
+{
+  Player.AddForce(Vector3(0,20,0) * force,ForceMode.Force); //或者把 force 使用在某个轴上
+}
+```
+
+| [Force](ForceMode.Force.html)                   | Add a continuous force to the rigidbody, using its mass.     |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| [Acceleration](ForceMode.Acceleration.html)     | Add a continuous acceleration to the rigidbody, ignoring its mass. |
+| [Impulse](ForceMode.Impulse.html)               | Add an instant force impulse to the rigidbody, using its mass. |
+| [VelocityChange](ForceMode.VelocityChange.html) | Add an instant velocity change to the rigidbody, ignoring its mass. |
+
+## Camera
+
+- 获得鼠标点击的位置，并返回物体的名字
+
+```c#
+    private Camera mainCamera;
+
+    void Start()
+    {       
+        mainCamera = Camera.main;
+    }
+
+    private void Update()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); //创建射线
+      	Ray ray = new Ray(transform.position, transform.forward); //创建射线的另一个方法    
+        RaycastHit hit; //定义一个变量放 out 的参数
+        bool isCollider = Physics.Raycast(ray, out hit); //raycast 可以指定射线长度
+        if (isCollider)
+        {
+            Debug.Log(hit.collider.name); //返回鼠标触碰的物体的名字
+          	Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow); //画出射线
+        }
+    }
+```
+
+## 监听GUI 事件
+
+```c#
+using UnityEngine.UI;
+using System;
+using TMPro; //如果使用有 texmeshpro 的组件，需要引用命名空间
+
+public GameObject btn;
+public GameObject slider;
+public GameObject dropdown;
+public GameObject toggle;
+
+
+void Start()
+{
+  btn.GetComponent<Button>().onClick.AddListener(this.btnOnClick); // 在 button 组件上添加监听方法
+  slider.GetComponent<Slider>().onClick.AddListener(this.silderChange); // 在 slider 上添加监听方法
+  dropdown.GetComponent<Dropdown>().onClick.AddListener(this.dropdownChange); // 在普通 dropdown 上添加监听方法
+  dropdown.GetComponent<TMP_Dropdown>().onClick.AddListener(this.dropdownChange); //在 TMP dropdown 上添加监听方法
+	dropdown.GetComponent<Toggle>().onClick.AddListener(this.toggleIsTrue); 
+} 
+
+void btnOnClick()
+{
+  
+}
+
+void sliderChange(float value)
+{
+  
+}
+
+void dropdownChange(Int32 value)
+{
+   Debug.Log("What you want!" + value);
+}
+
+void toggleIsTrue(bool value)
+{
+   Debug.Log("cancel that check! " + value);
+}
+```
+
+### 跟鼠标相关的事件接口
+
+文档：Manual / Scripting / Event System / Supported System
+
+方法不可修改参数，只能修改触发后的事件。
+
+挂在哪个物体上就只能控制当前物体。
+
+```c#
+using UnityEngine UI;
+using UnityEngine.EventSystems; //要引用 event systems 才能使用里面的事件方法
+
+public class time : MonoBehaviour, IPointerDownHandler // Called when a pointer is pressed on the object
+{
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("hey you!");
+    }
+}
+```
+
