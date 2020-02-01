@@ -1,4 +1,4 @@
-# Unity中的C#语法
+## Unity中的C#语法
 
 ## 基本格式
 
@@ -874,5 +874,79 @@ public class time : MonoBehaviour, IPointerDownHandler // Called when a pointer 
         Debug.Log("hey you!");
     }
 }
+```
+
+## CharacterController
+
+不经过 rigidbody 控制物体的运动。
+
+```c#
+// 脚本名字不可以重名，有一个组件为 CharacterController，脚本不可命名为CharacterController。
+public float Speed = 3;
+private CharacterController cc;
+
+private void Start()
+{
+    cc = GetComponent<CharacterController>();
+}
+
+private void Update()
+{
+    float h = Input.GetAxis("Horizontal");
+    float v = Input.GetAxis("Vertical");
+
+    cc.SimpleMove(new Vector3(h, 0, v) * Speed); 
+  	cc.Move(new Vector3(h, 0, v) * Speed * Time.deltaTime); // move 需要给一个时间间隔，没有重力影响
+}
+```
+
+## Mesh
+
+把一个物体的 mech 修改成另一个物体的。
+
+```c#
+public Mesh mesh;
+
+void Start()
+{
+  GetComponent<MeshFilter>().mesh = mesh; //复制一个实例再赋值
+  GetComponent<MeshFilter>().shareMesh = mesh; //直接share,性能更快
+}
+```
+
+## Material
+
+```c#
+//用  MeshRenderer 里的 material 改变物体颜色
+private Material mat;
+
+private void Start()
+{
+   mat = GetComponent<MeshRenderer>().material;
+}
+
+private void Update()
+{
+   mat.color = Color.Lerp(mat.color, Color.red, Time.deltaTime);
+}
+```
+
+
+
+```c#
+// 把物体颜色变为自定义颜色，因为 Color 是 struct 结构体，不可以单独对结构体内部元素赋值，需要先转换。color 和 vector4 可以互相转换。
+
+    private Material mat;
+
+    private void Start()
+    {
+        mat = GetComponent<MeshRenderer>().material;
+    }
+
+    private void Update()
+    {
+        Vector4 v4 = new Color(0.3f, 0.4f, 0.6f); //先设置一个目标颜色
+        mat.color = Color.Lerp(mat.color, v4, Time.deltaTime);
+    }
 ```
 
