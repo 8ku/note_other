@@ -332,8 +332,9 @@ footer {
 	footer {
 		position: fixed;
 		border-top: 1px solid #ccc;
+    background-color: #fbfaf7;
 		margin:0 84px 0 50px;
-		padding:0;
+		padding:0 10px;
 	}
 
   header {
@@ -373,7 +374,9 @@ footer {
 
 	footer {
 		position: fixed;
+    background-color: #fbfaf7;
 		margin: 0 0 0 30px;
+    padding:0 10px;
 	}
 
   header ul, header p.view {
@@ -389,7 +392,10 @@ footer {
 
 	footer {
     position: fixed;
+    background-color: #fbfaf7;
 		margin: 0 0 0 20px;
+    padding:0 5px;
+
 	}
 
 	footer a{
