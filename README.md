@@ -1,18 +1,9 @@
 # note_other
+### 介绍
+
 书籍以外的各种笔记
 
-## 目录
 
-- [Bolt](https://8ku.github.io/note_other/bolt/summary)
-- [Code](https://8ku.github.io/note_other/Code/summary)
-- [Unity](https://8ku.github.io/note_other/Unity/summary)
-- [Math](https://8ku.github.io/note_other/math/summary)
-- [正则表达式](https://8ku.github.io/note_other/RegularExpression/summary)
-- [System](https://8ku.github.io/note_other/system/summary)
-- [女性历史](https://8ku.github.io/note_other/WomensHistory/summary)
-- [神话](https://8ku.github.io/note_other/mythology/summary)
-- [GameHistory](https://8ku.github.io/note_other/GameHistory/summary)
-- [Biology](https://8ku.github.io/note_other/Biology/summary)
 
 ### 规则
 
