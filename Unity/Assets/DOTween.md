@@ -49,6 +49,7 @@
   - 循环、起点、延迟、以什么速度为基准（From, SetDelay, SetSpeedBased）
   - 设置 ID (SetId)，设置内部 id (字符串)，调用时直接传入内部 id。
   - 设置增量动画（SetRelative）
+  - 设置回放动画（DOPlayBackwards）
   - 设置翻转（DoFlip）
 
 - 设置曲线 （SetEase）
