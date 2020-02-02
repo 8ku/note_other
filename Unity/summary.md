@@ -12,4 +12,5 @@
   - [Animator](https://8ku.github.io/note_other/Unity/Animato)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
+  - [Bolt](https://8ku.github.io/note_other/Unity/Assets/bolt)
 
