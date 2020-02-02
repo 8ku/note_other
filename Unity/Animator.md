@@ -47,3 +47,14 @@
     - 第3方插件 `puppet 2D`
   - 3D
     - 第3方插件 `puppet 3D`
+
+## 绘制2D 地图
+
+-  新建 2D Project - Tilemap
+- Windows - 2D - Tile Patette
+- 把地图元素用 Sprite Editor 切好
+- 在 Tile Patette 中新建 palette ，把切好的元素拖入，点击保存
+
+## 创建动画的快捷方法
+
+在素材中直接把切好的图拖入 Hierarchy

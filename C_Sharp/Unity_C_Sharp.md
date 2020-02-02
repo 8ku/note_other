@@ -224,7 +224,7 @@ void Update()
 
 ```c#
 public Transform player; // 取得跟随对象的位置
-
+[SerializeField] //显示私有变量，能在Inspector中编辑
 private Vector3 offset; // 设置初始距离
 
 void Start()
@@ -390,7 +390,7 @@ void Update()
 
 void newBullet()
 {
-  bu = GameObject.Instantiate( bullet, transform.position, transform.rotation); // instantiate:实例化，第一个值：实例化的原对象
+  bu = GameObject.Instantiate( bullet, transform.position, transform.rotation); // instantiate:实例化，第一个值：实例化的原对象，第二：位置，第三：角度
 }
 ```
 
@@ -470,7 +470,7 @@ private void OnCollisionEnter(Collider2D collision)
 ## 触发区域
 
 ```c#
-private void OnTriggerEnter(Collider other)
+private void OnTriggerEnter(Collider other) //此方法不需要更改方法，只编辑返回值就可以
     {
         print("opps! " + other.name); //获取碰到的触发物体的名字
     }
@@ -490,7 +490,7 @@ public class ExampleClass : MonoBehaviour
     void Start()
     {
         Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-        Instantiate(prefab, position, Quaternion.identity);
+        Instantiate(prefab, position, Quaternion.identity); //Quaternion.identity:不旋转
     }
 }
 ```
@@ -587,10 +587,6 @@ public class Example : MonoBehaviour
 
 
 
-
-
-
-
 ## 时间
 
 ### Time
@@ -637,7 +633,25 @@ void ApplyDamage() // 直接引用方法
 ```
 
 2. `GameObject.SendMessage` ：只给当前接收者发送消息，不会同时给子物体发送。
-3. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
+
+```c#
+//发送消息方，通过 sendmessage 来触发方法
+collision.SendMessage("Die");
+```
+
+
+
+```c#
+//接收消息方,有一个方法就可以
+public void Die()
+{
+  sr.sprite = BrokenSprite;
+}
+```
+
+
+
+2. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
 
 ## 协程 Coroutine
 
@@ -709,6 +723,7 @@ public Transform cube;
 cube.eulerAngles = new Vector3(45, 45, 45);
 // 设置物体的角度方法2：把欧拉角转为四元数
 cube.rotation = Quaternion.Euler(new Vector3(45, 45, 45)); 
+cube.rotaiton = Quaternion.Euler(transform.eulerAngles+bullectEulerAngles);
 ```
 
 - LookRotation：让控制角色面向目标
@@ -948,5 +963,23 @@ private void Update()
         Vector4 v4 = new Color(0.3f, 0.4f, 0.6f); //先设置一个目标颜色
         mat.color = Color.Lerp(mat.color, v4, Time.deltaTime);
     }
+```
+
+## 数组
+
+创建一个公开的数组
+
+```c#
+public Sprite[] tankSprite; //创建一个公开的 sprite 数组，即可把动画图片拖到数组中
+
+private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+private void Update()
+{
+  sr.sprite = tankSprite[1];
+}
 ```
 
