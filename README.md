@@ -23,7 +23,7 @@
 
 ### Tips
 
-- 让github page显示数字公式的方法：
+- 让 github page 显示数字公式的方法：
   1. 应用系统主题，从[系统主题库](https://pages.github.com/themes/)中拷贝 defalt.html 文件到自己的仓库下，路径为 `/_layouts/default.html`(自己仓库也需要建立同样的 _layouts 路径，不然无法读取)
   
   2. 打开 `defaoult.html`，在 `head` 中添加 `<script type="text/javascript"src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>`
@@ -32,7 +32,7 @@
   
   4. 更换主题时，需要把 `default.html`文件全部再复制粘贴一次，不然新主题显示会有问题
   
-  5. **以上方法失效时，在每个markdown文档头部增加js:
+  5. 以上方法失效时，在每个markdown文档头部增加js:
   
      ```html
      <head>
