@@ -5,6 +5,15 @@
 - [从官网下载离线版文档](https://docs.unity3d.com/Manual/UnityManual.html)，左侧 Unity User Manual - Offline documentation
 - 把本地保存路径复制，在浏览器打开，在最后补上 index.html
 
+## 和 Unreal 对比
+
+- Unreal更适合制作3A大作，免费使用，产品成功发行后支付5%分成费
+- Unreal使用C++
+- Unreal，确保显卡、硬盘、内存、CPU都为高水准设备，且有稳定的翻墙手段
+- Unreal具备很多很酷的效果，但是使用难度同样倍增
+- UE4光照和物理渲染即便在缩水的状况下也足以秒杀Unity蓝图系统。UE4让游戏策划不用再写劳神费力编辑代码，其强大的材质编辑器实在让开发者们大呼德玛西亚，各种官方插件齐全也让开发者不用在自编第三方插件并担心兼容接口问题。更重要的是针对虚拟现实游戏，UE4为手柄、VR控制器提供了良好支持。而UE4提供的各种游戏模版，让其与Blueprint配合做原型甚至比Unity更快
+- UE4有 VR 游戏开发优势
+
 ## HUD Head-Up Display
 
 抬头显示，指在屏幕上显示游戏相关信息

@@ -344,7 +344,7 @@ private Transform something; //transform 是 Unity 的核心模块，可以直�
 
 void Start()
 {
-  somethin.子类(); //获取脚本中的东西
+  something.子类(); //获取脚本中的东西
   something = GameObject.Find("gameObject_name").transform;
 }
 ```
@@ -360,8 +360,32 @@ GameObject go = GameObject.Find("Main Camera");
 ```c#
 GameObject go = GameObject.FindWithTag("Player"); //根据 tag 名称返回active 的第一个结果
 GameObject go = GameObject.FindGameObjectsWithTag("Player"); //返回这个 Tag 的列表，顺序随机
+FindObjectOfType<PlayerController>().CherryCount(); //根据 object 的名称查找
 foreach(GameObject i in go){print(i);} //可以用 foreach 来查看找到的项
 ```
+
+5. 通过单例化调用脚本，不太喜欢，static 感觉有限制，后期学ECS
+
+```c#
+public class something: MonoBehavious
+{
+  public static something instance; //把该脚本单例化，就可以从别的角色直接调用该脚本下的方法和值
+  
+  private void Awake()
+    {
+        instance = this;// 在启动时调用一下，不写会调用不了。
+    }
+}
+```
+
+
+
+```c#
+//调用的脚本
+something.instance.function();
+```
+
+
 
 ### 启用/禁用组件
 
@@ -658,6 +682,7 @@ public void Die()
 - 在执行其他方法时同时执行其他方法的方法。
 - 协程方法可以暂停。
 - 使用 ` yield return ` 来停止并返回参数。
+- IEnumerator：迭代器
 
 ```c#
 public class time : MonoBehaviour
@@ -683,7 +708,7 @@ public class time : MonoBehaviour
             Color c = cube.GetComponent<Renderer>().material.color;
             Color newColor = Color.Lerp(c, Color.red, 0.02f); //使用插值 lerp
             cube.GetComponent<Renderer>().material.color = newColor;
-            yield return new WaitForSeconds(0.1f); //暂停0.1秒
+            yield return new WaitForSeconds(0.1f); //暂停0.1秒后执行下一句
             if (Mathf.Abs(Color.red.g - newColor.g) <= 0.01f) //如果颜色已经变为目标颜色红色
             {
                 break; //则退出循环

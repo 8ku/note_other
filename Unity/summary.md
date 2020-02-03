@@ -9,7 +9,7 @@
   - [Physics](https://8ku.github.io/note_other/Unity/Physice)
   - [Prefabs](https://8ku.github.io/note_other/Unity/Prefabs)
   - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
-  - [Animator](https://8ku.github.io/note_other/Unity/Animato)
+  - [Animator](https://8ku.github.io/note_other/Unity/Animator)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
   - [Bolt](https://8ku.github.io/note_other/Unity/Assets/bolt)
