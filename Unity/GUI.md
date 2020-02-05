@@ -4,3 +4,8 @@
 
 - FairyGUI 把 GUI 编辑分离出来，用发布的方式更新界面设计，在团队合作里提高效率
 - UGUI 内置于 Unity 中
+
+## UI 界面按钮注册
+
+把 GameManager 拖入对应的按钮中（例如 “继续游戏”） On Click 中，选择相应方法
+

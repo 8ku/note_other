@@ -2,6 +2,9 @@
 
 ## 基本格式
 
+- 方法用大驼峰；
+- 变量用小驼峰；
+
 ~~~c#
 using System.Collections;
 using UnityEngige;
@@ -331,6 +334,9 @@ public GameObject someone;  //先定义一个参数，把要获取的物体拖�
 void Start()
 {
   someone.GetComponent<Rigidbody2D>(); //获取物体组件
+  someone.GetComponent<ClssFileName>().method; //获取物体脚本中的方法
+  someone.GetComponentInParent<ClssFileName>.method; //视角：子物体身上的脚本，获得父物体身上的脚本方法
+  someone.GetComponentInChildren<ClassFileName>.method; //父物体获得子物体身上的脚本方法
 }
 ```
 
@@ -992,8 +998,6 @@ private void Update()
 
 ## 数组
 
-创建一个公开的数组
-
 ```c#
 public Sprite[] tankSprite; //创建一个公开的 sprite 数组，即可把动画图片拖到数组中
 
@@ -1006,5 +1010,35 @@ private void Update()
 {
   sr.sprite = tankSprite[1];
 }
+```
+
+切换怪物出现次序
+
+```c#
+public GameObject[] Monsters; //创建一个游戏物体组，把游戏物体拖入
+public GameObject activeMonster = null; //创建一个位置放置被随机到的游戏物体
+
+private void ActivateMonster()
+{
+  int i = Random.Range(0, Monster.Length); //随机循环一组长度为 Monsters 的长度的数组
+  activeMonster = Monsters[i];
+  activeMonster.SetActive(true);
+}
+
+```
+
+
+
+
+
+## 冻结/解冻游戏
+
+```c#
+// 暂停游戏，冻结时间
+Time.timeScale = 0f;
+Curor.visible = true; // 隐藏鼠标
+// 回到游戏，解冻时间
+Time.timeScale = 1f;
+Curor.visible = false; // 显示鼠标，可以点击
 ```
 
