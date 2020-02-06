@@ -30,3 +30,27 @@ rect.rect.width;
 ### UI 单位和像素的关系
 
 默认是100 px = 1unit = 1m，可以调整图片和 unit 的比例达到放大场景中对象的效果
+
+### UI适配屏幕比例
+
+在 Canvas 上添加脚本
+
+```c#
+void Start()
+    {
+        float wSale = Screen.width / 1920.0f; //要用浮点型，1920为设计时所用的屏幕宽度
+        float hScale = Screen.height / 1080.0f;
+
+        GetComponent<CanvasScaler>().scaleFactor = wSale;
+    }
+```
+
+### GraphicRaycaster 图片的点击检测
+
+Canvas 下的 GraphicRaycaster 组件
+
+- Blocking Objects ：检测的是物体身上挂的 collider 的类型，不是根据游戏物体的类型
+
+### Canvas group
+
+在 Canvas / Canvas 下的元素中 添加，可以对 Canvas 下的素材进行集体操作
