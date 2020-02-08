@@ -47,10 +47,58 @@ void Start()
 
 ### GraphicRaycaster 图片的点击检测
 
-Canvas 下的 GraphicRaycaster 组件
+Canvas 下的 GraphicRaycaster 组件，只能控制 UGUI 的元素，不能控制 3D 物体
 
 - Blocking Objects ：检测的是物体身上挂的 collider 的类型，不是根据游戏物体的类型
 
 ### Canvas group
 
 在 Canvas / Canvas 下的元素中 添加，可以对 Canvas 下的素材进行集体操作
+
+### Raw Image
+
+Raw Image 里的 UV Rect 可以用来设置帧动画
+
+```c#
+private float offsetY;
+private float offsetX;
+
+void Start()
+{
+  rawImage = GetComponent<RawImage>(); //获得物体身上的 rawImage 组件
+  offsetX = 1/4.0f; //一行有几个图片就除以几
+  offsetY = 1/2.0f; //有几列就除以几
+  
+  StartCoroutine(Ani());
+}
+
+//用一个序列动作来完成动画
+private IEnumerator Ani()
+{
+  float x = 0; //动画开始要定位图片的起始位置
+  float y = 0;
+  
+  while (true) 
+  {
+    y += offsetY;
+    while(x < 1)
+    {
+      x += offfsetX;
+      rawImage.uvRact = new Rect(x, y, rawImage.uvRect.width, rawImage.uvRect.height);
+      yield return new WaitForSeconds(0.3f);
+    }
+    x = 0;
+  }
+  
+}
+```
+
+### Mask
+
+如果 UI 需要使用遮罩，Ract Mask 2D 更节省性能（有可能会出 bug），最好是自己写 mask 脚本。
+
+### UI 排列
+
+使用适应性更强的 Grid Layout Group 组件
+
+在子项使用 Layout Element 管理子项的大小限度

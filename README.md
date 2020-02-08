@@ -7,6 +7,7 @@
 
 - [Code](https://8ku.github.io/note_other/Code/summary)
 - [Unity](https://8ku.github.io/note_other/Unity/summary)
+- [Math](https://8ku.github.io/note_other/math/summary)
 - [正则表达式](https://8ku.github.io/note_other/RegularExpression/summary)
 - [System](https://8ku.github.io/note_other/System/summary)
 - [WomenHistory](https://8ku.github.io/note_other/WomensHistory/summary)
