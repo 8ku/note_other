@@ -520,8 +520,8 @@ int MyValue //int:属性类型   MyValue:属性名
 
 - 选择语句：可以选择哪条语句或语句块来执行
 	- if 
-	- if...else
-	- switch
+	- if... else if ...else：对只有一个层次深度的简单类型使用switch/case，但对于更复杂的比较和多个嵌套层次，使用经典的if/else构造。
+	- switch：只能写一个条件,switch/case语句通常速度更快，深度为1级，但当您开始进入2个或更多级别时，switch/case语句开始占用的时间是嵌套if/else语句的2-3倍。
 - 迭代语句：在一个语句块上循环或迭代
 	- for 
 	- while

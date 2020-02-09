@@ -58,6 +58,46 @@ public class PlayerController : MonoBehaviour
   }
   ```
 
+### 代码中指定快捷键
+
+`UnityEditor` 中的 MenuItem 可设定自己的菜单，并为其指定快捷键。
+
+| key                 | macOS         | Windows        |
+| ------------------- | ------------- | -------------- |
+| %                   | cmd           | control        |
+| #                   | shift         | shift          |
+| &                   | alt           | alt            |
+| #LEFT/RIGHT/UP/DOWN | left shift... | left shift ... |
+| HOME/END/PGUP/PGDN  | ...           | ...            |
+
+```c#
+# if UNITY_EDITOR
+using UnityEditor;
+# endif
+  
+namespace Baku 
+{
+    public class ReuseMenuItems
+    {
+#if UNITY_EDITOR 
+        [MenuItem("8ku/ReuseMenuItems %e")] // “%e”表示 cmd + e 菜单项快捷键,快捷键必须和菜单名之间用空格分离
+
+        private static void MenuClicked()
+        {
+            // 调用复制文件名的菜单命令，并打开文件夹
+            EditorApplication.ExecuteMenuItem("8ku/CopyPackageName");
+            // 要使用 combine, path.combine需要引用System.IO，../表示该目录的上级目录
+            Application.OpenURL("file:///" + Path.Combine(Application.dataPath, "../"));
+        }
+    }
+#endif
+}
+```
+
+
+
+
+
 ### 命名空间和类
 
 可自定义命名空间和类，并在代码中引用
