@@ -234,14 +234,13 @@ $$
 
 ### sequence
 
-```html
 <div class="mermaid">
 sequenceDiagram
     Alice->Bob: Hello Bob, how are you?
     Note right of Bob: Bob thinks
     Bob-->Alice: I am good thanks!
 </div>
-```
+
 
 ### mermaid - flowchat
 
@@ -256,7 +255,7 @@ A[Hard edge] -->B(Round edge)
 
 ### mermaid - class diagrams
 
-```html
+
 <div class="mermaid">
 classDiagram
       Animal <|-- Duck
@@ -279,37 +278,30 @@ classDiagram
           +bool is_wild
           +run()
       }
-      
  </div>     
-```
+
 
 ### mermaid - state diagrams
 
-
-
-```html
 <div class="mermaid">
 stateDiagram
     [*] --> Still
     Still --> [*]
-
     Still --> Moving
     Moving --> Still
     Moving --> Crash
-    Crash --> [*]
-    
- </div>   
-```
+    Crash --> [*] 
+</div>   
+
 
 ### mermaid - pie charts
 
-```html
 <div class="mermaid">
 pie
     title Pie Chart
     "Dogs" : 386
     "Cats" : 85
     "Rats" : 150
-    
 </div>    
-```
+
+<div class = >
