@@ -8,17 +8,15 @@
             }
         });
     </script>
-  	<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-  	<script>mermaid.initialize({startOnLoad:true});</script>
+      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      <script>mermaid.initialize({startOnLoad:true});</script>
 </head>
-
-
 
 # Markdown输入数学公式及图表
 
 ## 插入方式
 
-### 行间插入或左对齐 
+### 行间插入或左对齐
 
 a + b :``` $a + b$```
 
@@ -143,7 +141,6 @@ x = y + z
 \end{gather}
 $$
 
-
 ```
 $$
 \begin{gather}
@@ -229,10 +226,9 @@ $$
 需要在页头添加
 
 ```javascript
-<script src="mermaid.full.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 ```
-
-
 
 ### flowchat
 
@@ -260,13 +256,13 @@ Bob-->Alice: I am good thanks!
 
 ### mermaid - flowchat
 
-```mermaid
+<div class="mermaid">
 graph LR
 A[Hard edge] -->B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
-```
+</div>
 
 ```mermaid
 graph TD
@@ -304,6 +300,8 @@ classDiagram
 
 ### mermaid - state diagrams
 
+
+
 ```mermaid
 stateDiagram
     [*] --> Still
@@ -324,4 +322,3 @@ pie
     "Cats" : 85
     "Rats" : 150
 ```
-
