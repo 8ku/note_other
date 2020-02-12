@@ -8,7 +8,10 @@
             }
         });
     </script>
+  	<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  	<script>mermaid.initialize({startOnLoad:true});</script>
 </head>
+
 
 
 # Markdown输入数学公式及图表
@@ -222,6 +225,14 @@ $$
 ```
 
 ## 图表
+
+需要在页头添加
+
+```javascript
+<script src="mermaid.full.min.js"></script>
+```
+
+
 
 ### flowchat
 
