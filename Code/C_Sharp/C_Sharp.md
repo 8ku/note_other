@@ -25,8 +25,12 @@ namespace simple //sign space name
             int a = 1;
             long b = 1000000;
             byte c = 12;
-            Console.WriteLine("Hi,there.");
-          	Console.WriteLine($"int:{a} long:{b} byte:{c}");
+          	string d = @"lala
+          	lalali"; //使用 @ 字符不会识别字符串中的换行符，可以直接换行
+            string path = @"c:\x\x.doc";
+            Console.WriteLine("Hi,there."); //用 @ 可以不用 \ 转义
+          	// \n 换行符
+          	Console.WriteLine($"int:{a} \nlong:{b} \nbyte:{c}");                    	
         }
     }
 }
