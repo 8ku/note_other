@@ -225,6 +225,8 @@ $$
 
 需要在页头添加以下代码，使用时需要用`<div class = "mermaid”></div>` 包裹图表。
 
+参考：<a href="https://mermaid-js.github.io/mermaid/#/flowchart">语法说明</a>
+
 ```javascript
 <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
@@ -285,12 +287,12 @@ classDiagram
 
 <div class="mermaid">
 stateDiagram
-    [*] --> Still
-    Still --> [*]
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
+      [*] --> Still
+      Still --> [*]
+      Still --> Moving
+      Moving --> Still
+      Moving --> Crash
+      Crash --> [*]
 </div>   
 
 
@@ -299,9 +301,9 @@ stateDiagram
 
 <div class="mermaid">
 pie title Key elements in Product X
-    "Calcium" : 42.96
-    "Potassium" : 50.05
-    "Magnesium" : 10.01
-    "Iron" :  5
+      "Calcium" : 42.96
+      "Potassium" : 50.05
+      "Magnesium" : 10.01
+      "Iron" :  5
 </div>    
 
