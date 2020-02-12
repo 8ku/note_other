@@ -22,7 +22,11 @@ namespace simple //sign space name
     {
         static void Main()  //name a function call main static:静态字段，静态的，不变的，在某个类中只有一个，不会因实例化对象的不同而不同。
         {
+            int a = 1;
+            long b = 1000000;
+            byte c = 12;
             Console.WriteLine("Hi,there.");
+          	Console.WriteLine($"int:{a} long:{b} byte:{c}");
         }
     }
 }
@@ -127,17 +131,17 @@ C#程序是一组类型声明。
 
 所有预定义类型名称都是小写。
 
-| 简单类型          | 名称                           | 说明             | 默认值 |
-| ----------------- | ------------------------------ | ---------------- | ------ |
-| 非数值类型        | bool                           | 布尔，true false | false  |
-| 非数值类型        | char                           | Unicode字符串    | \x0000 |
-| 数值类型-整数类型 | 8-Bit:<br />sbyte<br />byte    |                  | 0      |
-| 数值类型-整数类型 | 16-Bit:<br />short<br />ushort |                  | 0      |
-| 数值类型-整数类型 | 32-Bit:<br />int<br />uint     |                  |        |
-| 数值类型-整数类型 | 64-Bit:<br />long<br />ulong   |                  | 0      |
-| 数值类型-浮点类型 | decimal                        | 小数，精度为28位 | 0m     |
-| 数值类型-浮点类型 | float                          | 单精度浮点数     | 0.0f   |
-| 数值类型-浮点类型 | double                         | 双精度浮点数     | 0.0d   |
+| 简单类型          | 名称                           | 说明                                                         | 默认值 |
+| ----------------- | ------------------------------ | ------------------------------------------------------------ | ------ |
+| 非数值类型        | bool                           | 布尔，true false                                             | false  |
+| 非数值类型        | char                           | Unicode字符，和 string 的区别是 char 只能放一个字符，例如“a”，不可以放“aa”，string 可以放字符串 | \x0000 |
+| 数值类型-整数类型 | 8-Bit:<br />sbyte<br />byte    |                                                              | 0      |
+| 数值类型-整数类型 | 16-Bit:<br />short<br />ushort |                                                              | 0      |
+| 数值类型-整数类型 | 32-Bit:<br />int<br />uint     |                                                              |        |
+| 数值类型-整数类型 | 64-Bit:<br />long<br />ulong   |                                                              | 0      |
+| 数值类型-浮点类型 | decimal                        | 小数，精度为28位                                             | 0m     |
+| 数值类型-浮点类型 | float                          | 单精度浮点数                                                 | 0.0f   |
+| 数值类型-浮点类型 | double                         | 双精度浮点数                                                 | 0.0d   |
 
 | 非简单类型 | 说明                             |
 | ---------- | -------------------------------- |
