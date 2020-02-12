@@ -223,35 +223,24 @@ $$
 
 ## 图表
 
-需要在页头添加
+需要在页头添加以下代码，使用时需要用`<div class = "mermaid”></div>` 包裹图表。
 
 ```javascript
-<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 ```
 
-### flowchat
 
-```flow
-st=>start: 开始
-op=>operation: 内容发布
-op1=>operation: 回复并等等投票
-cond=>condition: 审核是否通过？
-cond1=>condition: 是否二次编辑
-e=>end
-st->op->cond
-cond(yes)->op1->e
-cond(no)->cond1
-cond1(yes,right)->op
-cond1(no)->e
-```
 
 ### sequence
 
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
+```html
+<div class="mermaid">
+sequenceDiagram
+    Alice->Bob: Hello Bob, how are you?
+    Note right of Bob: Bob thinks
+    Bob-->Alice: I am good thanks!
+</div>
 ```
 
 ### mermaid - flowchat
@@ -264,17 +253,11 @@ A[Hard edge] -->B(Round edge)
     C -->|Two| E[Result two]
 </div>
 
-```mermaid
-graph TD
-A[Hard edge] -->B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
-```
 
 ### mermaid - class diagrams
 
-```mermaid
+```html
+<div class="mermaid">
 classDiagram
       Animal <|-- Duck
       Animal <|-- Fish
@@ -296,13 +279,16 @@ classDiagram
           +bool is_wild
           +run()
       }
+      
+ </div>     
 ```
 
 ### mermaid - state diagrams
 
 
 
-```mermaid
+```html
+<div class="mermaid">
 stateDiagram
     [*] --> Still
     Still --> [*]
@@ -311,14 +297,19 @@ stateDiagram
     Moving --> Still
     Moving --> Crash
     Crash --> [*]
+    
+ </div>   
 ```
 
 ### mermaid - pie charts
 
-```mermaid
+```html
+<div class="mermaid">
 pie
     title Pie Chart
     "Dogs" : 386
     "Cats" : 85
     "Rats" : 150
+    
+</div>    
 ```

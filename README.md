@@ -51,10 +51,20 @@
      </head>
      ```
   
-- 在markdown中画流程图的方法
   
-  - https://support.typora.io/Draw-Diagrams-With-Markdown/
+  
 - 在markdown中画图表的方法
   
   - https://tianqi.name/jekyll-TeXt-theme/docs/en/markdown-enhancements
+  
+  - 需要在页头引用，且在图表外要使用 `<div class = "mermaid”></div>` 包裹图表（特别麻烦）
+  
+    ```html
+    <head>
+          <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+          <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    ```
+  
+    
 
