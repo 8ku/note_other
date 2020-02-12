@@ -11,7 +11,7 @@
 </head>
 
 
-# Markdown输入数学公式
+# Markdown输入数学公式及图表
 
 ## 插入方式
 
@@ -219,5 +219,98 @@ $$
 \hline
 \end{array}
 $$
+```
+
+## 图表
+
+### flowchat
+
+```flow
+st=>start: 开始
+op=>operation: 内容发布
+op1=>operation: 回复并等等投票
+cond=>condition: 审核是否通过？
+cond1=>condition: 是否二次编辑
+e=>end
+st->op->cond
+cond(yes)->op1->e
+cond(no)->cond1
+cond1(yes,right)->op
+cond1(no)->e
+```
+
+### sequence
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+### mermaid - flowchat
+
+```mermaid
+graph LR
+A[Hard edge] -->B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+```mermaid
+graph TD
+A[Hard edge] -->B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+### mermaid - class diagrams
+
+```mermaid
+classDiagram
+      Animal <|-- Duck
+      Animal <|-- Fish
+      Animal <|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+```
+
+### mermaid - state diagrams
+
+```mermaid
+stateDiagram
+    [*] --> Still
+    Still --> [*]
+
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
+```
+
+### mermaid - pie charts
+
+```mermaid
+pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150
 ```
 
