@@ -545,7 +545,27 @@ int MyValue //int:属性类型   MyValue:属性名
 	- Foreach
 - 跳转语句：从代码块或方法体内部的一个地方跳转到另一个地方
 	- break 跳出当前循环
-	- continue 到当前循环的底部
+	
+	- continue 到当前循环的底部，满足 continue 的条件会被跳过，继续执行循环，类似玩牌中的“pass”，当满足 continue 条件的情况都会 pass
+	
+	  ```c#
+	  int a = 1;
+	              while (true)
+	              {
+	                  a++;
+	                  if (a < 3)
+	                  {
+	                      continue; // 1,2 would be pass
+	                  }
+	                  if (a == 10)
+	                  {
+	                      break; // 10 would be pass
+	                  }                
+	                  Console.WriteLine("result is " + a); // 3,4,5,6,7,8,9   
+	  ```
+	
+	  
+	
 	- return 返回调用方法继续执行
 
 ### 方法调用
@@ -881,6 +901,183 @@ else
   语句2；
 }
 ```
+
+## 数学运算符
+
+### ++/--
+
+```c#
+int z = 20;
+z++; //z=21
+int y = z; //y = new z = 21
+int x = z++; //x = new z = 21 and z = z + new z = 22
+int t = ++z; // t = new z = 22+1 =23 and z = 23
+Console.WriteLine(z + ":" + y + ":" + x); //22:21:21
+```
+
+### 监控用户输入 , 转换为相应类型
+
+```c#
+string str = Console.ReadLine(); //用 ReadLine 来监控用户输入
+int num = Convert.ToInt32(str); // 用 Convert 转换用户输入
+Console.WriteLine(num); 
+```
+
+判断用户输入的是否为某个类型,是,输出结果,不是,提示
+
+```c#
+using System;
+namespace C_Sharp_test
+{
+    class MainClass
+    {
+        public static void Main()
+        {
+            string str = Console.ReadLine(); //接收用户字符
+            int number; //定义一个整数类型接收字符          
+
+            if (int.TryParse(str, out number)) //如果输入的字符串是整数，则转换为整数
+            {
+                Console.WriteLine(number); //输出整数
+            }
+          	if (int)
+            else
+            {
+                Console.WriteLine("not number"); //提示不是整数
+            }
+        }
+    }
+}
+```
+
+
+
+```c#
+// 根据用户输入的字符判断是什么字符，只能输入一个字符
+public static void Main()
+        {
+            char c = (char)Console.Read();
+            if (char.IsDigit(c)) Console.WriteLine("这个是数字");
+            else if (char.IsLower(c)) Console.WriteLine("这个是小写字母");
+            else if (char.IsUpper(c)) Console.WriteLine("这个是大写字母");
+            else Console.WriteLine("这个不是一个字母");
+
+        }
+```
+
+
+
+```c#
+// 判断用户输入的字符
+string str = Console.ReadLine();
+char[] c = str.ToCharArray(); // 用一个数组来放输入的字符
+for (int i = 0; i < str.Length; i++)
+{
+  if (char.IsNumber(c[i])) // 是否是个数字符号; 范围包括 0..9, 还有 ASCII 码中的 178、179、185、188、189、190 等
+	{
+  	Console.WriteLine(c[i] + " is number");
+  }
+  else if (char.IsDigit(c[i])) // 是否是个十进制数字; 范围 0..9
+	{
+  	Console.WriteLine(c[i] + " is number");
+  }
+  else if (char.IsLetter(c[i]) && char.IsUpper(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is capital letter");
+  }
+  else if (char.IsLetter(c[i]) && char.IsLower(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is small letter ");
+  }
+  else if (char.IsLetterOrDigit(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is a letter or a number ");
+  }
+  else if (char.IsPunctuation(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is a punctuation "); //是否是标点符号
+  }
+  else if (char.IsWhiteSpace(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is a white space "); //是否是空格字符
+  }
+  else if (char.IsWhiteSpace(c[i]))
+  {
+  	Console.WriteLine(c[i] + " is a white space "); //是否是空格字符
+  }
+  else if (c[i] >= 0x4e00 && c[i] <= 0x9fbb)
+	{
+   Console.WriteLine(c[i] + " is Chinese characters"); //用UNICODE编码判断是否为汉字
+   }
+  else
+  {
+    Console.WriteLine(c[i] + " is not a letter ");
+  }
+    
+    
+```
+
+
+
+### 比大小
+
+需要引用 System.Linq
+
+```c#
+using System;
+using System.Linq;
+
+namespace C_Sharp_test
+{
+    class MainClass
+    {
+        public static void Main()
+        {
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
+            int d = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[] { a, b, c, d };
+            Console.WriteLine("Min:{0}", array.Min());
+        }
+    }
+}
+```
+
+### 乘方/开方、e的次方、对数log、正弦sin、余弦cos、正切tan、绝对值abs、PI、E
+
+```c#
+double num = Convert.ToDouble(a);
+
+//平方 Math.Pow(double 底数,double 几次方)
+Console.WriteLine(a + "的平方是 " + Math.Pow(a,2));
+
+//平方根 Math.Sqrt(double 数字)
+Console.WriteLine(a + "的平方根是 " + Math.Sqrt(a));
+
+/* 
+Math.log(double x) 以 e 为底
+Math.log(double x, double 底数) 以 底数 为底
+Math.log10(double x) 以 10 为底
+Math.log2(double x) 以 2 为底
+*/
+
+// 求正弦 Math.Sin(double x)
+Console.WriteLine(a + "的正弦是" + Math.Sin(a));
+// 求余弦 Math.Cos(double x)
+
+// e,固定值
+public const double E = 2.7182818284590451;
+
+// pi,固定值
+public const double PI = 3.1415926535897931;
+
+// 绝对值 Math.Abs(decimal/double/float/int/long/sbyte/short)
+// e 的次方 Math.Exp(double x)
+```
+
+
 
 
 
