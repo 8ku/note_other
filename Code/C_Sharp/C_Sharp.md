@@ -539,8 +539,8 @@ int MyValue //int:属性类型   MyValue:属性名
 	- if... else if ...else：对只有一个层次深度的简单类型使用switch/case，但对于更复杂的比较和多个嵌套层次，使用经典的if/else构造。
 	- switch：只能写一个条件,switch/case语句通常速度更快，深度为1级，但当您开始进入2个或更多级别时，switch/case语句开始占用的时间是嵌套if/else语句的2-3倍。
 - 迭代语句：在一个语句块上循环或迭代
-	- for 
-	- while
+	- for ：在循环次数确定时使用
+	- while：在循环次数不确定时使用
 	- Do
 	- Foreach
 - 跳转语句：从代码块或方法体内部的一个地方跳转到另一个地方
@@ -1077,9 +1077,67 @@ public const double PI = 3.1415926535897931;
 // e 的次方 Math.Exp(double x)
 ```
 
+### 排序
+
+给输入的数字排序：针对一种类型
+
+```c#
+string input = Console.ReaLine(); //存储用户输入的字符
+string[] splitString = input.Split(" "); //定义一个数组，按空格把用户的输入分组存入
+int[] numArray = new int[splitString.Length]; //把 splitString 中的数据按编号存到一个整数数组中
+
+for (int i = 0; i < numArray.Length; i++)
+{
+  	int temp = Convert.ToInt32(splitString[i]); //把 string 类型的 splitString 中的字符转为 int 类型
+  	numArray[i] = temp; //存到上面定义的长度为 splitString 的长度的 int 数组中
+}
+
+Array.Sort(numArray); //排序
+
+for (int i = 0; i< numArray.Length; i++)
+{
+  Console.Write(numArray[i] + " "); //遍历数组，把数组中的数据用空格分开输出
+}
+```
 
 
 
+
+
+
+
+## 结构体
+
+结构体的实例化需要先实例化结构体，再给结构体的内部变量赋值。
+
+结构体中可以包含枚举类型。
+
+```c#
+enum Direction
+{
+  West,
+  North,
+  East,
+  South
+}
+
+struct Position
+{
+	public float b, c, d;
+  public Direction dir; //包含枚举类型
+}
+
+Position enemy1;
+enemy1.b = 22;
+enemy1.dir = Direction.East;
+```
+
+## 切分
+
+### 类型
+
+- split：根据条件切分，`Split(' ')`，括号里是条件，可以是空格，逗号或任何符号
+- 
 
 
 
