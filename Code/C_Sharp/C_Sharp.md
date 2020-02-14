@@ -1084,7 +1084,7 @@ public const double PI = 3.1415926535897931;
 ```c#
 string input = Console.ReaLine(); //存储用户输入的字符
 string[] splitString = input.Split(" "); //定义一个数组，按空格把用户的输入分组存入
-int[] numArray = new int[splitString.Length]; //把 splitString 中的数据按编号存到一个整数数组中
+int[] numArray = new int[splitString.Length]; //新建一个数组用于记录 splitString 中数据的位置，把 splitString 中数据的编号存到一个整数数组中，每个字符占一个位置，同时 numArray 中的字符的值都为0
 
 for (int i = 0; i < numArray.Length; i++)
 {
@@ -1100,9 +1100,80 @@ for (int i = 0; i< numArray.Length; i++)
 }
 ```
 
+**冒泡排序**：性能相比 Array 要低，因为是用户定制的循环方式，机器要再转义一次。
+
+冒泡排序指，从0位开始，把前一位的值和后一位值依次比较，遇大后移，直到循环比较结束。
+
+例如一个数组序列为 a b c d e f ，第一轮循环为：
+
+- a:b --> a>b --> b a c d e f
+
+- a:c --> a<c --> b a c d e f
+- c:d -->c>d --> b a d c e f
+- c:e --> c<e --> b a d c e f
+- e:f --> e>f --> b a d c f e
+
+最大为 e,开始第二轮循环，直到所有数字交换完位置。
+
+```c#
+string input = Console.ReadLine();
+            string[] str = input.Split(' ');
+            int[] numArray = new int[str.Length];
 
 
+            for (int j = 1; j < str.Length - 1; j++) //为了限制内层 for 循环的次数
+            {
 
+                for (int i = 0; i < numArray.Length - 1-j+1; i++)
+                {
+                    if (numArray[i + 1] < numArray[i]) //如果后一位小于前一位，要把大数向后放
+                    {
+                        int temp = numArray[i]; //先把前一位放到暂时的容器中
+                        numArray[i] = numArray[i + 1];//把后一位放到前一位
+                        numArray[i + 1] = temp;//从暂的容器中取出前一位放到后一位上
+                    }
+                }
+            }
+            for (int i = 0; i < numArray.Length; i++)
+            {
+                Console.Write(str[i] + " "); //按最后的排序把 str 中的字段输出
+            }
+```
+
+### 在一个有序列表中插入值并保持排序
+
+```c#
+int[] num = { 4, 8, 12, 17, 30 };
+            int x = Convert.ToInt32(Console.ReadLine());
+            int index = 0; //给 num 计数
+            int[] newNum = new int[num.Length + 1];
+
+            bool isInsert = false ;
+
+            for (int i = 0; i < newNum.Length; i++) // i 给 newNum 计数
+            {
+              	if (i == num.Length && isInsert == false) //当输入的数字比 num 中的最大数字大时，把 x 放到 newNum 的最后一位，结束循环。程序从上自下执行，此条件必须放在第一个
+                {
+                    newNum[i] = x;
+                    break;
+                }              
+                if (x <= num[index] && isInsert == false) //当第一个满足条件的值插入后，停止这个 if 语句，使用一个布尔值作为开关来控制
+                {
+                    newNum[i] = x;
+                    isInsert = true;
+                }
+                else
+                {
+                    newNum[i] = num[index];
+                    index++;
+                }
+            }
+
+            for (int i = 0; i < newNum.Length; i++)
+            {
+                Console.Write(newNum[i] + " ");
+            }
+```
 
 
 
