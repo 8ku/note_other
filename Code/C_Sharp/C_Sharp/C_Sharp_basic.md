@@ -4,11 +4,26 @@
 
 ### 面向对象的特性
 
-封装
+- **封装**
 
-继承：a ⊧ b，b 继承 a，则 b 可以拥有 a 中的 public,protect 方法和成员变量，也可以用 a 里的变量接收 b 对象。
+- **继承（仅适用于类和接口，其他各种类型（结构、委托和枚举）不支持）**
+  - a ⊧ b，b 继承 a，则 b 可以拥有 a 中的 public,protect 方法和成员变量，也可以用 a 里的变量接收 b 对象。
+  - c# 不支持多重继承。
+  - **基类最好不提供实现代码，作为声明抽象方法的抽象类。**
+  - 子类（派生类）可使用父类（基类）所有公开属性和方法
+  - 基类标记有 `virtual`关键字的，派生类**可**重写
+  - 基类标记有 `abstract` 关键字的，派生类**必须**重写
+  - 可见性
+    - 基类中嵌套的派生类，私有成员才可见，否则不可见
+    - 受保护成员仅在派生类中可见
+    - 公共成员在派生类中可见
+    - 内部成员仅在与基类同属一个程序集的派生类中可见
+  - 不可被继承的成员有：
+    - 静态构造函数
+    - 实例构造函数：每个类都需要有自己的实例构造函数
+  - 任何类都可以做基类，可使用`sealed `来指明类不能用作其他类的基类
 
-多态
+- **多态**
 
 基本格式：
 
@@ -159,7 +174,7 @@ C#程序是一组类型声明。
 - 结构类型：struct
 - 数组类型：array
 - 枚举类型：enum
-- 委托类型：delegate
+- 委托类型：delegate：委托用于**将方法作为参数传递给其他方法，即转手**。
 - 接口类型：interface
 
 ### 栈和堆
@@ -550,18 +565,19 @@ int MyValue //int:属性类型   MyValue:属性名
 	
 	  ```c#
 	  int a = 1;
-	              while (true)
-	              {
-	                  a++;
-	                  if (a < 3)
-	                  {
-	                      continue; // 1,2 would be pass
-	                  }
-	                  if (a == 10)
-	                  {
-	                      break; // 10 would be pass
-	                  }                
-	                  Console.WriteLine("result is " + a); // 3,4,5,6,7,8,9   
+	  while (true)
+	  {
+	  	a++;
+	    if (a < 3)
+	  	{
+	  		continue; // 1,2 would be pass
+	    }
+	     if (a == 10)
+	     {
+	     		break; // 10 would be pass
+	     }                
+	      Console.WriteLine("result is " + a); // 3,4,5,6,7,8,9  
+	  }
 	  ```
 	
 	  
@@ -825,6 +841,20 @@ for(int i = 0; i < 4; i++) // 需要先知道数组长度
   }
   ```
 
+参数数组举例
+
+```c#
+
+```
+
+
+
+
+
+
+
+
+
 ## 枚举
 
 枚举是一组命名整型常量。枚举列表中的每个符号代表一个整数值，一个比它前面的符号大的整数值。默认情况下，第一个枚举符号的值是 0。
@@ -901,6 +931,8 @@ else
   语句2；
 }
 ```
+
+
 
 ## 数学运算符
 
@@ -1083,7 +1115,7 @@ public const double PI = 3.1415926535897931;
 
 ```c#
 string input = Console.ReaLine(); //存储用户输入的字符
-string[] splitString = input.Split(" "); //定义一个数组，按空格把用户的输入分组存入
+string[] splitString = input.Split(' '); //定义一个数组，按空格把用户的输入分组存入
 int[] numArray = new int[splitString.Length]; //新建一个数组用于记录 splitString 中数据的位置，把 splitString 中数据的编号存到一个整数数组中，每个字符占一个位置，同时 numArray 中的字符的值都为0
 
 for (int i = 0; i < numArray.Length; i++)
@@ -1092,7 +1124,7 @@ for (int i = 0; i < numArray.Length; i++)
   	numArray[i] = temp; //存到上面定义的长度为 splitString 的长度的 int 数组中
 }
 
-Array.Sort(numArray); //排序
+Array.Sort(numArray); //数组排序
 
 for (int i = 0; i< numArray.Length; i++)
 {
@@ -1175,13 +1207,69 @@ int[] num = { 4, 8, 12, 17, 30 };
             }
 ```
 
+### 方法定义和使用
+
+```c#
+//以求一个数的所有因子为例,定义一个方法
+
+static int[] GetDivisor( int number) //定义一个判断并接收因子的方法，方法的类型为 int 数组，即返回值必须为 int 数组类型
+{
+   int count = 0; //定义一个值给因子数组计数
+   for (int i = 1;i <= number; i++) //设置一个值，和输入值求余，如果余数为0，则这个值是输入值的因子
+   {
+     if (number%i ==0) //当 i 是因子时，count计数+1
+     {
+       count++;
+     }
+   }
+  
+   int[] array = new int[count]; //定义一数组接收因子的值，数组的长度为上个数组数好的长度
+   int index = 0; //定义一个整型接收值
+   for (int i=1;i <= number; i++)
+   {
+      if (number % i == 0)
+      {
+        array[index] = i; //如果求余为0，把i(因子)放到 array 中
+        index++; 
+      }
+   }  
+   return array; //此方法返回一个数组 array，array 中是算好的因子
+}
+
+static void Main()
+{
+   int num = Convert.ToInt32(Console.ReadLine()); //把用户输入的字符串转为 int 存到一个变量中
+   int[] array = GetDivisor(num); //把 num 放到方法中，把输出的值放到一个 int 数组中
+  foreach (int temp in array)
+  {
+    Console.Write(temp + " "); //输出数组中的值，即 num 的因子
+  }
+}
+```
+
 
 
 ## 结构体
 
 结构体的实例化需要先实例化结构体，再给结构体的内部变量赋值。
 
-结构体中可以包含枚举类型。
+结构体中可以包含：
+
+- 构造函数 constructors：即调用方法
+- 常量 constants
+- 字段 fields
+- 方法 methods
+- 属性 properties
+- 索引器 indexers
+- 运算符 operators
+- 事件 events
+- 嵌套类型 nested types ：在类或构造体中定义的类型，默认为 private
+
+如果一个结构体里需要包含太多不同类型的成员，更应选择 class 而不是结构体。
+
+结构体不能继承另一个结构体。
+
+结构体中的成员也不能声明为 protected。
 
 ```c#
 enum Direction
