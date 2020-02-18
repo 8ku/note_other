@@ -441,5 +441,180 @@ while (true)
 
 ## 委托和 Lambda
 
+关键字 `delegate`，委托用于将**方法**作为参数传递给其他方法。**定义一个委托相当于定义一个新类。**
 
+一旦声明了委托类型，委托对象必须使用 **new** 关键字来创建，且与一个特定的**方法**有关。
+
+定义委托：`delegate 返回值 方法名（参数）;`
+
+```c#
+//定义委托,如果被委托的方法中指定了输入参数，委托中也有要同类型参数
+public delegate void PrintString(string str);
+
+//定义一个方法
+public static void WriteToScreen(string str) //需要和委托一样有一个输入参数
+{
+  Console.WriteLine($"The string is {str}");
+}
+public static void Write(string str) //需要和委托一样有一个输入参数
+{
+  Console.WriteLine($"The write is {str}");
+}
+
+static void Main()
+{
+  string x = "you";
+  //把方法做为值赋给委托
+  PrintString pst = new PrintString(WriteToScreen);
+  PrintString pst = WriteToScreen; //上一行的简化方式，直接把方法赋值给委托的变量
+  PrintString pst1 = Write;
+  
+  pst(x); //output:The string is you
+  pst1(x); // output:The write is you
+}
+```
+
+### Action委托(没有返回值)
+
+Action委托是系统内置的委托类型。
+
+- Action 委托只能指向一个没有参数，**没有返回值**的方法。
+- `Action<T>`封装一个方法，该方法只有一个参数 T 且没有返回值。
+- `Action<int,int string>`   可以有多个参数，最多支持16个，委托和被委托的参数类型及个数要对应。
+
+```c#
+static void PrintString()
+{
+  Console.WriteLine("hello");
+}
+
+stratic void StringValue(string x)
+{
+  console.WriteLine($"this is  {x} Action.");
+}
+
+static void Main()
+{
+  string y = "you";
+  Action a = PrintString;
+  Action<string> action = StringValue;
+  a(); // output:hello
+  action(y); // output:this is a you Action
+}
+```
+
+### Func委托（必须有返回值）
+
+Func委托要求指向的方法**必须有返回值**，可以传递0个到16个参数类型，和1个返回类型。
+
+```c#
+static int Test1()
+{
+  ruturn 1;
+}
+
+public static string Test2(int x)
+{
+  string y = "hi";
+  string z = x.ToString();
+  return y + " " + z; //返回值是string类型
+}
+Func<int> a = Test1; // 返回类型为 int
+Console.WriteLine()
+Func<int,string> b = Test2; //< >中有多个值时，最后一个表示返回类型，前面所有都表示参数类型,必须和指向的方法一一对应。相当于 Func<in int, out string>
+Console.WriteLine(Text2(2)); // output:hi 2
+```
+
+
+
+## 排序的拓展方法（适用于任何类型的排序）
+
+以给雇员薪水排序为例。
+
+```c#
+namespace C_Sharp_test
+{
+    class Employee //定义一个自定义类，包含雇员的名字和薪水
+    {
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+        public Employee(string name, int salary) //构造方法
+        {
+            this.Name = name;
+            this.Salary = salary;
+        }
+				//定义一个布尔方法
+        public static bool Compare(Employee e1, Employee e2)
+        {
+            if (e1.Salary > e2.Salary) return true;
+            return false;
+        }
+				//重写该类中的ToString方法，把输出值更换为想要的输出值
+        public override string ToString()
+        {
+            return Name + ":" + Salary;
+        }
+    }
+
+    class Program
+    {
+      	/* 定义一个通用的比较方法（泛型）
+      	返回值未知<T>，属性：
+      	in:一个名为 dataArray 的未知类型T的数组
+      	out:一个名为 compareMethod 的 Func<T,T,bool> 委托 */
+        static void CommonSort<T>(T[] dataArray, Func<T, T, bool> compareMethod)
+        {
+          	//冒泡排序方法，参考 basic1 中的冒泡排序法
+            bool swapped = true;
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < dataArray.Length - 1; i++)
+                {
+                   	/* 
+                   	if条件中默认为true，此处原方法为比较int类型中的字符
+                   	dataArray[i + 1] < dataArray[i] = true
+                   	用Func<T,T,bool>委托，输入两个未知类型的值T,返回 bool = true 给 if
+                   	*/
+                    if (compareMethod(dataArray[i], dataArray[i + 1]))
+                    {
+                        T temp = dataArray[i]; //原来的int temp --> T temp 未知类型的值
+                        dataArray[i] = dataArray[i + 1];
+                        dataArray[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            }
+            while (swapped);
+        }
+
+        static void Main()
+        {
+            //用Employee类实例化一个新的数组，数组中每个值名称为 Employee ,类型为 function ,值为方法中的赋值
+            Employee[] employees = new Employee[]
+            {
+              	//实例化Employee方法
+                new Employee("baku",612),
+                new Employee("saku",132),
+                new Employee("taku", 212),
+            };
+						/*实例化泛型比较方法，返回值<Employee>
+						传入参数为实例化数组 employees
+						返回参数为 Employee 类中 Compare 方法的 bool 值 */
+            CommonSort<Employee>(employees, Employee.Compare);
+            foreach(Employee em in employees)
+            {
+                /*遍历数组，返回 Employee 方法所在的类名（Employee），因为方法定义的返回值为 Employee 类
+              	ToString为系统内置方法，ToString默认返回值为（return base.ToString）,即所属 class 的类型。
+              	把ToString方法重写为想要的输出值：
+              	return Name + ":" + Salary;
+              	WriteLine会默认调用ToString方法，输入字符串，所以直接wirteline em即可
+              	也可以调用ToString方法 Console.WriteLine(em.ToString()); */
+                Console.WriteLine(em);
+            }
+        }
+    }
+}
+```
 

@@ -1358,7 +1358,6 @@ enemy1.dir = Direction.East;
 ### 类型
 
 - split：根据条件切分，`Split(' ')`，括号里是条件，可以是空格，逗号或任何符号
-- 
 
 
 
