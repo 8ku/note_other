@@ -50,3 +50,13 @@
 
 - 应用程序 - 右键：显示包内容 - Contents - MacOS 
 - 终端：`chmod +x ‘拖入1’ ` 回车执行
+
+## 删除 office 的历史记录
+
+清空下列两个文件中的内容
+
+```
+~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.microsoft.Word.securebookmarks.plist
+~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.microsoft.Word.plist
+```
+

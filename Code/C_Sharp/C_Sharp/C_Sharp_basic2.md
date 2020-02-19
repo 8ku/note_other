@@ -42,6 +42,8 @@ static void Main()
 }
 ```
 
+
+
 ## 调试
 
 ### 断点调试
@@ -177,6 +179,8 @@ class Program
 }
 ```
 
+
+
 ## 派生类构造方法
 
 派生类调用基类的方法
@@ -249,6 +253,8 @@ public class MyClass:Ib,BaseClass
 }
 ```
 
+
+
 ## 继承的一个例子
 
 ```c#
@@ -296,8 +302,26 @@ public class A
 
 ## 列表
 
+### 数组和列表的区别
+
+- 数组必须有初始大小或具体值
+  - 指定大小： `int[] a = new int[10];`
+  - 指定初始值：`int[] a = new int[]{1,2,3};`
+  - 指定初始值，系统自动推断大小：` int[] a = {1,2,3};`
+- ArrayList 类，是System.Collections下的类，大小是按存储的数据动态扩充和收缩。
+  - **不建议使用ArrayList进行开发，建议使用泛型`List<T>`。**
+  - ArrayList把数据当做Object处理，允许插入不同类型的数据，在使用中如果不清楚具体值的数据类型，会报类型不匹配，需要转化使用（装箱拆箱）**即ArrayList是不严谨的。**
+  - 初始化时不需要指定大小： `ArrayList list = new ArrayList();
+  - 新增数据： `list.Add(“abc”);`
+  - 修改数据：`list[2]=345;`
+  - 移除数据： `list.RemoveAt(0);`
+  - 插入数据：`list.Insert(0,”hello world”);`
+- `List<T>`类
+  - `list<T>`类初始化时必须指定一个类型，int string 或自定class
+  - 避免了 ArrayList 会出现的类型不匹配的报错
+
 ```c#
-// 创建列表的2种方式
+// 创建列表的2种方式，使用泛型 List<T>
 List<int> scoreList = new List<int>();
 var scoreList = new List<int>();
 // 插入数据的方式
@@ -316,6 +340,8 @@ scoreList.LastIndexOf(2); //从后向前搜索
 //排序
 scoreList.Sort();
 ```
+
+
 
 ## 泛型类
 
@@ -345,6 +371,8 @@ class TestGenericList
     }
 }
 ```
+
+
 
 ## 一些零碎的点
 
@@ -439,6 +467,8 @@ while (true)
 }
 ```
 
+
+
 ## 委托和 Lambda
 
 关键字 `delegate`，委托用于将**方法**作为参数传递给其他方法。**定义一个委托相当于定义一个新类。**
@@ -523,6 +553,120 @@ Func<int> a = Test1; // 返回类型为 int
 Console.WriteLine()
 Func<int,string> b = Test2; //< >中有多个值时，最后一个表示返回类型，前面所有都表示参数类型,必须和指向的方法一一对应。相当于 Func<in int, out string>
 Console.WriteLine(Text2(2)); // output:hi 2
+```
+
+### 多播委托
+
+委托多个对象。
+
+```c#
+//用+=来连接多个委托
+static void Test1(){Console.WriteLine("Test1")};
+static void Test2(){Console.WriteLine("Test2")};
+static void Main(){
+  Action a = Test1;
+		a += Test2; //means a = Test1 + Test2
+  	a -= Test1; //means a = Test2
+	a(); // output:Test1 Test2
+}
+```
+
+### 匿名方法
+
+在创建委托时创建一个没有名字的方法。
+
+```c#
+Func<int,int,int> a = delegate(int arg1,int arg2)
+{
+  return arg1 + arg2;
+}
+```
+
+### Lambda
+
+lambda表达式是用来简化匿名方法的。
+
+lambda表达式不需要声明参数类型。
+
+当参数只有一个时，可以不写小括号，当方法体只有一句时可以不写大括号。
+
+```c#
+Func<int,int,int> a = (arg1,arg2) => {return arg1 + arg2;};
+Func<int,int> a = arg1 => a+1; //23表示返回值，即return = a+1
+```
+
+### 事件
+
+事件基于委托，为委托提供了一个发布/订阅机制，可以说是特殊的委托。
+
+**事件不能在类的外部触发，只能在类的内部调用。**
+
+格式：`public event 委托类型 事件名` 
+
+- 动作触发者发布消息
+
+```c#
+Class Teacher
+{
+  			//基本属性
+  			private string name;
+        private string course;
+				//构造方法
+        public Teacher(string name,string course)
+        {
+            this.name = name;
+            this.course = course;
+        }
+				//定义动作
+        public void WhoseCourse()
+        {
+            Console.WriteLine($"{name}'s class is {course}");
+          	//调用事件 TeacherCourse
+            if (TeacherCourse != null) TeacherCourse();
+        }
+				//定义事件（广播），发布信息,使用 event 关键字让action委托只能在类的内部触发，避免外部调用，减少误调用而出错
+        public event Action TeacherCourse;
+}
+```
+
+- 接收者订阅（注册）消息
+
+```c#
+public class student
+    {
+        private string name;
+        private string sex;
+				// 把Teacher类做为参数传入
+        public student(string name,string sex,Teacher teacher)
+        {
+            this.name = name;
+            this.sex = sex;
+          	//把ChooseCourse事件传给teacher里的event委托(订阅消息)
+            teacher.TeacherCourse += ChooseCourse;
+        }
+
+        public void ChooseCourse()
+        {
+            Console.WriteLine($"{name} choose ({sex}).");
+        }
+    }
+```
+
+- 实例化
+
+```c#
+class Program
+    {
+        static void Main()
+        {
+            Teacher teacher1 = new Teacher("Marry", "Math");
+            Teacher teacher2 = new Teacher("Emma", "Music");
+            student student1 = new student("Tom", "boy", teacher1);
+            student student2 = new student("Lily", "girl", teacher2);
+            //调用Teacher中的动作，此时会把Student里的动作也调用上
+          	teacher1.WhoseCourse();
+            teacher2.WhoseCourse();
+        }
 ```
 
 
@@ -615,6 +759,105 @@ namespace C_Sharp_test
             }
         }
     }
+}
+```
+
+## LINQ查询
+
+.NET 中的集成查询技术。
+
+操作步骤：
+
+1. 获取数据源
+2. 创建查询
+3. 执行查询
+
+```c#
+//获取数据源list, m 代表数据源列表中的对象
+var IntList = new List<int>() { 1, 2, 3, 56, 22 };
+var res = from m in IntList 
+  				where m >8 //查询条件,没有查询条件可不写这句
+  				select m; //把符合条件的对象返回
+//输出
+foreach (int i in res){Console.WriteLine(i);}
+```
+
+### 查询复杂list对象
+
+```c#
+//建立对象类
+class Student
+{
+  public int Id{get;set;}
+  public string Name{get;set;}
+  public int Age{get;set;}
+  public int FavoriteCourse{get;set;}
+  //把对象转为字符串
+  public override string ToString()
+  {
+    return string.Format($"ID:{Id},Name:{Name},Age:{Age},FavoriteCourse:{FavoriteCourse}");
+  }
+}
+
+class Teacher
+{
+  public int Id{get;set;}
+  public string Name{get;set;}
+  public int Course{get;set;}
+  //把对象转为字符串
+  public override string ToString()
+  {
+    return string.Format($"ID:{Id},Name:{Name},Course:{Course}");
+  }
+}
+```
+
+单表查询
+
+```c#
+//初始化列表对象
+class Program
+{
+  private static void Main()
+  {
+    var StudentList = new List<Student>()
+    {
+      new student() { Id = 1, Name = "e", Age = 1 ,FavoriteCourse = "Math"},
+      new student() { Id = 2, Name = "a", Age = 2 ,FavoriteCourse = "Music"},
+    };
+    var TeacherList = new List<Teacher>()
+    {
+      new teacher() { Id = 1, Name = "e", Age = 1 , Course = "Math" },
+      new teacher() { Id = 2, Name = "a", Age = 2 , Course = "Music" },
+    };
+    
+    //查询
+    var res = from m in StudentList
+      				where m.Id == 1
+      				select m;
+    
+    //输出查询结果
+    foreach (var i in res)
+    {
+      Console.WriteLine(i);
+    }
+  }
+}
+```
+
+多表查询（联合查询）
+
+联合查询会把第一个序列和第二个序列中所有元素合并成一个序列
+
+```c#
+var res = from m in StudentList
+  				from k in TeacherList
+  				where m.FavoriteCourse == k.Course
+  				select new {student = m, teacher = k};
+
+foreach(var human in res)
+{
+  Console.WriteLine(human);
 }
 ```
 
