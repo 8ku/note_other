@@ -403,6 +403,63 @@ StringBuilder是可变类型，指为对象维护一个缓冲区以容纳字符�
 - 对字符串进行未知数量的更改
 - 希望对字符串进行大量更改时
 
+### [特性] Obsolete 方法弃用提示
+
+```c#
+/*在方法上加obsolete关键字可以标记该方法被弃用,标记弃用的方法仍可调用
+如不允许再次调用，在()中加上判断 true ,加上后，调用时程序会报错 */
+[Obsolete("this method is obsolete, pls use NewMethod.",true)]
+static void OldMethod(){}
+```
+
+### [特性] Conditional 控制方法的调用
+
+```c#
+/*Conditional关键字控制方法的调用
+在文件头用宏（一些组织在一起的命令作为一个单独命令完成一个特定任务）定义一个规则 */
+#define IsTest
+
+using System;
+namespace MySpace
+{
+  class Program
+  {
+    [Conditional("IsTest")]
+    static void Method1(){}
+    
+    static void Main()
+    {
+      Method1(); //系统调用时会检查宏是否有对应关键字，如有，则运行该方法，没有则不运行
+    }
+  }
+}
+
+```
+
+### [特性] DebuggerStepThrough 在调试时跳过该方法
+
+```c#
+//在方法头加上 DebuggerStepThrough 标签，debug step时可跳过该方法
+[DebuggerStepThrough]
+static void Method1(){}
+```
+
+### 创建自己的特性类(自定义标签)
+
+```c#
+//特性类是一个类，一般命名以Attribute结尾，且继承自System.Attribute,特性不需要继承，可以设计为封闭的 sealed
+[AttributeUsage(AttributeTargets.Class)] //在特性类上方加标签说明特性可以用在什么类型的元素上，class或mathod或其他
+sealed class MyTestAttribute:System.Attribute
+{
+  public string Description{get;set;}
+}
+
+```
+
+
+
+
+
 ## 正则表达式
 
 要在项目中引用`System.Text.RegularExpressions;`命名空间
@@ -845,19 +902,63 @@ class Program
 }
 ```
 
+对单表结果按条件分组 group by
+
+```c#
+var res = from m in StudentList
+  				group m in m.FavoriteCourse into newGroup //按FavoriteCourse分组
+  				orderby newGroup.Key //newGroup.key=m.favoritecourse
+  				select new {fvcourse = newGroup.key,count = newGroup.Count()};
+
+//输出查询结果
+foreach (var temp in res)
+{
+  Console.WriteLine(temp);
+}
+```
+
+用 .any判断是否包含元素或存在元素满足指定条件
+
+用 .all判断序列是否完全满足指定条件
+
+```c#
+//是否存在满足条件的元素
+bool res = StudentList.Any(m => m.Id == 1);
+//是否序列所有元素都满足条件
+bool res = StudentList.All(m => m.Id == 1);
+Console.Write(res); //output:True
+```
+
+
+
+
+
 多表查询（联合查询）
 
 联合查询会把第一个序列和第二个序列中所有元素合并成一个序列
 
 ```c#
-var res = from m in StudentList
-  				from k in TeacherList
-  				where m.FavoriteCourse == k.Course
+var res = from s in StudentList
+  				from t in TeacherList
+  				where s.FavoriteCourse == t.Course
+  				orderby s.Age descending  //排序关键字 orderby,倒序 descending
+  				//orderby s.Age,t.Age 多字段排序
   				select new {student = m, teacher = k};
 
 foreach(var human in res)
 {
   Console.WriteLine(human);
 }
+```
+
+另一种联合方法 join in，把结果分类
+
+```c#
+var res = from s in StudentList
+  				join t in TeacherList
+  				on s.FavoriteCourse equals t.Course
+  				into groups //把结果放到一个组中
+  				orderby groups.Count() //按统计排序
+  				select new {student = m, count = groups.Count()};
 ```
 
