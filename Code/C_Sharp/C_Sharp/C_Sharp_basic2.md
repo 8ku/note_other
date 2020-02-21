@@ -962,3 +962,55 @@ var res = from s in StudentList
   				select new {student = m, count = groups.Count()};
 ```
 
+## 文件操作
+
+### 文件属性读取操作
+
+```c#
+FileInfo fileInfo = new FileInfo("filename.txt");
+if (fileInfo.Exists == false){fileInfo.Create();}
+```
+
+### 文件夹属性读取操作
+
+```c#
+DirectoryInfo dirInfo = new DirectoryInfo("directoryname");
+```
+
+### 文件内容读写
+
+```c#
+//读取文本文件
+string[] strArray = File.ReadLines("fileName.txt");
+//适合读取二进制文件
+FileStream stream = new FileStream("file.txt",FileMode.Open);
+//最常用于读取文本文件的方式,不需要声明文件的编码，此命令会自动处理
+StreamReader str = new StreamReader("filename.txt");
+StreamReader str = new StreamReader("filename.txt",Encoding.UTF8);
+
+//写入文本文件
+StreamWriter writer = new StreamWriter("filename.txt");//如果不存在此文件会自动新建,如果存在会覆盖同名文件
+
+//输出读取结果方法1
+While(true)
+{
+  string str = str.ReadLine(); //读取一行字符串
+  if (str == null) break;
+  Console.WriteLine(str);
+}
+//输出读取结果方法2
+string str = str.ReadToEnd();
+Console.Write(str);
+str.Close();
+
+//输出StreamWriter的写入结果
+while(true)
+{
+  string message = Console.ReadLine();
+  if (messsage == "q") break; //设置退出写入的命令键
+  writer.WriterLine(message);
+}
+writer.Close();
+
+```
+
