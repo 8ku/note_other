@@ -1014,3 +1014,230 @@ writer.Close();
 
 ```
 
+## XML  JSON
+
+### XML 
+
+- xml 必须要有开头结尾符
+- 标签可以加属性，属性名和属性值都可自定义
+
+```xml
+<skills>
+    <skill>
+        <id>1</id>
+      	<!--属性名为 lang ，值为 eng-->
+        <name lang="eng">sky</name> 
+        <damage>123</damage>
+    </skill>
+
+    <skill>
+        <id>2</id>
+        <name lang="eng">ground</name>
+        <damage>12</damage>
+    </skill>
+</skills>
+```
+
+读取
+
+```c#
+class Skill
+{
+  public int Id{get;set;}
+  public string Name{get;set;}
+  public string Lang{get;set;}
+  public int Damage{get;set;}
+}
+
+class Program
+{
+  static void Main()
+  {
+    //位于 System.Xml 类下
+    XmlDocument xmlDoc = new XmlDocument();
+    xmlDoc.Load("skillinfo.txt");
+  }
+}
+```
+
+### json
+
+![img](C_Sharp_basic2.assets/object.png)
+
+
+
+![img](C_Sharp_basic2.assets/array.png)
+
+
+
+![img](C_Sharp_basic2.assets/value.png)
+
+
+
+![img](C_Sharp_basic2.assets/string.png)
+
+
+
+![img](C_Sharp_basic2.assets/number.png)
+
+```json
+//json文件-array 
+[
+{"id":2,"name":"aa","damage":123},
+{"id":3,"name":"bb","damage":13},
+{"id":4,"name":"cc","damage":12}
+]
+```
+
+
+
+```c#
+//json文件-object
+{
+  "Name":"baku",
+  "Level":99,
+  "Age":14,
+  "SkillList":
+  [
+    {"id":2,"name":"aa","damage":123},
+    {"id":3,"name":"bb","damage":13},
+    {"id":4,"name":"cc","damage":12}
+	]
+}
+```
+
+
+
+
+
+```c#
+using System.IO;
+using LitJson;
+//右键项目-管理NuGet包-LitJson,添加包
+//JsonData 代表一个数组或一个对象,读取外部文件时，需要把外部文件的[属性]中[生成-复制到输出目录]选择为[如较新则复制]，不然文件无法被找到
+JsonData jsonData = JsonMapper.ToObject(File.ReadAllText("json.txt"));
+
+foreach (JsonData temp in jsonData)
+{
+  //通过key值查找value
+  JsonData idvalue = temp["id"];
+  JsonData namevalue = temp["name"];
+  
+  //把JsonData类型转换为相应可输出类型
+  int id = Int32.Parse(idvalue.ToString());
+  string name = namevalue.ToString();
+  
+  //输出结果
+  Console.WriteLine($"{id}:{name}");
+}
+```
+
+把json数据用一个类来管理
+
+```c#
+class Skill
+{
+  public int id;
+  public string name;
+  public string damage;
+  
+  public override string ToString()
+  {
+    return string.Format($"id:{id},name:{name},damage:{damage}");
+  }
+}
+
+class Program
+{
+  public static void Main()
+  {
+    //建一个列表存放json转化出来的数据
+    List<Skill> skills = new List<Skill>();
+    //把Skill类中的对象实例化
+    Skill skill = new Skill();
+    
+    //解析json文件
+    JsonData jsonData =  JsonMapper.ToObject(File.ReadAllText("json.txt"));
+    
+    //遍历json文件中的数据，转化为可读类型字段
+    foreach (Jsondata temp in jsonData)
+    {
+      JsonData idValue = temp["id"]; //通过key得到value
+      JsonData nameValue = temp["name"];
+      
+      skill.id = Int32.Parse(idValue.ToString()); //把json值转成可读类型
+      skill.name = nameValue.ToString();
+      skills.Add(skill); //把数据添加到列表中    
+    }
+    
+    foreach (var temp in skills)
+    {
+      Console.WriteLine(temp); //输出skills列表中的数据
+    }
+  }
+}
+```
+
+用泛型解析json
+
+```c#
+class Skill
+{
+  public int id;
+  public string name;
+  public int damage;
+  
+  public override string ToString()
+  {
+    return string.Format($"id:{id},name:{name},damage:{damage}");
+  }
+}
+
+//Object对象中嵌套list
+class SkillObject 
+{
+  public string Name{get;set;}
+  public int Level{get;set;}
+  public int Age{get;set;}
+  public List<Skill> SkillList{get;set;}
+  
+  public override string ToString()
+  {
+    return string.Format($"name:{Name},leve:{Level},age:{Age},skillList:{SkillList}");
+  }
+}
+
+class MainClass
+{
+  public static void Main()
+  {
+    //解析数组-使用这种方法需要Class Skill中的字段和json中的值完全一致
+    Skill[] skillArray = JsonMapper.ToObject<Skill[]>(File.ReadAllText("json.txt"));
+    //解析list-可以用list的方式代替泛型中的数组
+    List<Skill> skillList = JsonMapper.ToObject<List<Skill>>(File.ReadAllText("json.txt"));
+    //解析Object
+    SkillObject so = JsonMapper.ToObject<SkillObject>(File.ReadAllText("json.txt"));
+    
+    //输出list里的元素
+    foreach(var temp in skillArray)
+    {
+      Console.WriteLine(temp);
+    }
+    
+    //输出object里list的元素
+    foreach (var temp in so.SkillList)
+    {
+      Console.WriteLine(temp);
+    }
+  }
+}
+```
+
+
+
+## OLDB操作数据库及excel
+
+使用插件把excel转成json
+
+[参考](https://github.com/koalaylj/xlsx2json)
+
