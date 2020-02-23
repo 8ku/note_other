@@ -689,7 +689,7 @@ public void Die()
 
 - 在执行其他方法时同时执行其他方法的方法。
 - 协程方法可以暂停。
-- 使用 ` yield return ` 来停止并返回参数。
+- **[必须]**使用 ` yield return ` 来停止并返回参数。
 - IEnumerator：迭代器
 
 ```c#

@@ -13,5 +13,6 @@
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
   - [Bolt](https://8ku.github.io/note_other/Unity/Assets/bolt)
+  - [Fungus](https://8ku.github.io/note_other/Unity/Assets/Fungus)
   - [参考](https://www.jqhtml.com/53905.html)
 
