@@ -377,7 +377,8 @@ foreach(GameObject i in go){print(i);} //可以用 foreach 来查看找到的项
 ```c#
 public class something: MonoBehavious
 {
-  public static something instance; //把该脚本单例化，就可以从别的角色直接调用该脚本下的方法和值
+  //把该脚本单例化，就可以从别的角色直接调用该脚本下的方法和值,单例化必须保证一个类只有一个实例,并提供一个全局访问点
+  public static something instance; 
   
   private void Awake()
     {
@@ -385,6 +386,40 @@ public class something: MonoBehavious
     }
 }
 ```
+
+**单例模式的注意点**
+
+```c#
+//定义一个静态变量来保存类的实例,此例的类名为 Singleton
+private static Singleton instance;
+
+//定义私有构造函数,外界不能创建该类实例
+private Singleton(){}
+
+//定义一个标识来标记线程开关
+private static readonly object locker = new object();
+
+//定义仅有方法提供一个全局访问点,也可以定义公有属性提供全局访问点
+public static Singleton GetInstance()
+{
+  //使用 lock 方法
+  //lock 语句获取给定对象的互斥 lock，执行语句块，然后释放 lock。 持有 lock 时，持有 lock 的线程可以再次获取并释放 lock。 阻止任何其他线程获取 lock 并等待释放 lock。
+  // 当第一个线程运行到这里时，此时会对locker对象 "加锁"，
+  // 当第二个线程运行该方法时，首先检测到locker对象为"加锁"状态，该线程就会挂起等待第一个线程解锁
+  // lock语句运行完之后（即线程运行完之后）会对该对象"解锁"
+  lock (locker)
+  {
+  	if (instance == null)
+  	{    
+      //如果类的实例不存在则创建,否则直接返回
+    	instance = new Singleton();
+    }    
+  }
+  return instance;
+}
+```
+
+
 
 
 

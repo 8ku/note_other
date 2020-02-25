@@ -22,7 +22,8 @@
     - [2D](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/2D)
     - [performance](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/performance)
     - [save_and_load](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/saveAndLoad)
-- [DialogSystem](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/DialogSystem)
-    
+    - [DialogSystem](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/DialogSystem)
+    - [背包系统](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/InventorySystem)
+  
     
 

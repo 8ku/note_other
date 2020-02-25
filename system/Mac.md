@@ -24,6 +24,7 @@
 | 查询磁盘使用情况                              | du/du -k subdir               |
 | 显示文件系统的总空间和可用空间                | df <br />df/tmp               |
 | 显示当前系统活动的总信息                      | w                             |
+| 执行.sh文件                                   | ./aa.sh                       |
 
 
 
@@ -60,3 +61,6 @@
 ~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.microsoft.Word.plist
 ```
 
+### Excel
+
+- 编辑单元格: ctrl + u 
