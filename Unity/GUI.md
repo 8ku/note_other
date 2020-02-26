@@ -33,6 +33,8 @@ rect.rect.width;
 
 ### UI适配屏幕比例
 
+Canvas - Canvas Scaler - UI Scale Mode : Scale With Screen Size
+
 在 Canvas 上添加脚本
 
 ```c#
@@ -99,6 +101,16 @@ private IEnumerator Ani()
 
 ### UI 排列
 
-使用适应性更强的 Grid Layout Group 组件
+- 在 Canel 中使用适应性更强的 Grid Layout Group 组件
 
-在子项使用 Layout Element 管理子项的大小限度
+- 在子项使用 Layout Element 管理子项的大小限度
+
+### UI 素材拉伸问题
+
+在素材的 Sprite Editor 中设置拉伸边距
+
+### UI 交互设置
+
+Raycast Target : 设定 UI 对象是否能被射线检测到, 即是否能交互.
+
+在 UI 组件上加 button 组件可实现鼠标交互变化
