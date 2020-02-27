@@ -5,7 +5,13 @@
 - Python
   - [Python](https://8ku.github.io/note_other/Code/Python/Python)
   - [pandas](https://8ku.github.io/note_other/Code/Python/pandas)
+  
+- SQL
+  
+  - [SQL](https://8ku.github.io/note_other/Code/SQL/SQL)
+  
 - C_Sharp
+  
   - C_Sharp
     - [C_Sharp_basic](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_basic)
     - [C_Sharp_basic2](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_basic2)
