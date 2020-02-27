@@ -64,3 +64,14 @@
 ### Excel
 
 - 编辑单元格: ctrl + u 
+
+## 使用tree查看文件夹结构
+
+- 安装 `brew install tree`
+- 查看所有文件 `tree -a`
+- 只显示文件夹 `tree -d`
+- 显示项目层级，n表示层级 `tree -l n`
+- 过滤不想显示的文件或文件夹 `tree -I "node_modules"`
+- 将项目结构输出到文件 `tree >tree.md`
+- 查看更多命令 `tree --help`
+
