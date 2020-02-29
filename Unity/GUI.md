@@ -114,3 +114,7 @@ private IEnumerator Ani()
 Raycast Target : 设定 UI 对象是否能被射线检测到, 即是否能交互.
 
 在 UI 组件上加 button 组件可实现鼠标交互变化
+
+### 设置 UI 的渐入渐出效果
+
+在 UI 对象上挂 CanvasGroup 组件, 利用组件中的 Alpha 值控制显示.
