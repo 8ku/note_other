@@ -21,11 +21,7 @@ RectTransform rect = transform.GetComponent<RectTransform>();
 rect.rect.width;
 ```
 
-###  Canvas 的三种渲染模式
 
-- Screen Space - Overlay：在当前屏幕置顶
-- Screen Space - camera：在当前屏幕摄像机前，可调整 UI 和相机的距离来实现 UI 和场景中物体在相机中的前后顺序
-- World Space：变成一个可以移动的 3D 图层
 
 ### UI 单位和像素的关系
 
@@ -52,10 +48,6 @@ void Start()
 Canvas 下的 GraphicRaycaster 组件，只能控制 UGUI 的元素，不能控制 3D 物体
 
 - Blocking Objects ：检测的是物体身上挂的 collider 的类型，不是根据游戏物体的类型
-
-### Canvas group
-
-在 Canvas / Canvas 下的元素中 添加，可以对 Canvas 下的素材进行集体操作
 
 ### Raw Image
 
@@ -115,6 +107,68 @@ Raycast Target : 设定 UI 对象是否能被射线检测到, 即是否能交互
 
 在 UI 组件上加 button 组件可实现鼠标交互变化
 
+- **监听鼠标和UI元素的交互**
+
+```c#
+using UnityEngine.EventSystems;
+//鼠标移入,鼠标移出,鼠标点击
+public class MousePoint:MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerDownHandler
+{
+  public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (transform.childCount > 0)
+        {
+            string toolTipText = transform.GetChild(0).GetComponent<ItemUI>().Item.GetToolTipText();
+            InventoryManager.Instance.ShowToolTip(toolTipText);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (transform.childCount > 0)
+        {
+            InventoryManager.Instance.HideToolTip();
+        }
+    }
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+}
+```
+
+
+
 ### 设置 UI 的渐入渐出效果
 
 在 UI 对象上挂 CanvasGroup 组件, 利用组件中的 Alpha 值控制显示.
+
+## Canvas
+
+###  Canvas 的三种渲染模式
+
+- Screen Space - Overlay：在当前屏幕置顶
+- Screen Space - camera：在当前屏幕摄像机前，可调整 UI 和相机的距离来实现 UI 和场景中物体在相机中的前后顺序
+- World Space：变成一个可以移动的 3D 图层
+
+### Canvas group
+
+在 Canvas / Canvas 下的元素中 添加，可以对 Canvas 下的素材进行集体操作
+
+### RectTransformUtility
+
+ 是 RectTransform 的辅助类, 用于储存和管理位置,大小和中心点的变化.
+
+- RectTransformUtility.ScreenPointToLocalPointInRectangle -- 返回一个true
+
+  - 将屏幕空间点转换为RectTransform的局部空间中矩形平面上的位置(所有UI组件的边缘都是一个矩形,无论图形本身的样子,如下图)
+
+  - ```c#
+  canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+    Vector2 position;
+    RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, null, out position);
+    ```
+    
+  - 
+  
+    ![image-20200229225225327](GUI.assets/image-20200229225225327.png)
