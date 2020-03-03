@@ -115,3 +115,17 @@ public class ClickUI : MonoBehaviour,IPointerClickHandler
 }
 ```
 
+### 判断是否点击在UGUI上
+
+`EventSystem.current.IsPointerOverGameObject`
+
+```c#
+// -1表示 left mouse button" (pointerId = -1)
+if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject(-1) == false)
+        {
+            isPickedItem = false;
+            PickedItem.Hide();
+
+        }
+```
+
