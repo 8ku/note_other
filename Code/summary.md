@@ -5,6 +5,7 @@
 - Python
   - [Python](https://8ku.github.io/note_other/Code/Python/Python)
   - [pandas](https://8ku.github.io/note_other/Code/Python/pandas)
+  - [lambda](https://8ku.github.io/note_other/Code/Python/lambda)
   
 - SQL
   
