@@ -718,7 +718,7 @@ public void Die()
 
 
 
-2. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
+3. ` GameObject.SendMessageUpwards` ：给当前物体及其父物体发送信息，直到根级
 
 ## 协程 Coroutine
 
