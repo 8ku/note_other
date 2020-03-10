@@ -114,7 +114,6 @@
 
   ![Basic Excel Object Model ](vba.assets/09010004-e972fdbf517d49f5a88b3b510a9f64e8.png)
   
-
 - 打断长语句
 
   - VB使用一个专门的连续线（下划线）置于一行代码的末尾，表明下一行是这行的连续。必须在下划线之后带一个空格
@@ -223,4 +222,19 @@
   End Sub
   ```
 
-  
+
+
+
+- 工程级别变量
+
+  - 使用 public 声明，可以在VBA的任何模块里使用
+
+    ```vb
+    Option Explicit
+    Public slsTax As Single
+    Sub CalcCost( )
+                <过程代码>
+    End Sub
+    ```
+
+    
