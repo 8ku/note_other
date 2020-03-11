@@ -1,5 +1,8 @@
 # VBA
 
+
+[参考链接](https://www.w3cschool.cn/excelvba/excelvba-basics.html)
+
 ## 基本知识点
 
 - Dim
@@ -238,3 +241,41 @@
     ```
 
     
+
+## VBA自定义函数
+
+用户可以创建excel没有提供的函数。
+
+1. 打开一个新Excel工作簿，并保存为Chap04.xls
+2. 切换到VB编辑器窗口并且选择VBAProject(Chap04.xls)
+3. 在属性窗口，将VBAProject改为MyFunctions
+4. 在工程浏览器窗口选择MyFunctions(Chap04.xls)，然后选择“插入”－“模块”
+5. 在属性窗口将“模块1”改为Sample1
+6. 在工程浏览器窗口，点击Sample1并选择“插入”－“过程”（译者：需要激活右边的代码窗口）。
+
+类型：函数
+
+范围：公共的，关键字为 Function
+
+```vb
+Public Function SumItUp(m, n) 
+	SumItUp = m + n
+End Function
+```
+
+
+
+当设置为公共函数时，用户可以在excel表格中直接调用：
+
+![image-20200311171922867](vba.assets/image-20200311171922867.png)
+
+编辑时，选择结果单元格，点击工具栏上的 fx 按钮编辑
+
+### 调试
+
+1. 用debug.print 来输入结果
+2. 在立即窗口中输入 ?SumItUp(34,55)
+
+### 函数过程不能做什么
+
+函数过程不能进行任何动作，例如，它们不能在工作表里做插入，删除或设置数据格式操作，不能打开文件，或改变屏幕显示样式
