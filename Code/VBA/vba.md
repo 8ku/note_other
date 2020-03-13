@@ -56,7 +56,7 @@
   - Cell要求两个自变量，第一个是行号，第二个是列号或列字母
   - 选择一个单元格：`cells(5,1).select`或`cells(5,a).select`
   - 选择一个单元格区域：`range(cells(6,1),cells(10,1)).select`
-  - 选择工作表所有单元格：`cells.select`
+  - 选择工作表所有单元格：`cells.select`     
 
 - Offset属性
 
