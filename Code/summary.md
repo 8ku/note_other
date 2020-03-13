@@ -13,7 +13,7 @@
   
 - VBA
 
-  - [VBA](https://8ku.github.io/note_other/Code/VBA/VBA)
+  - [VBA](https://8ku.github.io/note_other/Code/VBA/vba)
 
 - C_Sharp
   
