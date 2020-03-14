@@ -21,6 +21,7 @@
     - [C_Sharp_basic](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_basic)
     - [C_Sharp_basic2](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_basic2)
     - [C_Sharp_random](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_random)
+    - [C_Sharp_Interface](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_Interface)
   - Unity_C_Sharp
     - [Unity_C_Sharp](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/Unity_C_Sharp)
     - [Random](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/random)
