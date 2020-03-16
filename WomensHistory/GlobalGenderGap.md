@@ -25,7 +25,7 @@ source：[世界经济论坛](https://www.weforum.org/reports/gender-gap-2020-re
 | rank | Country        | Score | Rank Change | Score Change |        |
 | ---- | -------------- | ----- | ----------- | ------------ | ------ |
 |      |                | 0-1   | 2018        | 2018         | 2006   |
-| 1    | United States  |       |             |              |        |
+| 53   | United States  | 0.724 | -2          | +0.004       | +0.020 |
 | 21   | United Kingdom | 0.767 | –6          | -0.007       | +0.031 |
 | 19   | Canda          | 0.772 | -3          | +0.001       | +0.055 |
 | 15   | France         | 0.781 | –3          | +0.002       | +0.129 |
