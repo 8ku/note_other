@@ -25,6 +25,7 @@
   - Unity_C_Sharp
     - [Unity_C_Sharp](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/Unity_C_Sharp)
     - [Random](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/random)
+    - [SoundManager](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/SoundManager)
     - [Rotate](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/rotate)
     - [Animation](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/animation)
     - [transferClass](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/transferClass)
@@ -35,7 +36,7 @@
     - [performance](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/performance)
     - [save_and_load](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/saveAndLoad)
     - [DialogSystem](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/DialogSystem)
-    - [背包系统](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/InventorySystem)
-  
+  - [背包系统](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/InventorySystem)
+    
     
 
