@@ -27,6 +27,7 @@
     - [Random](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/random)
     - [SoundManager](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/SoundManager)
     - [Rotate](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/rotate)
+    - [Tags管理](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/Tags)
     - [Animation](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/animation)
     - [transferClass](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/transferClass)
     - [UGUI](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/UGUI)
