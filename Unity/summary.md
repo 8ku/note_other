@@ -12,6 +12,7 @@
   - [Animator](https://8ku.github.io/note_other/Unity/Animator)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
+  - [Cinemachine](https://8ku.github.io/note_other/Unity/Assets/Cinemachine)
   - [Bolt](https://8ku.github.io/note_other/Unity/Assets/bolt)
   - [Fungus](https://8ku.github.io/note_other/Unity/Assets/Fungus)
   - [Json解析](https://8ku.github.io/note_other/Unity/Assets/Json)
