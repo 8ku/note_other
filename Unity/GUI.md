@@ -137,6 +137,36 @@ public class MousePoint:MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,I
 }
 ```
 
+### ui穿透
+
+```c#
+using UnityEngine.EventSystems;
+using UnityEngin.UI;
+
+public class Player:MonoBehaviour
+{
+  //获得canvas的射线组件
+  private GraphicRaycaster raycaster;
+
+  void Start()
+  {
+    //得到canvas身上的射线组件
+    raycaster = GameObject.Find("Canvas").GetComponent<GraphicRaycaster>();
+  }
+  
+  private bool CheckGuiRaycastObject()
+  {
+    PointEventData eventData = new PointEventData(EventSystem.current);
+    eventData.pressPosition = Input.mousePosition;
+    eventData.position = Input.mousePosition;
+    List<RaycastResult> list = new List<RaycastResult>();
+    raycaster.Raycast(eventData,list);
+    return list.count > 0; //如果list里有值,说明碰撞到ui
+  }
+}
+
+```
+
 
 
 ### 设置 UI 的渐入渐出效果
