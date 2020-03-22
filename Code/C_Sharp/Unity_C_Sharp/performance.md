@@ -29,7 +29,11 @@ Awake在MonoBehavior创建后就立刻调用，Start将在MonoBehavior创建后�
 
 如果属于组件,必须继承MonoBehaviour
 
+## Update FixedUpdate LateUpdate
 
+- 处理Rigidbody时需要用FixedUpdate代替Update,因为机器性能不同,会影响帧处理速度,用于FixedUpdate强制固定帧速率,保证动画速度一致
+- FixedUpdate的时间间隔可以在 Edit > ProjectSetting > time > Fixedtimestep 中修改
+- LateUpdate晚于Update调用,可用于控制同一物体身上的不同脚本,挂载LateUpdate的脚本晚于Update脚本执行,如果两个脚本中都有动画,在其中一个脚本使用LateUpdate可以防止动画在同一时间执行导致的抖动
 
 
 

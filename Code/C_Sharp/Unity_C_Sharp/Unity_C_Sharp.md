@@ -208,7 +208,9 @@ void SwitchAnime()
 }
 ```
 
+### 3d移动目标
 
+Vector3.Distance(目标位置,起始位置)
 
 ## 镜头跟踪
 

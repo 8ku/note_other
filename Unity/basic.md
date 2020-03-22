@@ -117,3 +117,9 @@ V：y 轴
 ## 图层
 
 - 物体只能和当前层级的物体发生交互，除非使用特殊设置
+
+## 控制移动
+
+- 使用transform
+- 使用rigidbody/rigidbody2D:DOTween的控制依赖于此
+- 使用CharacterController
