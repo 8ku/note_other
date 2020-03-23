@@ -47,6 +47,8 @@ void Start()
 
 Canvas 下的 GraphicRaycaster 组件，只能控制 UGUI 的元素，不能控制 3D 物体
 
+在摄像机下挂Physics Raycaster脚本,可以检测2D,3D物体,在3d物体上挂IPointerClickHandler脚本接收检测
+
 - Blocking Objects ：检测的是物体身上挂的 collider 的类型，不是根据游戏物体的类型
 
 ### Raw Image
