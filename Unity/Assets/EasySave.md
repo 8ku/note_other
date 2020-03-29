@@ -69,6 +69,14 @@ void Start()
 }
 ```
 
+## 加载文件
+
+可以读取目标操作系统允许的任何格式的文件后缀.
+
+```c#
+int myInt = ES3.Load<int>("myFolder/myFile.txt");
+```
+
 
 
 

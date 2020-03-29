@@ -204,3 +204,34 @@ public class Player:MonoBehaviour
   - 
   
     ![image-20200229225225327](GUI.assets/image-20200229225225327.png)
+
+## 设置鼠标指针图片
+
+使用 Texture2D 放需要替换的图片
+
+```c#
+//设置为单例模式方便外部调用
+public static CursorManager instance;
+
+public Texture2D cursor_normal,cursor_npc_talk;
+//设置鼠标焦点
+private Vector2 hotpot = Vector2.zero;
+//让鼠标指针根据硬件情况自己选择显示模式(有些平台不支持更改鼠标指针图片)
+private CursorMode mode = CursorMode.Auto;
+
+void Start()
+{
+  instance = this;
+}
+
+public void SetNormal()
+{
+  Cursor.SetCursor(cursor_normal,hotpot,mode)
+}
+public void SetNpcTalk()
+{
+  Cursor.SetCursor(cursor_npc_talk,hotpot,mode)
+}
+
+```
+
