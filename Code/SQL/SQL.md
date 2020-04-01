@@ -5,7 +5,7 @@
 - 排除包含字符串 NOT REGEXP
 
   ```sql
-  select * from file where name NOT REGEXP 'something'
+  select * from file where name NOT REGEXP 'something|somethingelse'
   ```
 
   
