@@ -283,3 +283,39 @@ End Function
 ## Excel技巧
 
 - 减1秒：=D2-1/24/60/60
+
+```vb
+Sub code()
+Dim i As Integer
+Dim pushType  As String
+Dim receType As String
+Dim pushDate As Date
+Dim receDate As Date
+Dim resultDate
+
+receType = "receive"
+pushType = "push"
+j = 1
+For i = 2 To 273
+   For j = i + 1 To 243
+    If Cells(i, 1).Value = Cells(j, 1).Value Then
+        If Cells(i, 2).Value = "receive" And Cells(j, 2).Value = "push" Then
+            receDate = Cells(i, 5)
+            pushDate = Cells(j, 5)
+            If DateValue(pushDate) - DateValue(receDate) < 2 Then
+                Cells(i, 11) = "yes"
+                Cells(i, 12) = Cells(j, 4).Value
+                i = i + 1
+            Else
+                Cells(i, 11) = "no"
+            End If
+        Else
+            Cells(i, 11) = "no"
+        End If
+    End If
+    j = j + 1
+    Next
+Next
+End Sub
+
+```
