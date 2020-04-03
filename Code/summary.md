@@ -7,6 +7,10 @@
   - [pandas](https://8ku.github.io/note_other/Code/Python/pandas)
   - [lambda](https://8ku.github.io/note_other/Code/Python/lambda)
   
+- ffmpeg
+  
+  - [ffmpeg](https://8ku.github.io/note_other/Code/ffmpeg/ffmpeg)
+  
 - SQL
   
   - [SQL](https://8ku.github.io/note_other/Code/SQL/SQL)
