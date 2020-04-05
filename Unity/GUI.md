@@ -169,7 +169,14 @@ public class Player:MonoBehaviour
 
 ```
 
+### ui背景图片自适应文字长度
 
+在背景图片挂两个自带脚本
+
+- Content Size Fitter
+- Vertical Layout Group
+- 勾选 Control Child Size
+- 勾选 Child Force Expand
 
 ### 设置 UI 的渐入渐出效果
 
