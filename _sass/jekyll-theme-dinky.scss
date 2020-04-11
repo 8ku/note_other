@@ -169,6 +169,13 @@ code, pre {
 	font-family:"Menlo", "Meslo LG", monospace, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color:#000;
   font-size:14px;
+  padding: 4px 12px;
+  background: #FDFEFB;
+  border-radius:4px;
+  border:1px solid #D7D8C8;
+  overflow: auto;
+  overflow-y: hidden;
+  margin-bottom: 32px;
 }
 
 pre {
@@ -176,7 +183,9 @@ pre {
   background: #FDFEFB;
   border-radius:4px;
   border:1px solid #D7D8C8;
-  overflow: auto;
+  word-wrap:break-word;
+  word-break:break-all;
+  overflow: hidden;
   overflow-y: hidden;
 	margin-bottom: 32px;
 }

@@ -4,7 +4,7 @@
 
 **不同对象的 awake 调用顺序是 Unity 自己分配的,不可控.**
 
-`Start`在对象被第一次`enable`后,在`Update`之前调用,**只有脚本`enable`的状态来,`Start`才会被调用.
+`Start`在对象被第一次`enable`后,在`Update`之前调用, **只有脚本`enable`的状态来,`Start`才会被调用.**
 
 尽量将其他 `Objec`t 的 `reference` 设置等事情放在 `Awake` 处理。然后将这些 `reference` 的 `Object` 的赋值设置放在 `Start()`中来完成。
 
