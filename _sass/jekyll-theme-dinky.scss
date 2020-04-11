@@ -164,7 +164,10 @@ p img, .emoji {
 }
 
 p code {
+  padding: .2em .4em;
+  font-size: 85%;
   background-color:rgba(27,31,35,.05);
+  border-radius: 3px;
 }
 
 /* Code blocks */
