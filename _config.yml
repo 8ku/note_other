@@ -3,3 +3,4 @@ markdown: kramdown
 mathjax_autoNumber: true
 mermaid: true
 chart: true
+highlighter: rouge
