@@ -350,7 +350,7 @@ footer {
 	}
 
   header {
-    padding-right:520px;
+    padding-right:650px;
     position:fixed;
     margin:0 25px 0 0;
   }
@@ -388,7 +388,7 @@ footer {
   }
 
   header {
-    padding:10px 460px 0 20px;
+    padding:10px 460px 10px 20px;
 		margin-right: 0;
     height:80px;
   }
@@ -416,6 +416,12 @@ footer {
 }
 
 @media print, screen and (max-width: 480px) {
+
+  header {
+    padding:10px 160px 10px 20px;
+    margin-right: 0;
+    height:60px;
+  }
 
   header ul li.download {
     display:none;
