@@ -365,13 +365,16 @@ footer {
   header ul {
     position:absolute;
     width:400px;
-    height:60px;
+    height:93px;
+    overflow:scroll;
     right:130px;
-    top:84px;
+    top:54px;
+    margin:5px;
   }
 
   header li {
     float:left;
+    width:auto;
 
   }
 }
