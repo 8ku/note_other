@@ -363,18 +363,19 @@ footer {
   }
 
   header ul {
-    position:absolute;
+    position:fixed;
     width:400px;
     height:93px;
     overflow:scroll;
     right:130px;
-    top:54px;
-    margin:5px;
+    top:64px;
   }
 
   header li {
     float:left;
     width:auto;
+    text-decoration:overline;
+    margin-top:12px;
 
   }
 }
