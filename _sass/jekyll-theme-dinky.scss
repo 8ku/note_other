@@ -364,8 +364,15 @@ footer {
 
   header ul {
     position:absolute;
+    width:400px;
+    height:60px;
     right:130px;
     top:84px;
+  }
+
+  header li {
+    float:left;
+
   }
 }
 
