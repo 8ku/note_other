@@ -71,6 +71,8 @@ git config --global user.email "email"
 
 ```yaml
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_another -C <Git注册邮箱>
+# -t 用来指定加密算法为 rsa；
+# -C 后面是个注释信息，并不一定要和你 Git 账户的邮箱或者 Git 账户名保持一致，只是常常是和你账户邮箱保持一致，这样设置，就能知道这个公钥被绑定在哪个 Git 账户上了。
 ```
 
 3. 配置config文件，如果存在，直接打开
@@ -84,13 +86,13 @@ touch ~/.ssh/config
 ```yaml
 Host github.com
 	HostName github.com
-    IdentityFile ~/.ssh/id_rsa_another
-    User user
-
-Host github.com
-	HostName github.com
     IdentityFile ~/.ssh/id_rsa
-    User anotherUser
+    User 8ku
+
+Host github8ku
+	HostName github.com
+    IdentityFile ~/.ssh/id_rsa_another
+    User another
 ```
 
 5. 测试
@@ -98,5 +100,25 @@ Host github.com
 ```yaml
 ssh -T git@github.com
 Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+
+ssh -T github8ku
+```
+
+6. 各种报错的解决方法
+
+```yaml
+# 用别名测试ssh被denied(publickey)
+ssh-add -K ~/.ssh/id_rsa_another
+# 提示 Could not open a connection to your authentication agent.
+eval 'ssh-agent'
+ssh-agent bash
+#提示 The agent has no identities. 清除代理
+ssh-add -D
+# 清除后再添加不同的ssh
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa_another
+# clone remote 的时候用别名
+git clone git@github8ku:bakumatata.github.io.git
+git remote add . git@github8ku:bakumatata.github.io.git
 ```
 
