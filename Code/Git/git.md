@@ -6,6 +6,10 @@
 
 [git官方说明](https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
 
+[github page绑定个人域名](https://blog.csdn.net/qq_41684621/article/details/103230888)
+
+[绑定多个二级域名](https://github.com/IcedSoul/wiki/wiki/使用Github-Pages绑定多个二级域名)
+
 1. 检查现有的推送方式
 
    ```yaml
@@ -122,3 +126,22 @@ git clone git@github8ku:bakumatata.github.io.git
 git remote add . git@github8ku:bakumatata.github.io.git
 ```
 
+## 绑定个人域名
+
+1. 买域名（阿里云）
+
+2. `ping xxx.github.io `得到ip地址
+
+3. 在域名提供商里为域名添加解析，以阿里云为例
+
+   1. 点击 '解析'
+   2. 添加两条记录
+
+![image-20200421142956939](git.assets/image-20200421142956939.png)
+
+
+![image-20200421142921978](git.assets/image-20200421142921978.png)
+
+4. Repository Settings - GitHubPages Custom domain 里添加自己的域名（不要加www)
+5. 勾选 `Enforce HTTPS`
+6. 设置子域名：在仓库的 GitHubPages Custom domain 填写 `子域名.xxx.com`
