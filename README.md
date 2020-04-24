@@ -14,6 +14,7 @@
 - [Mythology](https://8ku.github.io/note_other/mythology/summary)
 - [GameHistory](https://8ku.github.io/note_other/GameHistory/summary)
 - [Biology](https://8ku.github.io/note_other/Biology/summary)
+- [Draw](https://8ku.github.io/note_other/Draw/summary)
 
 
 
