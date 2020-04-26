@@ -5,3 +5,7 @@
 ## 生成目录树结构文件
 
 `tree /f > list.txt`
+
+## 图片批量压缩工具
+
+https://pngquant.org/
