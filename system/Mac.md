@@ -1,30 +1,31 @@
-| 功能                                          | 键                            |
-| --------------------------------------------- | ----------------------------- |
-| 查看                                          | ls                            |
-| 打开文件夹                                    | open fileFolderName///        |
-| 查看-隐藏                                     | ls -a                         |
-| 创建目录                                      | mkdir (make directories)      |
-| 进入目录                                      | mkdir                         |
-| 返回上级目录                                  | cd ..                         |
-| 删除目录(空目录)                              | rmdir test (remove)           |
-| 删除非空目录(加 -rf直接删除，不出现在回收站） | rm -rf test （remove force)   |
-| 创建文件                                      | touch 文件名                  |
-| 拷贝                                          | cp                            |
-| 查找                                          | find                          |
-| 用正则查找文件                                | find.-name”*.c”-print         |
-| 显示当前目录的路径                            | pwd (print working directory) |
-| 列出当前目录下的所有文件                      | ls                            |
-| 用默认程序打开文件                            | open                          |
-| 显示操作系统信息                              | uname -a/uname                |
-| 清除屏幕或窗口内容                            | clear                         |
-| 显示当前所有设置过的环境变量                  | env                           |
-| 列出当前登录过的所有用户                      | who                           |
-| 显示当前正在操作的用户名                      | whoami                        |
-| 显示终端或伪终端的名称                        | tty                           |
-| 查询磁盘使用情况                              | du/du -k subdir               |
-| 显示文件系统的总空间和可用空间                | df <br />df/tmp               |
-| 显示当前系统活动的总信息                      | w                             |
-| 执行.sh文件                                   | ./aa.sh                       |
+| 功能                                          | 键                              |
+| --------------------------------------------- | ------------------------------- |
+| 查看                                          | ls                              |
+| 打开文件夹                                    | open fileFolderName///          |
+| 查看-隐藏                                     | ls -a                           |
+| 创建目录                                      | mkdir (make directories)        |
+| 进入目录                                      | mkdir                           |
+| 返回上级目录                                  | cd ..                           |
+| 删除目录(空目录)                              | rmdir test (remove)             |
+| 删除非空目录(加 -rf直接删除，不出现在回收站） | rm -rf test （remove force)     |
+| 创建文件                                      | touch 文件名                    |
+| 拷贝                                          | cp                              |
+| 查找                                          | find                            |
+| 用正则查找文件                                | find.-name”*.c”-print           |
+| 显示当前目录的路径                            | pwd (print working directory)   |
+| 列出当前目录下的所有文件                      | ls                              |
+| 用默认程序打开文件                            | open                            |
+| 显示操作系统信息                              | uname -a/uname                  |
+| 清除屏幕或窗口内容                            | clear                           |
+| 显示当前所有设置过的环境变量                  | env                             |
+| 列出当前登录过的所有用户                      | who                             |
+| 显示当前正在操作的用户名                      | whoami                          |
+| 显示终端或伪终端的名称                        | tty                             |
+| 查询磁盘使用情况                              | du/du -k subdir                 |
+| 显示文件系统的总空间和可用空间                | df <br />df/tmp                 |
+| 显示当前系统活动的总信息                      | w                               |
+| 执行.sh文件                                   | ./aa.sh                         |
+| 刷新DNS                                       | sudo killall -HUP mDNSResponder |
 
 
 
