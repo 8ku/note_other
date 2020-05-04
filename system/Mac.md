@@ -77,3 +77,16 @@
 - 将项目结构输出到文件 `tree >tree.md`
 - 查看更多命令 `tree --help`
 
+## 批量压缩图片
+
+[参考](https://juejin.im/entry/5b18a1985188257d960ec9ac)
+
+```xaml
+<!--安装-->
+brew install imagemagick
+<!--查看该目录下所有图片数据-->
+identify *
+<!--把所有图片压缩60%, 质量为70-->
+mogrify -resize 60% -quality 70 *
+```
+
