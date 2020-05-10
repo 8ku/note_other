@@ -68,7 +68,7 @@ git config --global user.email "email"
 
 1. 把git换成要用的用户名和邮箱
 
-```yml
+```yaml 
 git config --global user.name "name"
 git config --global user.email "email"
 ```
