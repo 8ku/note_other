@@ -2,6 +2,7 @@
 | --------------------------------------------- | ------------------------------- |
 | 查看                                          | ls                              |
 | 打开文件夹                                    | open fileFolderName///          |
+| 使用系统preview查看多张图片                   | open *                          |
 | 查看-隐藏                                     | ls -a                           |
 | 创建目录                                      | mkdir (make directories)        |
 | 进入目录                                      | mkdir                           |
@@ -75,4 +76,17 @@
 - 过滤不想显示的文件或文件夹 `tree -I "node_modules"`
 - 将项目结构输出到文件 `tree >tree.md`
 - 查看更多命令 `tree --help`
+
+## 批量压缩图片
+
+[参考](https://juejin.im/entry/5b18a1985188257d960ec9ac)
+
+```xaml
+<!--安装-->
+brew install imagemagick
+<!--查看该目录下所有图片数据-->
+identify *
+<!--把所有图片压缩60%, 质量为70-->
+mogrify -resize 60% -quality 70 *
+```
 
