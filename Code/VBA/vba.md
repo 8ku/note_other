@@ -292,12 +292,13 @@ Dim receType As String
 Dim pushDate As Date
 Dim receDate As Date
 Dim resultDate
+lastRow = ActiveSheet.UsedRange.Rows.Count
 
 receType = "receive"
 pushType = "push"
 j = 1
-For i = 2 To 273
-   For j = i + 1 To 243
+For i = 2 To lastRow
+   For j = i + 1 To lastRow
     If Cells(i, 1).Value = Cells(j, 1).Value Then
         If Cells(i, 2).Value = "receive" And Cells(j, 2).Value = "push" Then
             receDate = Cells(i, 5)
@@ -319,3 +320,4 @@ Next
 End Sub
 
 ```
+
