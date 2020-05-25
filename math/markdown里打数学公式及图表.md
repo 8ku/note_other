@@ -11,14 +11,15 @@
       <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       <script>mermaid.initialize({startOnLoad:true});</script>
 </head>
-
 # Markdown输入数学公式及图表
+
+[参考](https://www.jianshu.com/p/e74eb43960a1)
 
 ## 插入方式
 
 ### 行间插入或左对齐
 
-a + b :``` $a + b$```
+a + b :$公式内容$
 
 ### 新行写入
 
@@ -28,27 +29,35 @@ a + b : ```$$a + b$$```
 
 ### 上、下标
 
-$$x_1$$: ```$$x_1$$```
+$$x_1$$: `x_1`
 
-$$x_1^2$$: ```$$x_1^2$$```
+$$x_1^2$$: `x_1^2`
 
-$$x^2_1$$: ```$$x^2_1$$```
+$$x^2_1$$: `x^2_1`
 
-$$x_{22}^{(n)}$$:   ```$$x_{22}^{(n)}$$```
+$$x_{22}^{(n)}$$:   `x_{22}^{(n)}`
 
-$${}^*x^*$$: ```$${}^*x^*$$```
+$${}^*x^*$$: `{}^*x^*$$`
 
-$$x_{balabala}^{bala}$$:  ```$$x_{balabala}^{bala}$$```
+$$x_{balabala}^{bala}$$:  `x_{balabala}^{bala}$$`
 
 上标用 ^ 后接体现，下标用 _ 后接体现，多于一位要用 { } 包裹
 
 ### 分式
 
+**四则运算**
+
+1. 乘法： `\times`
+2. 除法： `\div`
+3. 平均数：`\overline{xyz}`
+
 **frac：fraction 分数，要加 \ **
 
-$$\frac{x+y}{2}$$：```$$\frac{x+y}{2}$$```   
+$\overline{xyz}$
 
-$$\frac{1}{1+\frac{1}{2}}$$： ```$$\frac{1}{1+\frac{1}{2}}$$```
+$$\frac{x+y}{2}$$：`\frac{x+y}{2}`  
+
+$$\frac{1}{1+\frac{1}{2}}$$： `\frac{1}{1+\frac{1}{2}}`
 
 ### 根式
 
@@ -56,11 +65,11 @@ $$\frac{1}{1+\frac{1}{2}}$$： ```$$\frac{1}{1+\frac{1}{2}}$$```
 
 **[ ]：几次根式**
 
-$$\sqrt{2}<\sqrt[3]{3}$$ ：```$$\sqrt{2}<\sqrt[3]{3}$$```   
+$$\sqrt{2}<\sqrt[3]{3}$$ ：`\sqrt{2}<\sqrt[3]{3}$$`   
 
-$$\sqrt{1+\sqrt[p]{1+a^2}}$$:  ```$$\sqrt{1+\sqrt[p]{1+a^2}}$$```
+$$\sqrt{1+\sqrt[p]{1+a^2}}$$:  `\sqrt{1+\sqrt[p]{1+a^2}}$$`
 
-$$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$:  ```$$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$```--和上面的区别在于P的写法
+$$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$:  `\sqrt{1+\sqrt[^p]{1+a^2}}`--和上面的区别在于P的写法
 
 ### 求和、积分
 
@@ -68,35 +77,35 @@ $$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$:  ```$$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$```--和上�
 
 **int：integral 积分**
 
-$$\sum_{k=1}^{n}\frac{1}{k}$$：```$$\sum_{k=1}^{n}\frac{1}{k}$$```
+$$\sum_{k=1}^{n}\frac{1}{k}$$：`\sum_{k=1}^{n}\frac{1}{k}`
 
-$\sum_{k=1}^n\frac{1}{k}$：```$\sum_{k=1}^n\frac{1}{k}$```
+$\sum_{k=1}^n\frac{1}{k}$：`\sum_{k=1}^n\frac{1}{k}`
 
-$$\int_a^b f(x)dx$$:  ```$$\int_a^b f(x)dx$$```
+$$\int_a^b f(x)dx$$:  `\int_a^b f(x)dx`
 
-$\int_a^b f(x)dx$: ```$\int_a^b f(x)dx$```
+$\int_a^b f(x)dx$: `\int_a^b f(x)dx`
 
 ### 空格
 
 主要用于微调距离，让公式看易读
 
-$a\!b$ ：```$a\!b$``` 紧贴
+$a\!b$ ：`a\!b` 紧贴
 
-$ab$：```$ab$``` 没有空格
+$ab$：`ab` 没有空格
 
-$a\,b$：```$a\,b$``` 小空格
+$a\,b$：`a\,b$` 小空格
 
-$a\;b$：```$a\;b$```  中等空格
+$a\;b$：`a\;b$`  中等空格
 
-$a\quad b$: ```$a\quad b$``` big space
+$a\quad b$: `a\quad b` big space
 
-$a\qquad b$: ```$a\qquad b$``` two quad space 只能有2个，3个q会报错
+$a\qquad b$: `a\qquad b` two quad space 只能有2个，3个q会报错
 
 ### 公式界定符
 
 用 \left 和 \right 后跟界定符来对内容界定
 
-$$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$：```$$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$```
+$$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$：`\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)`
 
 ### 矩阵
 
@@ -104,19 +113,19 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$：```$$\left(\sum_{k=\fra
 
 **矩阵中括号不能直接写括号符号，需要用文字**
 
-$$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$$：```$$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$$```
+$$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$$：`\begin{matrix}1 & 2\\\\3 &4\end{matrix}`
 
-$$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$$: ```$$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$$```
+$$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$$: `\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}`
 
-$$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$$:  ```$$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$$```
+$$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$$:  `\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}`
 
-$$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$$:  ```$$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$$```
+$$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$$:  `\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}`
 
-$$\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}$$:  ```$$\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}$$```
+$$\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}$$:  `\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}`
 
-$$\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|$$:  ```$$\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|$$```
+$$\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|$$:  `\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|`
 
-$$\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}$$:  ```$$\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}$$```
+$$\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}$$:  `\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}`
 
 ### 排版数组
 
