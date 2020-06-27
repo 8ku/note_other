@@ -15,6 +15,13 @@
   - 另一个设置为 when running is less than 0.1, then change state.
   - 在角色的控制脚本中声明 animator，绑定控制器
 
+### [使用blend混合动画](https://docs.unity3d.com/Manual/class-BlendTree.html)
+
+- 在Animator里右键 Create State --> From New Blend Tree
+- 双击新建的 blend tree 进入编辑界面
+- 在右侧添加 motin 动画(或在blend tree上点击右建新建)
+- 
+
 ## 动作
 
 - **IDLE：待命状态**
