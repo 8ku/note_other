@@ -100,7 +100,7 @@
 - 切换到UV     Editing, press u, select smart UV project, then switch to Texture Paint,     create a new image
 - 切换到     Shading, 新建一个checker Texture, 选择上一步保存的image, 连接到roughness, 此时被上了UV的面会全反射环境, 再painting,     能把不需要反射的部分擦除
 
-![img](Blender.assets/clip_image002.png)
+![img](Blender.assets/clip_image002.jpg)
 
  
 
@@ -126,13 +126,13 @@
   - view      layer(右侧)-Passes-Data-Denoising Data
   - node界面: add Denoise
 
-![img](Blender.assets/clip_image004.png)
+![img](Blender.assets/clip_image004.jpg)
 
 - 加雾效
 
 - - 放一个box,      box显示模式设置为线框, 给box加shader
 
-![img](Blender.assets/clip_image006.png)
+![img](Blender.assets/clip_image006.jpg)
 
 - 局部渲染:cmd+b(取消局部渲染: ctrl+alt+b)
 - 渲染出图: 菜单-render-render image
