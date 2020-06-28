@@ -27,6 +27,7 @@
 | 显示当前系统活动的总信息                      | w                               |
 | 执行.sh文件                                   | ./aa.sh                         |
 | 刷新DNS                                       | sudo killall -HUP mDNSResponder |
+| 连续查看图片                                  | 全选所有图片-空格               |
 
 
 
