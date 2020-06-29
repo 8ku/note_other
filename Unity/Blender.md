@@ -1,5 +1,10 @@
 # Blender
 
+## 视图操作
+
+- 放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动
+- 调出/收起属性面板：n
+
 ## 选择:
 
 - 随机选择:Select     - Select Random
@@ -9,11 +14,15 @@
 
 ## 物体操作:
 
-- 建立父子关系:     cmd+p
+- 建立父子关系:     cmd/control+p
+- 选中的物体视图居中并把坐标归零: shift+c
+- 延局部坐标移动/缩放/旋转：先按快捷键（G/S/R），再按两下方向（X/Y/Z）
 - 复制物体:     shift+d
 - 复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d
 - 延法线挤出:alt+e
+- 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - 清除游离点/线/面: mesh-clean up-delete loose
+- 翻转物体：alt+f
 - 视图:
   - Numpad: .
 - 做楼梯
@@ -26,12 +35,53 @@
 - - 建正方体
   - cmd+2
 
+### 父子关系
+
+- 如有一对父子关系物体，想让新物体 C 跟随父物体 A 运动，但不绑定为新的子物体，可在`ObjectConstraint Properties` 中添加 `Copy Location`或其他， `Target` 选择子物体 B
+- 勾选`Offset`可以移动 C ，让 C 和 B 有距离，调整`Influence` 可以调整影响的强度
+- 如果`Spece` 选择 `World Space <--> World Space`，两者都使用世界坐标移动；如果选择`Local Space <--> Local Space`，则双方以自己的局部坐标方向移动；
+
+
+
+### 骨骼绑定的要点：
+
+- 建立骨骼前注意把坐标归零 shift+c
+- 把骨骼名字显示出来，养成给骨骼命名的习惯
+- 确保躯干和腿所有骨骼的Z轴都面向前，手臂骨骼的Z轴向上
+- 中心骨骼（root）的坐标必须保持和世界坐标一致，中心骨骼一般位于整个模型的底部中心
+  - 先沿Z轴建一根骨骼，命名为root
+  - 点击骨骼的tail,shift+s,选择 selection to cursor
+  - 沿Y轴移动Tail
+  - 或沿Z轴建一根骨骼，再沿X轴旋转-90度
+- 使用`Bone Layer Manager`管理骨骼层 [地址](https://gumroad.com/l/STdb)
+  - 使用`Bone Layers`右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
+  - ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
+  - root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform
+- 使用`Simple rename panel`管理批量命名（此插件可以重命名所有物体，不仅骨骼） [地址](https://gumroad.com/l/simple_renaming_panel)
+  - 把需要批量命名的骨骼放到同一层，全选，使用“在选择的物体中替换”
+
+
+
 ### 骨骼绑定1:
 
-- 添加骨节:     shift + e (同时按鼠标中键可保持90度)
+使用骨骼绑定控制物体行动的原因是：调整骨骼动画时，变换父级，子级动作也会被记录下来，而直接用物体做动画时，子级动画不会被记录，每个物体的运动是独立的
+
+- 添加骨节:     
+  1. e (同时按鼠标中键可保持90度)，之后shift+r，可以往一个方向同比挤出
+  2. 右键 `subdivide`
 - 添加没有父节点的骨头:shift+a
 - 在关节之间加骨骼:f
-- 解除父子关系: 在子节处     右侧骨头 删除父对象(alt+p 或 y)
+- 让解除关联/新添加的骨骼关联到物体：shift+w-deform/alt+left click deform(选择多段骨骼时好用)
+- **在编辑模式下调整骨骼朝向**：ctrl+r
+- 在骨骼模式下**刷权重**（该模式下可以移动骨骼查看效果）
+  - 物体模式下先选中骨骼，再选物体，进入权重刷编辑
+  - 按住ctrl，点击左键选择骨节
+  - 打开`Object propertise-Viewpoint Display`里的 `wireframe`，可以清楚看到权重对面的影响
+  - 使用面选择，按住ctrl选择面，可以把编辑范围限定在选择的面中
+  - 推荐使用subtract和mix笔刷，subtract时，使用最后一个preset笔头；mix时，使用1的强度，低一点weight
+  - **如果你的角色前臂运动总是影响了胸部和前臂，那是不对的**
+- **对齐骨骼**：选择骨骼，再选择被对齐骨骼control+alt+a
+- 解除父子关系: 在子节处     右侧骨头 删除父对象(alt+p，alt+p可以选择disconnect bons 或 y，y直接解除父子关系)
 - 命名单侧手脚时要加     .L,全选单侧骨骼 (顶上中部的transfomr     pivot point 要换成3d cursor)- 右键:symmetrize
 - 重新关联父子关系:     ctrl/cmd + p
 - 添加IK: 先选IK, 再选骨骼, pose mode: shift + i
@@ -41,14 +91,14 @@
 - 权重刷:object     mode-weight paint
 - 权重刷一般用add模式
 - 在edit mode里,选中要显示的骨头(带控制器的),m键加入图层,把其余的关闭显示
-- 使用pose     mode设置动作时,要选择 Local坐标,不能用Global坐标
-- **使用自动分配权重后,进入模型edit mode, 左上菜单Mesh-Weights-Normailze All 来重新计算权重
+- 使用pose  mode设置动作时,要选择 Local坐标,不能用Global坐标
+- **使用自动分配权重后,进入模型edit mode, 左上菜单Mesh-Weights-Normailze All 来重新计算权重**
 
  
 
 ### 骨骼绑定2:
 
-- 插件     rigging:rigify
+- 插件  rigging:rigify
 - 骨骼对齐模型
 - 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate     RIg
 - 先全选模型,再选骨骼,ctrl+p—with automation weights
@@ -65,7 +115,11 @@
 - Collisions:     distance(调高)
 - 给人物身体添加Collision,勾选single Sided
 
- 
+### 骨骼动画
+
+- 大多数骨骼运动是基于局部坐标，而不是世界坐标，所以在最初建立骨骼时，尽量让骨骼的臂部坐标和世界坐标一致 
+- 给某个骨骼添加动画：选中要记录动画的骨骼，i
+- 
 
 ## 拓扑: 
 
