@@ -37,7 +37,7 @@
 
 ### 父子关系
 
-- 如有一对父子关系物体，想让新物体 C 跟随父物体 A 运动，但不绑定为新的子物体，可在`ObjectConstraint Properties` 中添加 `Copy Location`或其他， `Target` 选择子物体 B
+- 如有一对父子关系物体，想让新物体 C 跟随父物体 B 运动，但不绑定为新的子物体，可在`ObjectConstraint Properties` 中添加 `Copy Location`或其他， `Target` 选择子物体 B（或者在pose mode下，先选B，再选C，shift+ctrl+c)
 - 勾选`Offset`可以移动 C ，让 C 和 B 有距离，调整`Influence` 可以调整影响的强度
 - 如果`Spece` 选择 `World Space <--> World Space`，两者都使用世界坐标移动；如果选择`Local Space <--> Local Space`，则双方以自己的局部坐标方向移动；
 
@@ -86,7 +86,7 @@
 - 重新关联父子关系:     ctrl/cmd + p
 - 添加IK: 先选IK, 再选骨骼, pose mode: shift + i
 - 先选人体,再选骨架, ctrl+p
-- 回归初始状态:     pose mode- alt+r
+- 回归初始状态:     pose mode- alt+r/alt+g/alt+s
 - 单独部件(例如眼球)未和身体一起绑定时,可单独选择眼球和骨架:cmd+p,选with empty groups
 - 权重刷:object     mode-weight paint
 - 权重刷一般用add模式
