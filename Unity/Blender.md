@@ -55,7 +55,7 @@
 - 使用`Bone Layer Manager`管理骨骼层 [地址](https://gumroad.com/l/STdb)
   - 使用`Bone Layers`右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
   - ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
-  - root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform
+  - **root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform**
 - 使用`Simple rename panel`管理批量命名（此插件可以重命名所有物体，不仅骨骼） [地址](https://gumroad.com/l/simple_renaming_panel)
   - 把需要批量命名的骨骼放到同一层，全选，使用“在选择的物体中替换”
 
@@ -71,6 +71,7 @@
 - 添加没有父节点的骨头:shift+a
 - 在关节之间加骨骼:f
 - 让解除关联/新添加的骨骼关联到物体：shift+w-deform/alt+left click deform(选择多段骨骼时好用)
+- 显示骨骼名称：`Object Data Properties-Viewwport Display`，勾选`Name` & `Axes`
 - **在编辑模式下调整骨骼朝向**：ctrl+r
 - 在骨骼模式下**刷权重**（该模式下可以移动骨骼查看效果）
   - 物体模式下先选中骨骼，再选物体，进入权重刷编辑
@@ -104,7 +105,7 @@
 
  
 
-### 在绑定骨骼的人物是加衣服
+### 在绑定骨骼的人物上加衣服
 
 - 添加Cloth     modifier
 - 调整Quality     steps(往高调整)
