@@ -90,6 +90,7 @@ open ~/.ssh
 ```
 
 4. 修改config文件相关信息，注意Host 和Hostname要写主机名
+5. **更换代理软件后(clash/shadowsocks), 要修改`localhost`的端口号,不然无法推送接收.**
 
 ```yaml
 # localhost端口号要和当前使用的代理端口号一致
