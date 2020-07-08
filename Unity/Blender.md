@@ -28,6 +28,20 @@
 - 做楼梯
   - 用array
 
+### array的技巧
+
+- 做螺旋线
+  - 创建一个物体，array
+  - 建立一个空物体 `Plain Axes`
+  - 在array中勾选`Object Offset`，物体选择空物体
+  - 使用R旋转，S缩放
+  - 勾选`Merge`，`distance`调大
+- 沿曲线array不变形
+  - 创建平面，array
+  - 添加 curve，物体选择曲线
+  - 新建一个物体，把该物体做为平面的子物体（ctrl+p）
+  - 在`Object properties-instancing`里选择`Face`，去掉`Display Instancer`的勾选
+
 ## 人体建模
 
 - 头部
@@ -36,6 +50,8 @@
   - cmd+2
 
 ### 父子关系
+
+- 如果解除父子关系不起作用，试试ctrl+j合并两个物体，再进入编辑模式，L，P解除合并
 
 - 如有一对父子关系物体，想让新物体 C 跟随父物体 B 运动，但不绑定为新的子物体，可在`ObjectConstraint Properties` 中添加 `Copy Location`或其他， `Target` 选择子物体 B（或者在pose mode下，先选B，再选C，shift+ctrl+c)
 - 勾选`Offset`可以移动 C ，让 C 和 B 有距离，调整`Influence` 可以调整影响的强度
@@ -169,7 +185,7 @@
 - 导入其他blender文件:用 link或append
 - 在编辑模式下添加细分, 使用smooth工具平滑
 
- 
+##  UV
 
 ### UV绘制
 
@@ -192,7 +208,13 @@
 - 回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node
 - 如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图
 
- 
+###  物体使用不同UV
+
+- 给整体加texture
+- 复制一个材质，在编辑模式下assign需要另赋材质的部分
+- 切换到物体模式，把整体材质取消复制标志（这样可以单独调节一个物体两部分的材质）
+- ![image-20200708143448208](Blender.assets/image-20200708143448208.png)
+- 在UV Editor里单独调整材质
 
 ## 渲染
 
