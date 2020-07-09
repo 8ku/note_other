@@ -1,5 +1,26 @@
 # Blender
 
+## 三方插件
+
+### 骨骼
+
+- bone layer manager
+
+### 图层管理
+
+- simple_renaming_panel
+
+### 工作流程插件
+
+- [万物有灵](https://shimo.im/docs/tWhW8QJPHhDqKwr9/)
+  - 安装好插件后，在`add-on`中导入预设
+  - 使用时，点击`import`可应用
+
+### 烘焙
+
+- [Bake Wrangler](https://blenderartists.org/t/bake-wrangler-node-based-baking-tool-set/1187732)
+  - [教程](https://www.bilibili.com/s/video/BV14z4y1R789)
+
 ## 视图操作
 
 - 放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动
@@ -23,7 +44,7 @@
 - 复制物体:     shift+d
 - 对齐物体：ctrl+alt+a
 - 向一个轴缩放：编辑模式-shift+ctrl+alt+s
-- 复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d
+- **复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d**
 - 延法线挤出:alt+e
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - 清除游离点/线/面: mesh-clean up-delete loose
@@ -33,6 +54,7 @@
 
 ## 建模
 
+- 点倒角：ctrl+shift+b
 - 添加插件`Extra Objects` 分别勾`Curve` `Mesh`
 
 - 做楼梯
@@ -224,18 +246,6 @@
 
  
 
-### 法线贴图
-
-- 复制一个模,做成高精, 雕刻
-- alt+g把两个模对齐
-- 给低精械添加一个材质,添加image texture, color-space:     non-color
-- 渲染模式改为cycles,     在bake中设置bake type为normal
-- 勾选     Selected to active
-- 先选择高精模,再加选低精模,点击bake
-- 如果法线渲染出来有没覆盖好的, 调Ray distance
-- 回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node
-- 如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图
-
 ###  物体使用不同UV
 
 - 给整体加texture
@@ -247,11 +257,30 @@
 ## 烘焙
 
 - 高分烘给低分
+
   - 使用插件**BAKE WRANGLER**，[教程](https://www.bilibili.com/s/video/BV14z4y1R789)
 
+- ### 法线贴图
+
+  - 复制一个模,做成高精, 雕刻
+  - alt+g把两个模对齐
+  - 给低精械添加一个材质,添加image texture, color-space:     non-color
+  - 渲染模式改为cycles,     在bake中设置bake type为normal
+  - 勾选     Selected to active
+  - 先选择高精模,再加选低精模,点击bake
+  - 如果法线渲染出来有没覆盖好的, 调Ray distance
+  - 回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node
+  - 如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图
 
 
 
+## 材质
+
+### 玻璃材质
+
+- 使用默认材质，把`Transmission`调到最大
+- `Render Properties`勾选`Screen Space Reflections`，点开设置，勾选`Reflaction`
+- 回到物体材质编辑，`Settings`，勾选`Screen Space REfraction`
 
 
 
@@ -338,7 +367,7 @@ cmd+2:添加细分
 
 线框模式：shift+z
 
-点倒角：ctrl+shift+b
+
 
  
 
