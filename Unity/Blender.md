@@ -13,20 +13,48 @@
 ## 物体操作:
 
 - 建立父子关系:     cmd/control+p
+- 物体吸附：
+  - 吸附到表面，勾选`align rotation to target`可以根据吸附面的方向自动转向
 - 沿地面网格移动物体：先按G/R/S，按住ctrl操作
 - 选中的物体视图居中并把坐标归零: shift+c
+- 切换对齐方式：主键盘-句号
+- 选中多个物体时，以每个物体自身中心点缩放：对齐方式选择 `Individual Origins`
 - 延局部坐标移动/缩放/旋转：先按快捷键（G/S/R），再按两下方向（X/Y/Z）
 - 复制物体:     shift+d
 - 对齐物体：ctrl+alt+a
+- 向一个轴缩放：编辑模式-shift+ctrl+alt+s
 - 复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d
 - 延法线挤出:alt+e
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - 清除游离点/线/面: mesh-clean up-delete loose
 - 翻转物体：alt+f
 - 视图:
-  - Numpad: .
+  - 选中物体最大化：Numpad-句号
+
+## 建模
+
+- 添加插件`Extra Objects` 分别勾`Curve` `Mesh`
+
 - 做楼梯
-  - 用array
+  - 做两个面
+  - array
+- 做栅栏
+  - 平面，ctrl+r 切分
+  - ctrl+b 倒角
+  - 删除倒角面
+  - 挤出
+- 做树枝
+  - 用点画出主干
+  - 添加`skin`
+  - 进入编辑模式，a全选，ctrl+a 收缩
+  - 选择单独节点 ctrl+a 调整
+- 做蔓藤
+  - 做要放置蔓藤的平面区域（切分会影响生成方向和密度）
+  - 做树叶
+  - 在区域中添加粒子生成器
+  - `Render`选择`Object`，物体选择树叶
+  - `Physics`选择`none`
+  - 调整`Rotation`里的参数
 
 ### array的技巧
 
@@ -216,6 +244,17 @@
 - ![image-20200708143448208](Blender.assets/image-20200708143448208.png)
 - 在UV Editor里单独调整材质
 
+## 烘焙
+
+- 高分烘给低分
+  - 使用插件**BAKE WRANGLER**，[教程](https://www.bilibili.com/s/video/BV14z4y1R789)
+
+
+
+
+
+
+
 ## 渲染
 
 - 打开降噪:     compositing
@@ -359,13 +398,13 @@ select all : a
 
 调出插件工具条: n
 
-布尔: 安插件 then ctrl+shift+b or ctrl + 小键盘 -
+布尔: 安插件 `bool tool` then ctrl+shift+b or ctrl + 小键盘 -，使用时选择`Brush Boolean`，在应用前都可以修改
 
 hide : h / alt+h
 
 把物体中心点归到物体中心: 右键 origin to geometry
 
-坐标归零: alt+g
+**坐标归零: alt+g**
 
 分窗口: 在边缘右键
 
