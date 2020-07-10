@@ -56,7 +56,6 @@
 
 - 点倒角：ctrl+shift+b
 - 添加插件`Extra Objects` 分别勾`Curve` `Mesh`
-
 - 做楼梯
   - 做两个面
   - array
@@ -77,6 +76,12 @@
   - `Render`选择`Object`，物体选择树叶
   - `Physics`选择`none`
   - 调整`Rotation`里的参数
+- 做冰块
+  - 切换到雕刻模式
+  - 使用`scrape`
+  - `n`打开属性面板，选择`tool`，勾选`Dyntopo`，`Detail size`调小
+  - 这样边雕刻，物体会增加细分
+  - 最好雕刻完以后，把该物体做为高精模烘到低精上，直接渲染会死机
 
 ### array的技巧
 
