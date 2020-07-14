@@ -30,9 +30,12 @@
 
 - 随机选择:Select     - Select Random
 - 按组选择:Shiift+g
+- 灯光方向
+  - 主键盘-句号：选择`3D Cursor`，再移动灯光位置
 
 ## 物体操作:
 
+- **对物体命名：F2**
 - 建立父子关系:     cmd/control+p
 - 物体吸附：
   - 吸附到表面，勾选`align rotation to target`可以根据吸附面的方向自动转向
@@ -49,6 +52,9 @@
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - 清除游离点/线/面: mesh-clean up-delete loose
 - 翻转物体：alt+f
+- 使用正则批量给物体重命名的技巧（有时做镜像复制时会有很多带 .001 的物体）
+  - 框选要重命名的物体
+  - 使用插件`simple renaming panel`
 - 视图:
   - 选中物体最大化：Numpad-句号
 
@@ -128,6 +134,11 @@
   - 使用`Bone Layers`右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
   - ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
   - **root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform**
+- 做好单边骨骼后，复制一份，原骨骼层（DEF）做为导入到其他软件的骨骼结构，复制的骨骼可以放到单独一层，教程用命名为TGT层
+- 使用TGT驱动DEF，先选中TGT的单个骨骼，再选中DEF的单个骨骼，shift+ctrl+c-copy transforms，此操作可把DEF层的骨骼互相解绑
+- 把TGT层的`deform`取消，之后和人体绑定时不会绑到TGT层和ROOT层
+- 把人物的Armature置于细分之上
+- 刷权重时，**注意权重影响的是DEF（deform）层，TGT层用于控制人物动作，所以刷权重需要让DEF层显示，TGT层隐藏，不然会找不到所选择的骨节对应的蒙皮区域**
 - 使用`Simple rename panel`管理批量命名（此插件可以重命名所有物体，不仅骨骼） [地址](https://gumroad.com/l/simple_renaming_panel)
   - 把需要批量命名的骨骼放到同一层，全选，使用“在选择的物体中替换”
 
@@ -147,8 +158,8 @@
 - **在编辑模式下调整骨骼朝向**：ctrl+r
 - 在骨骼模式下**刷权重**（该模式下可以移动骨骼查看效果）
   - 物体模式下先选中骨骼，再选物体，进入权重刷编辑
-  - 按住ctrl，点击左键选择骨节
-  - 打开`Object propertise-Viewpoint Display`里的 `wireframe`，可以清楚看到权重对面的影响
+  - 按住ctrl，点击左键选择骨节，此时会同时显示此骨节影响的蒙皮
+  - **打开`Object propertise-Viewpoint Display`里的 `wireframe`，可以清楚看到权重对面的影响**
   - 使用面选择，按住ctrl选择面，可以把编辑范围限定在选择的面中
   - 推荐使用subtract和mix笔刷，subtract时，使用最后一个preset笔头；mix时，使用1的强度，低一点weight
   - **如果你的角色前臂运动总是影响了胸部和前臂，那是不对的**
@@ -286,6 +297,11 @@
 - 使用默认材质，把`Transmission`调到最大
 - `Render Properties`勾选`Screen Space Reflections`，点开设置，勾选`Reflaction`
 - 回到物体材质编辑，`Settings`，勾选`Screen Space REfraction`
+
+### 透明
+
+- 材质面板 `settings-Blend Mode-Alpha Blend`
+-  在`Surface-Alpha`拉到0 
 
 
 
