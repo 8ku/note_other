@@ -122,17 +122,29 @@
 
 ### 骨骼绑定的要点：
 
+- **控制组 control**
+  - **root**：控制整个人物的位置，一般放在平行于腿的后侧
+  - **torso**：控制驱干，`parent:root`
+  - **spine/hips**：控制上半身和胯部，`parent:torso`，`copy rotation from chest`
+  - **chest**：控制腰部到脖子，`parent:torso`
+- **机动组 mechanism**
+  - **neck-rot**：带动neck-int-rot，让neck-int-rot跟着动，`parent:ctrl-tweak-chest`
+  - **neck-int-rot**：控制脖子 neck  `parent:torso`，`copy location/rotation/scale from neck-rot`
+- **总控组 properties**
+  - 放在头顶，用于控制各控制组件的强弱  `parent:root`
+  - 
 - 建立骨骼前注意把坐标归零 shift+c
 - 把骨骼名字显示出来，养成给骨骼命名的习惯
 - 确保躯干和腿所有骨骼的Z轴都面向前，手臂骨骼的Z轴向上
-- 中心骨骼（root）的坐标必须保持和世界坐标一致，中心骨骼一般位于整个模型的底部中心
+- **在编辑骨骼时，应该一直使用`individual origins`**
+- 中心骨骼（root）的坐标必须保持和世界坐标一致，动画时control骨骼延局部坐标移动，如果局部坐标和世界坐标不一致，移动时不直观，中心骨骼一般位于整个模型的底部中心
   - 先沿Z轴建一根骨骼，命名为root
   - 点击骨骼的tail,shift+s,选择 selection to cursor
   - 沿Y轴移动Tail
   - 或沿Z轴建一根骨骼，再沿X轴旋转-90度
 - 使用`Bone Layer Manager`管理骨骼层 [地址](https://gumroad.com/l/STdb)
   - 使用`Bone Layers`右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
-  - ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
+   ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
   - **root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform**
 - 做好单边骨骼后，复制一份，原骨骼层（DEF）做为导入到其他软件的骨骼结构，复制的骨骼可以放到单独一层，教程用命名为TGT层
 - 使用TGT驱动DEF，先选中TGT的单个骨骼，再选中DEF的单个骨骼，shift+ctrl+c-copy transforms，此操作可把DEF层的骨骼互相解绑
@@ -201,7 +213,7 @@
 ### 骨骼动画
 
 - 大多数骨骼运动是基于局部坐标，而不是世界坐标，所以在最初建立骨骼时，尽量让骨骼的臂部坐标和世界坐标一致 
-- 给某个骨骼添加动画：选中要记录动画的骨骼，i
+- 给某个骨骼添加帧动画：选中要记录动画的骨骼，i
 
 ## 动画
 
