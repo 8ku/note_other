@@ -36,6 +36,7 @@
 ## 物体操作:
 
 - **对物体命名：F2**
+- **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
 - 建立父子关系:     cmd/control+p
 - 物体吸附：
   - 吸附到表面，勾选`align rotation to target`可以根据吸附面的方向自动转向
@@ -122,36 +123,79 @@
 
 ### 骨骼绑定的要点：
 
-- **控制组 control**
-  - **root**：控制整个人物的位置，一般放在平行于腿的后侧
-  - **torso**：控制驱干，`parent:root`
-  - **spine/hips**：控制上半身和胯部，`parent:torso`，`copy rotation from chest`
-  - **chest**：控制腰部到脖子，`parent:torso`
+- **备用组 deform**
+  
+  - 用于导入其他软件做绑定动作，默认从tgt组复制，没有IK组件，所有骨骼和root绑定
+  - 所有骨骼都copy transforms from tgt组
+  
+- **控制组 control(torso组)**
+  
+  - **ctrl-root**：控制整个人物的位置，一般放在平行于腿的后侧
+  - **ctrl-torso**：控制驱干，`parent:root`
+  - **ctrl-spine/hips**：控制上半身和胯部，`parent:torso`，`copy rotation from chest`
+  - **ctrl-chest**：控制腰部到脖子，`parent:torso`
+  - **ctrl-foot-roll02**：控制脚踝的上下转动
+  - **ctrl-foot**：总控脚部运动位置
+  
 - **机动组 mechanism**
-  - **neck-rot**：带动neck-int-rot，让neck-int-rot跟着动，`parent:ctrl-tweak-chest`
-  - **neck-int-rot**：控制脖子 neck  `parent:torso`，`copy location/rotation/scale from neck-rot`
+  
+  - **mch-neck-rot**：带动neck-int-rot，让neck-int-rot跟着动，`parent:ctrl-tweak-chest`
+  - **mch-neck-int-rot**：控制脖子 neck  `parent:torso`，`copy location/rotation/scale from neck-rot`
+  - **mch-head-follow**：带动int-head-follow，`parent:tgt-neck`
+  - **mch-int-head-follow**：`parent:ctrl-torso`，`copy location/rotation/scale from mch-head-follow`，此时需要重新把tgt-head和mch-int-head-follow绑定成父子关系，让此控制head
+  - **mch-ik-foot**：控制大小腿和脚的反向动力学活动，`parent:root` ，对齐tgt-foot.L，让tgt-foot.L copy transforms from mch-ik-foot，因为tgt-foot被mch-ik-foot控制，可以把tgt-foot的parent修改为root，`parent:mch-foot-roll`
+  - **mch-foot-roll**：控制前脚掌的转动，`parent:ctrl-foot`，`copy rotation from ctrl-foot-roll02`，设置转动范围`limit rotation min:0 max:180`
+  - **mch-foot-roll02**：控制后腿跟的位置，设置转动范围`limit rotation min:-180 max:0`（或者先选中02，再选中roll，左上角`pose-constraints-copyconstraints to selected bones`），`parent:ctrl-foot`
+  
 - **总控组 properties**
+  
   - 放在头顶，用于控制各控制组件的强弱  `parent:root`
-  - 
+  
+  - **控制neck**
+  
+    - 在`pose mode`下，在`bone properties-custom properties`中添加`neck-follow`，复制`data path`
+    - 在`neck-int-rot`的`bone constraint properties`的`copy rotation neck-follow`的`influence`中`add driver`
+    - `averaged value` `simple property`，粘贴之前复制的path data
+  
+  - **控制head**
+  
+    - 添加`head-follow`，`copy data path`
+  
+      - 复制脖子的旋转driver，粘贴到头部的旋转influence上
+  
+      
+  
 - 建立骨骼前注意把坐标归零 shift+c
+
 - 把骨骼名字显示出来，养成给骨骼命名的习惯
+
 - 确保躯干和腿所有骨骼的Z轴都面向前，手臂骨骼的Z轴向上
+
 - **在编辑骨骼时，应该一直使用`individual origins`**
+
 - 中心骨骼（root）的坐标必须保持和世界坐标一致，动画时control骨骼延局部坐标移动，如果局部坐标和世界坐标不一致，移动时不直观，中心骨骼一般位于整个模型的底部中心
   - 先沿Z轴建一根骨骼，命名为root
   - 点击骨骼的tail,shift+s,选择 selection to cursor
   - 沿Y轴移动Tail
   - 或沿Z轴建一根骨骼，再沿X轴旋转-90度
+  
 - 使用`Bone Layer Manager`管理骨骼层 [地址](https://gumroad.com/l/STdb)
   - 使用`Bone Layers`右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
    ![image-20200628173318326](Blender.assets/image-20200628173318326.png)
   - **root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform**
+  
 - 做好单边骨骼后，复制一份，原骨骼层（DEF）做为导入到其他软件的骨骼结构，复制的骨骼可以放到单独一层，教程用命名为TGT层
+
 - 使用TGT驱动DEF，先选中TGT的单个骨骼，再选中DEF的单个骨骼，shift+ctrl+c-copy transforms，此操作可把DEF层的骨骼互相解绑
+
 - 把TGT层的`deform`取消，之后和人体绑定时不会绑到TGT层和ROOT层
+
 - 把人物的Armature置于细分之上
+
 - 刷权重时，**注意权重影响的是DEF（deform）层，TGT层用于控制人物动作，所以刷权重需要让DEF层显示，TGT层隐藏，不然会找不到所选择的骨节对应的蒙皮区域**
+
 - 使用`Simple rename panel`管理批量命名（此插件可以重命名所有物体，不仅骨骼） [地址](https://gumroad.com/l/simple_renaming_panel)
+  
   - 把需要批量命名的骨骼放到同一层，全选，使用“在选择的物体中替换”
 
 
@@ -221,7 +265,7 @@
 
 - 打开`drivers`编辑器，调整曲线
 
-- 在对应的属性页面的`custom properties`中(如果要控制骨骼，应在骨骼控制页面中添加)添加新值，起名，保存，右键`copy data path`
+- 在对应的属性页面的`custom properties`中(如果要控制骨骼，应在骨骼控制页面（**pose mode**）中添加)添加新值，起名，保存，右键`copy data path`
 
 - 在`drivers`编辑器中，把刚复制的path粘贴到`path`一栏，`prop`可以选择物体本身
 
