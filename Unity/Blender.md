@@ -23,13 +23,33 @@
 
 ## 视图操作
 
+- blender说明书：鼠标放在要查询的功能上，按f1（会有快捷键冲突）
 - 放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动
 - 调出/收起属性面板：n
+- 固定面板：shift+LMB
+- 四视图(quad view)：alt+ctrl+q
+  - n调出view面板
+  - lock：四视图角度锁定，点击解锁，调整各视图视角，再锁定
+  - box：勾选后，在一个视图操作，另两个视图跟随变化（例如缩放，移动）
 
 ## 选择:
 
+- 单独显示选中物体: /
+- 点/线/面菜单：ctrl+v/e/f
+  - 封口：ctrl+f - beautify faces
+- **选择相似的：shift+g**（在编辑/物体/骨骼模式下都很好用）
+- 间隔环选：先环选，再`select-checker deselect`
+- 选择所有连接着的面: L(取消选择连着的面 shift+L)
+- 选择连续的点/线/面：ctrl+LMB
+  - 面板 face stepping：勾选按步选择
+  - Topology Distance：勾选后走的直角连接
+  - Fill Region：勾选后把两个路径之间的面积都选上
+  - Deselected：间隔多少个不选
+- 选择两点/线/面间的面积：ctrl+shift+LMB
+- 反选：ctrl+i
 - 随机选择:Select     - Select Random
 - 按组选择:Shiift+g
+- **同时修改xyz的值：按住左键，下拉选中xyz
 - 灯光方向
   - 主键盘-句号：选择`3D Cursor`，再移动灯光位置
 
@@ -37,6 +57,8 @@
 
 - **对物体命名：F2**
 - **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
+- **坐标归零: alt+g**
+- **沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s**
 - 建立父子关系:     cmd/control+p
 - 物体吸附：
   - 吸附到表面，勾选`align rotation to target`可以根据吸附面的方向自动转向
@@ -61,6 +83,14 @@
 
 ## 建模
 
+- 选择多个物体TAB能同时进入编辑模式
+- 沿法线移动边时（双击G）不能移动超出原来高度的位置，此时按 alt 或 c 可沿法线方向挤出，而不需要使用挤出功能
+- 在两点之前加线：不要使用F(使用F只会在两点间连线，不会把面也切开)，使用J
+- 任意调整环节的角度：环节后，使用左侧工具栏中的`Shear`
+- **删除点/线/但不同时清除面：x-Dissolve(或 ctrl+x)**
+- **清除没有必要的线和点：x-Limited Dissolve**
+- **随意面挤出：ctrl+RMB**
+- 调整subdivision的强度：使用modifier后，n-item-edges data
 - 点倒角：ctrl+shift+b
 - 添加插件`Extra Objects` 分别勾`Curve` `Mesh`
 - 做楼梯
@@ -68,7 +98,7 @@
   - array
 - 做栅栏
   - 平面，ctrl+r 切分
-  - ctrl+b 倒角
+  - ctrl+b 边/点倒角
   - 删除倒角面
   - 挤出
 - 做树枝
@@ -430,8 +460,6 @@ cmd+2:添加细分
 
 反选: cmd+i
 
-选择所有连接着的面: l
-
 使用snap把分享的组件合起(例如手臂和身体)
 
 快速顶点对齐:s-z/y/x-0
@@ -476,8 +504,6 @@ invert brush: ctrl
 
 smooth brush: shift
 
-loop cut: cmd + r
-
 loop line: alt+left click
 
 dulicate : shift + d
@@ -494,10 +520,6 @@ zoom : cmd + left mouse
 
 fill(封顶): f
 
-单独显示选中物体: /
-
-rotate x: r, x
-
 select all : a 
 
 场景平移: shift + 鼠标中键
@@ -509,8 +531,6 @@ select all : a
 hide : h / alt+h
 
 把物体中心点归到物体中心: 右键 origin to geometry
-
-**坐标归零: alt+g**
 
 分窗口: 在边缘右键
 
