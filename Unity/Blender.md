@@ -21,6 +21,14 @@
 - [Bake Wrangler](https://blenderartists.org/t/bake-wrangler-node-based-baking-tool-set/1187732)
   - [教程](https://www.bilibili.com/s/video/BV14z4y1R789)
 
+## 自带插件
+
+- rigify
+- loop tools
+- bool tool
+- Curve/Mesh：Extra Objects
+- mesh:F2(可在单点模式下使用F来直接挤出面)
+
 ## 视图操作
 
 - blender说明书：鼠标放在要查询的功能上，按f1（会有快捷键冲突）
@@ -36,8 +44,11 @@
 
 - 单独显示选中物体: /
 - 点/线/面菜单：ctrl+v/e/f
-  - 封口：ctrl+f - beautify faces
+  - 封口：ctrl+f - beautify faces/grid fill
 - **选择相似的：shift+g**（在编辑/物体/骨骼模式下都很好用）
+- **重复上一步操作：shift+r**
+- 选择父物体：右上角`Options-Parents`
+- 缩放两个物体之间的距离：右上角`Options-Location`
 - 间隔环选：先环选，再`select-checker deselect`
 - 选择所有连接着的面: L(取消选择连着的面 shift+L)
 - 选择连续的点/线/面：ctrl+LMB
@@ -49,7 +60,7 @@
 - 反选：ctrl+i
 - 随机选择:Select     - Select Random
 - 按组选择:Shiift+g
-- **同时修改xyz的值：按住左键，下拉选中xyz
+- **同时修改xyz的值：按住左键，下拉选中xyz**
 - 灯光方向
   - 主键盘-句号：选择`3D Cursor`，再移动灯光位置
 
@@ -57,20 +68,29 @@
 
 - **对物体命名：F2**
 - **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
-- **坐标归零: alt+g**
+- **坐标归零: alt+g/r/s**
+- 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - **沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s**
+- 把组合在一起的物件一次性分开：`edit mode-P-by loose parts`
 - 建立父子关系:     cmd/control+p
+- 让物体沿着某个面的方向移动（非物体局部坐标）：`transform pivot point-Active Element`
 - 物体吸附：
-  - 吸附到表面，勾选`align rotation to target`可以根据吸附面的方向自动转向
+  - 吸附到表面，选择`face`，勾选`align rotation to target`可以根据吸附面的方向自动转向，勾选`Project individual Elements`可以让吸附物体和被吸附物体朝向一样
 - 沿地面网格移动物体：先按G/R/S，按住ctrl操作
 - 选中的物体视图居中并把坐标归零: shift+c
 - 切换对齐方式：主键盘-句号
 - 选中多个物体时，以每个物体自身中心点缩放：对齐方式选择 `Individual Origins`
 - 延局部坐标移动/缩放/旋转：先按快捷键（G/S/R），再按两下方向（X/Y/Z）
 - 复制物体:     shift+d
+- **复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d**
+  - 把没有alt+d复制的物体关联起来：选中所有要关联的物体，最后选中模板物体，`ctrl+L-Object Data`
+- 当一个物体已经转成很奇怪的角度，要在上面加新的东西，可以先`alt+d`一个物体出来，再alt+r 还原旋转角度，在新物体添加部件，角度奇怪的原物体也会同时添加部件，调整好后再删除复制的物体
+- 让复制的物体有随机角度：左上角菜单 `Transform-Randomize Transform`
+- 复制一个物体的变换信息 copy Transform Data
+  - 先选择要复制的物体，再选被复制物体
+  - N调出sidebars，在某个坐标处右键 `Copy All to Selected` 或`Copy Single to Selected`
 - 对齐物体：ctrl+alt+a
 - 向一个轴缩放：编辑模式-shift+ctrl+alt+s
-- **复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d**
 - 延法线挤出:alt+e
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - 清除游离点/线/面: mesh-clean up-delete loose
@@ -84,28 +104,178 @@
 ## 建模
 
 - 选择多个物体TAB能同时进入编辑模式
+
+- 建一个完美球体
+
+  - 方法1：使用插件extra objects，选择round cube，增加细分
+  - 方法2：创建cube，添加`subdivision` 和 `cast`
+
+- **不会破坏原物体表面构造的subdivide方法**：使用`Multires-Subdivide`，此时使用雕刻模式雕刻的结果不会改变原物体的表面构造
+
+- 让物体边缘完美贴合另一个物体：
+
+  - 把要贴合的边打组（ctrl+g）
+  - 添加`shinkwrap`修改器
+
 - 沿法线移动边时（双击G）不能移动超出原来高度的位置，此时按 alt 或 c 可沿法线方向挤出，而不需要使用挤出功能
+
 - 在两点之前加线：不要使用F(使用F只会在两点间连线，不会把面也切开)，使用J
+
 - 任意调整环节的角度：环节后，使用左侧工具栏中的`Shear`
+
+- 沿某个轴对齐：坐标选为Normal，S-X/Y/Z-0
+
+- 镜像修改器的技巧
+
+  - 镜像修改器使用的是物体的origin点，移动origin点就可以把镜像物体对齐别的地方
+  - 把cursor放到要对齐的位置
+  - `Options-check Origins`
+  - `shift+s-selection to cursor`
+
+- **在应用镜像修改器后，又打算使用镜像添加新部件**
+
+  - 再添加一次镜像修改器
+  - 勾选`Bisect-x`
+
+- **skin工具没有应用上**：点击`Mark Root`
+
+- 一次性应用所有 Modifier：左上角菜单 `Object-Convert to-Mech from Curve/Meta/Suf/Text`
+
+- 一次性调整所有物体的变换（无论是修改器还是位置信息）：按住 alt 点击或Enter
+
+- 一次性把一个物体的Modifier复制给其他多个物体：先选要复制的物体，最后选被复制物体，`Shift+L （make links）- Modifiers` 
+
+- 布尔: 安插件 `bool tool` then ctrl+shift+b or ctrl + 小键盘 -，使用时选择`Brush Boolean`，在应用前都可以修改
+
+- 把选中的面assign到新组：`ctrl+g`
+
+- 用布尔做凹边
+
+  - 应用布尔修改器
+  - 在布尔物体（非被布尔物体）应用Solidfy修改器
+  - 如果被布尔物体应用过Bevel修改器，把布尔修改器放到Bevel修改器之上
+
+- 挤出面平面化/平滑部分sharp化：`Item-Edges Data-Mean Crease`调整到1
+
+  - 进一步优化
+
+    - 选择部分线，调整`Item-Edges Data-Mean Crease`
+    - 选择其中一条已经调整过的线，打开“选择相似菜单 `shift+g-Bevel`，再次调整
+
+    - 加`Bevel Modifier`，选择`Limit Method-Weight`可以对应应用上一步调整的 mean crease
+    - 检查是否勾上`Auto Smooth`
+
+- 单点挤出新面：插件`F2`，在点模式下，按F可挤出面
+
 - **删除点/线/但不同时清除面：x-Dissolve(或 ctrl+x)**
+
 - **清除没有必要的线和点：x-Limited Dissolve**
+
 - **随意面挤出：ctrl+RMB**
+
+- 修改器层面的merge：添加**Weld**修改器
+
+- 修正`shade smooth`对边角的平滑
+
+  - `Object Data Properties-Normals` 勾选 `Auto Smooth`
+
+- 使用 Bevel Modifier 来添加物体边角
+
+  - 调整`Limit Method`的类别，`Segments`的层数，`Offset`的层数，检查 `Auto Smooth`是否勾选
+  - 自定义物体中需要Bevel的部分：编辑模式，`Transform-Edges Data-Mean Bevel Weight`：是一个0-1的区间，1表示完全应用Modifier的Offset，0表示完全不应用
+  - 在一个物体上应用多种倒角形式
+    - 部分边倒角：编辑模式，选中边，调整`sidebars-Transform-Edges Data-Mean Bevel `，bevel修改器`Limit Method-Vertex Group`，调整`Segments`，这样不会影响第二个倒角修改器的效果
+    - 再添加一个倒角修改器，修改其他部分，**注意两个倒角器的上下位置**
+
+- 给环线加两条边缘环线的技巧
+  - 选中环线
+  - Crl+B 或 Ctrl+Shift+R(使用后一种时，只增加2条环线，用E让边缘线和环线等距)
+  
+- Insert的技巧
+  - +Ctrl 可以同时突出/凹进
+  - +O 扩大外边缘
+  - +I  分别内切
+  - +B 在边缘不内切
+  
+- knife的技巧
+  - +C 打开角度
+  - +Z 穿透面
+  - +E 保持cut工具不退出
+  
+- 投影式开洞
+  - 投影的原型必须是一个平面
+  - 选中平面，再选中要开洞的物体，TAB进入编辑界面，调整好投影角度
+  - 左上角菜单`Mesh-Knife Project`
+  - 使用auto merge来把点连接好
+  
+- 填补模型上不连续的破洞
+  - 编辑模式-边
+  - 菜单`Select-Select All by Trait-Non Manifold`
+  - F to fill these holes
+  - Ctrl+T 转为三角形填充（这样可以让拐角的图形格式化）
+  - Alt+J 合并三角形为矩形
+  
 - 调整subdivision的强度：使用modifier后，n-item-edges data
+
 - 点倒角：ctrl+shift+b
+
 - 添加插件`Extra Objects` 分别勾`Curve` `Mesh`
+
+- 沿着某个中心点array
+  
+  - 在中心点创建一个空物体
+  - 在物体中应用array修改器，把array物体的中心点对齐空物体中心点
+  - 取消勾选`Relative Offset`，勾选`Object Offset`，物体选择空物体
+  - 选中空物体，R旋转，上下移动空物体能制造step的分布，S能放大/缩小分布
+  
+- 利用array做控制器
+  
+  - 新建贝塞尔曲线
+  - 添加array修改器，`fit type-fit curve`，选择曲线（此时只是物体沿着曲线排列）
+  - 添加curve修改器，选择curve(此时可通过控制曲线来控制物体)，可选中两点，右键 subdivide添加更多曲线上的点
+  - 添加控制器：在编辑模式下选择一个点，`ctrl+h-Hook to new object`添加hook，回到物体模式，可用新物体控制曲线，进而控制array
+  - 物体模式，选中上一步生成的空物体，在`Object Data Properties`中，display as sphere
+  
 - 做楼梯
+  
   - 做两个面
   - array
+  
 - 做栅栏
   - 平面，ctrl+r 切分
   - ctrl+b 边/点倒角
   - 删除倒角面
   - 挤出
+  
+- 做交叉网格
+  
+  - 建一个cube，可见性改为wire
+  
+  - 建一个平面，选cube，选plane，`shift+b-brush boolean-intersect`
+  
+  - 在平面上添加`array modifier`，**进入编辑模式**，勾选`Merge`
+  
+  - 把平面缩短，复制，调整形状，整体再调整45度，全选，放大到边界延伸出盒子外
+  
+  - `copy array modifier`，y轴offset
+  
+    ![image-20200723105836087](Blender.assets/image-20200723105836087.jpg)
+  
+  - 回到`object mode`，**应用布尔修改器**
+  
+  - 选中边缘四个角的点，S-Z-0 打平
+  
+    ![image-20200723111240233](Blender.assets/image-20200723111240233.jpg)
+  
+  - 添加solidfy修改器和bevel修改器，增加厚度和倒角(记得勾选 auto smooth)
+  
 - 做树枝
+  
   - 用点画出主干
   - 添加`skin`
   - 进入编辑模式，a全选，ctrl+a 收缩
   - 选择单独节点 ctrl+a 调整
+  
 - 做蔓藤
   - 做要放置蔓藤的平面区域（切分会影响生成方向和密度）
   - 做树叶
@@ -113,6 +283,7 @@
   - `Render`选择`Object`，物体选择树叶
   - `Physics`选择`none`
   - 调整`Rotation`里的参数
+  
 - 做冰块
   - 切换到雕刻模式
   - 使用`scrape`
@@ -366,7 +537,7 @@
 
   - 复制一个模,做成高精, 雕刻
   - alt+g把两个模对齐
-  - 给低精械添加一个材质,添加image texture, color-space:     non-color
+  - 给低精械添加一个材质,添加 image texture，color-space：    non-color
   - 渲染模式改为cycles,     在bake中设置bake type为normal
   - 勾选     Selected to active
   - 先选择高精模,再加选低精模,点击bake
@@ -418,13 +589,9 @@ f: fill / alt+f(beauty fill)
 
 grid fill : ctrl/cmd + f then grid fill
 
-镜像: mirror
-
 挤出: e or ctrl+right mouse button(再按s,沿法线方向挤出) 
 
 分别挤出(做手指时):alt+e
-
-环切: cmd + r(早期不要用太多环切)
 
 连续先边/点: 首顶点,ctrl 尾顶点
 
@@ -442,17 +609,13 @@ grid fill : ctrl/cmd + f then grid fill
 
 移动模型出现的中心点: shift + 右键(中心点归位: shift+s 中心点回到物体中心:ctrl+shift+alt+c)
 
-add subdivision: cmd + 1/2/3
-
-cmd+2:添加细分
-
 桥接循环边：ctrl+e
 
 分离对象：p(或y)
 
 沿法线方向缩放：alt+s
 
-在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
+
 
 把节点一分为二: v
 
@@ -526,7 +689,7 @@ select all : a
 
 调出插件工具条: n
 
-布尔: 安插件 `bool tool` then ctrl+shift+b or ctrl + 小键盘 -，使用时选择`Brush Boolean`，在应用前都可以修改
+
 
 hide : h / alt+h
 
