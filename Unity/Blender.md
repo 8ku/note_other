@@ -67,12 +67,18 @@
 ## 物体操作:
 
 - **对物体命名：F2**
+- 批量重命名：ctrl+F2
 - **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
 - **坐标归零: alt+g/r/s**
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - **沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s**
 - 把组合在一起的物件一次性分开：`edit mode-P-by loose parts`
 - 建立父子关系:     cmd/control+p
+- 重新计算法线:shift+n
+- 解除父子关系
+  - 在列表上找到子物体，按住shift，左键从父物体下拖出
+  - 选中子物体，alt+p
+- 镜像：ctrl+m
 - 让物体沿着某个面的方向移动（非物体局部坐标）：`transform pivot point-Active Element`
 - 物体吸附：
   - 吸附到表面，选择`face`，勾选`align rotation to target`可以根据吸附面的方向自动转向，勾选`Project individual Elements`可以让吸附物体和被吸附物体朝向一样
@@ -84,6 +90,7 @@
 - 复制物体:     shift+d
 - **复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d**
   - 把没有alt+d复制的物体关联起来：选中所有要关联的物体，最后选中模板物体，`ctrl+L-Object Data`
+- **复制一组物体**：`shift+a-collection instance-选择要复制的collection`，复制后的物体组不可单独编辑，编辑原物体组，复制物体组很跟随变化
 - 当一个物体已经转成很奇怪的角度，要在上面加新的东西，可以先`alt+d`一个物体出来，再alt+r 还原旋转角度，在新物体添加部件，角度奇怪的原物体也会同时添加部件，调整好后再删除复制的物体
 - 让复制的物体有随机角度：左上角菜单 `Transform-Randomize Transform`
 - 复制一个物体的变换信息 copy Transform Data
@@ -115,7 +122,9 @@
 - 让物体边缘完美贴合另一个物体：
 
   - 把要贴合的边打组（ctrl+g）
-  - 添加`shinkwrap`修改器
+  - 添加`shinkwrap`修改器，`Vertex Group`选择上一步建的组
+  - `Mode-Project`，把坐标换为局部坐标
+  - 根据要贴合的轴向，勾选`Axis`，勾选`Negative`
 
 - 沿法线移动边时（双击G）不能移动超出原来高度的位置，此时按 alt 或 c 可沿法线方向挤出，而不需要使用挤出功能
 
@@ -235,6 +244,23 @@
   - 添加curve修改器，选择curve(此时可通过控制曲线来控制物体)，可选中两点，右键 subdivide添加更多曲线上的点
   - 添加控制器：在编辑模式下选择一个点，`ctrl+h-Hook to new object`添加hook，回到物体模式，可用新物体控制曲线，进而控制array
   - 物体模式，选中上一步生成的空物体，在`Object Data Properties`中，display as sphere
+  
+- 画自由管线
+  
+  - 新建一个曲线，`Object Data properties-Geometry`加Bevel，增加shape的Resolution preview U的段数
+  - 进入编辑模式，确认`Active Tool and Workspace settings-Projection Depth`选中`Cursor`（如果选中surface，画线时会附在被画物体的表面，调整offset的距离可以让画线和物体表面的间距）
+  - 使用左侧`Draw`工具画曲线
+  - 通过alt+s控制曲线bevel的粗细
+  
+- 做贴在物体上的便利粘
+  
+  - 新建平面，细分，把中心点移到边上，使用局部坐标，保证Y轴指向中心点，Z轴朝上
+  - 快捷键o，选择sharp，选择一个边，向上抬
+  - 回到物体模式，shift+tab打开磁吸，选择面，勾选`Align rotation to target`和`Project individual elements`，移动平面到物体上吸附
+  - 添加细分，实体修改器
+  - 如果吸附物体为曲面，添加`shinkwrap`修改器，把该修改器移到最上面，target选中曲面物体，mode选中project，勾选Negative
+  - 把需要吸附的平面部分ctrl+g添加到新组，回到`shrinkwrap`修改器，选中上步的组
+  - 如果上步效果还不够好，ctrl+shift切换到权重刷模式，刷权重（可切换到点模式，查看每个点受到的权重影响）
   
 - 做楼梯
   
