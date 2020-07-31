@@ -10,6 +10,7 @@
   - [Prefabs](https://8ku.github.io/note_other/Unity/Prefabs)
   - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
   - [Animator](https://8ku.github.io/note_other/Unity/Animator)
+  - [Blender](https://8ku.github.io/note_other/Unity/Blender)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
   - [Cinemachine](https://8ku.github.io/note_other/Unity/Assets/Cinemachine)
