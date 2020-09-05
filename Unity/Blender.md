@@ -367,6 +367,7 @@
   - **ctrl-chest**：控制腰部到脖子，`parent:torso`
   - **ctrl-foot-roll02**：控制脚踝的上下转动
   - **ctrl-foot**：总控脚部运动位置
+  - **ctrl-pole-leg**：控制膝盖的朝向，`parent:ctrl-foot`，**绑定ctrl-foot后可解决抬腿时膝盖后折的问题**
   
 - **机动组 mechanism**
   
