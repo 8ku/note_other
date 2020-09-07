@@ -22,6 +22,7 @@
 - VBA
 
   - [VBA](https://8ku.github.io/note_other/Code/VBA/vba)
+  - [Excel](https://8ku.github.io/note_other/Code/VBA/excel)
 
 - C_Sharp
   
