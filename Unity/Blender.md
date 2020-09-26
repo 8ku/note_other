@@ -2,6 +2,12 @@
 
 ## 三方插件
 
+### 节点编辑
+
+- Node Wrangler
+  - 在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点
+  - 重排节点: `shift+=`
+
 ### 骨骼
 
 - bone layer manager
@@ -552,6 +558,12 @@
 
 ##  UV
 
+### UV适应
+
+- 给物体添加材质- `Emission`, 颜色选`Image Texture` ,载入图片
+- 在编辑模式下,点击U, 选择`Project to view`
+- 添加一个界面, 选择`UV Editor`
+
 ### UV绘制
 
 - 切换到UV     Editing, press u, select smart UV project, then switch to Texture Paint,     create a new image
@@ -623,7 +635,9 @@
 - 局部渲染:cmd+b(取消局部渲染: ctrl+alt+b)
 - 渲染出图: 菜单-render-render image
 
+### 2D风格渲染参数
 
+- `Diffuse BSDF + Shade to RGB + ColorRamp`
 
 ## 常用快捷键
 
