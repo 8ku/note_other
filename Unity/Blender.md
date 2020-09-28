@@ -476,9 +476,10 @@
 ### 骨骼绑定方法2:
 
 - 插件  rigging:rigify
-- 骨骼对齐模型
-- 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate     RIg
-- 先全选模型,再选骨骼,ctrl+p—with automation weights
+- 骨骼对齐模型，ctrl+a 应用变换
+- 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate RIg
+- 删除原骨骼
+- 在Object mode下，先全选模型,再选生成了IK的骨骼,ctrl+p—with automation weights
 
  
 
