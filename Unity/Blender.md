@@ -40,6 +40,9 @@
 - blender说明书：鼠标放在要查询的功能上，按f1（会有快捷键冲突）
 - 放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动
 - 调出/收起属性面板：n
+- 切换着色模式: z
+- 添加视图: 在视图边角LMB拉出(松开鼠标前ESC可取消)
+- 合并视图: 在要保留的视图边角(鼠标放到视图中)LMB
 - 固定面板：shift+LMB
 - 四视图(quad view)：alt+ctrl+q
   - n调出view面板
@@ -101,6 +104,8 @@
   - 把对象M添加到集合中
   - shift+a 选择`Collection Instance`
   - shift+d 复制
+- 从collection中移除(会完全删除) remove from collection: ctrl(cmd)+alt+g
+- 从所有collections中移除(会完全删除) remove from all collections: shift+ctrl(cmd)+alt+g
 - 当一个物体已经转成很奇怪的角度，要在上面加新的东西，可以先`alt+d`一个物体出来，再alt+r 还原旋转角度，在新物体添加部件，角度奇怪的原物体也会同时添加部件，调整好后再删除复制的物体
 - 让复制的物体有随机角度：左上角菜单 `Transform-Randomize Transform`
 - 复制一个物体的变换信息 copy Transform Data
@@ -445,11 +450,17 @@
 - 添加骨节:     
   1. e (同时按鼠标中键可保持90度)，之后shift+r，可以往一个方向同比挤出
   2. 右键 `subdivide`
+  
 - 添加没有父节点的骨头:shift+a
+
 - 在关节之间加骨骼:f
+
 - 让解除关联/新添加的骨骼关联到物体：shift+w-deform/alt+left click deform(选择多段骨骼时好用)
+
 - 显示骨骼名称：`Object Data Properties-Viewwport Display`，勾选`Name` & `Axes`
+
 - **在编辑模式下调整骨骼朝向**：ctrl+r
+
 - 在骨骼模式下**刷权重**（该模式下可以移动骨骼查看效果）
   - 物体模式下先选中骨骼，再选物体，进入权重刷编辑
   - 按住ctrl，点击左键选择骨节，此时会同时显示此骨节影响的蒙皮
@@ -457,18 +468,40 @@
   - 使用面选择，按住ctrl选择面，可以把编辑范围限定在选择的面中
   - 推荐使用subtract和mix笔刷，subtract时，使用最后一个preset笔头；mix时，使用1的强度，低一点weight
   - **如果你的角色前臂运动总是影响了胸部和前臂，那是不对的**
+  
 - **对齐骨骼**：选择骨骼，再选择被对齐骨骼control+alt+a
+
 - 解除父子关系: 在子节处     右侧骨头 删除父对象(alt+p，alt+p可以选择disconnect bons 或 y，y直接解除父子关系)
-- 命名单侧手脚时要加     .L,全选单侧骨骼 (顶上中部的transfomr     pivot point 要换成3d cursor)- 右键:symmetrize
+
+- 命名单侧手脚时要加  .L,全选单侧骨骼 (顶上中部的transfomr     pivot point 要换成3d cursor)- 右键:symmetrize
+
 - 重新关联父子关系:     ctrl/cmd + p
+
 - 添加IK: 先选IK, 再选骨骼, pose mode: shift + i
+
+  - **几个重点IK**
+    - Root: 在两脚之间, 控制整个身体的位置, 是Torso和FootIK的父级
+    - Torso: 在尾椎, 控制上身躯干, 是尾椎的父级
+    - Foot: 在脚踝, 控制脚, 在pose mode下, 先点击IK, 后点击小腿骨, ctrl+shift+c - inverse kinematics ,是knee的父级
+    - Knee: 在膝盖, 在小腿的运动约束面板下添加此IK
+
+  - 把脚的骨骼清除父级(这样在用Torso控制身体时脚不会穿过地面), 在pose mode下, 先选小脚骨, 后选脚骨, ctrl+shift+c - copy location, 在运动约束面板下, 把Head/Tail 拉到1
+  - 把以上IK选中, 在骨骼面板下, Alt+LMB 取消Deform
+
 - 先选人体,再选骨架, ctrl+p
+
 - 回归初始状态:     pose mode- alt+r/alt+g/alt+s
+
 - 单独部件(例如眼球)未和身体一起绑定时,可单独选择眼球和骨架:cmd+p,选with empty groups
+
 - 权重刷:object     mode-weight paint
+
 - 权重刷一般用add模式
+
 - 在edit mode里,选中要显示的骨头(带控制器的),m键加入图层,把其余的关闭显示
+
 - 使用pose  mode设置动作时,要选择 Local坐标,不能用Global坐标
+
 - **使用自动分配权重后,进入模型edit mode, 左上菜单Mesh-Weights-Normailze All 来重新计算权重**
 
  
@@ -478,7 +511,11 @@
 - 插件  rigging:rigify
 - 骨骼对齐模型
 - 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate     RIg
+- 脚踝后的横向骨骼要和脚面最宽的部分一样长
 - 先全选模型,再选骨骼,ctrl+p—with automation weights
+- 如果要调整骨骼, 调整后保持骨骼在显示状态, 重新生成rig
+- **如果一个场景里有多个rig, 在generate rig之前, 先打开Advanced Options, 把默认的overwrite切换为 new**
+- **在edit mode - Object Data Properties(小人图标) - Rigify Buttons 中, 有很多骨骼样板可以参考**
 
  
 
