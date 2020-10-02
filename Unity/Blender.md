@@ -516,8 +516,13 @@
 - 如果要调整骨骼, 调整后保持骨骼在显示状态, 重新生成rig
 - **如果一个场景里有多个rig, 在generate rig之前, 先打开Advanced Options, 把默认的overwrite切换为 new**
 - **在edit mode - Object Data Properties(小人图标) - Rigify Buttons 中, 有很多骨骼样板可以参考**
+- 骨骼对齐模型，ctrl+a 应用变换
+- 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate RIg
+- 删除原骨骼
+- 在 Object mode下，先全选模型,再选生成了IK的骨骼,ctrl+p—with automation weights
 
- 
+
+
 
 ### 在绑定骨骼的人物上加衣服
 
@@ -729,12 +734,6 @@ grid fill : ctrl/cmd + f then grid fill
 
 线框模式：shift+z
 
-
-
- 
-
- 
-
 delete:x
 
 make face: alt+f
@@ -783,15 +782,11 @@ select all : a
 
 调出插件工具条: n
 
-
-
 hide : h / alt+h
 
 把物体中心点归到物体中心: 右键 origin to geometry
 
 分窗口: 在边缘右键
-
-
 
 导入: f12
 
