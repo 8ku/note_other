@@ -492,7 +492,7 @@
 
 - 回归初始状态:     pose mode- alt+r/alt+g/alt+s
 
-- 单独部件(例如眼球)未和身体一起绑定时,可单独选择眼球和骨架:cmd+p,选with empty groups
+- 单独部件(例如眼球)未和身体一起绑定时,可单独选择眼球和骨架:cmd+p,选with empty groups/bone, **如果绑定出错, alt+p 清除附件(眼球)的父级, 重新绑定
 
 - 权重刷:object     mode-weight paint
 
@@ -514,20 +514,25 @@
 - 脚踝后的横向骨骼要和脚面最宽的部分一样长
 - 先全选模型,再选骨骼,ctrl+p—with automation weights
 - 如果要调整骨骼, 调整后保持骨骼在显示状态, 重新生成rig
+- **[非常重要] 如果用自定义骨骼, 在`pose mode- bone properties-Rigify Type`里给骨骼选择类型, 之后使用`Generate rig`才会生成rig**
 - **如果一个场景里有多个rig, 在generate rig之前, 先打开Advanced Options, 把默认的overwrite切换为 new**
 - **在edit mode - Object Data Properties(小人图标) - Rigify Buttons 中, 有很多骨骼样板可以参考**
+- **使用Rigify里的`Rigify Layer Names`管理图层**(在小人菜单下)
+  - 在`pose mode-Rigify Layer Names`下按`Rigify Bone Group`设定图层颜色, rig以后可以用颜色区分图层
+  - ![Snipaste_2020-10-03_22-15-58](Blender.assets/Snipaste_2020-10-03_22-15-58.jpg)
 - 骨骼对齐模型，ctrl+a 应用变换
 - 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate RIg
 - 删除原骨骼
 - 在 Object mode下，先全选模型,再选生成了IK的骨骼,ctrl+p—with automation weights
+- 
 
 
 
 
 ### 在绑定骨骼的人物上加衣服
 
-- 添加Cloth     modifier
-- 调整Quality     steps(往高调整)
+- 添加Cloth  modifier
+- 调整Quality  steps(往高调整)
 - 调整Tension(往低调)
 - 调整Stiffness(僵硬)/Damping(衰减)-bending(往低调)
 - 勾选     Collisions-Self Collisions
