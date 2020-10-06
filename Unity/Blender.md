@@ -29,7 +29,8 @@
 
 ## 自带插件
 
-- rigify
+- rigify: 自带骨骼插件, 理解了比较好用
+- Import-Export: Import Image as Planes, 可以把图片当做平面导入, 制作表情flame
 - loop tools
 - bool tool
 - Curve/Mesh：Extra Objects
@@ -349,9 +350,29 @@
 ## 人体建模
 
 - 头部
+  - 方法1: 建正方体 cmd+2
+  - [方法2](https://www.youtube.com/watch?v=xCrmYQlzp2A)
+    - 正方形, 编辑模式, 细分:5
+    - 删除一半, 镜像
+    - 再次进入编辑模式, 在中部添加一条环线(做为鼻子的分隔线), 中部6块挤出
+    - ![HEAD](Blender.assets/HEAD.jpg)
+    - 调整后, 沿眼周cut一圈, merge掉一些三角形区域
+    - 挤出嘴, 缩小成嘴缝, 删除面, 调整好后加一圈线做嘴唇![MOUTH](Blender.assets/MOUTH.jpg)
+  - 方法3(有设计图)
+    - 沿眼睛围一圈, 嘴围一圈, 连起(需要练习)
+  
+- [身体(方法1:从腿往上)](https://www.youtube.com/watch?v=lyMvUhHlbG4)
 
-- - 建正方体
-  - cmd+2
+  - 添加一个6边形平面, 进入编辑模式, 沿x轴移动一点(注意中心点保持在原点上), 添加mirror修改器
+  - 挤出双腿, 向内侧倾斜, 挤出裆部
+  - 向上挤出肚子, 放大一些, 在侧面向前倾斜
+  - 挤出身体, 把前面两片和后两片向上挤出, 留出手臂洞
+  - 挤出手臂, 手臂留出胳肢窝的位置(挤出2次), 再拉出手臂
+  - 腰部加环线, 胸部加环线
+  - 腿部加环线, 选择前面两片, 挤出脚
+  - 收紧头部, 挤出脖子
+
+  ![BODY](Blender.assets/BODY.jpg)
 
 ### 父子关系
 
@@ -524,12 +545,17 @@
 - 绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate RIg
 - 删除原骨骼
 - 在 Object mode下，先全选模型,再选生成了IK的骨骼,ctrl+p—with automation weights
-- 
-
+- **控制技巧**
+  - IK/FK切换: 在pose mode下, N菜单-Item, 点击控制IK, 菜单会对应切换到IK/FK控制板, 默认使用IK模式, 如果要切换为FK模式, 点击FK控制部分(例如大臂), 在菜单中把 IK-FK(hand.L) 拉到1
+  - IK/FK切换后动作跟随: 当使用IK/FK摆好姿势后, 想继续切换到另一个模式摆姿势, 点击 IK->FK(hand.L)(有个磁铁标志)
+  - 更方便控制手肘的转动: 选择手掌IK, 点击 `Toggle Pole`, 出现控制手肘的控制器
+  - 让模型保持正常长度: 默认模型的长度跟随控制器伸长变长, 把菜单中的 `IK Stretch` 拉到0, 可以让模型保持原来的长度
 
 
 
 ### 在绑定骨骼的人物上加衣服
+
+方法1: 
 
 - 添加Cloth  modifier
 - 调整Quality  steps(往高调整)
@@ -538,6 +564,10 @@
 - 勾选     Collisions-Self Collisions
 - Collisions:     distance(调高)
 - 给人物身体添加Collision,勾选single Sided
+
+方法2(推荐): 
+
+- 选择衣服, 选择rig, ctrl+p-自动权重
 
 ### 骨骼动画
 
