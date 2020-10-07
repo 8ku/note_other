@@ -53,6 +53,10 @@
 ## 选择:
 
 - 单独显示选中物体: /
+- 切换坐标模式(世界坐标/局部坐标): <
+- 切换点对齐模式: >
+- 打开磁吸: shift+tab
+- 加选: ctrl+Numpad(+)
 - 点/线/面菜单：ctrl+v/e/f
   - 封口：ctrl+f - beautify faces/grid fill
 - **选择相似的：shift+g**（在编辑/物体/骨骼模式下都很好用）
@@ -80,6 +84,7 @@
 - 批量重命名：ctrl+F2
 - **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
 - **坐标归零: alt+g/r/s**
+- 快速统一法线: 选中需要翻转的法线部分, 在Object Data properties-Normals 下, 勾选 Auto Smooth
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - **沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s**
 - 把组合在一起的物件一次性分开：`edit mode-P-by loose parts`
@@ -373,6 +378,15 @@
   - 收紧头部, 挤出脖子
 
   ![BODY](Blender.assets/BODY.jpg)
+  
+- [手(单独建)](https://www.youtube.com/watch?v=HC7dlP9cRpU)
+
+  - 正方体, 压扁, 切分3段
+  - 从顶视图调整手掌的形状
+  - 分别挤出四个手指, 分两段
+  - 用侧面挤出拇指
+  - 挤出手腕, 连接手臂(手掌10个节点, 如手臂是8个节点, 手臂需要加两个环线再连接)
+  - 检查法线
 
 ### 父子关系
 
@@ -550,6 +564,12 @@
   - IK/FK切换后动作跟随: 当使用IK/FK摆好姿势后, 想继续切换到另一个模式摆姿势, 点击 IK->FK(hand.L)(有个磁铁标志)
   - 更方便控制手肘的转动: 选择手掌IK, 点击 `Toggle Pole`, 出现控制手肘的控制器
   - 让模型保持正常长度: 默认模型的长度跟随控制器伸长变长, 把菜单中的 `IK Stretch` 拉到0, 可以让模型保持原来的长度
+- **修复技巧**
+  - rig以后发现有部件没有显示widget(一般表现为骨骼底部的圆圈)
+    - 在 pose mode 下查看 Bone properties(骨头菜单) 的  Rigify Type-Options 有没有勾选 Widget
+    - 如果没勾选, 重新勾选
+    - 在上面资源菜单中右击 Widgets- Delete Hierarchy
+    - 重新 Genearte Rig
 
 
 
@@ -568,6 +588,7 @@
 方法2(推荐): 
 
 - 选择衣服, 选择rig, ctrl+p-自动权重
+- 添加其他配件: 把配件都ctrl+j结合, 之后分别给配件分配骨骼控制组(在edit mode-Object Data Properties-Vertex Groups  assign 控制组)
 
 ### 骨骼动画
 
