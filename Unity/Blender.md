@@ -734,11 +734,11 @@
   
   - <div class="mermaid">
       graph LR
-      A[Fresnel]-->|Fac|B[ColorRamp]
-      B-->|Color||Fac|C[Mix Shader]
-      D[Emission 衰减]-->|Shader|C
-      E[Emission 高亮]-->|Shader|C
-      C-->|Shader|F[Material Output]
+      A[Fresnel]-->|Fac--Fac|B[ColorRamp]
+      B-->|Color--Fac|C[Mix Shader]
+      D[Emission 衰减]-->|Emission--Shader|C
+      E[Emission 高亮]-->|Emission--Shader|C
+      C-->|Shader--Surface|F[Material Output]
     </div>
 
 ### 玻璃材质
