@@ -732,7 +732,7 @@
 - 渲染菜单中, 勾选`Bloom`(显示自发光) `Screen Space Reflections`(显示反射)
 - 材质设定
   
-  - <div class="mermaid">
+   <div class="mermaid">
       graph LR
       A[Fresnel]-->|Fac--Fac|B[ColorRamp]
       B-->|Color--Fac|C[Mix Shader]
@@ -752,7 +752,19 @@
 - 材质面板 `settings-Blend Mode-Alpha Blend`
 -  在`Surface-Alpha`拉到0 
 
+### 水面
 
+- 细分, 把顶面添加到一个新组, 细分顶面
+- 添加Displace修改器, 应用到顶面
+  - 编辑Texture, Type: Cloud(可尝试其他贴图), 调整Size
+  - 回到修改器, 调整strength和Direction(to z)
+- 材质设置
+  - 显示设置里打开 Ambient Occlusion, Bloom, Screen Space Reflections (打开下拉菜单, 勾选 Reflection)
+  - 材质: Settings-Shadow Mode : Alpha Hashed
+  - 勾选 Screen Space Reflections
+  - Transmission: 0.9
+  - Roughness: 0.05
+  - IOR: 1.333
 
 ## 渲染
 
