@@ -68,6 +68,12 @@
 
 - 编辑单元格: ctrl + u 
 
+## office更新速度很慢问题
+
+- dns 保留 114.114.114.114
+- 挂vpn, 在自定义规则中添加 `akamaized.net` `azurewebsites.net`
+- 清理dns缓存 `sudo killall -HUP mDNSResponder `
+
 ## 使用tree查看文件夹结构
 
 - 安装 `brew install tree`

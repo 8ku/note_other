@@ -1,3 +1,17 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      <script>mermaid.initialize({startOnLoad:true});</script>
+</head>
+
 # Blender
 
 ## 三方插件
@@ -131,7 +145,11 @@
 
 ## 建模
 
+- 快速把物体中心点对齐到底部: 进入编辑模式, z轴设置为1m
+
 - 选择多个物体TAB能同时进入编辑模式
+
+- **把点一分为二: v**
 
 - 建一个完美球体
 
@@ -217,7 +235,13 @@
     - 部分边倒角：编辑模式，选中边，调整`sidebars-Transform-Edges Data-Mean Bevel `，bevel修改器`Limit Method-Vertex Group`，调整`Segments`，这样不会影响第二个倒角修改器的效果
     - 再添加一个倒角修改器，修改其他部分，**注意两个倒角器的上下位置**
 
+- **做石头**
+  
+  - 在编辑模式下, 选择左侧工具 Bisect
+  - **全选面**, 切分, 勾选 fill / clear outside or inside
+  
 - 给环线加两条边缘环线的技巧
+  
   - 选中环线
   - Crl+B 或 Ctrl+Shift+R(使用后一种时，只增加2条环线，用E让边缘线和环线等距)
   
@@ -363,6 +387,7 @@
     - ![HEAD](Blender.assets/HEAD.jpg)
     - 调整后, 沿眼周cut一圈, merge掉一些三角形区域
     - 挤出嘴, 缩小成嘴缝, 删除面, 调整好后加一圈线做嘴唇![MOUTH](Blender.assets/MOUTH.jpg)
+    - 挤出鼻子, 挤出鼻子时要把鼻翼一起挤出
   - 方法3(有设计图)
     - 沿眼睛围一圈, 嘴围一圈, 连起(需要练习)
   
@@ -702,6 +727,20 @@
 
 ## 材质
 
+### 自发光
+
+- 渲染菜单中, 勾选`Bloom`(显示自发光) `Screen Space Reflections`(显示反射)
+- 材质设定
+  
+  - <div class="mermaid">
+      graph LR
+      A[Fresnel]-->B[ColorRamp-color]
+      B-->C[Mix Shader-Fac]
+      D[Emission 衰减 Shader]-->C
+      E[Emission 高亮 Shader]-->C
+      C-->F[Material Output]
+    </div>
+
 ### 玻璃材质
 
 - 使用默认材质，把`Transmission`调到最大
@@ -830,19 +869,7 @@ zoom : cmd + left mouse
 
 切分: 编辑模式-右键subdivide
 
-fill(封顶): f
-
-select all : a 
-
-场景平移: shift + 鼠标中键
-
 调出插件工具条: n
-
-hide : h / alt+h
-
-把物体中心点归到物体中心: 右键 origin to geometry
-
-分窗口: 在边缘右键
 
 导入: f12
 
@@ -857,12 +884,6 @@ hide : h / alt+h
 查看法线方向: 左上 global - 改为 normal
 
 编辑-点模式-alt+左键: 选择相邻点
-
-切割knife: k
-
-合并点: alt + m
-
-打开snap: shift + tab
 
 添加细分: cmd + 2(需要关闭数字键映射)(反细分: modifier - decimate - unsubdivide/edge-unsubdivide)
 
