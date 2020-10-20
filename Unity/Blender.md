@@ -11,8 +11,10 @@
       <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       <script>mermaid.initialize({startOnLoad:true});</script>
 </head>
-
 # Blender
+
+* TOC
+{: toc}
 
 ## 三方插件
 
