@@ -4,6 +4,8 @@ mathjax_autoNumber: true
 mermaid: true
 chart: true
 highlighter: rouge
+plugins:
+  - jekyll-toc
 kramdown:
   input:  GFM
   # https://github.com/jekyll/jekyll/pull/4090
