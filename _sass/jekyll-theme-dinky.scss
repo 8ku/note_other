@@ -145,9 +145,11 @@ hr {
 
 #markdown-toc {
   padding: 10px 0 0 30px;
-  right:0;
+  right:1px;
   bottom:30%;
   position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
 
 
