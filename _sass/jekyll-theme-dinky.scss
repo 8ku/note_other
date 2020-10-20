@@ -388,6 +388,11 @@ footer {
     margin-top:12px;
 
   }
+
+  #markdown-toc {
+  display:"none";
+  }
+
 }
 
 @media print, screen and (max-width: 720px) {
@@ -421,6 +426,10 @@ footer {
     display:none;
     position:static;
   }
+
+  #markdown-toc {
+  display:"none";
+  }
 }
 
 @media print, screen and (max-width: 480px) {
@@ -446,6 +455,10 @@ footer {
 	footer a{
 		display:block;
 	}
+
+  #markdown-toc {
+  display:"none";
+  }
 
 }
 
