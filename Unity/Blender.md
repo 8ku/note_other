@@ -656,10 +656,18 @@
 ## 摄像机
 
 - 摄像机视图: 小键盘0(正交摄像机:属性选择Orthographic)
-
 - **把当前视角设置为摄像机视角: ctrl + alt + numpad0**
-
 - 旋转摄像机视角: 上一步后,点击视角边缘, g移动 r旋转
+
+### 摄像机跟随路径动画
+
+使用 camera constraints tract path 搜索
+
+- 新建曲线（贝塞尔曲线）
+- 新建 empty cube
+- 在 empty cube 添加 follow path, target 选择曲线
+- 摄像机添加 child of 修改器，选择空对象（调整摄像机的location可以调整摄像机和空对象之间的距离）
+- 摄像机添加 track to 修改器，target 选择**需要跟拍的对象**（保证 track to 在 child of 修改器下）
 
 
 
