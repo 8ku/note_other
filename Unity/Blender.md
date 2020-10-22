@@ -18,12 +18,6 @@
 
 ## 三方插件
 
-### 节点编辑
-
-- Node Wrangler
-  - 在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点
-  - 重排节点: `shift+=`
-
 ### 骨骼
 
 - bone layer manager
@@ -51,6 +45,12 @@
 - bool tool
 - Curve/Mesh：Extra Objects
 - mesh:F2(可在单点模式下使用F来直接挤出面)
+- Node Wrangler
+  - 在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点
+  - 重排节点: `shift+=`
+  - 添加材质节点：在node mode 下`ctrl+t`
+    - 在图片节点下，texture Coordinate 选择 Object，Texture image 选择 box，把 blend(混合) 调整大一点点（0.2），可以解决贴图接缝问题
+- Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size
 
 ## 视图操作
 
@@ -230,6 +230,11 @@
 - 修正`shade smooth`对边角的平滑
 
   - `Object Data Properties-Normals` 勾选 `Auto Smooth`
+
+- 倒角：ctrl+b
+
+  - 如果倒角没有弧度，查看 Bevel 菜单（倒角时出现在右下角）中的 Shape
+  - 导角-凹面：ctrl+b --> p
 
 - 使用 Bevel Modifier 来添加物体边角
 
