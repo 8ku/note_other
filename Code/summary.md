@@ -19,6 +19,10 @@
   
   - [SQL](https://8ku.github.io/note_other/Code/SQL/SQL)
   
+- Tableau
+
+  - [Tableau](https://8ku.github.io/note_other/Code/Tableau/Tableau)
+  
 - VBA
 
   - [VBA](https://8ku.github.io/note_other/Code/VBA/vba)
