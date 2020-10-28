@@ -28,6 +28,7 @@
 | 执行.sh文件                                   | ./aa.sh                         |
 | 刷新DNS                                       | sudo killall -HUP mDNSResponder |
 | 连续查看图片                                  | 全选所有图片-空格               |
+| 安装cli命令行应用                             | 输入chmod +x (拖入cli文件)      |
 
 
 
