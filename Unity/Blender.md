@@ -72,6 +72,7 @@
 - 切换坐标模式(世界坐标/局部坐标): <
 - 切换点对齐模式: >
 - 打开磁吸: shift+tab
+  - 打开磁吸选择：shift+ctrl+tab
 - 加选: ctrl+Numpad(+)
 - 点/线/面菜单：ctrl+v/e/f
   - 封口：ctrl+f - beautify faces/grid fill
