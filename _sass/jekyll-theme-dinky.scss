@@ -207,8 +207,9 @@ table {
   width:100%;
 }
 
-table {
+table,th,td {
   text-align: left;
+  boder:1px solid;
   border-collapse:collapse;
   margin-bottom: 10px;
  }
