@@ -1,3 +1,8 @@
+* TOC
+{: toc}
+##基本快捷键
+
+
 | 功能                                          | 键                              |
 | --------------------------------------------- | ------------------------------- |
 | 查看                                          | ls                              |
@@ -51,10 +56,20 @@
 | ␣    | **空格键**               |
 | ⇥    | Tab                      |
 
-## 不能打开应用的解决方法
+## 软件安装问题
+
+### 不能打开应用的解决方法
 
 - 应用程序 - 右键：显示包内容 - Contents - MacOS 
 - 终端：`chmod +x ‘拖入1’ ` 回车执行
+
+### 提示已损坏无法打开
+
+`sudo xattr -d com.apple.quarantine /Applications/xxxx.app`
+
+### 闪退
+
+`codesign --force --deep --sign - /Applications/name.app`
 
 ## 删除 office 的历史记录
 
