@@ -8,6 +8,8 @@
 | 在当前文件夹下打开git bash     | shift+F10                                                    |
 | 查看端口占用情况（以1080为例） | netstat -ano\|findstr “1080”<br />最后一个数字是软件PID      |
 | 用PID查看程度名称              | tasklist\|findstr "9088"                                     |
+| chrome截长图                   | F12-->Ctrl+Shift+P --> full -->回车                          |
+| firefox截长图                  | 地址栏右侧 “。。。” 下拉菜单中选择截图                       |
 
 ### 经常失去意识的程序PID
 
