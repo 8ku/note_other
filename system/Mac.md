@@ -1,5 +1,9 @@
+# MAC快捷键
+
 * TOC
 {: toc}
+
+
 ##基本快捷键
 
 
@@ -12,6 +16,7 @@
 | 创建目录                                      | mkdir (make directories)        |
 | 进入目录                                      | mkdir                           |
 | 返回上级目录                                  | cd ..                           |
+| 返回根目录                                    | cd /                            |
 | 删除目录(空目录)                              | rmdir test (remove)             |
 | 删除非空目录(加 -rf直接删除，不出现在回收站） | rm -rf test （remove force)     |
 | 创建文件                                      | touch 文件名                    |
@@ -34,6 +39,7 @@
 | 刷新DNS                                       | sudo killall -HUP mDNSResponder |
 | 连续查看图片                                  | 全选所有图片-空格               |
 | 安装cli命令行应用                             | 输入chmod +x (拖入cli文件)      |
+| 中断运行                                      | control+d                       |
 
 
 
@@ -112,4 +118,61 @@ identify *
 <!--把所有图片压缩60%, 质量为70-->
 mogrify -resize 60% -quality 70 *
 ```
+
+## 命令行自动补全
+
+- 终端- nano .inputrc
+
+- 粘贴以下文字
+
+  ```xml
+  set completion-ignore-case on
+  set show-all-if-ambiguous on
+  TAB: menu-complete
+  ```
+
+- ctrl+o 回车
+
+- 重启终端
+
+## FD搜索工具
+
+### 安装
+
+`brew install fd`
+
+### 按指定类型`-t`
+
+- 文件(f): `fd -tf keyword`
+- 目录(d): `fd -td keyword`
+- 符号链接(l): `fd -tl keyword`
+- 可执行文件(x):  `fd -tx keyword`
+
+### 搜索指定目录
+
+fd keyword /目录名
+
+### 通过正则表达式搜索
+
+举例: 包含字母且文件名后缀为png的文件 `fd ‘[a-z]\.png$’`
+
+### 搜索隐藏文件
+
+fd -H keyword
+
+### 按扩展名搜索
+
+fd -e md
+
+搜索文件名包含readme且扩展名是md的文件 `fd -e md readme`
+
+### 排除特定目录或文件
+
+搜索除lib目录外所有包含关键字是readme的文件或目录
+
+fd -E lib readme
+
+搜索指定目录下除文件名后缀为js的所有文件
+
+fd -E ‘*.js’ -tf . source/lib/fatclick
 
