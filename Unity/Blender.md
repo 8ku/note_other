@@ -37,6 +37,10 @@
 - [Bake Wrangler](https://blenderartists.org/t/bake-wrangler-node-based-baking-tool-set/1187732)
   - [教程](https://www.bilibili.com/s/video/BV14z4y1R789)
 
+### 动画
+
+- [Animation nodes](https://animation-nodes.com/)
+
 ## 自带插件
 
 - rigify: 自带骨骼插件, 理解了比较好用
@@ -51,6 +55,7 @@
   - 添加材质节点：在node mode 下`ctrl+t`
     - 在图片节点下，texture Coordinate 选择 Object，Texture image 选择 box，把 blend(混合) 调整大一点点（0.2），可以解决贴图接缝问题
 - Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size
+- Cell Fracture: 破碎插件
 
 ## 视图操作
 
@@ -194,7 +199,7 @@
 
 - 一次性应用所有 Modifier：左上角菜单 `Object-Convert to-Mech from Curve/Meta/Suf/Text`
 
-- 一次性调整所有物体的变换（无论是修改器还是位置信息）：按住 alt 点击或Enter
+- **一次性调整所有物体的变换（无论是修改器还是位置信息）：按住 alt 点击或Enter**
 
 - 一次性把一个物体的Modifier复制给其他多个物体：先选要复制的物体，最后选被复制物体，`Shift+L （make links）- Modifiers` 
 

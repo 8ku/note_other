@@ -2,6 +2,7 @@
 
 [BACK](https://8ku.github.io/note_other)
 
+- [基础数学](https://8ku.github.io/note_other/math/基础数学)
 - [贝叶斯推断](https://8ku.github.io/note_other/math/贝叶斯推断)
 - [机器学习](https://8ku.github.io/note_other/math/机器学习)
 - [指数增长和衰减 对数](https://8ku.github.io/note_other/math/指数增长和衰减and对数)
