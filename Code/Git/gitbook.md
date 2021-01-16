@@ -1,5 +1,11 @@
 # Gitbook
 
+* TOC
+  
+  {:toc}
+
+
+
 ## 使用行内HTML CSS样式
 
 ### 上下横线
@@ -11,6 +17,19 @@ your text
 ```
 
 [可直接使用名称的颜色参考](https://www.w3schools.com/colors/colors_names.asp)
+
+### div 半透明背景色
+
+```html
+<div style=
+    "background:rgba(0,0,0,0.05);
+     padding:10px;
+     color:red;">
+  ddd
+</div>
+```
+
+
 
 ### 有序/无序/缩进列表
 
