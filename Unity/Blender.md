@@ -31,6 +31,11 @@
 - [万物有灵](https://shimo.im/docs/tWhW8QJPHhDqKwr9/)
   - 安装好插件后，在`add-on`中导入预设
   - 使用时，点击`import`可应用
+- [饼图热盒菜单插件](https://machin3.io/MACHIN3tools/docs/#what-is-machin3tools)
+  - 快速设置相机
+    - 安装后在`General-Pie Menus`里选中`Views Pie’
+    - 在`Keymaps`中给`Pie Menus-Views`设置快捷键
+    - 在视图中用快捷键呼出, 选择`Smart View Cam`, 会在当前视角下创建一个相机
 
 ### 烘焙
 
@@ -52,8 +57,9 @@
 - Node Wrangler
   - 在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点
   - 重排节点: `shift+=`
-  - 添加材质节点：在node mode 下`ctrl+t`
+  - **添加材质节点：在node mode 下`ctrl+t`**
     - 在图片节点下，texture Coordinate 选择 Object，Texture image 选择 box，把 blend(混合) 调整大一点点（0.2），可以解决贴图接缝问题
+  - **自动连接节点: 选中要连接的节点, f**
 - Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size
 - Cell Fracture: 破碎插件
 
@@ -669,6 +675,7 @@
 - 摄像机视图: 小键盘0(正交摄像机:属性选择Orthographic)
 - **把当前视角设置为摄像机视角: ctrl + alt + numpad0**
 - 旋转摄像机视角: 上一步后,点击视角边缘, g移动 r旋转
+- 锁定摄像机: N-View-Lock Camera to View
 
 ### 摄像机跟随路径动画
 
@@ -702,7 +709,14 @@
 
   
 
+### k帧快捷键
 
+- 切换时间轴到Graph editor: ctrl+tab
+- 修改动画平滑度 set keyframe interpolation: t
+- 给动画添加修改器
+  - 在左侧选择要修改的动画
+  - n 调出右侧菜单, 选择 modifiers
+  - add modifiers
 
 
 
