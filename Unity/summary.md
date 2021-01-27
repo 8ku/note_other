@@ -10,8 +10,12 @@
   - [Prefabs](https://8ku.github.io/note_other/Unity/Prefabs)
   - [Shortcuts](https://8ku.github.io/note_other/Unity/Shortcuts)
   - [Animator](https://8ku.github.io/note_other/Unity/Animator)
+  - [Unity Shader](https://8ku.github.io/note_other/Unity/UnityShader)
+- Blender
   - [Blender](https://8ku.github.io/note_other/Unity/Blender)
   - [Blender Node](https://8ku.github.io/note_other/Unity/BlenderNode)
+  - [Blender 2 Unity](https://8ku.github.io/note_other/Unity/Blender2Unity)
+  - [Blender Physics](https://8ku.github.io/note_other/Unity/BlenderPhysics)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
   - [Cinemachine](https://8ku.github.io/note_other/Unity/Assets/Cinemachine)
