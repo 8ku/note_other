@@ -79,7 +79,7 @@
 - 应用程序 - 右键：显示包内容 - Contents - MacOS 
 - 终端：`chmod +x ‘拖入1’ ` 回车执行
 
-### 提示已损坏无法打开
+### 提示已损坏/软件有危险无法打开
 
 `sudo xattr -d com.apple.quarantine /Applications/xxxx.app`
 
@@ -186,3 +186,15 @@ fd -E lib readme
 
 fd -E ‘*.js’ -tf . source/lib/fatclick
 
+## Dash离线文档下载方式
+
+- 断网, 点击要下载的包,把弹出提示框中的地址复制后在浏览器打开
+- 选择一个地址用下载软件下载
+- 下载后放到某个文件夹下
+- 打开Dash添加本地文档
+
+## 微信助手
+
+- [下载](https://github.com/MustangYM/WeChatExtension-ForMac)
+- 使用第二种方式安装
+- `omw -n`
