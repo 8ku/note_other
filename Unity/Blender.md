@@ -62,6 +62,13 @@
   - **自动连接节点: 选中要连接的节点, f**
 - Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size
 - Cell Fracture: 破碎插件
+- 物体随机分布插件: `Scatter Objects`
+  - 安装好后, 在右侧 扳手 菜单中多一个工具菜单
+  - 先选择要实例化的父物体, 再选择实例放置的面
+  - 空格呼出快捷菜单 搜索 Scatter Objects, 点击
+  - 在放置的面上画要实例化的轨迹
+  - 回车应用
+  - 想单独编辑实例时, 选择实例, cmd+a -- make Instances Real 
 
 ## 视图操作
 

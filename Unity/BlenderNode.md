@@ -115,3 +115,46 @@
   - 添加Modifiers-Cycles, After选择Repeat with Offset
 
 ![Snipaste_2021-01-23_23-32-14(1)](BlenderNode.assets/Snipaste_2021-01-23_23-32-14(1).jpg)
+
+## Texture Node
+
+### 基础知识
+
+- **置换贴图 Displacement Texture 凹凸贴图 bump Texture 法线贴图 Normal Texture**
+  - **置换贴图**: 是通过批量修改顶点位置的方式实现物体表面真实的凹凸感, 会使用大量的内存渲染(最好不用...)
+    - 原物体细分必须足够多, 不然效果出不来
+    - 在node中添加displacement节点后, 还需要在物体上应用displacement修改器,效果才能出来
+  - **凹凸贴图**: 是用一张黑白图做为高度模拟, 黑不变白凸起, 不会实质性影响物体表面的点面数, 改变光照角度时凹凸不会改变
+  - **法线贴图**: 用于在低精模上表现高精模的纹理, 使用高精模bake
+    - 每个纹理像素的RGB值表示方向矢量的X Y Z值, 从而影响平面计算光照的方式
+
+
+
+### 法线贴图最简步骤
+
+制作一个简单的法线贴图的步骤:
+
+- 在最终要体现法线贴图的物体添加材质, 新建一个img Texture并选中
+- 打开 UV 编辑器
+- 选中物体, 把渲染模式改为 Cycles ,模式选择Normal,  Bake
+- 可以在UV编辑器里看到结果
+- 把Texture连接到Normal节点
+- 在渲染模式下添加太阳光, 调整角度查看结果
+
+
+
+### 蒙皮贴图要点
+
+以 Brick 贴图为例:
+
+- 修正贴图只有一面正常的情况: 
+  - 给贴图添加`Texture Coordinate` UV连接到贴图的Vector
+- 修正贴图过大的情况: 
+  - 进入编辑模式, U 调出UV菜单 选择 `Cube Projection`(根据蒙皮物体的形状)
+- 添加Noise贴图后修正原表面颜色
+  - 在Noise贴图和Brick贴图间加上ColorRamp
+- 使用置换添加凹凸感
+
+![texture_node_brick](BlenderNode.assets/texture_node_brick.jpg)
+
+![texture_node_brick_result](BlenderNode.assets/texture_node_brick_result.jpg)
