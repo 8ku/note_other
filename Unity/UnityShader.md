@@ -29,3 +29,8 @@
   - *Unlit Graph* 不受光照的图
 - 双击打开Shader Graph 窗口
 
+## 特效渲染节点
+
+### 玻璃
+
+![Glass_shade_node](UnityShader.assets/Glass_shade_node.jpg)
