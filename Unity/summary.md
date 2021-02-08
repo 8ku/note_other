@@ -16,6 +16,7 @@
   - [Blender Node](https://8ku.github.io/note_other/Unity/BlenderNode)
   - [Blender 2 Unity](https://8ku.github.io/note_other/Unity/Blender2Unity)
   - [Blender Physics](https://8ku.github.io/note_other/Unity/BlenderPhysics)
+  - [Blender Animation](https://8ku.github.io/note_other/Unity/BlenderAnimation)
 - Assets
   - [DOTween](https://8ku.github.io/note_other/Unity/Assets/DOTween)
   - [Cinemachine](https://8ku.github.io/note_other/Unity/Assets/Cinemachine)

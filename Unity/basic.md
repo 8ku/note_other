@@ -1,5 +1,8 @@
 # 基本概念
 
+* TOC
+{:toc}
+
 ## Unity官方文档离线版打开方式
 
 - [从官网下载离线版文档](https://docs.unity3d.com/Manual/UnityManual.html)，左侧 Unity User Manual - Offline documentation
@@ -123,3 +126,9 @@ V：y 轴
 - 使用transform
 - 使用rigidbody/rigidbody2D:DOTween的控制依赖于此
 - 使用CharacterController
+
+## 遇到的软件问题
+
+### Package Manager登录失效
+
+进入Asset Store, 重新登录账户, 再打开package manager, 刷新

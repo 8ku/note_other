@@ -28,11 +28,17 @@
 
 ### 添加可行走区域
 
-window - AI - Navigation -Bake
+- 新建一个空对象, 添加 NavMesh Surface
+  - 如果没有NavMesh Surface, 直接从window - AI - Navigation 打开菜单
+  - 切换到 Object标签
+  - 在Scene选择可行走的地面物体, 下拉菜单选 Walkable/Not Walkable
+  - 切换到Bake, 选中地面和不可行走的物体, 点击Bake
 
-如果需要让某些物体可穿过，点击物体，Inspector ，取消 Navigation Static
+- window - AI - Navigation -Bake
 
-取消物体某些部分的行走区域，先选择物体的 mech Renderers 部分，在 Navigation - Object 中，把 Navigation Area 设置为 Not Walkable
+  - 如果需要让某些物体可穿过，点击物体，Inspector ，取消 Navigation Static
+
+  - 取消物体某些部分的行走区域，先选择物体的 mech Renderers 部分，在 Navigation - Object 中，把 Navigation Area 设置为 Not Walkable
 
 ### 给角色添加寻路控制器
 
