@@ -63,6 +63,19 @@
 
 添加 Film Grain ( 杂色是动态的, 效果不是很好)
 
+
+
+## 设置调整
+
+### 阴影清晰度优化
+
+- 打开UniversalRenderPipelineAsset
+- 找到`Shadows`, 调整`Cascades`为更高
+- `Lightning - Shadow Resolution` 调整为更高
+- 调整`Shadows` 的 `Deptch Bias` 和 `Normal Bias`
+
+
+
 ## 特效渲染节点
 
 ### 玻璃
