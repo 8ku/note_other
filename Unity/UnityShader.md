@@ -103,6 +103,58 @@ Out = refract(ViewDir, Normal, IndexofRef);
 
 
 
+### 卡通配色
+
+- 新建一个Unlit Shader
+
+- 新建一个文件夹 Includes, 新建`Lighting.hlsl`文件, (mac)下用sublime打开(添加 `HLSL Syntax`插件)
+
+  ```hlsl 
+  #ifndef CUSTOM_LIGHTING_INCLUDED
+  #define CUSTOM_LIGHTING_INCLUDED
+  
+  // CalculateMainLight是方法名 float是告诉Unity用的是什么类型的值
+  void CalculateMainLight_float(float3 WorldPos, out float3 Direction, out float3 Color){
+  #if SHADERGRAPH_PREVIEW
+  	Direction = float3(0.5, 0.5, 0);
+  	Color = 1;
+  #else
+  	Light mainLight = getMainLight(0);
+  	Direction = mainLight.direction;
+  	Color = mainLight.color;
+  #endif
+  
+  }
+  #endif
+  ```
+
+- 在 Unilit Shaer 中新建一个`Custom Function`, 按上一步定义的值添加 input out value
+
+  - Input : WorldPos - Vector3
+  - output: Direction - Vector3
+  - output: Color - Vector3
+  - type: File
+  - Name: CalculateMainLight
+  - Source: Lighting.hlsl
+
+- 添加一个`Position`(Absolute World) - `Custom Function`
+
+- add `Normal Vector`(法线方向)  `dot product`
+
+  <div class = "mermaid">
+  graph LR
+  CustomFunction & NormalVector --> dotproduct       
+  </div>
+
+  ```mermaid
+  graph LR
+  CustomFunction & NormalVector --> dotproduct    
+  ```
+
+  
+
+
+
 ## 贴图
 
 ### 漫贴反射图要点

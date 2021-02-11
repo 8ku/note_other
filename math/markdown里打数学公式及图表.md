@@ -13,6 +13,9 @@
 </head>
 # Markdown输入数学公式及图表
 
+* TOC
+{:toc}
+
 [参考](https://www.jianshu.com/p/e74eb43960a1)
 
 ## 插入方式

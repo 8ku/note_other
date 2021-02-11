@@ -612,7 +612,7 @@
 
  
 
-### 骨骼绑定方法2
+### 骨骼绑定方法2:  rigging:rigify
 
 - 插件  rigging:rigify
 - 骨骼对齐模型
@@ -634,7 +634,7 @@
   - IK/FK切换: 在pose mode下, N菜单-Item, 点击控制IK, 菜单会对应切换到IK/FK控制板, 默认使用IK模式, 如果要切换为FK模式, 点击FK控制部分(例如大臂), 在菜单中把 IK-FK(hand.L) 拉到1
   - IK/FK切换后动作跟随: 当使用IK/FK摆好姿势后, 想继续切换到另一个模式摆姿势, 点击 IK->FK(hand.L)(有个磁铁标志)
   - 更方便控制手肘的转动: 选择手掌IK, 点击 `Toggle Pole`, 出现控制手肘的控制器
-  - 让模型保持正常长度: 默认模型的长度跟随控制器伸长变长, 把菜单中的 `IK Stretch` 拉到0, 可以让模型保持原来的长度
+  - 让模型保持正常长度: 默认模型的长度跟随控制器伸长变长, ~~把菜单中的 `IK Stretch` 拉到0, 可以让模型保持原来的长度~~, **小人图标 - Inverse Kinematics - IK Solver : iTaSC
 - **修复技巧**
   - rig以后发现有部件没有显示widget(一般表现为骨骼底部的圆圈)
     - 在 pose mode 下查看 Bone properties(骨头菜单) 的  Rigify Type-Options 有没有勾选 Widget

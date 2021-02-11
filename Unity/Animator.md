@@ -1,5 +1,104 @@
 # 动画控制
 
+* TOC
+{:toc}
+## 细节技术
+
+### 脚不沾地
+
+在fbx导入 - Animation - Root Transform Position(Y) 下, **调整Offset的数值, 大约是0.05~0.1之间**
+
+**注意<u>不要</u>勾选Root Transform Position(XZ) - Bake Into Pose**
+
+### 后脚跟不沾地
+
+- 导入fbx时, rig 使用Humanoid
+- 打开Animator编辑器, 点击Layers - Base Layer 右侧的齿轮, 勾选 IK Pass, 这样可以在脚本里调用IK组件
+- 在需要控制的角色中加入脚本
+
+```c#
+using UnityEngine;
+
+
+[RequireComponent(typeof(Animator))]
+public class CharacterIK : MonoBehaviour
+{
+
+    protected Animator animator;
+
+    [Range(0, 1)]
+    public float DistanceToGround;
+
+    public LayerMask layerMask;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (animator)
+        {
+            //把IK的重量重置为1, 避免之前设置为其他值
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1f);
+            animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1f);
+
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1f);
+            animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 1f);
+
+            //Left Foot
+            RaycastHit hit;
+            //从脚发射一个向下的射线
+            Ray ray = new Ray(animator.GetIKPosition(AvatarIKGoal.LeftFoot) + Vector3.up, Vector3.down);
+            Debug.DrawRay(animator.GetIKPosition(AvatarIKGoal.LeftFoot), Vector3.down, Color.red);
+
+            //如果射线碰撞到Player以外的所有层, 此时需要在面板上把角色设置为Player层, 并在此脚本的下拉选项中把Player层取消勾选
+            if (Physics.Raycast(ray, out hit, DistanceToGround + 1f, layerMask))
+            {
+                //把可行走的地面Tag修改为Walkable
+                if (hit.transform.tag == "Walkable")
+                {
+                    Vector3 footPosition = hit.point;
+                    footPosition.y += DistanceToGround; //使脚接触到地面
+                    animator.SetIKPosition(AvatarIKGoal.LeftFoot, footPosition);
+                    animator.SetIKRotation(AvatarIKGoal.LeftFoot, Quaternion.FromToRotation(Vector3.up, hit.normal) * transform.rotation);
+                }
+            }
+
+            //Right foot
+            ray = new Ray(animator.GetIKPosition(AvatarIKGoal.RightFoot) + Vector3.up, Vector3.down);
+            Debug.DrawRay(animator.GetIKPosition(AvatarIKGoal.RightFoot), Vector3.down, Color.red);
+
+            if (Physics.Raycast(ray, out hit, DistanceToGround + 1f, layerMask))
+            {
+                //把可行走的地面Tag修改为Walkable
+                if (hit.transform.tag == "Walkable")
+                {
+                    Vector3 footPosition = hit.point;
+                    footPosition.y += DistanceToGround; //使脚接触到地面
+                    animator.SetIKPosition(AvatarIKGoal.RightFoot, footPosition);
+                    animator.SetIKRotation(AvatarIKGoal.RightFoot, Quaternion.FromToRotation(Vector3.up, hit.normal) * transform.rotation);
+                }
+            }
+
+        }
+
+    }
+}
+
+```
+
+
+
+
+
 ## 创建人物动画
 
 - 在人物角色下创建 Animator 组件
