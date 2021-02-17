@@ -1,9 +1,38 @@
 # GUI
 
+* TOC
+{:toc}
+
 ## FairyGUI 和 UGUI 的区别
 
 - FairyGUI 把 GUI 编辑分离出来，用发布的方式更新界面设计，在团队合作里提高效率
 - UGUI 内置于 Unity 中
+
+## 插件
+
+### UI动效插件 [UI Extentions](https://bitbucket.org/UnityUIExtensions/unity-ui-extensions/wiki/UPMInstallation)
+
+- 安装
+
+  - 方法1: package manager from URL https://bitbucket.org/UnityUIExtensions/unity-ui-extensions/wiki/UPMInstallation
+
+  - 方法2: 在Project 窗口中, 右击Packages文件夹, 在文件夹中显示, 点击进入, 找到 `manifest.json`
+
+    - 添加一个source在 ` dependencies`上面
+
+      ```
+      "scopedRegistries": [
+          {
+            "name": "npmjs",
+            "url": "https://registry.npmjs.org/",
+            "scopes": [
+              "com.unity.uiextensions"
+            ]
+          }
+        ],
+      ```
+
+
 
 ## UI 界面按钮注册
 

@@ -105,6 +105,8 @@ Out = refract(ViewDir, Normal, IndexofRef);
 
 ### 卡通配色
 
+<p style="background-color:red;color:white;">加上多类型灯光的配置后出现强反射, 不能用</p>
+
 最终文件包含:
 
 - Shader Material
@@ -374,4 +376,11 @@ Out = refract(ViewDir, Normal, IndexofRef);
 - 在材质Inspector中
   - Smoothness: 0
 - 在导入的带rig的模型包中, 选择非rig以外所有模型子对象**(不要选rig)**, 拖入材质到 Element 0
+
+### 贴图大小设置
+
+- 漫反射贴图的UV节点添加`Tiling And Offset`
+  - Tiling: 贴图重复的次数, 数字越大, 重复次数越多, 即贴图越小
+  - Offset: 偏移
+    - 建立两个vector1- uOffset vOffset , 用 Combine 连接 R 和 B, 出口RGBA连接到Tiling and Offset 的Offset
 

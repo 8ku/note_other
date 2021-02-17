@@ -1,5 +1,8 @@
 # c#
 
+* TOC
+{:toc}
+
 ## static
 
 不使用 static 的默认为 auto。
@@ -1108,7 +1111,7 @@ class Program
 
 
 
-
+### 用 LitJson 解析Json
 
 ```c#
 using System.IO;
@@ -1232,6 +1235,19 @@ class MainClass
   }
 }
 ```
+
+### 用 Newtonsoft.Json 解析Json
+
+```c#
+//Visual Studio 右键项目-管理NuGet包-Newtonsoft json,添加包
+//Unity package manager - 左上角 Add package from git URL : https://github.com/jilleJr/Newtonsoft.Json-for-Unity.git#upm 
+
+
+```
+
+
+
+
 
 
 

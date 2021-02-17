@@ -1,5 +1,8 @@
 # C#
 
+* TOC
+{:toc}
+
 ## 基本常识
 
 ### 面向对象的特性
@@ -970,6 +973,10 @@ public class HeroType:MonoBehaviour
 效率比较：分支少时，if 比 switch 效率高，反之 switch 效率高。
 
 switch 只能判断单个值，不能判断范围，如果条件为范围，不能用 switch 。
+
+<p style="background-color:red;color:white;">Visual Studio中, 智能填充快捷键为, 把光标放在switch上, alt+enter</p>
+
+
 
 ```c#
 switch(表达式/变量)

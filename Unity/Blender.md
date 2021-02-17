@@ -812,6 +812,15 @@
 
 ## 材质
 
+### 地面
+
+- 新建一个平面
+- 编辑-u-展开UV, 切换到UV绘制模式
+- 给平面添加一个基本材质
+- 切换到 Active Tool and Workspace settings (右侧第二个工具栏(螺丝刀和扳手图标))
+- 点击 + 新建一个基本面贴图
+- 点击 + 新建 Normal 贴图
+
 ### 自发光
 
 - 渲染菜单中, 勾选`Bloom`(显示自发光) `Screen Space Reflections`(显示反射)

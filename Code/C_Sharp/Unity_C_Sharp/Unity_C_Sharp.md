@@ -900,6 +900,26 @@ void Update()
     }
 ```
 
+
+
+### 从物体发出射线
+
+```c#
+//从IK脚部发出射线
+RaycastHit hit;
+Ray ray = new Ray(animator.GetIKPosition(AvatarIKGoal.LeftFoot) + Vector3.up, Vector3.down);
+Debug.DrawyRay(animator.GetIKPosition(AvatarIKGoal.LeftFoot), Vector3.down, Color.red);
+
+//从碰撞物体表面发出normal射线
+Debug.DrawRay(hit.nomal, hit.normal, Color.green);
+```
+
+
+
+
+
+
+
 ## 监听GUI 事件
 
 ```c#
