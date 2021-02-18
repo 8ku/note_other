@@ -820,6 +820,8 @@
 - 切换到 Active Tool and Workspace settings (右侧第二个工具栏(螺丝刀和扳手图标))
 - 点击 + 新建一个基本面贴图
 - 点击 + 新建 Normal 贴图
+- **放大物体, 但材质不放大的技巧: **
+  - 编辑模式 - 右上角 Options - 勾选 `Correct Face Attributes`
 
 ### 自发光
 
