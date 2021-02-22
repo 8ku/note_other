@@ -2,6 +2,28 @@
 
 * TOC
 {:toc}
+## 解除中国特供版Unity Hub
+
+- 设置代理
+
+```xml
+//Windows
+@echo off
+set HTTP_PROXY=http://127.0.0.1:1080
+set HTTPS_PROXY=http://127.0.0.1:1080
+start "" "C:\Program Files\Unity Hub\Unity Hub.exe"
+
+//Mac 使用http代理地址
+echo '#!/bin/bash
+export HTTP_PROXY=http://127.0.0.1:1080 
+export HTTPS_PROXY=http://127.0.0.1:1080
+nohup "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub" &>/dev/null &' > launchUnityHub.command
+chmod +x launchUnityHub.command
+```
+
+- [下载官方hub 安装](https://unity3d.com/get-unity/download)
+- 通过上上步创建的命令打开 Unity Hub
+- 载入/下载 Editor
 
 ## Unity官方文档离线版打开方式
 

@@ -1,9 +1,13 @@
 # UGUI
 
+* TOC
+{:toc}
+## 使用  EventSystem 探测物体
+
 使用 UI 事件需要先引用事件系统
 
 ```c#
-using UnityEngin.EventSystems;
+using UnityEngine.EventSystems;
 ```
 
 [MonoBehaviour](MonoBehaviour) 里有一个 OnMouseDown 的类可以控制有 collider 属性的物体。
@@ -129,3 +133,73 @@ if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject(-
         }
 ```
 
+
+
+## 使用Input System 探测物体
+
+### 前置工作
+
+-  安装input system插件
+- 新建action文件, 把action文件生成 C# 文件(Actions.cs)
+- 在player controller里引用 action 生成的 C# 文件(或建立一个空对象放这个文件, 为了便于控制其他 input 命令, 还是挂在player身上比较好)
+
+### 脚本
+
+- ```c#
+  public Actions actions;
+  //要使用射线, 引入摄像机, 如果有多个摄像机, 用公开变量, 如果只有一个, 用私变量 Cam = Camera.mainCamera;
+  publice Camera uiCam; 
+  
+  
+  private void Awake(){
+    //默认该文件不能修改, 所以用新建, 引用后可以用脚本调用action
+    actions = new Actions();
+  }
+  
+   private void OnEnable(){
+     actions.Enable();
+  }
+  
+  private void Disable(){
+    actions.Disable();
+  }
+  
+  private void Start(){
+    // UI 是action map的名字, Click 是map下的Action名字
+    action.UI.Click.started += _ => StartClicked();
+    action.UI.Click.performed += _ => EndClicked();
+  }
+  
+  private void StartClicked(){
+    
+  }
+  
+  private void EndClicked(){
+    DetectObject();
+  }
+  
+  //探测
+  private void DetectObject(){
+    //先在action面板里创建/使用action(name = Point), type = Pass Through, Control Type = Vector 2 Path = Position[Mouse]
+    Ray ray = uiCam.ScreenPointToRay(actions.UI.Point.ReadValue<Vector2>());
+    
+    int layerMask = LayerMask.GetMask("UI");
+    
+    //3D Array Detect
+    RaycastHit[] hits = Physics.RaycastAll(ray, 200, layermask);
+    for (int i = 0; i < hits.Length; i++){
+      if (hit[i].collider != null){
+        Debug.Log(hits[i].collider.Tag);
+      }
+    }
+    
+    //2D Detect 物体上同样要加刚体
+    RaycastHit2D hits2d = Physics2D.GetRayIntersection(ray);
+  if (hits2d.collider != null)
+     {
+        Debug.Log(hits2d.collider.gameObject.name);
+     }
+  }
+  ```
+
+- 

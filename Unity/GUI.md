@@ -40,6 +40,20 @@
 
 ## UI 设置技巧
 
+### Canvas 自适应
+
+在Cavas Scaler 中设置 Scale With Screen Size
+
+- Referecce Resolution(建议为 1600*900)
+- Screen Match Mode: Expand
+
+### 让UI背景适应文本
+
+- 在父对象(一般是有背景图片的对象) 添加 `Vecrtical/Horizontal Layout Group ` `Content Size Fitter`
+  - `Vecrtical/Horizontal Layout Group `: 只勾选 `Use Child Scale` 设置Padding
+  - `Content Size Fitter`: 选择 `Preferred Size`
+- 在子对象(文字层) 添加 `Content Size Fitter`: 选择 `Preferred Size`
+
 ### 获取 UI 宽高最安全的方式
 
 使用 Inspector 面板右侧的 Debug 模式可以看到更多属性

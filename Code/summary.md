@@ -38,6 +38,7 @@
     - [C_Sharp_Interface](https://8ku.github.io/note_other/Code/C_Sharp/C_Sharp/C_Sharp_Interface)
   - Unity_C_Sharp
     - [Unity_C_Sharp](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/Unity_C_Sharp)
+    - [Input System](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/InputSystem)
     - [Random](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/random)
     - [SoundManager](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/SoundManager)
     - [CharacterController](https://8ku.github.io/note_other/Code/C_Sharp/Unity_C_Sharp/CharacterController)
