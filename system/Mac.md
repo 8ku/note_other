@@ -116,6 +116,14 @@
 - 将项目结构输出到文件 `tree >tree.md`
 - 查看更多命令 `tree --help`
 
+## LaunchPad 图标重排
+
+```
+defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+```
+
+
+
 ## 批量压缩图片
 
 [参考](https://juejin.im/entry/5b18a1985188257d960ec9ac)

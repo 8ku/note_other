@@ -18,6 +18,24 @@
 
 ## 三方插件
 
+### 建模
+
+- [mesh Tree](https://github.com/maximeherpin/modular_tree/tree/blender_28)
+  - 安装后在左上角打开 Mtree Node Tree
+  - 添加`Branch Node` `Trunk Node`  连接 trunk node - branch node
+  - 添加`Tree parameters` 生成树
+  - 添加一个平面, 给一个材质, 把 basic color 材质类型改为 image texture
+  - 添加叶子贴图(可以在ps里用画笔做一个)
+    - Specular : 0
+    - Alpha : Image Texture 选择叶子的图片
+    - Setting - Blend Mode - Alpha Clip
+  - `Tree parameters` - check `create_leafs` 
+  - 导出**重要**
+    - 选择叶子, 界面上 Object - Convert To Mesh - 勾选 Keep Original
+    - 把叶子的粒子系统删除
+    - 选中叶子和树干 cmd+j 
+    - 导出选中的树
+
 ### 骨骼
 
 - bone layer manager
@@ -864,15 +882,15 @@
 
 ## 渲染
 
-- 打开降噪:     compositing
+### 打开降噪:     compositing
 
-- - use      nodes(左上角)
-  - view      layer(右侧)-Passes-Data-Denoising Data
-  - node界面: add Denoise
+- use      nodes(左上角)
+- view      layer(右侧)-Passes-Data-Denoising Data
+- node界面: add Denoise
 
 ![img](Blender.assets/clip_image004.jpg)
 
-- 加雾效
+### 加雾效
 
 - - 放一个box,      box显示模式设置为线框, 给box加shader
 
@@ -884,6 +902,10 @@
 ### 2D风格渲染参数
 
 - `Diffuse BSDF + Shade to RGB + ColorRamp`
+
+### 透明背景
+
+Render Properties - Film - Transparent  打勾
 
 ## 常用快捷键
 

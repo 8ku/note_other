@@ -24,6 +24,7 @@ chmod +x launchUnityHub.command
 - [下载官方hub 安装](https://unity3d.com/get-unity/download)
 - 通过上上步创建的命令打开 Unity Hub
 - 载入/下载 Editor
+- [离线下载Editor地址](https://unity3d.com/unity/qa/lts-releases)
 
 ## Unity官方文档离线版打开方式
 

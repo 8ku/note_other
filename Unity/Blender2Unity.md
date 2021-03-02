@@ -29,6 +29,7 @@
 ## 普通模型到Unity
 
 - 保存文件为`.fbx`
+  - **如果有材质, 要把 `Path Mode` 改为 Copy**, 不然材质导不出来
 - 在Unity中直接导入
 - 导入时在模型的`Materials`中更改`Location-Use External Materials`, 这样在Unity中也可编辑模型材质
 
