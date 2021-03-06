@@ -39,6 +39,7 @@
 ### 骨骼
 
 - bone layer manager
+- Auto-Rig Pro(付费)
 
 ### 图层管理
 
@@ -63,6 +64,7 @@
 ### 动画
 
 - [Animation nodes](https://animation-nodes.com/)
+- [Graph Editor快捷键扩展](https://github.com/aresdevo/animaide)
 
 ## 自带插件
 

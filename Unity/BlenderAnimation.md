@@ -64,6 +64,29 @@
 - 插入帧: i
 - 批量删除帧: 全选帧, 在顶部 summary 行的光标帧, cmd+ left click 会取消选择当前列之前的所有列, 再x
 - 缩放关键帧: 全选 s
+- 重置动作: alt+g alt+r
+- **打开动作面板的`Only Show Selected`, 对编辑单部分动作比较方便** 在动作名称后面, 图标为🡼
+- Graph Editor 
+  - **放大视图: 按住ctrl 和中键, 上下滑动**
+  - 选中当前帧所在链: shift+LB
+  - 选中当前帧所在链所有key: L
+  - 在Graph Editor和Dope Sheet切换: ctrl+tab
+  - 选中当前帧所在列: K
+  - 选中当前帧以前/以后所有帧: [ /  ]
+  - 反选: cmd+i
+  - 插入帧: cmd+RB
+  - 独显当前选中帧所在曲线: Shift+h / alt+h
+  - 独显时, i 插入帧可选择插入到显示帧还是所有帧
+  - 展开/收起层级: NumPad + -
+  - **T/V: 快速改变曲线形式**
+  - 自由框选: cmd/ctrl+RB
+  - 根据Cursor的位置缩放: N 调出菜单, 勾选 Show Cursor, 调整X and Y
+    - 快速把Cursor定位到选中帧: ctrl/cmd+g
+  - 同时缩放/移动一个帧的两个handle: S / G - X / Y
+  - 平滑曲线: 选中一段曲线(需要有起点和终点), alt+o(不断按o)    [需要安装插件](https://github.com/aresdevo/animaide)
+  - Snap Menu: shift+s
+  - 复制/粘贴keyframe: ctrl+c  - 切换到粘贴的层 ctrl+v 选择粘贴形式
+  - 镜像keyframe: ctrl+m
 
 
 

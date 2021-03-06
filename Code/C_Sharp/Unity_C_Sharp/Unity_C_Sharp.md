@@ -922,6 +922,18 @@ Debug.DrawyRay(animator.GetIKPosition(AvatarIKGoal.LeftFoot), Vector3.down, Colo
 
 //从碰撞物体表面发出normal射线
 Debug.DrawRay(hit.nomal, hit.normal, Color.green);
+
+//从player身上发出向前的射线
+Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.forward, Color.red);
+
+Vector3 playerLine = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+
+if(Physics.Raycast(playerLine, transform.forward, out objectHit, 50))
+{
+if (objectHit.collider.tag == Tags.npc)
+{
+  tagetAnamy = objectHit.collider.transform;
+}
 ```
 
 
