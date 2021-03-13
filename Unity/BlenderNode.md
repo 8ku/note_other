@@ -116,6 +116,25 @@
 
 ![Snipaste_2021-01-23_23-32-14(1)](BlenderNode.assets/Snipaste_2021-01-23_23-32-14(1).jpg)
 
+
+
+### Emission
+
+- 在Emission前添加 Blackbody 可以调色温
+- 要打开 Render Properties 里的 Bloom, 发光才会在渲染模式下可见
+
+
+
+### Background
+
+在World Properties里添加节点
+
+
+
+
+
+
+
 ## Texture Node
 
 ### 基础知识

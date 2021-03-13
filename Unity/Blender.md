@@ -192,7 +192,15 @@
 
 - 选择多个物体TAB能同时进入编辑模式
 
+- 曲线改为锐角: 编辑模式 - V
+
 - **把点一分为二: v**
+
+- 编辑模式分离物体到新物体: p
+
+- 编辑模式分离物体(不到新物体): y
+
+- **同时修改多个物体属性: Alt+点选**
 
 - 建一个完美球体
 
@@ -429,6 +437,7 @@
   - 添加 curve，物体选择曲线
   - 新建一个物体，把该物体做为平面的子物体（ctrl+p）
   - 在`Object properties-instancing`里选择`Face`，去掉`Display Instancer`的勾选
+  - **应用后让Instances实体化: `Object - Apply - Make Duplicates Real` ** (快捷键 Ctrl+a)
 
 ## 人体建模
 
@@ -832,6 +841,12 @@
 
 ## 材质
 
+### 快捷方式
+
+- 清理不用的材质
+  - 右上列表, 切换到 Orphan Data 
+  - 拉开, 最右侧: Purge
+
 ### 地面
 
 - 新建一个平面
@@ -860,7 +875,7 @@
 ### 玻璃材质
 
 - 使用默认材质，把`Transmission`调到最大
-- `Render Properties`勾选`Screen Space Reflections`，点开设置，勾选`Reflaction`
+- **`Render Properties`勾选`Screen Space Reflections`，点开设置，勾选`Reflaction`**
 - 回到物体材质编辑，`Settings`，勾选`Screen Space REfraction`
 
 ### 透明
@@ -936,8 +951,6 @@ grid fill : ctrl/cmd + f then grid fill
 移动模型出现的中心点: shift + 右键(中心点归位: shift+s 中心点回到物体中心:ctrl+shift+alt+c)
 
 桥接循环边：ctrl+e
-
-分离对象：p(或y)
 
 沿法线方向缩放：alt+s
 

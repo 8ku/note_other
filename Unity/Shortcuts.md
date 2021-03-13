@@ -1,12 +1,19 @@
 # Shortcuts
 
+### Unity
+
 - 场景内物品放大：F
 - Hierarchy / Project 中收起子物体：alt + 左/右箭头
+- 一次性展开所有子对象: alt + 鼠标左键 
 - 按 cmd 移动物体，按1个单位移动
 - 场景背景设置：Windows-Rendering-Lighting Settings
-- 注释：ctrl + k +c
+- 在当前视角设置摄像机: 选中摄像机, shift+cmd+f
 - 顶点捕捉：v
-- 取消注释：ctrl + k + u
+- 复制Component的值: alt+鼠标左键 
+
+### VS
+
+- 注释/取消注释：cmd+/
 - 排版（windows）：ctrl + k + f
 - 代码格式化（MAC）：ctrl + i
 - VS 中同时改变所有同名变量名：cmd + r
@@ -15,7 +22,7 @@
 - VS 中，右键变量或物体或脚本，可以查看所有引用的地方
 - VS 中, 打完关键词, 按两次 Tab 键可以补全格式
 - VS中, 折叠代码 cmd + option + shift + ←
-- 在当前视角设置摄像机: 选中摄像机, shift+cmd+f
+- 
 
 ## 项目设置
 
