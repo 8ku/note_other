@@ -25,4 +25,6 @@
   - [Json解析](https://8ku.github.io/note_other/Unity/Assets/Json)
   - [EasySave](https://8ku.github.io/note_other/Unity/Assets/EasySave)
   - [参考](https://www.jqhtml.com/53905.html)
+- Zbrush
+  - [Zbrush](https://8ku.github.io/note_other/Unity/Zbrush)
 

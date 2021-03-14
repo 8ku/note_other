@@ -724,6 +724,7 @@
 - **把当前视角设置为摄像机视角: ctrl + alt + numpad0**
 - 旋转摄像机视角: 上一步后,点击视角边缘, g移动 r旋转
 - 锁定摄像机: N-View-Lock Camera to View
+- 切换多个摄像机: 选中摄像机, cmd+Numpad 0
 
 ### 摄像机跟随路径动画
 
