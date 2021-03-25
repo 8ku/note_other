@@ -40,7 +40,7 @@
 | 刷新DNS                                       | sudo killall -HUP mDNSResponder                              |
 | 连续查看图片                                  | 全选所有图片-空格                                            |
 | 安装cli命令行应用                             | 输入chmod +x (拖入cli文件)                                   |
-| 中断运行                                      | control+d                                                    |
+| 中断运行                                      | **control+d**                                                |
 | 打开表情键盘                                  | alt+cmd+space                                                |
 | 显示隐藏文件                                  | cmd+shift+.                                                  |
 | 将光标后一个字删除                            | Fn+Delete                                                    |
@@ -50,6 +50,8 @@
 | 显示资源库                                    | finder--> 单击菜单栏的’前往’ 按下option<br />或终端中输入`chflags nohidden ~/Library/`-显示 `chflags hidden ~/Library/`-隐藏 |
 | 剪切式粘贴                                    | cmd+option+v                                                 |
 | 强制退出程序                                  | cmd+option+esc                                               |
+| 查看程序使用的内存                            | `top -o MEM`                                                 |
+| 停止运行命令                                  | ctrl+c                                                       |
 
 
 

@@ -137,6 +137,12 @@
 
 ## Texture Node
 
+### 快捷键
+
+- 预览: ctrl+shift+鼠标左键
+
+- Texture Setup: ctrl+t
+
 ### 基础知识
 
 - **置换贴图 Displacement Texture 凹凸贴图 bump Texture 法线贴图 Normal Texture**
@@ -169,7 +175,8 @@
 - 修正贴图只有一面正常的情况: 
   - 给贴图添加`Texture Coordinate` UV连接到贴图的Vector
 - 修正贴图过大的情况: 
-  - 进入编辑模式, U 调出UV菜单 选择 `Cube Projection`(根据蒙皮物体的形状)
+  - 方法一: 进入编辑模式, U 调出UV菜单 选择 `Cube Projection`(根据蒙皮物体的形状)
+  - 方法二: 在贴图前面加上Texture Coolrdinate + mapping , 调整 Mapping scale
 - 添加Noise贴图后修正原表面颜色
   - 在Noise贴图和Brick贴图间加上ColorRamp
 - 使用置换添加凹凸感

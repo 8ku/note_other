@@ -75,12 +75,12 @@
 - Curve/Mesh：Extra Objects
 - mesh:F2(可在单点模式下使用F来直接挤出面)
 - Node Wrangler
-  - 在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点
+  - **在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点**
   - 重排节点: `shift+=`
   - **添加材质节点：在node mode 下`ctrl+t`**
     - 在图片节点下，texture Coordinate 选择 Object，Texture image 选择 box，把 blend(混合) 调整大一点点（0.2），可以解决贴图接缝问题
   - **自动连接节点: 选中要连接的节点, f**
-- Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size
+- **Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size**
 - Cell Fracture: 破碎插件
 - 物体随机分布插件: `Scatter Objects`
   - 安装好后, 在右侧 扳手 菜单中多一个工具菜单
@@ -106,6 +106,7 @@
 
 ## 选择:
 
+- **选择快捷键: shift+alt+鼠标左键** (当选择多个重叠物体时好用)
 - 单独显示选中物体: /
 - 切换坐标模式(世界坐标/局部坐标): <
 - 切换点对齐模式: >
@@ -195,6 +196,12 @@
 - 曲线改为锐角: 编辑模式 - V
 
 - **把点一分为二: v**
+
+- **选择子对象**: 选中父对象后, shift+g
+
+- 减少多余面和节点的方法
+
+  - 编辑模式- X -  Dessolve 点 线 面
 
 - 编辑模式分离物体到新物体: p
 
@@ -797,6 +804,10 @@
 
 ##  UV
 
+### 技巧
+
+- 查看选中的UV对应的部分: NumPad 句号
+
 ### UV适应
 
 - 给物体添加材质- `Emission`, 颜色选`Image Texture` ,载入图片
@@ -897,6 +908,29 @@
   - Transmission: 0.9
   - Roughness: 0.05
   - IOR: 1.333
+
+### 即时更新贴图
+
+- 展UV
+- 新建一个贴图, Generated Type : UV Grid
+- 全选UV, 顶上菜单 UV - Export UV Layout ( Fill Opacity : 0)
+- 打开 PS / GIMP , 载入上一步的图
+- 保存为 **psd**
+- 回到 blender, 把贴图改为上一步的psd
+- 在 PS / GIMP 中编辑, 保存
+- 回到 blender , 在 UV Editor **Alt+R** 更新贴图
+
+### 用bump做normal贴图
+
+- 分窗口 
+  - 窗口1: Image Editor, 模式 Paint
+  - 窗口2: 切换到 Texture Piant模式
+- 右侧菜单 Active Tool and Workspace settings(螺丝刀和扳手icon), 新建一个贴图, 选择 **Bump** 
+- 画好后, 切换到渲染菜单, 选择 Cycles
+  - Bake Type: Diffuse
+  - Contributions: 取消勾选 Direct Indirect
+  - Bake
+- 导入 Unity , 图像模式选择 UV
 
 ## 渲染
 
