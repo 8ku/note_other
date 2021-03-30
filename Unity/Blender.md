@@ -387,6 +387,11 @@
   - 删除倒角面
   - 挤出
   
+- 做栅栏方法2
+
+  - 细分
+  - 使用Wireframe修改器
+
 - 做交叉网格
   
   - 建一个cube，可见性改为wire
@@ -833,23 +838,32 @@
 
 ## 烘焙
 
-- 高分烘给低分
+### 高分烘给低分
 
-  - 使用插件**BAKE WRANGLER**，[教程](https://www.bilibili.com/s/video/BV14z4y1R789)
+- 使用插件**BAKE WRANGLER**，[教程](https://www.bilibili.com/s/video/BV14z4y1R789)
 
-- ### 法线贴图
+### 法线贴图
 
-  - 复制一个模,做成高精, 雕刻
-  - alt+g把两个模对齐
-  - 给低精械添加一个材质,添加 image texture，color-space：    non-color
-  - 渲染模式改为cycles,     在bake中设置bake type为normal
-  - 勾选     Selected to active
-  - 先选择高精模,再加选低精模,点击bake
-  - 如果法线渲染出来有没覆盖好的, 调Ray distance
-  - 回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node
-  - 如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图
+- 复制一个模,做成高精, 雕刻
+- alt+g把两个模对齐
+- 给低精械添加一个材质,添加 image texture，color-space：    non-color
+- 渲染模式改为cycles,     在bake中设置bake type为normal
+- 勾选     Selected to active
+- 先选择高精模,再加选低精模,点击bake
+- 如果法线渲染出来有没覆盖好的, 调Ray distance
+- 回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node
+- 如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图
 
+### Simple Bake
 
+- 选择需要烘焙的setting
+- 设置 Bake Margin
+- 勾选Export bakes
+- 命名 Batch name
+- 勾选 Copy objects and apply bakes 
+- 多个物体材质烘焙到一张图上
+  - 先把两个物品的UV在一张图上展好(位置不能重叠)
+  - 勾选 Multiple objects to one texture set
 
 ## 材质
 
