@@ -77,10 +77,12 @@ git config --global user.email "email"
 
 [参考](https://juejin.im/post/5dfcb9ebf265da33e82bc5b0)
 
-1. 把git换成要用的用户名和邮箱
+1. 查看当前用户`git config user.name`  `git config user.email`
+2. 把git换成要用的用户名和邮箱
 
 ```yaml 
-git config --global user.name "name"
+git config --global user.name "name" 
+# 或
 git config --global user.email "email"
 ```
 
@@ -240,7 +242,7 @@ git remote add . git@github8ku:bakumatata.github.io.git
 - `git push -u origin master`推送到github
 - `git remote -v`查看当前在哪个远程仓库
 
-#### create a readme.md file before build and push a new book (important!)
+**create a readme.md file before build and push a new book (important!)**
 
 ## 输出各种格式
 
