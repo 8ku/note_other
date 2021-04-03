@@ -77,16 +77,14 @@ git config --global user.email "email"
 
 [参考](https://juejin.im/post/5dfcb9ebf265da33e82bc5b0)
 
+[多git账户免密码登录完全配置](https://www.jianshu.com/p/9720e237c834)
+
 1. 查看当前用户`git config user.name`  `git config user.email`
-2. 把git换成要用的用户名和邮箱
-
-```yaml 
-git config --global user.name "name" 
-# 或
-git config --global user.email "email"
-```
-
 2. 生成SSH Key，指定文件名，避免覆盖原有文件，注意下列代码中的`id_rsa.another`
+
+id_rsa: 私钥
+
+id_rsa.pub: 公钥
 
 ```yaml
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_another -C <Git注册邮箱>
@@ -167,6 +165,12 @@ git clone github8ku:bakumatata.github.io.git
 
 #查看当前会话已添加的ssh私钥
 ssh-add -L
+
+#添加私钥到当前ssh-agent会话
+ssh-add ~/.ssh/id_rsa
+
+#每次启动终端时都自动添加指定私钥到当前 ssh-agent 会话中
+echo "ssh-add ~/.ssh/id_rsa  >/dev/null 2>&1" >> ~/.bashrc
 ```
 
 
