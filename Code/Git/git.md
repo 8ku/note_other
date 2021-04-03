@@ -174,8 +174,6 @@ echo "ssh-add ~/.ssh/id_rsa  >/dev/null 2>&1" >> ~/.bashrc
 
 #查看本仓库用户信息
 git config -l
-
-
 ```
 
 
@@ -186,6 +184,9 @@ git config -l
 #仓库根目录
 cd .git
 open config
+#注意以下配置里 git@ 后 : 前的名字必须和 ssh/config里的Host名称一致(一定要保留git@)
+[remote "origin"]
+url = git@github.com:user/rep.git
 ```
 
 
