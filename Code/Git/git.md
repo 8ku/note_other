@@ -171,6 +171,11 @@ ssh-add ~/.ssh/id_rsa
 
 #每次启动终端时都自动添加指定私钥到当前 ssh-agent 会话中
 echo "ssh-add ~/.ssh/id_rsa  >/dev/null 2>&1" >> ~/.bashrc
+
+#查看本仓库用户信息
+git config -l
+
+
 ```
 
 
