@@ -164,11 +164,22 @@ ssh-add ~/.ssh/id_rsa_another
 
 # clone remote 的时候用别名
 git clone github8ku:bakumatata.github.io.git
-git remote add . github8ku:bakumatata.github.io.git
 
 #查看当前会话已添加的ssh私钥
 ssh-add -L
 ```
+
+
+
+### 查看仓库config文件
+
+```yml
+#仓库根目录
+cd .git
+open config
+```
+
+
 
 ### Hexo配置更改
 
