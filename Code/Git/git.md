@@ -132,15 +132,21 @@ ssh -T github8ku
 
 ```yaml
 # 用别名测试ssh被denied(publickey)
+ssh-add -D #清除现保存的密钥,如有必要, 执行此步
+eval "$(ssh-agnent -s)" #启动ssh-agent
 ssh-add -K ~/.ssh/id_rsa_another
+
 # 提示 Could not open a connection to your authentication agent.
 eval 'ssh-agent'
 ssh-agent bash
+
 #提示 The agent has no identities. 清除代理
 ssh-add -D
+
 # 清除后再添加不同的ssh
 ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa_another
+
 # clone remote 的时候用别名
 git clone git@github8ku:bakumatata.github.io.git
 git remote add . git@github8ku:bakumatata.github.io.git
