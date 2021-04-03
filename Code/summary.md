@@ -15,6 +15,7 @@
 
   - [git](https://8ku.github.io/note_other/Code/Git/git)
   - [gitbook](https://8ku.github.io/note_other/Code/Git/gitbook)
+  - [Ruby Gem](https://8ku.github.io/note_other/Code/Git/Gem.md)
 
 - SQL
   
