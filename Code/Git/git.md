@@ -1,4 +1,4 @@
-# Git
+#  Git
 
 * TOC
 {:toc}
@@ -122,10 +122,25 @@ Host github8ku
 5. 测试
 
 ```yaml
-ssh -T git@github.com
+ssh -vT git@github.com
 #Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
 
 ssh -T github8ku
+```
+
+6. 更改仓库对应的账户
+
+```yaml
+#移除全局账户
+git config --global --unset user.name && git config --global --unset user.email
+#到每个仓库根目录, 单独给每个仓库配置账户
+git remote remove origin && git remote add origin github.com:8ku/note_other.git
+git remote remove origin && git remote add origin github8ku:bakumatata/something.git
+#到每个仓库根目录, 给每个仓库重新配置用户名和邮件地址
+git config --global --unset user.name && git config --global --unset user.email
+
+git config --local user.name "name"
+git config --local user.email "someone@email.com"
 ```
 
 6. 各种报错的解决方法
@@ -148,9 +163,33 @@ ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa_another
 
 # clone remote 的时候用别名
-git clone git@github8ku:bakumatata.github.io.git
-git remote add . git@github8ku:bakumatata.github.io.git
+git clone github8ku:bakumatata.github.io.git
+git remote add . github8ku:bakumatata.github.io.git
+
+#查看当前会话已添加的ssh私钥
+ssh-add -L
 ```
+
+### Hexo配置更改
+
+_config.yml的修改
+
+```yml
+deploy:
+	type: git
+	repo: git@别名:git用户名/仓库地址
+	branch: master
+```
+
+修改对应用户名和电邮地址
+
+```yml
+cd .deploy_git
+git config user.name '之前设置在根目录的'
+git config user.email '之前设置在根目录的'
+```
+
+
 
 ## 绑定个人域名
 
