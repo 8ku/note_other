@@ -1,0 +1,494 @@
+<h1 id="正则表达式">正则表达式</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#正则表达式" id="markdown-toc-正则表达式">正则表达式</a>    <ul>
+      <li><a href="#元字符" id="markdown-toc-元字符">元字符</a></li>
+      <li><a href="#限定符" id="markdown-toc-限定符">限定符</a></li>
+      <li><a href="#字符转义" id="markdown-toc-字符转义">字符转义</a></li>
+      <li><a href="#字符类" id="markdown-toc-字符类">字符类</a></li>
+      <li><a href="#分枝条件" id="markdown-toc-分枝条件">分枝条件</a></li>
+      <li><a href="#分组" id="markdown-toc-分组">分组</a></li>
+      <li><a href="#反义" id="markdown-toc-反义">反义</a></li>
+      <li><a href="#后向引用" id="markdown-toc-后向引用">后向引用</a></li>
+      <li><a href="#环视零宽断言" id="markdown-toc-环视零宽断言">环视（零宽断言）</a>        <ul>
+          <li><a href="#参考说明" id="markdown-toc-参考说明">参考说明</a></li>
+        </ul>
+      </li>
+      <li><a href="#python中不区分大小写的查找方式" id="markdown-toc-python中不区分大小写的查找方式">Python中不区分大小写的查找方式</a></li>
+      <li><a href="#匹配中文" id="markdown-toc-匹配中文">匹配中文</a></li>
+      <li><a href="#表达式全集" id="markdown-toc-表达式全集">表达式全集</a></li>
+      <li><a href="#常用正则表达式" id="markdown-toc-常用正则表达式">常用正则表达式</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>正则表达式的符号放在需要定义的字符后。</p>
+
+<h2 id="元字符">元字符</h2>
+
+<ul>
+  <li>\b
+    <ul>
+      <li>代表单词分界处，<u>只匹配一个位置</u>，例如找 “hi” ，使用 \bhi\b</li>
+    </ul>
+  </li>
+  <li>.
+    <ul>
+      <li>匹配除了换行符以外的<u>任意字符</u></li>
+    </ul>
+  </li>
+  <li>\d
+    <ul>
+      <li>匹配一位数字，4\d{6} 表示 <u>从4开始至4向后6位</u></li>
+    </ul>
+  </li>
+  <li>\s
+    <ul>
+      <li>匹配任意的空白符1个，<strong>包括空格、制表符、换页符等等</strong>。等价于[ \f\n\r\t\v]。</li>
+    </ul>
+  </li>
+  <li>\w
+    <ul>
+      <li>匹配字母或数字或下划线或汉字</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>匹配字符串的开始（非逻辑行的开头），即从每一行开头匹配，如字符串不是行第一位，不会匹配；如字符串在一行里有多个，不会匹配，例如，匹配apple，如一行中有两个apple：apple pear apple，^apple$ 匹配不到本行，^apple 能匹配行开头是apple的字符串</li>
+    </ul>
+  </li>
+  <li>$
+    <ul>
+      <li>匹配字符串的结束（非逻辑行的结束）</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="限定符">限定符</h2>
+
+<ul>
+  <li>*
+    <ul>
+      <li>表示数量，指 <u>* 前的内容可以连续重复使用任意次至整个表达式得到匹配或**不出现**</u>， .* 表示 <u>任意数量的不包含换行的字符，重复零次或更多次</u></li>
+    </ul>
+  </li>
+  <li>+
+    <ul>
+      <li>表示数量，重复一次或更多次，和 * 的区别是如果匹配次数为0，会报告匹配失败</li>
+    </ul>
+  </li>
+  <li>？
+    <ul>
+      <li>表示数量，重复零次或一次；表示可选项，加在一个字符后面，意思是 ？前的字符可匹配可不匹配，非必要条件</li>
+    </ul>
+  </li>
+  <li>{n}
+    <ul>
+      <li>表示数量，重复n次</li>
+    </ul>
+  </li>
+  <li>{n,}
+    <ul>
+      <li>表示数量，重复n次或更多次</li>
+    </ul>
+  </li>
+  <li>{n,m}
+    <ul>
+      <li>重复n到m次</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>次数下限</th>
+      <th>次数上限</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>？</td>
+      <td>无</td>
+      <td>1</td>
+      <td>可以不出现，也可以<u>只出现1次</u></td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>无</td>
+      <td>无</td>
+      <td>可出现无数次，也可不出现（任意次数均可）</td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>1</td>
+      <td>无</td>
+      <td>可以出现无数次，但<u>至少出现1次</u></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="字符转义">字符转义</h2>
+
+<p>在字符前使用 \ 来取消字符的特殊意义</p>
+
+<h2 id="字符类">字符类</h2>
+
+<ul>
+  <li>[ ]，指定字符集合“或”，可以把条件写在里面，例如 [) -] 表示 ）或 空格 或 - 出现0次或1次，里面可以写字符范围，匹配集合中的任一为true，如 [0-9] [a-z] [a-z0-9A-Z]，顺序无所谓，<strong>只能匹配 [ ] 中的一个字符</strong>
+    <ul>
+      <li>只有在 [ ]内且不在开头，- 才表示范围，在 [ ] 内且在开头，表示普通字符，而不是一个范围；在 [ ] 外，- 只表示它本身</li>
+    </ul>
+  </li>
+  <li>
+    <p>^ 在 [ ] 里表示非，. 在 [ ] 里表示符号本身，在非 [ ] 条件下表示除换行符以外所有</p>
+  </li>
+  <li>（）也表示或，但更多用于分组，或限制<code class="language-plaintext highlighter-rouge"> |</code> 的作用范围，<strong>可以匹配 ( ) 内任意长度的文本</strong>，( ) 没有像 [ ]  那样的排除功能（即 ^ 在 ( ）中不表示 非 ）</li>
+</ul>
+
+<h2 id="分枝条件">分枝条件</h2>
+
+<p>如果满足其中任意一种规则都应该当成匹配，用<code class="language-plaintext highlighter-rouge">|</code> 把不同的规则分隔开。or的关系。</p>
+
+<p><strong>使用分枝条件时，要注意各个条件的顺序，匹配分枝条件时，会从左到右测试每个条件，如果满足某个分枝的话，就不会管其它条件了。</strong></p>
+
+<h2 id="分组">分组</h2>
+
+<p>也称为子表达式，用 ( ) 包裹，可以用 {n} 来指定子表达式的重复次数，例如（\d{1,3}\ .）{3} ，指从头开始数第1位到3位数字，加上英文 . （此处用 \ 转义），重复3次</p>
+
+<h2 id="反义">反义</h2>
+
+<p>排除某些条件</p>
+
+<ul>
+  <li>\ W
+    <ul>
+      <li>匹配任意不是字母、数字、下划线、汉字的字符</li>
+    </ul>
+  </li>
+  <li>\ S
+    <ul>
+      <li>匹配任意不是空白符的字符</li>
+    </ul>
+  </li>
+  <li>\ D
+    <ul>
+      <li>匹配任意非数字的字符</li>
+    </ul>
+  </li>
+  <li>\ B
+    <ul>
+      <li>匹配不是单词开头的或结束的位置</li>
+    </ul>
+  </li>
+  <li>[^x]
+    <ul>
+      <li>匹配除了x以外的任意字符</li>
+    </ul>
+  </li>
+  <li>[^aeiou]
+    <ul>
+      <li>匹配除了aeiou这几个字母以外的任意字符</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="后向引用">后向引用</h2>
+
+<p>后向引用用于重复搜索前面某个分组匹配的文本。</p>
+
+<h2 id="环视零宽断言">环视（零宽断言）</h2>
+
+<h3 id="参考说明"><a href="https://www.cnblogs.com/onepixel/articles/7717789.html">参考说明</a></h3>
+
+<p>环视结构不匹配任何字符，只匹配文本中的特定位置。</p>
+
+<ul>
+  <li>?= 顺序环视：非获取匹配，从左至右查看文本，在任何匹配 ( ) 中的字符串开始匹配查找字符串，该匹配不需要获取供以后使用。
+    <ul>
+      <li>举例：a(?=b) ，先找到 ?=后的字符，再匹配 b 前面的 <strong>a</strong></li>
+    </ul>
+  </li>
+  <li>?&lt;= 逆序环视：从右向左查看文本
+    <ul>
+      <li>举例：(?&lt;=b)a，先找到 ?&lt;=后的字符，再匹配 b 后面的 <strong>a</strong></li>
+    </ul>
+  </li>
+  <li>?! 顺序否定环视：在任何不匹配（?!字符）的地方开始查找，找到不匹配的字符
+    <ul>
+      <li>举例：a(?!b)，先找到 b ，再匹配 <strong>a</strong> 后面不是 b 的字符串</li>
+      <li>举例：(?&lt;!b)a，先找到b，再匹配前面不 b 的 <strong>a</strong></li>
+    </ul>
+  </li>
+  <li>?: 非获取（捕获型）匹配：只分组，不捕获，能提高匹配效率，会增加整个表达式的阅读难度，如果匹配只需要进行一次（不需要在循环中多次匹配），效率并不重要</li>
+</ul>
+
+<h2 id="python中不区分大小写的查找方式">Python中不区分大小写的查找方式</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">"This is one Test, another TEST,and another test."</span>
+<span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'(?i)test'</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>(?i) 表示所在位置右侧的表达式开启忽略大小写模式</li>
+  <li>(?s) 表示所在位置右侧的表达式开启单行模式</li>
+  <li>(?m) 表示所在位置右侧的表示式开启指定多行模式</li>
+  <li>(?is) 更改句点字符 (.) 的含义，以使它与每个字符（而不是除 \n 之外的所有字符）匹配</li>
+  <li>(?im) 更改 ^ 和 $ 的含义，以使它们分别与任何行的开头和结尾匹配,而不只是与整个字符串的开头和结尾匹配</li>
+</ul>
+
+<p>注意：(?s)通常在匹配有换行的文本时使用
+注意：(?m)只有在正则表达式中涉及到多行的“^”和“$”的匹配时，才使用Multiline模式,上面的匹配模式可以组合使用，比如(?is),(?im)
+另外，还可以用(?i:exp)或者(?i)exp(?-i)来指定匹配的有效范围</p>
+
+<p>附：
+. 表示除\n之外的任意字符
+*表示匹配0-无穷
++表示匹配1-无穷</p>
+
+<h2 id="匹配中文">匹配中文</h2>
+
+<ul>
+  <li>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>[\u4e00-\u9fa5]
+匹配2~4个汉字  [\u4e00-\u9fa5]{2,4}
+匹配中文姓名:[我的名字是|找一下|帮我找][\u4e00-\u9fa5]+(·[\u4e00-\u9fa5]+)*
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="表达式全集">表达式全集</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">字符</th>
+      <th style="text-align: center">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">\</td>
+      <td style="text-align: center">将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“<code class="language-plaintext highlighter-rouge">n</code>”匹配字符“<code class="language-plaintext highlighter-rouge">n</code>”。“<code class="language-plaintext highlighter-rouge">\n</code>”匹配一个换行符。串行“<code class="language-plaintext highlighter-rouge">\\</code>”匹配“<code class="language-plaintext highlighter-rouge">\</code>”而“<code class="language-plaintext highlighter-rouge">\(</code>”则匹配“<code class="language-plaintext highlighter-rouge">(</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^</td>
+      <td style="text-align: center">匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“<code class="language-plaintext highlighter-rouge">\n</code>”或“<code class="language-plaintext highlighter-rouge">\r</code>”之后的位置。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$</td>
+      <td style="text-align: center">匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“<code class="language-plaintext highlighter-rouge">\n</code>”或“<code class="language-plaintext highlighter-rouge">\r</code>”之前的位置。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*</td>
+      <td style="text-align: center">匹配前面的子表达式零次或多次。例如，zo<em>能匹配“<code class="language-plaintext highlighter-rouge">z</code>”以及“<code class="language-plaintext highlighter-rouge">zoo</code>”。</em>等价于{0,}。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">+</td>
+      <td style="text-align: center">匹配前面的子表达式一次或多次。例如，“<code class="language-plaintext highlighter-rouge">zo+</code>”能匹配“<code class="language-plaintext highlighter-rouge">zo</code>”以及“<code class="language-plaintext highlighter-rouge">zoo</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">z</code>”。+等价于{1,}。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">匹配前面的子表达式零次或一次。例如，“<code class="language-plaintext highlighter-rouge">do(es)?</code>”可以匹配“<code class="language-plaintext highlighter-rouge">does</code>”或“<code class="language-plaintext highlighter-rouge">does</code>”中的“<code class="language-plaintext highlighter-rouge">do</code>”。?等价于{0,1}。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">{<em>n</em>}</td>
+      <td style="text-align: center"><em>n</em>是一个非负整数。匹配确定的<em>n</em>次。例如，“<code class="language-plaintext highlighter-rouge">o{2}</code>”不能匹配“<code class="language-plaintext highlighter-rouge">Bob</code>”中的“<code class="language-plaintext highlighter-rouge">o</code>”，但是能匹配“<code class="language-plaintext highlighter-rouge">food</code>”中的两个o。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">{<em>n</em>,}</td>
+      <td style="text-align: center"><em>n</em>是一个非负整数。至少匹配<em>n</em>次。例如，“<code class="language-plaintext highlighter-rouge">o{2,}</code>”不能匹配“<code class="language-plaintext highlighter-rouge">Bob</code>”中的“<code class="language-plaintext highlighter-rouge">o</code>”，但能匹配“<code class="language-plaintext highlighter-rouge">foooood</code>”中的所有o。“<code class="language-plaintext highlighter-rouge">o{1,}</code>”等价于“<code class="language-plaintext highlighter-rouge">o+</code>”。“<code class="language-plaintext highlighter-rouge">o{0,}</code>”则等价于“<code class="language-plaintext highlighter-rouge">o*</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">{<em>n</em>,<em>m</em>}</td>
+      <td style="text-align: center"><em>m</em>和<em>n</em>均为非负整数，其中<em>n</em>&lt;=<em>m</em>。最少匹配<em>n</em>次且最多匹配<em>m</em>次。例如，“<code class="language-plaintext highlighter-rouge">o{1,3}</code>”将匹配“<code class="language-plaintext highlighter-rouge">fooooood</code>”中的前三个o。“<code class="language-plaintext highlighter-rouge">o{0,1}</code>”等价于“<code class="language-plaintext highlighter-rouge">o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">当该字符紧跟在任何一个其他限制符（<em>,+,?，{</em>n<em>}，{</em>n<em>,}，{</em>n<em>,</em>m*}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“<code class="language-plaintext highlighter-rouge">oooo</code>”，“<code class="language-plaintext highlighter-rouge">o+?</code>”将匹配单个“<code class="language-plaintext highlighter-rouge">o</code>”，而“<code class="language-plaintext highlighter-rouge">o+</code>”将匹配所有“<code class="language-plaintext highlighter-rouge">o</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.</td>
+      <td style="text-align: center">匹配除“<code class="language-plaintext highlighter-rouge">\</code><em><code class="language-plaintext highlighter-rouge">n</code></em>”之外的任何单个字符。要匹配包括“<code class="language-plaintext highlighter-rouge">\</code><em><code class="language-plaintext highlighter-rouge">n</code></em>”在内的任何字符，请使用像“<code class="language-plaintext highlighter-rouge">(.|\n)</code>”的模式。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(pattern)</td>
+      <td style="text-align: center">匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“<code class="language-plaintext highlighter-rouge">\(</code>”或“<code class="language-plaintext highlighter-rouge">\)</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(?:pattern)</td>
+      <td style="text-align: center">匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“<code class="language-plaintext highlighter-rouge">(|)</code>”来组合一个模式的各个部分是很有用。例如“<code class="language-plaintext highlighter-rouge">industr(?:y|ies)</code>”就是一个比“<code class="language-plaintext highlighter-rouge">industry|industries</code>”更简略的表达式。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(?=pattern)</td>
+      <td style="text-align: center">正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code class="language-plaintext highlighter-rouge">Windows(?=95|98|NT|2000)</code>”能匹配“<code class="language-plaintext highlighter-rouge">Windows2000</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">Windows3.1</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(?!pattern)</td>
+      <td style="text-align: center">正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code class="language-plaintext highlighter-rouge">Windows(?!95|98|NT|2000)</code>”能匹配“<code class="language-plaintext highlighter-rouge">Windows3.1</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">Windows2000</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(?&lt;=pattern)</td>
+      <td style="text-align: center">反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“<code class="language-plaintext highlighter-rouge">(?&lt;=95|98|NT|2000)Windows</code>”能匹配“<code class="language-plaintext highlighter-rouge">2000Windows</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">3.1Windows</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">(?&lt;!pattern)</td>
+      <td style="text-align: center">反向否定预查，与正向否定预查类拟，只是方向相反。例如“<code class="language-plaintext highlighter-rouge">(?&lt;!95|98|NT|2000)Windows</code>”能匹配“<code class="language-plaintext highlighter-rouge">3.1Windows</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">2000Windows</code>”中的“<code class="language-plaintext highlighter-rouge">Windows</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">x|y</td>
+      <td style="text-align: center">匹配x或y。例如，“<code class="language-plaintext highlighter-rouge">z|food</code>”能匹配“<code class="language-plaintext highlighter-rouge">z</code>”或“<code class="language-plaintext highlighter-rouge">food</code>”。“<code class="language-plaintext highlighter-rouge">(z|f)ood</code>”则匹配“<code class="language-plaintext highlighter-rouge">zood</code>”或“<code class="language-plaintext highlighter-rouge">food</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[xyz]</td>
+      <td style="text-align: center">字符集合。匹配所包含的任意一个字符。例如，“<code class="language-plaintext highlighter-rouge">[abc]</code>”可以匹配“<code class="language-plaintext highlighter-rouge">plain</code>”中的“<code class="language-plaintext highlighter-rouge">a</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[^xyz]</td>
+      <td style="text-align: center">负值字符集合。匹配未包含的任意字符。例如，“<code class="language-plaintext highlighter-rouge">[^abc]</code>”可以匹配“<code class="language-plaintext highlighter-rouge">plain</code>”中的“<code class="language-plaintext highlighter-rouge">p</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[a-z]</td>
+      <td style="text-align: center">字符范围。匹配指定范围内的任意字符。例如，“<code class="language-plaintext highlighter-rouge">[a-z]</code>”可以匹配“<code class="language-plaintext highlighter-rouge">a</code>”到“<code class="language-plaintext highlighter-rouge">z</code>”范围内的任意小写字母字符。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[^a-z]</td>
+      <td style="text-align: center">负值字符范围。匹配任何不在指定范围内的任意字符。例如，“<code class="language-plaintext highlighter-rouge">[^a-z]</code>”可以匹配任何不在“<code class="language-plaintext highlighter-rouge">a</code>”到“<code class="language-plaintext highlighter-rouge">z</code>”范围内的任意字符。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\b</td>
+      <td style="text-align: center">匹配一个单词边界，也就是指单词和空格间的位置。例如，“<code class="language-plaintext highlighter-rouge">er\b</code>”可以匹配“<code class="language-plaintext highlighter-rouge">never</code>”中的“<code class="language-plaintext highlighter-rouge">er</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">verb</code>”中的“<code class="language-plaintext highlighter-rouge">er</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\B</td>
+      <td style="text-align: center">匹配非单词边界。“<code class="language-plaintext highlighter-rouge">er\B</code>”能匹配“<code class="language-plaintext highlighter-rouge">verb</code>”中的“<code class="language-plaintext highlighter-rouge">er</code>”，但不能匹配“<code class="language-plaintext highlighter-rouge">never</code>”中的“<code class="language-plaintext highlighter-rouge">er</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\cx</td>
+      <td style="text-align: center">匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“<code class="language-plaintext highlighter-rouge">c</code>”字符。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\d</td>
+      <td style="text-align: center">匹配一个数字字符。等价于[0-9]。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\D</td>
+      <td style="text-align: center">匹配一个非数字字符。等价于[^0-9]。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\f</td>
+      <td style="text-align: center">匹配一个换页符。等价于\x0c和\cL。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\n</td>
+      <td style="text-align: center">匹配一个换行符。等价于\x0a和\cJ。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\r</td>
+      <td style="text-align: center">匹配一个回车符。等价于\x0d和\cM。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\s</td>
+      <td style="text-align: center">匹配任何空白字符，<strong>包括空格、制表符、换页符等等</strong>。等价于[ \f\n\r\t\v]。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\S</td>
+      <td style="text-align: center">匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\t</td>
+      <td style="text-align: center">匹配一个制表符。等价于\x09和\cI。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\v</td>
+      <td style="text-align: center">匹配一个垂直制表符。等价于\x0b和\cK。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\w</td>
+      <td style="text-align: center">匹配包括下划线的任何单词字符。等价于“<code class="language-plaintext highlighter-rouge">[A-Za-z0-9_]</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\W</td>
+      <td style="text-align: center">匹配任何非单词字符。等价于“<code class="language-plaintext highlighter-rouge">[^A-Za-z0-9_]</code>”。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\x<em>n</em></td>
+      <td style="text-align: center">匹配<em>n</em>，其中<em>n</em>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“<code class="language-plaintext highlighter-rouge">\x41</code>”匹配“<code class="language-plaintext highlighter-rouge">A</code>”。“<code class="language-plaintext highlighter-rouge">\x041</code>”则等价于“<code class="language-plaintext highlighter-rouge">\x04&amp;1</code>”。正则表达式中可以使用ASCII编码。.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*num*</td>
+      <td style="text-align: center">匹配<em>num</em>，其中<em>num</em>是一个正整数。对所获取的匹配的引用。例如，“<code class="language-plaintext highlighter-rouge">(.)\1</code>”匹配两个连续的相同字符。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*n*</td>
+      <td style="text-align: center">标识一个八进制转义值或一个向后引用。如果*n<em>之前至少</em>n<em>个获取的子表达式，则</em>n<em>为向后引用。否则，如果</em>n<em>为八进制数字（0-7），则</em>n*为一个八进制转义值。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*nm*</td>
+      <td style="text-align: center">标识一个八进制转义值或一个向后引用。如果*nm<em>之前至少有</em>nm<em>个获得子表达式，则</em>nm<em>为向后引用。如果*nm</em>之前至少有<em>n</em>个获取，则<em>n</em>为一个后跟文字<em>m</em>的向后引用。如果前面的条件都不满足，若<em>n</em>和<em>m</em>均为八进制数字（0-7），则*nm<em>将匹配八进制转义值</em>nm*。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*nml*</td>
+      <td style="text-align: center">如果<em>n</em>为八进制数字（0-3），且<em>m和l</em>均为八进制数字（0-7），则匹配八进制转义值<em>nm</em>l。</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\u<em>n</em></td>
+      <td style="text-align: center">匹配<em>n</em>，其中<em>n</em>是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（©）。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="常用正则表达式">常用正则表达式</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">用户名</th>
+      <th>/^[a-z0-9_-]{3,16}$/</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">密码</td>
+      <td>/^[a-z0-9_-]{6,18}$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">十六进制值</td>
+      <td>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">电子邮箱</td>
+      <td>/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/ /^[a-z\d]+(.[a-z\d]+)*@(<a href="-[\da-z]">\da-z</a>?)+(.{1,2}[a-z]+)+$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">URL</td>
+      <td>/^(https?:\/\/)?([\da-z.-]+).([a-z.]{2,6})([\/\w .-]<em>)</em>\/?$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IP 地址</td>
+      <td>/((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/ /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">HTML 标签</td>
+      <td>/^&lt;([a-z]+)([^&lt;]+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;|\s+\/&gt;)$/</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">删除代码\注释</td>
+      <td>(?&lt;!http:|\S)//.*$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Unicode编码中的汉字范围</td>
+      <td>/^[\u2E80-\u9FFF]+$/</td>
+    </tr>
+  </tbody>
+</table>
+
