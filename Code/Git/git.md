@@ -383,6 +383,37 @@ vi ~/.gitconfig
    4. enter password again
    5. done.
 
+
+
+## 删除本地库
+
+```yaml
+#显示本地所有分支
+git branch
+
+#初始化仓库
+git init
+
+#查看文件
+ls -a
+
+#强删.git
+rm -rf .git
+
+#查看
+ls -a
+
+#回退
+cd ..
+
+#强删文件夹
+rm -rf repositoryname
+```
+
+
+
+
+
 ## 支持数学公式
 
 - md头部添加代码
