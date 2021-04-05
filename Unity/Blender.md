@@ -104,6 +104,14 @@
   - lock：四视图角度锁定，点击解锁，调整各视图视角，再锁定
   - box：勾选后，在一个视图操作，另两个视图跟随变化（例如缩放，移动）
 
+### 最近距离修改
+
+object clip view:
+
+修改: N - View - View : Clip Start
+
+
+
 ## 选择:
 
 - **选择快捷键: shift+alt+鼠标左键** (当选择多个重叠物体时好用)
@@ -418,7 +426,7 @@
   
   - 用点画出主干
   - 添加`skin`
-  - 进入编辑模式，a全选，ctrl+a 收缩
+  - 进入编辑模式，a全选，ctrl+a 收缩(或 cmd + a + x )
   - 选择单独节点 ctrl+a 调整
   
 - 做蔓藤
@@ -435,6 +443,16 @@
   - `n`打开属性面板，选择`tool`，勾选`Dyntopo`，`Detail size`调小
   - 这样边雕刻，物体会增加细分
   - 最好雕刻完以后，把该物体做为高精模烘到低精上，直接渲染会死机
+  
+- 做道路网格
+
+  - curve画道路网
+  - 转为mesh
+  - 添加 skin 
+    - 进入edit mode , cmd + a (或 cmd + a + x/y) 调整宽度
+  - 添加Decimate 精简面
+    - 选择 Planar
+  - 在Object Properties - Viewport Display - check Wireframe 可查看精简后的面的样子
 
 ### array的技巧
 
