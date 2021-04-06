@@ -1,0 +1,1769 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>note_other | 书籍以外的各种笔记</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="note_other" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="书籍以外的各种笔记" />
+<meta property="og:description" content="书籍以外的各种笔记" />
+<link rel="canonical" href="http://localhost:4000/Unity/Blender.html" />
+<meta property="og:url" content="http://localhost:4000/Unity/Blender.html" />
+<meta property="og:site_name" content="note_other" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="note_other" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/Unity/Blender.html","description":"书籍以外的各种笔记","headline":"note_other","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- 字体自适应放大 -->
+    <link rel="stylesheet" href="/assets/css/style.css?v=159ef0d1a2b93c35559ace56016d4d2f8add2ad2">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- 显示页内目录 -->
+    <!-- <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/jquery-3.5.1.min.js" type="text/javascript"></script> 
+    <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/toc.js" type="text/javascript"></script> -->
+
+
+	<!-- 显示数学公式 -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+    
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">note_other</h1>
+        <p class="header">书籍以外的各种笔记</p>
+
+
+        <ul> 
+               	
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Code/summary">Code</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Unity/summary">Unity</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/math/summary">Math</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/RegularExpression/summary">RegularExpression</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/system/summary">System</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/WomensHistory/summary">WomensHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/mythology/summary">Mythology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/GameHistory/summary">GameHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Biology/summary">Biology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Draw/summary">Draw</a></li>
+
+        </ul>
+
+        <!--<ul>
+          
+          <li><a class="buttons github" href="https://github.com/8ku/note_other">View On GitHub</a></li>
+        </ul> 
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/8ku">8ku</a></p>
+        
+
+         -->
+      </header>
+
+      <div id="toc"></div>
+
+      <section>
+
+        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      <script>mermaid.initialize({startOnLoad:true});</script>
+</head>
+<h1 id="blender">Blender</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#blender" id="markdown-toc-blender">Blender</a>    <ul>
+      <li><a href="#三方插件" id="markdown-toc-三方插件">三方插件</a>        <ul>
+          <li><a href="#建模" id="markdown-toc-建模">建模</a></li>
+          <li><a href="#骨骼" id="markdown-toc-骨骼">骨骼</a></li>
+          <li><a href="#图层管理" id="markdown-toc-图层管理">图层管理</a></li>
+          <li><a href="#工作流程插件" id="markdown-toc-工作流程插件">工作流程插件</a></li>
+          <li><a href="#烘焙" id="markdown-toc-烘焙">烘焙</a></li>
+          <li><a href="#动画" id="markdown-toc-动画">动画</a></li>
+        </ul>
+      </li>
+      <li><a href="#自带插件" id="markdown-toc-自带插件">自带插件</a></li>
+      <li><a href="#视图操作" id="markdown-toc-视图操作">视图操作</a>        <ul>
+          <li><a href="#最近距离修改" id="markdown-toc-最近距离修改">最近距离修改</a></li>
+        </ul>
+      </li>
+      <li><a href="#选择" id="markdown-toc-选择">选择:</a></li>
+      <li><a href="#物体操作" id="markdown-toc-物体操作">物体操作</a></li>
+      <li><a href="#建模-1" id="markdown-toc-建模-1">建模</a>        <ul>
+          <li><a href="#array的技巧" id="markdown-toc-array的技巧">array的技巧</a></li>
+        </ul>
+      </li>
+      <li><a href="#人体建模" id="markdown-toc-人体建模">人体建模</a>        <ul>
+          <li><a href="#建模及导出技巧" id="markdown-toc-建模及导出技巧">建模及导出技巧</a></li>
+          <li><a href="#人体建模技巧" id="markdown-toc-人体建模技巧">人体建模技巧</a></li>
+          <li><a href="#父子关系" id="markdown-toc-父子关系">父子关系</a></li>
+        </ul>
+      </li>
+      <li><a href="#骨骼绑定" id="markdown-toc-骨骼绑定">骨骼绑定</a>        <ul>
+          <li><a href="#骨骼绑定的要点" id="markdown-toc-骨骼绑定的要点">骨骼绑定的要点</a></li>
+          <li><a href="#骨骼绑定方法1" id="markdown-toc-骨骼绑定方法1">骨骼绑定方法1</a></li>
+          <li><a href="#骨骼绑定方法2--riggingrigify" id="markdown-toc-骨骼绑定方法2--riggingrigify">骨骼绑定方法2:  rigging:rigify</a></li>
+          <li><a href="#在绑定骨骼的人物上加衣服" id="markdown-toc-在绑定骨骼的人物上加衣服">在绑定骨骼的人物上加衣服</a></li>
+          <li><a href="#骨骼动画" id="markdown-toc-骨骼动画">骨骼动画</a></li>
+        </ul>
+      </li>
+      <li><a href="#摄像机" id="markdown-toc-摄像机">摄像机</a>        <ul>
+          <li><a href="#摄像机跟随路径动画" id="markdown-toc-摄像机跟随路径动画">摄像机跟随路径动画</a></li>
+        </ul>
+      </li>
+      <li><a href="#动画-1" id="markdown-toc-动画-1">动画</a>        <ul>
+          <li><a href="#k帧快捷键" id="markdown-toc-k帧快捷键">k帧快捷键</a></li>
+        </ul>
+      </li>
+      <li><a href="#拓扑" id="markdown-toc-拓扑">拓扑:</a>        <ul>
+          <li><a href="#场景建模技巧" id="markdown-toc-场景建模技巧">场景建模技巧</a></li>
+        </ul>
+      </li>
+      <li><a href="#uv" id="markdown-toc-uv">UV</a>        <ul>
+          <li><a href="#技巧" id="markdown-toc-技巧">技巧</a></li>
+          <li><a href="#uv适应" id="markdown-toc-uv适应">UV适应</a></li>
+          <li><a href="#uv绘制" id="markdown-toc-uv绘制">UV绘制</a></li>
+          <li><a href="#物体使用不同uv" id="markdown-toc-物体使用不同uv">物体使用不同UV</a></li>
+        </ul>
+      </li>
+      <li><a href="#烘焙-1" id="markdown-toc-烘焙-1">烘焙</a>        <ul>
+          <li><a href="#高分烘给低分" id="markdown-toc-高分烘给低分">高分烘给低分</a></li>
+          <li><a href="#法线贴图" id="markdown-toc-法线贴图">法线贴图</a></li>
+          <li><a href="#simple-bake" id="markdown-toc-simple-bake">Simple Bake</a></li>
+        </ul>
+      </li>
+      <li><a href="#材质" id="markdown-toc-材质">材质</a>        <ul>
+          <li><a href="#快捷方式" id="markdown-toc-快捷方式">快捷方式</a></li>
+          <li><a href="#地面" id="markdown-toc-地面">地面</a></li>
+          <li><a href="#自发光" id="markdown-toc-自发光">自发光</a></li>
+          <li><a href="#玻璃材质" id="markdown-toc-玻璃材质">玻璃材质</a></li>
+          <li><a href="#透明" id="markdown-toc-透明">透明</a></li>
+          <li><a href="#水面" id="markdown-toc-水面">水面</a></li>
+          <li><a href="#即时更新贴图" id="markdown-toc-即时更新贴图">即时更新贴图</a></li>
+          <li><a href="#用bump做normal贴图" id="markdown-toc-用bump做normal贴图">用bump做normal贴图</a></li>
+        </ul>
+      </li>
+      <li><a href="#渲染" id="markdown-toc-渲染">渲染</a>        <ul>
+          <li><a href="#打开降噪-----compositing" id="markdown-toc-打开降噪-----compositing">打开降噪:     compositing</a></li>
+          <li><a href="#加雾效" id="markdown-toc-加雾效">加雾效</a></li>
+          <li><a href="#2d风格渲染参数" id="markdown-toc-2d风格渲染参数">2D风格渲染参数</a></li>
+          <li><a href="#透明背景" id="markdown-toc-透明背景">透明背景</a></li>
+        </ul>
+      </li>
+      <li><a href="#常用快捷键" id="markdown-toc-常用快捷键">常用快捷键</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="三方插件">三方插件</h2>
+
+<h3 id="建模">建模</h3>
+
+<ul>
+  <li><a href="https://github.com/maximeherpin/modular_tree/tree/blender_28">mesh Tree</a>
+    <ul>
+      <li>安装后在左上角打开 Mtree Node Tree</li>
+      <li>添加<code class="language-plaintext highlighter-rouge">Branch Node</code> <code class="language-plaintext highlighter-rouge">Trunk Node</code>  连接 trunk node - branch node</li>
+      <li>添加<code class="language-plaintext highlighter-rouge">Tree parameters</code> 生成树</li>
+      <li>添加一个平面, 给一个材质, 把 basic color 材质类型改为 image texture</li>
+      <li>添加叶子贴图(可以在ps里用画笔做一个)
+        <ul>
+          <li>Specular : 0</li>
+          <li>Alpha : Image Texture 选择叶子的图片</li>
+          <li>Setting - Blend Mode - Alpha Clip</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">Tree parameters</code> - check <code class="language-plaintext highlighter-rouge">create_leafs</code></li>
+      <li>导出<strong>重要</strong>
+        <ul>
+          <li>选择叶子, 界面上 Object - Convert To Mesh - 勾选 Keep Original</li>
+          <li>把叶子的粒子系统删除</li>
+          <li>选中叶子和树干 cmd+j</li>
+          <li>导出选中的树</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="骨骼">骨骼</h3>
+
+<ul>
+  <li>bone layer manager</li>
+  <li>Auto-Rig Pro(付费)</li>
+</ul>
+
+<h3 id="图层管理">图层管理</h3>
+
+<ul>
+  <li>simple_renaming_panel</li>
+</ul>
+
+<h3 id="工作流程插件">工作流程插件</h3>
+
+<ul>
+  <li><a href="https://shimo.im/docs/tWhW8QJPHhDqKwr9/">万物有灵</a>
+    <ul>
+      <li>安装好插件后，在<code class="language-plaintext highlighter-rouge">add-on</code>中导入预设</li>
+      <li>使用时，点击<code class="language-plaintext highlighter-rouge">import</code>可应用</li>
+    </ul>
+  </li>
+  <li><a href="https://machin3.io/MACHIN3tools/docs/#what-is-machin3tools">饼图热盒菜单插件</a>
+    <ul>
+      <li>快速设置相机
+        <ul>
+          <li>安装后在<code class="language-plaintext highlighter-rouge">General-Pie Menus</code>里选中`Views Pie’</li>
+          <li>在<code class="language-plaintext highlighter-rouge">Keymaps</code>中给<code class="language-plaintext highlighter-rouge">Pie Menus-Views</code>设置快捷键</li>
+          <li>在视图中用快捷键呼出, 选择<code class="language-plaintext highlighter-rouge">Smart View Cam</code>, 会在当前视角下创建一个相机</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="烘焙">烘焙</h3>
+
+<ul>
+  <li><a href="https://blenderartists.org/t/bake-wrangler-node-based-baking-tool-set/1187732">Bake Wrangler</a>
+    <ul>
+      <li><a href="https://www.bilibili.com/s/video/BV14z4y1R789">教程</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="动画">动画</h3>
+
+<ul>
+  <li><a href="https://animation-nodes.com/">Animation nodes</a></li>
+  <li><a href="https://github.com/aresdevo/animaide">Graph Editor快捷键扩展</a></li>
+</ul>
+
+<h2 id="自带插件">自带插件</h2>
+
+<ul>
+  <li>rigify: 自带骨骼插件, 理解了比较好用</li>
+  <li>Import-Export: Import Image as Planes, 可以把图片当做平面导入, 制作表情flame</li>
+  <li>loop tools</li>
+  <li>bool tool</li>
+  <li>Curve/Mesh：Extra Objects</li>
+  <li>mesh:F2(可在单点模式下使用F来直接挤出面)</li>
+  <li>Node Wrangler
+    <ul>
+      <li><strong>在输出节点前添加预览节点: 点击输出节点, 按住<code class="language-plaintext highlighter-rouge">shift+ctrl</code>, 左键点击输出节点前最后一个节点</strong></li>
+      <li>重排节点: <code class="language-plaintext highlighter-rouge">shift+=</code></li>
+      <li><strong>添加材质节点：在node mode 下<code class="language-plaintext highlighter-rouge">ctrl+t</code></strong>
+        <ul>
+          <li>在图片节点下，texture Coordinate 选择 Object，Texture image 选择 box，把 blend(混合) 调整大一点点（0.2），可以解决贴图接缝问题</li>
+        </ul>
+      </li>
+      <li><strong>自动连接节点: 选中要连接的节点, f</strong></li>
+    </ul>
+  </li>
+  <li><strong>Auto Tile Size：优化渲染速度，添加后在 Render Properties - Performance 下可以打开 Auto Tile Size</strong></li>
+  <li>Cell Fracture: 破碎插件</li>
+  <li>物体随机分布插件: <code class="language-plaintext highlighter-rouge">Scatter Objects</code>
+    <ul>
+      <li>安装好后, 在右侧 扳手 菜单中多一个工具菜单</li>
+      <li>先选择要实例化的父物体, 再选择实例放置的面</li>
+      <li>空格呼出快捷菜单 搜索 Scatter Objects, 点击</li>
+      <li>在放置的面上画要实例化的轨迹</li>
+      <li>回车应用</li>
+      <li>想单独编辑实例时, 选择实例, cmd+a – make Instances Real</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="视图操作">视图操作</h2>
+
+<ul>
+  <li>blender说明书：鼠标放在要查询的功能上，按f1（会有快捷键冲突）</li>
+  <li>放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动</li>
+  <li>调出/收起属性面板：n</li>
+  <li>切换着色模式: z</li>
+  <li>添加视图: 在视图边角LMB拉出(松开鼠标前ESC可取消)</li>
+  <li>合并视图: 在要保留的视图边角(鼠标放到视图中)LMB</li>
+  <li>固定面板：shift+LMB</li>
+  <li>四视图(quad view)：alt+ctrl+q
+    <ul>
+      <li>n调出view面板</li>
+      <li>lock：四视图角度锁定，点击解锁，调整各视图视角，再锁定</li>
+      <li>box：勾选后，在一个视图操作，另两个视图跟随变化（例如缩放，移动）</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="最近距离修改">最近距离修改</h3>
+
+<p>object clip view:</p>
+
+<p>修改: N - View - View : Clip Start</p>
+
+<h2 id="选择">选择:</h2>
+
+<ul>
+  <li><strong>选择快捷键: shift+alt+鼠标左键</strong> (当选择多个重叠物体时好用)</li>
+  <li>单独显示选中物体: /</li>
+  <li>切换坐标模式(世界坐标/局部坐标): &lt;</li>
+  <li>切换点对齐模式: &gt;</li>
+  <li>打开磁吸: shift+tab
+    <ul>
+      <li>打开磁吸选择：shift+ctrl+tab</li>
+    </ul>
+  </li>
+  <li>加选: ctrl+Numpad(+)</li>
+  <li>点/线/面菜单：ctrl+v/e/f
+    <ul>
+      <li>封口：ctrl+f - beautify faces/grid fill</li>
+    </ul>
+  </li>
+  <li><strong>选择相似的：shift+g</strong>（在编辑/物体/骨骼模式下都很好用）</li>
+  <li><strong>重复上一步操作：shift+r</strong></li>
+  <li>选择父物体：右上角<code class="language-plaintext highlighter-rouge">Options-Parents</code></li>
+  <li>缩放两个物体之间的距离：右上角<code class="language-plaintext highlighter-rouge">Options-Location</code></li>
+  <li>间隔环选：先环选，再<code class="language-plaintext highlighter-rouge">select-checker deselect</code></li>
+  <li>选择所有连接着的面: L(取消选择连着的面 shift+L)</li>
+  <li>选择连续的点/线/面：ctrl+LMB
+    <ul>
+      <li>面板 face stepping：勾选按步选择</li>
+      <li>Topology Distance：勾选后走的直角连接</li>
+      <li>Fill Region：勾选后把两个路径之间的面积都选上</li>
+      <li>Deselected：间隔多少个不选</li>
+    </ul>
+  </li>
+  <li>选择两点/线/面间的面积：ctrl+shift+LMB</li>
+  <li>反选：ctrl+i</li>
+  <li>随机选择:Select     - Select Random</li>
+  <li>按组选择:Shiift+g</li>
+  <li><strong>同时修改xyz的值：按住左键，下拉选中xyz</strong></li>
+  <li>灯光方向
+    <ul>
+      <li>主键盘-句号：选择<code class="language-plaintext highlighter-rouge">3D Cursor</code>，再移动灯光位置</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="物体操作">物体操作</h2>
+
+<ul>
+  <li><strong>对物体命名：F2</strong></li>
+  <li>批量重命名：ctrl+F2</li>
+  <li><strong>编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复</strong></li>
+  <li><strong>坐标归零: alt+g/r/s</strong></li>
+  <li>快速统一法线: 选中需要翻转的法线部分, 在Object Data properties-Normals 下, 勾选 Auto Smooth</li>
+  <li>快速删除背面
+    <ul>
+      <li>选择一个面, shift + g 选择所有相似法线面 / 左上菜单 select - select linked - linked flat faces</li>
+      <li>cmd+ i 反选 删除</li>
+    </ul>
+  </li>
+  <li>在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a</li>
+  <li><strong>沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s</strong></li>
+  <li>把组合在一起的物件一次性分开：<code class="language-plaintext highlighter-rouge">edit mode-P-by loose parts</code></li>
+  <li>建立父子关系:     cmd/control+p</li>
+  <li>重新计算法线:shift+n</li>
+  <li>解除父子关系
+    <ul>
+      <li>在列表上找到子物体，按住shift，左键从父物体下拖出</li>
+      <li>选中子物体，alt+p</li>
+    </ul>
+  </li>
+  <li>镜像：ctrl+m</li>
+  <li>让物体沿着某个面的方向移动（非物体局部坐标）：<code class="language-plaintext highlighter-rouge">transform pivot point-Active Element</code></li>
+  <li>物体吸附：
+    <ul>
+      <li>吸附到表面，选择<code class="language-plaintext highlighter-rouge">face</code>，勾选<code class="language-plaintext highlighter-rouge">align rotation to target</code>可以根据吸附面的方向自动转向，勾选<code class="language-plaintext highlighter-rouge">Project individual Elements</code>可以让吸附物体和被吸附物体朝向一样</li>
+    </ul>
+  </li>
+  <li>沿地面网格移动物体：先按G/R/S，按住ctrl操作</li>
+  <li>选中的物体视图居中并把坐标归零: shift+c</li>
+  <li>切换对齐方式：主键盘-句号</li>
+  <li>选中多个物体时，以每个物体自身中心点缩放：对齐方式选择 <code class="language-plaintext highlighter-rouge">Individual Origins</code></li>
+  <li>延局部坐标移动/缩放/旋转：先按快捷键（G/S/R），再按两下方向（X/Y/Z）</li>
+  <li>复制物体:     shift+d</li>
+  <li><strong>复制且让新物体继承原物体(操作原物体时新物体一起被操作): alt+d</strong>
+    <ul>
+      <li>把没有alt+d复制的物体关联起来：选中所有要关联的物体，最后选中模板物体，<code class="language-plaintext highlighter-rouge">ctrl+L-Object Data</code></li>
+    </ul>
+  </li>
+  <li><strong>复制一组物体</strong>：<code class="language-plaintext highlighter-rouge">shift+a-collection instance-选择要复制的collection</code>，复制后的物体组不可单独编辑，编辑原物体组，复制物体组很跟随变化</li>
+  <li><strong>复制物体但不增加场景中的面数</strong>（节省性能的方法）：
+    <ul>
+      <li>把对象M添加到集合中</li>
+      <li>shift+a 选择<code class="language-plaintext highlighter-rouge">Collection Instance</code></li>
+      <li>shift+d 复制</li>
+    </ul>
+  </li>
+  <li>从collection中移除(会完全删除) remove from collection: ctrl(cmd)+alt+g</li>
+  <li>从所有collections中移除(会完全删除) remove from all collections: shift+ctrl(cmd)+alt+g</li>
+  <li>当一个物体已经转成很奇怪的角度，要在上面加新的东西，可以先<code class="language-plaintext highlighter-rouge">alt+d</code>一个物体出来，再alt+r 还原旋转角度，在新物体添加部件，角度奇怪的原物体也会同时添加部件，调整好后再删除复制的物体</li>
+  <li>让复制的物体有随机角度：左上角菜单 <code class="language-plaintext highlighter-rouge">Transform-Randomize Transform</code></li>
+  <li>复制一个物体的变换信息 copy Transform Data
+    <ul>
+      <li>先选择要复制的物体，再选被复制物体</li>
+      <li>N调出sidebars，在某个坐标处右键 <code class="language-plaintext highlighter-rouge">Copy All to Selected</code> 或<code class="language-plaintext highlighter-rouge">Copy Single to Selected</code></li>
+    </ul>
+  </li>
+  <li>对齐物体：ctrl+alt+a</li>
+  <li>向一个轴缩放：编辑模式-shift+ctrl+alt+s</li>
+  <li>延法线挤出:alt+e</li>
+  <li>在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a</li>
+  <li>清除游离点/线/面: mesh-clean up-delete loose</li>
+  <li>翻转物体：alt+f</li>
+  <li>使用正则批量给物体重命名的技巧（有时做镜像复制时会有很多带 .001 的物体）
+    <ul>
+      <li>框选要重命名的物体</li>
+      <li>使用插件<code class="language-plaintext highlighter-rouge">simple renaming panel</code></li>
+    </ul>
+  </li>
+  <li>视图:
+    <ul>
+      <li>选中物体最大化：Numpad-句号</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="建模-1">建模</h2>
+
+<ul>
+  <li>
+    <p>shift+alt+LMB: 可以同时选择连接的面</p>
+  </li>
+  <li>
+    <p>快速把物体中心点对齐到底部: 进入编辑模式, z轴设置为1m</p>
+  </li>
+  <li>
+    <p>选择多个物体TAB能同时进入编辑模式</p>
+  </li>
+  <li>
+    <p>曲线改为锐角: 编辑模式 - V</p>
+  </li>
+  <li>
+    <p><strong>把点一分为二: v</strong></p>
+  </li>
+  <li>
+    <p><strong>选择子对象</strong>: 选中父对象后, shift+g</p>
+  </li>
+  <li>
+    <p>减少多余面和节点的方法</p>
+
+    <ul>
+      <li>编辑模式- X -  Dessolve 点 线 面</li>
+    </ul>
+  </li>
+  <li>
+    <p>编辑模式分离物体到新物体: p</p>
+  </li>
+  <li>
+    <p>编辑模式分离物体(不到新物体): y</p>
+  </li>
+  <li>
+    <p><strong>同时修改多个物体属性: Alt+点选</strong></p>
+  </li>
+  <li>
+    <p>建一个完美球体</p>
+
+    <ul>
+      <li>方法1：使用插件extra objects，选择round cube，增加细分</li>
+      <li>方法2：创建cube，添加<code class="language-plaintext highlighter-rouge">subdivision</code> 和 <code class="language-plaintext highlighter-rouge">cast</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>不会破坏原物体表面构造的subdivide方法</strong>：使用<code class="language-plaintext highlighter-rouge">Multires-Subdivide</code>，此时使用雕刻模式雕刻的结果不会改变原物体的表面构造</p>
+  </li>
+  <li>
+    <p>让物体边缘完美贴合另一个物体：</p>
+
+    <ul>
+      <li>把要贴合的边打组（ctrl+g）</li>
+      <li>添加<code class="language-plaintext highlighter-rouge">shinkwrap</code>修改器，<code class="language-plaintext highlighter-rouge">Vertex Group</code>选择上一步建的组</li>
+      <li><code class="language-plaintext highlighter-rouge">Mode-Project</code>，把坐标换为局部坐标</li>
+      <li>根据要贴合的轴向，勾选<code class="language-plaintext highlighter-rouge">Axis</code>，勾选<code class="language-plaintext highlighter-rouge">Negative</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>沿法线移动边时（双击G）不能移动超出原来高度的位置，此时按 alt 或 c 可沿法线方向挤出，而不需要使用挤出功能</p>
+  </li>
+  <li>
+    <p>在两点之前加线：不要使用F(使用F只会在两点间连线，不会把面也切开)，使用J</p>
+  </li>
+  <li>
+    <p>任意调整环节的角度：环节后，使用左侧工具栏中的<code class="language-plaintext highlighter-rouge">Shear</code></p>
+  </li>
+  <li>
+    <p>沿某个轴对齐：坐标选为Normal，S-X/Y/Z-0</p>
+  </li>
+  <li>
+    <p>镜像修改器的技巧</p>
+
+    <ul>
+      <li>镜像修改器使用的是物体的origin点，移动origin点就可以把镜像物体对齐别的地方</li>
+      <li>把cursor放到要对齐的位置</li>
+      <li><code class="language-plaintext highlighter-rouge">Options-check Origins</code></li>
+      <li><code class="language-plaintext highlighter-rouge">shift+s-selection to cursor</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>在应用镜像修改器后，又打算使用镜像添加新部件</strong></p>
+
+    <ul>
+      <li>再添加一次镜像修改器</li>
+      <li>勾选<code class="language-plaintext highlighter-rouge">Bisect-x</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>skin工具没有应用上</strong>：点击<code class="language-plaintext highlighter-rouge">Mark Root</code></p>
+  </li>
+  <li>
+    <p>一次性应用所有 Modifier：左上角菜单 <code class="language-plaintext highlighter-rouge">Object-Convert to-Mech from Curve/Meta/Suf/Text</code></p>
+  </li>
+  <li>
+    <p><strong>一次性调整所有物体的变换（无论是修改器还是位置信息）：按住 alt 点击或Enter</strong></p>
+  </li>
+  <li>
+    <p>一次性把一个物体的Modifier复制给其他多个物体：先选要复制的物体，最后选被复制物体，<code class="language-plaintext highlighter-rouge">Shift+L （make links）- Modifiers</code></p>
+  </li>
+  <li>
+    <p>布尔: 安插件 <code class="language-plaintext highlighter-rouge">bool tool</code> then ctrl+shift+b or ctrl + 小键盘 -，使用时选择<code class="language-plaintext highlighter-rouge">Brush Boolean</code>，在应用前都可以修改</p>
+  </li>
+  <li>
+    <p>把选中的面assign到新组：<code class="language-plaintext highlighter-rouge">ctrl+g</code></p>
+  </li>
+  <li>
+    <p>用布尔做凹边</p>
+
+    <ul>
+      <li>应用布尔修改器</li>
+      <li>在布尔物体（非被布尔物体）应用Solidfy修改器</li>
+      <li>如果被布尔物体应用过Bevel修改器，把布尔修改器放到Bevel修改器之上</li>
+    </ul>
+  </li>
+  <li>
+    <p>挤出面平面化/平滑部分sharp化：<code class="language-plaintext highlighter-rouge">Item-Edges Data-Mean Crease</code>调整到1</p>
+
+    <ul>
+      <li>
+        <p>进一步优化</p>
+
+        <ul>
+          <li>选择部分线，调整<code class="language-plaintext highlighter-rouge">Item-Edges Data-Mean Crease</code></li>
+          <li>
+            <p>选择其中一条已经调整过的线，打开“选择相似菜单 <code class="language-plaintext highlighter-rouge">shift+g-Bevel</code>，再次调整</p>
+          </li>
+          <li>加<code class="language-plaintext highlighter-rouge">Bevel Modifier</code>，选择<code class="language-plaintext highlighter-rouge">Limit Method-Weight</code>可以对应应用上一步调整的 mean crease</li>
+          <li>检查是否勾上<code class="language-plaintext highlighter-rouge">Auto Smooth</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>单点挤出新面：插件<code class="language-plaintext highlighter-rouge">F2</code>，在点模式下，按F可挤出面</p>
+  </li>
+  <li>
+    <p><strong>删除点/线/但不同时清除面：x-Dissolve(或 ctrl+x)</strong></p>
+  </li>
+  <li>
+    <p><strong>清除没有必要的线和点：x-Limited Dissolve</strong></p>
+  </li>
+  <li>
+    <p><strong>随意面挤出：ctrl+RMB</strong></p>
+  </li>
+  <li>
+    <p>修改器层面的merge：添加<strong>Weld</strong>修改器</p>
+  </li>
+  <li>
+    <p>修正<code class="language-plaintext highlighter-rouge">shade smooth</code>对边角的平滑</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Object Data Properties-Normals</code> 勾选 <code class="language-plaintext highlighter-rouge">Auto Smooth</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>倒角：ctrl+b</p>
+
+    <ul>
+      <li>如果倒角没有弧度，查看 Bevel 菜单（倒角时出现在右下角）中的 Shape</li>
+      <li>导角-凹面：ctrl+b –&gt; p</li>
+    </ul>
+  </li>
+  <li>
+    <p>使用 Bevel Modifier 来添加物体边角</p>
+
+    <ul>
+      <li>调整<code class="language-plaintext highlighter-rouge">Limit Method</code>的类别，<code class="language-plaintext highlighter-rouge">Segments</code>的层数，<code class="language-plaintext highlighter-rouge">Offset</code>的层数，检查 <code class="language-plaintext highlighter-rouge">Auto Smooth</code>是否勾选</li>
+      <li>自定义物体中需要Bevel的部分：编辑模式，<code class="language-plaintext highlighter-rouge">Transform-Edges Data-Mean Bevel Weight</code>：是一个0-1的区间，1表示完全应用Modifier的Offset，0表示完全不应用</li>
+      <li>在一个物体上应用多种倒角形式
+        <ul>
+          <li>部分边倒角：编辑模式，选中边，调整<code class="language-plaintext highlighter-rouge">sidebars-Transform-Edges Data-Mean Bevel </code>，bevel修改器<code class="language-plaintext highlighter-rouge">Limit Method-Vertex Group</code>，调整<code class="language-plaintext highlighter-rouge">Segments</code>，这样不会影响第二个倒角修改器的效果</li>
+          <li>再添加一个倒角修改器，修改其他部分，<strong>注意两个倒角器的上下位置</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>做石头</strong></p>
+
+    <ul>
+      <li>在编辑模式下, 选择左侧工具 Bisect</li>
+      <li><strong>全选面</strong>, 切分, 勾选 fill / clear outside or inside</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=7h89tkUJLuM">自动缝衣服</a></p>
+
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=HPz5gk_AT6w">缝好衣服加动画</a>
+        <ul>
+          <li>要点在于, 先做人物动画,再加衣服,人物动画要在衣服缝好之后, 把衣服的动画最大帧数设置和人物动画一样长</li>
+          <li><strong>Bake!!</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>给环线加两条边缘环线的技巧</p>
+
+    <ul>
+      <li>选中环线</li>
+      <li>Crl+B 或 Ctrl+Shift+R(使用后一种时，只增加2条环线，用E让边缘线和环线等距)</li>
+    </ul>
+  </li>
+  <li>Insert的技巧
+    <ul>
+      <li>+Ctrl 可以同时突出/凹进</li>
+      <li>+O 扩大外边缘</li>
+      <li>+I  分别内切</li>
+      <li>+B 在边缘不内切</li>
+    </ul>
+  </li>
+  <li>knife的技巧
+    <ul>
+      <li>+C 打开角度</li>
+      <li>+Z 穿透面</li>
+      <li>+E 保持cut工具不退出</li>
+    </ul>
+  </li>
+  <li>投影式开洞
+    <ul>
+      <li>投影的原型必须是一个平面</li>
+      <li>选中平面，再选中要开洞的物体，TAB进入编辑界面，调整好投影角度</li>
+      <li>左上角菜单<code class="language-plaintext highlighter-rouge">Mesh-Knife Project</code></li>
+      <li>使用auto merge来把点连接好</li>
+    </ul>
+  </li>
+  <li>填补模型上不连续的破洞
+    <ul>
+      <li>编辑模式-边</li>
+      <li>菜单<code class="language-plaintext highlighter-rouge">Select-Select All by Trait-Non Manifold</code></li>
+      <li>F to fill these holes</li>
+      <li>Ctrl+T 转为三角形填充（这样可以让拐角的图形格式化）</li>
+      <li>Alt+J 合并三角形为矩形</li>
+    </ul>
+  </li>
+  <li>
+    <p>调整subdivision的强度：使用modifier后，n-item-edges data</p>
+  </li>
+  <li>
+    <p>点倒角：ctrl+shift+b</p>
+  </li>
+  <li>
+    <p>添加插件<code class="language-plaintext highlighter-rouge">Extra Objects</code> 分别勾<code class="language-plaintext highlighter-rouge">Curve</code> <code class="language-plaintext highlighter-rouge">Mesh</code></p>
+  </li>
+  <li>
+    <p>沿着某个中心点array</p>
+
+    <ul>
+      <li>在中心点创建一个空物体</li>
+      <li>在物体中应用array修改器，把array物体的中心点对齐空物体中心点</li>
+      <li>取消勾选<code class="language-plaintext highlighter-rouge">Relative Offset</code>，勾选<code class="language-plaintext highlighter-rouge">Object Offset</code>，物体选择空物体</li>
+      <li>选中空物体，R旋转，上下移动空物体能制造step的分布，S能放大/缩小分布</li>
+    </ul>
+  </li>
+  <li>
+    <p>利用array做控制器</p>
+
+    <ul>
+      <li>新建贝塞尔曲线</li>
+      <li>添加array修改器，<code class="language-plaintext highlighter-rouge">fit type-fit curve</code>，选择曲线（此时只是物体沿着曲线排列）</li>
+      <li>添加curve修改器，选择curve(此时可通过控制曲线来控制物体)，可选中两点，右键 subdivide添加更多曲线上的点</li>
+      <li>添加控制器：在编辑模式下选择一个点，<code class="language-plaintext highlighter-rouge">ctrl+h-Hook to new object</code>添加hook，回到物体模式，可用新物体控制曲线，进而控制array</li>
+      <li>物体模式，选中上一步生成的空物体，在<code class="language-plaintext highlighter-rouge">Object Data Properties</code>中，display as sphere</li>
+    </ul>
+  </li>
+  <li>
+    <p>画自由管线</p>
+
+    <ul>
+      <li>新建一个曲线，<code class="language-plaintext highlighter-rouge">Object Data properties-Geometry</code>加Bevel，增加shape的Resolution preview U的段数</li>
+      <li>进入编辑模式，确认<code class="language-plaintext highlighter-rouge">Active Tool and Workspace settings-Projection Depth</code>选中<code class="language-plaintext highlighter-rouge">Cursor</code>（如果选中surface，画线时会附在被画物体的表面，调整offset的距离可以让画线和物体表面的间距）</li>
+      <li>使用左侧<code class="language-plaintext highlighter-rouge">Draw</code>工具画曲线</li>
+      <li>通过alt+s控制曲线bevel的粗细</li>
+    </ul>
+  </li>
+  <li>
+    <p>做贴在物体上的便利粘</p>
+
+    <ul>
+      <li>新建平面，细分，把中心点移到边上，使用局部坐标，保证Y轴指向中心点，Z轴朝上</li>
+      <li>快捷键o，选择sharp，选择一个边，向上抬</li>
+      <li>回到物体模式，shift+tab打开磁吸，选择面，勾选<code class="language-plaintext highlighter-rouge">Align rotation to target</code>和<code class="language-plaintext highlighter-rouge">Project individual elements</code>，移动平面到物体上吸附</li>
+      <li>添加细分，实体修改器</li>
+      <li>如果吸附物体为曲面，添加<code class="language-plaintext highlighter-rouge">shinkwrap</code>修改器，把该修改器移到最上面，target选中曲面物体，mode选中project，勾选Negative</li>
+      <li>把需要吸附的平面部分ctrl+g添加到新组，回到<code class="language-plaintext highlighter-rouge">shrinkwrap</code>修改器，选中上步的组</li>
+      <li>如果上步效果还不够好，ctrl+shift切换到权重刷模式，刷权重（可切换到点模式，查看每个点受到的权重影响）</li>
+    </ul>
+  </li>
+  <li>
+    <p>做楼梯</p>
+
+    <ul>
+      <li>做两个面</li>
+      <li>array</li>
+    </ul>
+  </li>
+  <li>做栅栏
+    <ul>
+      <li>平面，ctrl+r 切分</li>
+      <li>ctrl+b 边/点倒角</li>
+      <li>删除倒角面</li>
+      <li>挤出</li>
+    </ul>
+  </li>
+  <li>
+    <p>做栅栏方法2</p>
+
+    <ul>
+      <li>细分</li>
+      <li>使用Wireframe修改器</li>
+    </ul>
+  </li>
+  <li>
+    <p>做交叉网格</p>
+
+    <ul>
+      <li>
+        <p>建一个cube，可见性改为wire</p>
+      </li>
+      <li>
+        <p>建一个平面，选cube，选plane，<code class="language-plaintext highlighter-rouge">shift+b-brush boolean-intersect</code></p>
+      </li>
+      <li>
+        <p>在平面上添加<code class="language-plaintext highlighter-rouge">array modifier</code>，<strong>进入编辑模式</strong>，勾选<code class="language-plaintext highlighter-rouge">Merge</code></p>
+      </li>
+      <li>
+        <p>把平面缩短，复制，调整形状，整体再调整45度，全选，放大到边界延伸出盒子外</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">copy array modifier</code>，y轴offset</p>
+
+        <p><img src="/Unity/Blender.assets/image-20200723105836087.jpg" alt="image-20200723105836087" /></p>
+      </li>
+      <li>
+        <p>回到<code class="language-plaintext highlighter-rouge">object mode</code>，<strong>应用布尔修改器</strong></p>
+      </li>
+      <li>
+        <p>选中边缘四个角的点，S-Z-0 打平</p>
+
+        <p><img src="/Unity/Blender.assets/image-20200723111240233.jpg" alt="image-20200723111240233" /></p>
+      </li>
+      <li>
+        <p>添加solidfy修改器和bevel修改器，增加厚度和倒角(记得勾选 auto smooth)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>做树枝</p>
+
+    <ul>
+      <li>用点画出主干</li>
+      <li>添加<code class="language-plaintext highlighter-rouge">skin</code></li>
+      <li>进入编辑模式，a全选，ctrl+a 收缩(或 cmd + a + x )</li>
+      <li>选择单独节点 ctrl+a 调整</li>
+    </ul>
+  </li>
+  <li>做蔓藤
+    <ul>
+      <li>做要放置蔓藤的平面区域（切分会影响生成方向和密度）</li>
+      <li>做树叶</li>
+      <li>在区域中添加粒子生成器</li>
+      <li><code class="language-plaintext highlighter-rouge">Render</code>选择<code class="language-plaintext highlighter-rouge">Object</code>，物体选择树叶</li>
+      <li><code class="language-plaintext highlighter-rouge">Physics</code>选择<code class="language-plaintext highlighter-rouge">none</code></li>
+      <li>调整<code class="language-plaintext highlighter-rouge">Rotation</code>里的参数</li>
+    </ul>
+  </li>
+  <li>做冰块
+    <ul>
+      <li>切换到雕刻模式</li>
+      <li>使用<code class="language-plaintext highlighter-rouge">scrape</code></li>
+      <li><code class="language-plaintext highlighter-rouge">n</code>打开属性面板，选择<code class="language-plaintext highlighter-rouge">tool</code>，勾选<code class="language-plaintext highlighter-rouge">Dyntopo</code>，<code class="language-plaintext highlighter-rouge">Detail size</code>调小</li>
+      <li>这样边雕刻，物体会增加细分</li>
+      <li>最好雕刻完以后，把该物体做为高精模烘到低精上，直接渲染会死机</li>
+    </ul>
+  </li>
+  <li>
+    <p>做道路网格</p>
+
+    <ul>
+      <li>curve画道路网</li>
+      <li>转为mesh</li>
+      <li>添加 skin
+        <ul>
+          <li>进入edit mode , cmd + a (或 cmd + a + x/y) 调整宽度</li>
+        </ul>
+      </li>
+      <li>添加Decimate 精简面
+        <ul>
+          <li>选择 Planar</li>
+        </ul>
+      </li>
+      <li>在Object Properties - Viewport Display - check Wireframe 可查看精简后的面的样子</li>
+      <li>清理面
+        <ul>
+          <li>选择一个面, shift + g 选择所有相似法线面 / 左上菜单 select - select linked - linked flat faces</li>
+          <li>cmd+ i 反选 删除</li>
+          <li>把面分解好(用插件 MACHIN@tools快速切分面) f 合并面</li>
+        </ul>
+      </li>
+      <li>做路肩
+        <ul>
+          <li>选择一条边, shift+g - Amount of Faces Around and Edge</li>
+          <li>shift+d 复制, p分享为单独的物体</li>
+          <li>把出口删除(即线不可以封闭), 转为曲线</li>
+          <li>在顶视图, 画一条曲线如下图</li>
+          <li><img src="/Unity/Blender.assets/Snipaste_2021-04-05_18-41-26-7619341.jpg" alt="Snipaste_2021-04-05_18-41-26" /></li>
+          <li>选择刚分离出来的曲线 Bevel - Object -选择上一步的曲线</li>
+          <li>调整上一步曲线的形状和大小</li>
+          <li>在 viewport overlays 中打开 face orientation查看法线方向, 蓝色为上</li>
+          <li><img src="/Unity/Blender.assets/image-20210405210227045.jpg" alt="image-20210405210227045" /></li>
+          <li>修复法线方向:
+            <ul>
+              <li>选择路肩形状曲线, 编辑模式, 选中所有, 左上菜单 - Segments- Switch Direction</li>
+            </ul>
+          </li>
+          <li>把路肩转为mesh</li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="array的技巧">array的技巧</h3>
+
+<ul>
+  <li>做螺旋线
+    <ul>
+      <li>创建一个物体，array</li>
+      <li>建立一个空物体 <code class="language-plaintext highlighter-rouge">Plain Axes</code></li>
+      <li>在array中勾选<code class="language-plaintext highlighter-rouge">Object Offset</code>，物体选择空物体</li>
+      <li>使用R旋转，S缩放</li>
+      <li>勾选<code class="language-plaintext highlighter-rouge">Merge</code>，<code class="language-plaintext highlighter-rouge">distance</code>调大</li>
+    </ul>
+  </li>
+  <li>沿曲线array不变形
+    <ul>
+      <li>创建平面，array</li>
+      <li>添加 curve，物体选择曲线</li>
+      <li>新建一个物体，把该物体做为平面的子物体（ctrl+p）</li>
+      <li>在<code class="language-plaintext highlighter-rouge">Object properties-instancing</code>里选择<code class="language-plaintext highlighter-rouge">Face</code>，去掉<code class="language-plaintext highlighter-rouge">Display Instancer</code>的勾选</li>
+      <li>**应用后让Instances实体化: <code class="language-plaintext highlighter-rouge">Object - Apply - Make Duplicates Real</code> ** (快捷键 Ctrl+a)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="人体建模">人体建模</h2>
+
+<h3 id="建模及导出技巧">建模及导出技巧</h3>
+
+<ul>
+  <li>
+    <p><strong>建模</strong></p>
+
+    <ul>
+      <li>
+        <p style="background-color:red;"><b>建模时先建空对象把各部分放成子对象, 再绑骨骼</b></p>
+      </li>
+      <li>
+        <p>把被衣服遮盖的四肢分开建模, 这样方便上色和调整骨骼绑定</p>
+      </li>
+      <li>使用<code class="language-plaintext highlighter-rouge">Decimate</code>修改器精简面</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="人体建模技巧">人体建模技巧</h3>
+
+<ul>
+  <li>头部
+    <ul>
+      <li>方法1: 建正方体 cmd+2</li>
+      <li><a href="https://www.youtube.com/watch?v=xCrmYQlzp2A">方法2</a>
+        <ul>
+          <li>正方形, 编辑模式, 细分:5</li>
+          <li>删除一半, 镜像</li>
+          <li>再次进入编辑模式, 在中部添加一条环线(做为鼻子的分隔线), 中部6块挤出</li>
+          <li><img src="/Unity/Blender.assets/HEAD.jpg" alt="HEAD" /></li>
+          <li>调整后, 沿眼周cut一圈, merge掉一些三角形区域</li>
+          <li>挤出嘴, 缩小成嘴缝, 删除面, 调整好后加一圈线做嘴唇<img src="/Unity/Blender.assets/MOUTH.jpg" alt="MOUTH" /></li>
+          <li>挤出鼻子, 挤出鼻子时要把鼻翼一起挤出</li>
+        </ul>
+      </li>
+      <li>方法3(有设计图)
+        <ul>
+          <li>沿眼睛围一圈, 嘴围一圈, 连起(需要练习)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=lyMvUhHlbG4">身体(方法1:从腿往上)</a></p>
+
+    <ul>
+      <li>添加一个6边形平面, 进入编辑模式, 沿x轴移动一点(注意中心点保持在原点上), 添加mirror修改器</li>
+      <li>挤出双腿, 向内侧倾斜, 挤出裆部</li>
+      <li>向上挤出肚子, 放大一些, 在侧面向前倾斜</li>
+      <li>挤出身体, 把前面两片和后两片向上挤出, 留出手臂洞</li>
+      <li>挤出手臂, 手臂留出胳肢窝的位置(挤出2次), 再拉出手臂</li>
+      <li>腰部加环线, 胸部加环线</li>
+      <li>腿部加环线, 选择前面两片, 挤出脚</li>
+      <li>收紧头部, 挤出脖子</li>
+    </ul>
+
+    <p><img src="/Unity/Blender.assets/BODY.jpg" alt="BODY" /></p>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=HC7dlP9cRpU">手(单独建)</a></p>
+
+    <ul>
+      <li>正方体, 压扁, 切分3段</li>
+      <li>从顶视图调整手掌的形状</li>
+      <li>分别挤出四个手指, 分两段</li>
+      <li>用侧面挤出拇指</li>
+      <li>挤出手腕, 连接手臂(手掌10个节点, 如手臂是8个节点, 手臂需要加两个环线再连接)</li>
+      <li>检查法线</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="父子关系">父子关系</h3>
+
+<ul>
+  <li>
+    <p>如果解除父子关系不起作用，试试ctrl+j合并两个物体，再进入编辑模式，L，P解除合并</p>
+  </li>
+  <li>如有一对父子关系物体，想让新物体 C 跟随父物体 B 运动，但不绑定为新的子物体，可在<code class="language-plaintext highlighter-rouge">ObjectConstraint Properties</code> 中添加 <code class="language-plaintext highlighter-rouge">Copy Location</code>或其他， <code class="language-plaintext highlighter-rouge">Target</code> 选择子物体 B（或者在pose mode下，先选B，再选C，shift+ctrl+c)</li>
+  <li>勾选<code class="language-plaintext highlighter-rouge">Offset</code>可以移动 C ，让 C 和 B 有距离，调整<code class="language-plaintext highlighter-rouge">Influence</code> 可以调整影响的强度</li>
+  <li>如果<code class="language-plaintext highlighter-rouge">Spece</code> 选择 <code class="language-plaintext highlighter-rouge">World Space &lt;--&gt; World Space</code>，两者都使用世界坐标移动；如果选择<code class="language-plaintext highlighter-rouge">Local Space &lt;--&gt; Local Space</code>，则双方以自己的局部坐标方向移动；</li>
+</ul>
+
+<h2 id="骨骼绑定">骨骼绑定</h2>
+
+<h3 id="骨骼绑定的要点">骨骼绑定的要点</h3>
+
+<ul>
+  <li>
+    <p><strong>备用组 deform</strong></p>
+
+    <ul>
+      <li>用于导入其他软件做绑定动作，默认从tgt组复制，没有IK组件，所有骨骼和root绑定</li>
+      <li>所有骨骼都copy transforms from tgt组</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>控制组 control(torso组)</strong></p>
+
+    <ul>
+      <li><strong>ctrl-root</strong>：控制整个人物的位置，一般放在平行于腿的后侧</li>
+      <li><strong>ctrl-torso</strong>：控制驱干，<code class="language-plaintext highlighter-rouge">parent:root</code></li>
+      <li><strong>ctrl-spine/hips</strong>：控制上半身和胯部，<code class="language-plaintext highlighter-rouge">parent:torso</code>，<code class="language-plaintext highlighter-rouge">copy rotation from chest</code></li>
+      <li><strong>ctrl-chest</strong>：控制腰部到脖子，<code class="language-plaintext highlighter-rouge">parent:torso</code></li>
+      <li><strong>ctrl-foot-roll02</strong>：控制脚踝的上下转动</li>
+      <li><strong>ctrl-foot</strong>：总控脚部运动位置</li>
+      <li><strong>ctrl-pole-leg</strong>：控制膝盖的朝向，<code class="language-plaintext highlighter-rouge">parent:ctrl-foot</code>，<strong>绑定ctrl-foot后可解决抬腿时膝盖后折的问题</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>机动组 mechanism</strong></p>
+
+    <ul>
+      <li><strong>mch-neck-rot</strong>：带动neck-int-rot，让neck-int-rot跟着动，<code class="language-plaintext highlighter-rouge">parent:ctrl-tweak-chest</code></li>
+      <li><strong>mch-neck-int-rot</strong>：控制脖子 neck  <code class="language-plaintext highlighter-rouge">parent:torso</code>，<code class="language-plaintext highlighter-rouge">copy location/rotation/scale from neck-rot</code></li>
+      <li><strong>mch-head-follow</strong>：带动int-head-follow，<code class="language-plaintext highlighter-rouge">parent:tgt-neck</code></li>
+      <li><strong>mch-int-head-follow</strong>：<code class="language-plaintext highlighter-rouge">parent:ctrl-torso</code>，<code class="language-plaintext highlighter-rouge">copy location/rotation/scale from mch-head-follow</code>，此时需要重新把tgt-head和mch-int-head-follow绑定成父子关系，让此控制head</li>
+      <li><strong>mch-ik-foot</strong>：控制大小腿和脚的反向动力学活动，<code class="language-plaintext highlighter-rouge">parent:root</code> ，对齐tgt-foot.L，让tgt-foot.L copy transforms from mch-ik-foot，因为tgt-foot被mch-ik-foot控制，可以把tgt-foot的parent修改为root，<code class="language-plaintext highlighter-rouge">parent:mch-foot-roll</code></li>
+      <li><strong>mch-foot-roll</strong>：控制前脚掌的转动，<code class="language-plaintext highlighter-rouge">parent:ctrl-foot</code>，<code class="language-plaintext highlighter-rouge">copy rotation from ctrl-foot-roll02</code>，设置转动范围<code class="language-plaintext highlighter-rouge">limit rotation min:0 max:180</code></li>
+      <li><strong>mch-foot-roll02</strong>：控制后腿跟的位置，设置转动范围<code class="language-plaintext highlighter-rouge">limit rotation min:-180 max:0</code>（或者先选中02，再选中roll，左上角<code class="language-plaintext highlighter-rouge">pose-constraints-copyconstraints to selected bones</code>），<code class="language-plaintext highlighter-rouge">parent:ctrl-foot</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>总控组 properties</strong></p>
+
+    <ul>
+      <li>
+        <p>放在头顶，用于控制各控制组件的强弱  <code class="language-plaintext highlighter-rouge">parent:root</code></p>
+      </li>
+      <li>
+        <p><strong>控制neck</strong></p>
+
+        <ul>
+          <li>在<code class="language-plaintext highlighter-rouge">pose mode</code>下，在<code class="language-plaintext highlighter-rouge">bone properties-custom properties</code>中添加<code class="language-plaintext highlighter-rouge">neck-follow</code>，复制<code class="language-plaintext highlighter-rouge">data path</code></li>
+          <li>在<code class="language-plaintext highlighter-rouge">neck-int-rot</code>的<code class="language-plaintext highlighter-rouge">bone constraint properties</code>的<code class="language-plaintext highlighter-rouge">copy rotation neck-follow</code>的<code class="language-plaintext highlighter-rouge">influence</code>中<code class="language-plaintext highlighter-rouge">add driver</code></li>
+          <li><code class="language-plaintext highlighter-rouge">averaged value</code> <code class="language-plaintext highlighter-rouge">simple property</code>，粘贴之前复制的path data</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>控制head</strong></p>
+
+        <ul>
+          <li>
+            <p>添加<code class="language-plaintext highlighter-rouge">head-follow</code>，<code class="language-plaintext highlighter-rouge">copy data path</code></p>
+
+            <ul>
+              <li>复制脖子的旋转driver，粘贴到头部的旋转influence上</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>建立骨骼前注意把坐标归零 shift+c</p>
+  </li>
+  <li>
+    <p>把骨骼名字显示出来，养成给骨骼命名的习惯</p>
+  </li>
+  <li>
+    <p>确保躯干和腿所有骨骼的Z轴都面向前，手臂骨骼的Z轴向上</p>
+  </li>
+  <li>
+    <p><strong>在编辑骨骼时，应该一直使用<code class="language-plaintext highlighter-rouge">individual origins</code></strong></p>
+  </li>
+  <li>中心骨骼（root）的坐标必须保持和世界坐标一致，动画时control骨骼延局部坐标移动，如果局部坐标和世界坐标不一致，移动时不直观，中心骨骼一般位于整个模型的底部中心
+    <ul>
+      <li>先沿Z轴建一根骨骼，命名为root</li>
+      <li>点击骨骼的tail,shift+s,选择 selection to cursor</li>
+      <li>沿Y轴移动Tail</li>
+      <li>或沿Z轴建一根骨骼，再沿X轴旋转-90度</li>
+    </ul>
+  </li>
+  <li>使用<code class="language-plaintext highlighter-rouge">Bone Layer Manager</code>管理骨骼层 <a href="https://gumroad.com/l/STdb">地址</a>
+    <ul>
+      <li>使用<code class="language-plaintext highlighter-rouge">Bone Layers</code>右边的圆点可以把选中的骨骼加入该层：先选骨骼，再点圆点
+ <img src="/Unity/Blender.assets/image-20200628173318326.png" alt="image-20200628173318326" /></li>
+      <li><strong>root不需要deform，把root单独放到一层中，把其他骨骼全选，shift+w - deform</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>做好单边骨骼后，复制一份，原骨骼层（DEF）做为导入到其他软件的骨骼结构，复制的骨骼可以放到单独一层，教程用命名为TGT层</p>
+  </li>
+  <li>
+    <p>使用TGT驱动DEF，先选中TGT的单个骨骼，再选中DEF的单个骨骼，shift+ctrl+c-copy transforms，此操作可把DEF层的骨骼互相解绑</p>
+  </li>
+  <li>
+    <p>把TGT层的<code class="language-plaintext highlighter-rouge">deform</code>取消，之后和人体绑定时不会绑到TGT层和ROOT层</p>
+  </li>
+  <li>
+    <p>把人物的Armature置于细分之上</p>
+  </li>
+  <li>
+    <p>刷权重时，<strong>注意权重影响的是DEF（deform）层，TGT层用于控制人物动作，所以刷权重需要让DEF层显示，TGT层隐藏，不然会找不到所选择的骨节对应的蒙皮区域</strong></p>
+  </li>
+  <li>
+    <p>使用<code class="language-plaintext highlighter-rouge">Simple rename panel</code>管理批量命名（此插件可以重命名所有物体，不仅骨骼） <a href="https://gumroad.com/l/simple_renaming_panel">地址</a></p>
+
+    <ul>
+      <li>把需要批量命名的骨骼放到同一层，全选，使用“在选择的物体中替换”</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="骨骼绑定方法1">骨骼绑定方法1</h3>
+
+<p>使用骨骼绑定控制物体行动的原因是：调整骨骼动画时，变换父级，子级动作也会被记录下来，而直接用物体做动画时，子级动画不会被记录，每个物体的运动是独立的</p>
+
+<ul>
+  <li>添加骨节:
+    <ol>
+      <li>e (同时按鼠标中键可保持90度)，之后shift+r，可以往一个方向同比挤出</li>
+      <li>右键 <code class="language-plaintext highlighter-rouge">subdivide</code></li>
+    </ol>
+  </li>
+  <li>
+    <p>添加没有父节点的骨头:shift+a</p>
+  </li>
+  <li>
+    <p>在关节之间加骨骼:f</p>
+  </li>
+  <li>
+    <p>让解除关联/新添加的骨骼关联到物体：shift+w-deform/alt+left click deform(选择多段骨骼时好用)</p>
+  </li>
+  <li>
+    <p>显示骨骼名称：<code class="language-plaintext highlighter-rouge">Object Data Properties-Viewwport Display</code>，勾选<code class="language-plaintext highlighter-rouge">Name</code> &amp; <code class="language-plaintext highlighter-rouge">Axes</code></p>
+  </li>
+  <li>
+    <p><strong>在编辑模式下调整骨骼朝向</strong>：ctrl+r</p>
+  </li>
+  <li>在骨骼模式下<strong>刷权重</strong>（该模式下可以移动骨骼查看效果）
+    <ul>
+      <li>物体模式下先选中骨骼，再选物体，进入权重刷编辑</li>
+      <li>按住ctrl，点击左键选择骨节，此时会同时显示此骨节影响的蒙皮</li>
+      <li><strong>打开<code class="language-plaintext highlighter-rouge">Object propertise-Viewpoint Display</code>里的 <code class="language-plaintext highlighter-rouge">wireframe</code>，可以清楚看到权重对面的影响</strong></li>
+      <li>使用面选择，按住ctrl选择面，可以把编辑范围限定在选择的面中</li>
+      <li>推荐使用subtract和mix笔刷，subtract时，使用最后一个preset笔头；mix时，使用1的强度，低一点weight</li>
+      <li><strong>如果你的角色前臂运动总是影响了胸部和前臂，那是不对的</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>对齐骨骼</strong>：选择骨骼，再选择被对齐骨骼control+alt+a</p>
+  </li>
+  <li>
+    <p>解除父子关系: 在子节处     右侧骨头 删除父对象(alt+p，alt+p可以选择disconnect bons 或 y，y直接解除父子关系)</p>
+  </li>
+  <li>
+    <p>命名单侧手脚时要加  .L,全选单侧骨骼 (顶上中部的transfomr     pivot point 要换成3d cursor)- 右键:symmetrize</p>
+  </li>
+  <li>
+    <p>重新关联父子关系:     ctrl/cmd + p</p>
+  </li>
+  <li>
+    <p>添加IK: 先选IK, 再选骨骼, pose mode: shift + i</p>
+
+    <ul>
+      <li><strong>几个重点IK</strong>
+        <ul>
+          <li>Root: 在两脚之间, 控制整个身体的位置, 是Torso和FootIK的父级</li>
+          <li>Torso: 在尾椎, 控制上身躯干, 是尾椎的父级</li>
+          <li>Foot: 在脚踝, 控制脚, 在pose mode下, 先点击IK, 后点击小腿骨, ctrl+shift+c - inverse kinematics ,是knee的父级</li>
+          <li>Knee: 在膝盖, 在小腿的运动约束面板下添加此IK</li>
+        </ul>
+      </li>
+      <li>把脚的骨骼清除父级(这样在用Torso控制身体时脚不会穿过地面), 在pose mode下, 先选小脚骨, 后选脚骨, ctrl+shift+c - copy location, 在运动约束面板下, 把Head/Tail 拉到1</li>
+      <li>把以上IK选中, 在骨骼面板下, Alt+LMB 取消Deform</li>
+    </ul>
+  </li>
+  <li>
+    <p>先选人体,再选骨架, ctrl+p</p>
+  </li>
+  <li>
+    <p>回归初始状态:     pose mode- alt+r/alt+g/alt+s</p>
+  </li>
+  <li>
+    <p>单独部件(例如眼球)未和身体一起绑定时,可单独选择眼球和骨架:cmd+p,选with empty groups/bone, **如果绑定出错, alt+p 清除附件(眼球)的父级, 重新绑定</p>
+  </li>
+  <li>
+    <p>权重刷:object     mode-weight paint</p>
+  </li>
+  <li>
+    <p>权重刷一般用add模式</p>
+  </li>
+  <li>
+    <p>在edit mode里,选中要显示的骨头(带控制器的),m键加入图层,把其余的关闭显示</p>
+  </li>
+  <li>
+    <p>使用pose  mode设置动作时,要选择 Local坐标,不能用Global坐标</p>
+  </li>
+  <li><strong>使用自动分配权重后,进入模型edit mode, 左上菜单Mesh-Weights-Normailze All 来重新计算权重</strong></li>
+</ul>
+
+<h3 id="骨骼绑定方法2--riggingrigify">骨骼绑定方法2:  rigging:rigify</h3>
+
+<ul>
+  <li>插件  rigging:rigify</li>
+  <li>骨骼对齐模型</li>
+  <li>绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate     RIg</li>
+  <li>脚踝后的横向骨骼要和脚面最宽的部分一样长</li>
+  <li>先全选模型,再选骨骼,ctrl+p—with automation weights</li>
+  <li>如果要调整骨骼, 调整后保持骨骼在显示状态, 重新生成rig</li>
+  <li><strong>[非常重要] 如果用自定义骨骼, 在<code class="language-plaintext highlighter-rouge">pose mode- bone properties-Rigify Type</code>里给骨骼选择类型, 之后使用<code class="language-plaintext highlighter-rouge">Generate rig</code>才会生成rig</strong></li>
+  <li><strong>如果一个场景里有多个rig, 在generate rig之前, 先打开Advanced Options, 把默认的overwrite切换为 new</strong></li>
+  <li><strong>在edit mode - Object Data Properties(小人图标) - Rigify Buttons 中, 有很多骨骼样板可以参考</strong></li>
+  <li><strong>使用Rigify里的<code class="language-plaintext highlighter-rouge">Rigify Layer Names</code>管理图层</strong>(在小人菜单下)
+    <ul>
+      <li>在<code class="language-plaintext highlighter-rouge">pose mode-Rigify Layer Names</code>下按<code class="language-plaintext highlighter-rouge">Rigify Bone Group</code>设定图层颜色, rig以后可以用颜色区分图层</li>
+      <li><img src="/Unity/Blender.assets/Snipaste_2020-10-03_22-15-58.jpg" alt="Snipaste_2020-10-03_22-15-58" /></li>
+    </ul>
+  </li>
+  <li>骨骼对齐模型，ctrl+a 应用变换</li>
+  <li>绑定IK: 选Object Data Properties(小人跳舞的图标)-Generate RIg</li>
+  <li>删除原骨骼</li>
+  <li>在 Object mode下，先全选模型,再选生成了IK的骨骼,ctrl+p—with automation weights</li>
+  <li><strong>控制技巧</strong>
+    <ul>
+      <li>IK/FK切换: 在pose mode下, N菜单-Item, 点击控制IK, 菜单会对应切换到IK/FK控制板, 默认使用IK模式, 如果要切换为FK模式, 点击FK控制部分(例如大臂), 在菜单中把 IK-FK(hand.L) 拉到1</li>
+      <li>IK/FK切换后动作跟随: 当使用IK/FK摆好姿势后, 想继续切换到另一个模式摆姿势, 点击 IK-&gt;FK(hand.L)(有个磁铁标志)</li>
+      <li>更方便控制手肘的转动: 选择手掌IK, 点击 <code class="language-plaintext highlighter-rouge">Toggle Pole</code>, 出现控制手肘的控制器</li>
+      <li>让模型保持正常长度: 默认模型的长度跟随控制器伸长变长, <del>把菜单中的 <code class="language-plaintext highlighter-rouge">IK Stretch</code> 拉到0, 可以让模型保持原来的长度</del>, **小人图标 - Inverse Kinematics - IK Solver : iTaSC</li>
+    </ul>
+  </li>
+  <li><strong>修复技巧</strong>
+    <ul>
+      <li>rig以后发现有部件没有显示widget(一般表现为骨骼底部的圆圈)
+        <ul>
+          <li>在 pose mode 下查看 Bone properties(骨头菜单) 的  Rigify Type-Options 有没有勾选 Widget</li>
+          <li>如果没勾选, 重新勾选</li>
+          <li>在上面资源菜单中右击 Widgets- Delete Hierarchy</li>
+          <li>重新 Genearte Rig</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="在绑定骨骼的人物上加衣服">在绑定骨骼的人物上加衣服</h3>
+
+<p>方法1:</p>
+
+<ul>
+  <li>添加Cloth  modifier</li>
+  <li>调整Quality  steps(往高调整)</li>
+  <li>调整Tension(往低调)</li>
+  <li>调整Stiffness(僵硬)/Damping(衰减)-bending(往低调)</li>
+  <li>勾选     Collisions-Self Collisions</li>
+  <li>Collisions:     distance(调高)</li>
+  <li>给人物身体添加Collision,勾选single Sided</li>
+</ul>
+
+<p>**方法2(推荐): **</p>
+
+<ul>
+  <li>
+    <p>选择衣服, 选择rig, ctrl+p-自动权重（或empty)</p>
+  </li>
+  <li>
+    <p>添加其他配件: 把配件都ctrl+j结合, 之后分别给配件分配骨骼控制组(在edit mode-Object Data Properties-Vertex Groups  assign 控制组)</p>
+  </li>
+  <li>
+    <p>人物做动作时模型穿出衣服外面：给人物模型<strong>衣服遮盖部分</strong>打组，人物模型加 mask 修改器，选择组，即把衣服遮盖部分的身体隐藏，解决穿模问题</p>
+  </li>
+  <li>
+    <p>（可选）在骨骼修改器下添加面料修改器</p>
+
+    <ul>
+      <li>
+        <p>将布料钉在骨架上</p>
+
+        <p>布料可以模拟并固定在骨架上。例如，一个角色可以用腰带将一件宽松外衣固定在角色的腰部。</p>
+
+        <p>固定操作的典型工作流程：</p>
+
+        <ol>
+          <li>将骨架设置为绑定姿势。</li>
+          <li>建模出包裹但不穿透角色的衣服。</li>
+          <li>将骨架设置为衣服的父级。现在骨架将有几个绑定到它的子级网格。</li>
+          <li>在每个布料对象上为固定的顶点创建一个新的顶点组。</li>
+          <li>将要固定的顶点添加到此顶点组，并为这些顶点赋予非零权重（您可能希望权重=1）。例如，外衣的腰带区域将位于权重为1的顶点组内。</li>
+          <li>在属性编辑器的物理选项卡中将衣服对象指定为“布料”。确保布料修改器位于修改器堆栈中的骨架下方。</li>
+          <li>按下 <em>布料</em> 面板中的 <em>固定布料</em> 按钮并选择顶点组。</li>
+          <li>在属性编辑器的物理选项卡中将角色的网格指定为“碰撞”对象。</li>
+          <li>现在衣服已经准备好了。非固定的顶点将受到布料修改器的控制。固定的顶点将受骨架修改器的控制。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="骨骼动画">骨骼动画</h3>
+
+<ul>
+  <li>大多数骨骼运动是基于局部坐标，而不是世界坐标，所以在最初建立骨骼时，尽量让骨骼的臂部坐标和世界坐标一致</li>
+  <li>给某个骨骼添加帧动画：选中要记录动画的骨骼，i</li>
+</ul>
+
+<h2 id="摄像机">摄像机</h2>
+
+<ul>
+  <li>摄像机视图: 小键盘0(正交摄像机:属性选择Orthographic)</li>
+  <li><strong>把当前视角设置为摄像机视角: ctrl + alt + numpad0</strong></li>
+  <li>旋转摄像机视角: 上一步后,点击视角边缘, g移动 r旋转</li>
+  <li>锁定摄像机: N-View-Lock Camera to View</li>
+  <li>切换多个摄像机: 选中摄像机, cmd+Numpad 0</li>
+</ul>
+
+<h3 id="摄像机跟随路径动画">摄像机跟随路径动画</h3>
+
+<p>使用 camera constraints tract path 搜索</p>
+
+<ul>
+  <li>新建曲线（贝塞尔曲线）</li>
+  <li>新建 empty cube</li>
+  <li>在 empty cube 添加 follow path, target 选择曲线</li>
+  <li>摄像机添加 child of 修改器，选择空对象（调整摄像机的location可以调整摄像机和空对象之间的距离）</li>
+  <li>摄像机添加 track to 修改器，target 选择<strong>需要跟拍的对象</strong>（保证 track to 在 child of 修改器下）</li>
+</ul>
+
+<h2 id="动画-1">动画</h2>
+
+<ul>
+  <li>
+    <p>清除所有动画帧: 物体模式-物体菜单(左上角)-动画-清除关键帧</p>
+  </li>
+  <li>
+    <p>在需要做动画的坐标上右键，<code class="language-plaintext highlighter-rouge">add driver</code></p>
+  </li>
+  <li>
+    <p>打开<code class="language-plaintext highlighter-rouge">drivers</code>编辑器，调整曲线</p>
+  </li>
+  <li>
+    <p>在对应的属性页面的<code class="language-plaintext highlighter-rouge">custom properties</code>中(如果要控制骨骼，应在骨骼控制页面（<strong>pose mode</strong>）中添加)添加新值，起名，保存，右键<code class="language-plaintext highlighter-rouge">copy data path</code></p>
+  </li>
+  <li>
+    <p>在<code class="language-plaintext highlighter-rouge">drivers</code>编辑器中，把刚复制的path粘贴到<code class="language-plaintext highlighter-rouge">path</code>一栏，<code class="language-plaintext highlighter-rouge">prop</code>可以选择物体本身</p>
+
+    <p><img src="/Unity/Blender.assets/image-20200701165414048.png" alt="image-20200701165414048" /></p>
+
+    <p><img src="/Unity/Blender.assets/image-20200701174111695.png" alt="image-20200701174111695" /></p>
+
+    <p><img src="/Unity/Blender.assets/image-20200701173935161.png" alt="image-20200701173935161" /></p>
+  </li>
+</ul>
+
+<h3 id="k帧快捷键">k帧快捷键</h3>
+
+<ul>
+  <li>切换时间轴到Graph editor: ctrl+tab</li>
+  <li>修改动画平滑度 set keyframe interpolation: t</li>
+  <li>给动画添加修改器
+    <ul>
+      <li>在左侧选择要修改的动画</li>
+      <li>n 调出右侧菜单, 选择 modifiers</li>
+      <li>add modifiers</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="拓扑">拓扑:</h2>
+
+<ul>
+  <li>雕模</li>
+  <li>安装bsurfaces</li>
+  <li>新建一个plane</li>
+  <li>选择画笔</li>
+  <li>add     surface</li>
+  <li>fn+f9 增加面数</li>
+  <li>加镜像</li>
+  <li>加shrinkwrap     把皮往外offset一点,按住shift可以微量调整</li>
+  <li>打开 吸附至表面(顶上工具栏)</li>
+  <li>两下g 按住alt 散开移动(两下g: 在表面平滑移动)</li>
+  <li>镜像:勾选 clipping, extrude时可以自动合并镜像点</li>
+  <li>安装looptools     右键,再右键添加到收藏, 可使用q 调出收藏快捷菜单</li>
+  <li>选择连续几个点:     cmd+左击</li>
+  <li>looptools     - loft: 顶点分散</li>
+  <li>looptools     - space: 顶点均匀分布</li>
+</ul>
+
+<h3 id="场景建模技巧">场景建模技巧</h3>
+
+<ul>
+  <li>alt+g 物体位置归零</li>
+  <li>options，选择“affects origins”，移动原点时吸附表面，让原点落到底部</li>
+  <li>曲线加点:编辑模式下, 选中两个顶点,选择左上角菜单-细分</li>
+  <li>导入其他blender文件:用 link或append</li>
+  <li>在编辑模式下添加细分, 使用smooth工具平滑</li>
+</ul>
+
+<h2 id="uv">UV</h2>
+
+<h3 id="技巧">技巧</h3>
+
+<ul>
+  <li>查看选中的UV对应的部分: NumPad 句号</li>
+</ul>
+
+<h3 id="uv适应">UV适应</h3>
+
+<ul>
+  <li>给物体添加材质- <code class="language-plaintext highlighter-rouge">Emission</code>, 颜色选<code class="language-plaintext highlighter-rouge">Image Texture</code> ,载入图片</li>
+  <li>在编辑模式下,点击U, 选择<code class="language-plaintext highlighter-rouge">Project to view</code></li>
+  <li>添加一个界面, 选择<code class="language-plaintext highlighter-rouge">UV Editor</code></li>
+</ul>
+
+<h3 id="uv绘制">UV绘制</h3>
+
+<ul>
+  <li>切换到UV     Editing, press u, select smart UV project, then switch to Texture Paint,     create a new image</li>
+  <li>切换到     Shading, 新建一个checker Texture, 选择上一步保存的image, 连接到roughness, 此时被上了UV的面会全反射环境, 再painting,     能把不需要反射的部分擦除</li>
+</ul>
+
+<p><img src="/Unity/Blender.assets/clip_image002.jpg" alt="img" /></p>
+
+<h3 id="物体使用不同uv">物体使用不同UV</h3>
+
+<ul>
+  <li>给整体加texture</li>
+  <li>复制一个材质，在编辑模式下assign需要另赋材质的部分</li>
+  <li>切换到物体模式，把整体材质取消复制标志（这样可以单独调节一个物体两部分的材质）</li>
+  <li><img src="/Unity/Blender.assets/image-20200708143448208.png" alt="image-20200708143448208" /></li>
+  <li>在UV Editor里单独调整材质</li>
+</ul>
+
+<h2 id="烘焙-1">烘焙</h2>
+
+<h3 id="高分烘给低分">高分烘给低分</h3>
+
+<ul>
+  <li>使用插件<strong>BAKE WRANGLER</strong>，<a href="https://www.bilibili.com/s/video/BV14z4y1R789">教程</a></li>
+</ul>
+
+<h3 id="法线贴图">法线贴图</h3>
+
+<ul>
+  <li>复制一个模,做成高精, 雕刻</li>
+  <li>alt+g把两个模对齐</li>
+  <li>给低精械添加一个材质,添加 image texture，color-space：    non-color</li>
+  <li>渲染模式改为cycles,     在bake中设置bake type为normal</li>
+  <li>勾选     Selected to active</li>
+  <li>先选择高精模,再加选低精模,点击bake</li>
+  <li>如果法线渲染出来有没覆盖好的, 调Ray distance</li>
+  <li>回到     shader editor, 添加normal map,把image的color连接到normal     map的color, then link normal map’s normal node to     principled BSDF’s normal node</li>
+  <li>如果要添加表面凹凸, 添加一个Displace modifier, Texture选择到刚才渲染好的贴图</li>
+</ul>
+
+<h3 id="simple-bake">Simple Bake</h3>
+
+<ul>
+  <li>选择需要烘焙的setting</li>
+  <li>设置 Bake Margin</li>
+  <li>勾选Export bakes</li>
+  <li>命名 Batch name</li>
+  <li>勾选 Copy objects and apply bakes</li>
+  <li>多个物体材质烘焙到一张图上
+    <ul>
+      <li>先把两个物品的UV在一张图上展好(位置不能重叠)</li>
+      <li>勾选 Multiple objects to one texture set</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="材质">材质</h2>
+
+<h3 id="快捷方式">快捷方式</h3>
+
+<ul>
+  <li>清理不用的材质
+    <ul>
+      <li>右上列表, 切换到 Orphan Data</li>
+      <li>拉开, 最右侧: Purge</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="地面">地面</h3>
+
+<ul>
+  <li>新建一个平面</li>
+  <li>编辑-u-展开UV, 切换到UV绘制模式</li>
+  <li>给平面添加一个基本材质</li>
+  <li>切换到 Active Tool and Workspace settings (右侧第二个工具栏(螺丝刀和扳手图标))</li>
+  <li>点击 + 新建一个基本面贴图</li>
+  <li>点击 + 新建 Normal 贴图</li>
+  <li>**放大物体, 但材质不放大的技巧: **
+    <ul>
+      <li>编辑模式 - 右上角 Options - 勾选 <code class="language-plaintext highlighter-rouge">Correct Face Attributes</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="自发光">自发光</h3>
+
+<ul>
+  <li>渲染菜单中, 勾选<code class="language-plaintext highlighter-rouge">Bloom</code>(显示自发光) <code class="language-plaintext highlighter-rouge">Screen Space Reflections</code>(显示反射)</li>
+  <li>
+    <p>材质设定</p>
+
+    <div class="mermaid">
+    graph LR
+    A[Fresnel]--&gt;|Fac--Fac|B[ColorRamp]
+    B--&gt;|Color--Fac|C[Mix Shader]
+    D[Emission 衰减]--&gt;|Emission--Shader|C
+    E[Emission 高亮]--&gt;|Emission--Shader|C
+    C--&gt;|Shader--Surface|F[Material Output]
+  </div>
+  </li>
+</ul>
+
+<h3 id="玻璃材质">玻璃材质</h3>
+
+<ul>
+  <li>使用默认材质，把<code class="language-plaintext highlighter-rouge">Transmission</code>调到最大</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Render Properties</code>勾选<code class="language-plaintext highlighter-rouge">Screen Space Reflections</code>，点开设置，勾选<code class="language-plaintext highlighter-rouge">Reflaction</code></strong></li>
+  <li>回到物体材质编辑，<code class="language-plaintext highlighter-rouge">Settings</code>，勾选<code class="language-plaintext highlighter-rouge">Screen Space REfraction</code></li>
+</ul>
+
+<h3 id="透明">透明</h3>
+
+<ul>
+  <li>材质面板 <code class="language-plaintext highlighter-rouge">settings-Blend Mode-Alpha Blend</code></li>
+  <li>在<code class="language-plaintext highlighter-rouge">Surface-Alpha</code>拉到0</li>
+</ul>
+
+<h3 id="水面">水面</h3>
+
+<ul>
+  <li>细分, 把顶面添加到一个新组, 细分顶面</li>
+  <li>添加Displace修改器, 应用到顶面
+    <ul>
+      <li>编辑Texture, Type: Cloud(可尝试其他贴图), 调整Size</li>
+      <li>回到修改器, 调整strength和Direction(to z)</li>
+    </ul>
+  </li>
+  <li>材质设置
+    <ul>
+      <li>显示设置里打开 Ambient Occlusion, Bloom, Screen Space Reflections (打开下拉菜单, 勾选 Reflection)</li>
+      <li>材质: Settings-Shadow Mode : Alpha Hashed</li>
+      <li>勾选 Screen Space Reflections</li>
+      <li>Transmission: 0.9</li>
+      <li>Roughness: 0.05</li>
+      <li>IOR: 1.333</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="即时更新贴图">即时更新贴图</h3>
+
+<ul>
+  <li>展UV</li>
+  <li>新建一个贴图, Generated Type : UV Grid</li>
+  <li>全选UV, 顶上菜单 UV - Export UV Layout ( Fill Opacity : 0)</li>
+  <li>打开 PS / GIMP , 载入上一步的图</li>
+  <li>保存为 <strong>psd</strong></li>
+  <li>回到 blender, 把贴图改为上一步的psd</li>
+  <li>在 PS / GIMP 中编辑, 保存</li>
+  <li>回到 blender , 在 UV Editor <strong>Alt+R</strong> 更新贴图</li>
+</ul>
+
+<h3 id="用bump做normal贴图">用bump做normal贴图</h3>
+
+<ul>
+  <li>分窗口
+    <ul>
+      <li>窗口1: Image Editor, 模式 Paint</li>
+      <li>窗口2: 切换到 Texture Piant模式</li>
+    </ul>
+  </li>
+  <li>右侧菜单 Active Tool and Workspace settings(螺丝刀和扳手icon), 新建一个贴图, 选择 <strong>Bump</strong></li>
+  <li>画好后, 切换到渲染菜单, 选择 Cycles
+    <ul>
+      <li>Bake Type: Diffuse</li>
+      <li>Contributions: 取消勾选 Direct Indirect</li>
+      <li>Bake</li>
+    </ul>
+  </li>
+  <li>导入 Unity , 图像模式选择 UV</li>
+</ul>
+
+<h2 id="渲染">渲染</h2>
+
+<h3 id="打开降噪-----compositing">打开降噪:     compositing</h3>
+
+<ul>
+  <li>use      nodes(左上角)</li>
+  <li>view      layer(右侧)-Passes-Data-Denoising Data</li>
+  <li>node界面: add Denoise</li>
+</ul>
+
+<p><img src="/Unity/Blender.assets/clip_image004.jpg" alt="img" /></p>
+
+<h3 id="加雾效">加雾效</h3>
+
+<ul>
+  <li>
+    <ul>
+      <li>放一个box,      box显示模式设置为线框, 给box加shader</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/Unity/Blender.assets/clip_image006.jpg" alt="img" /></p>
+
+<ul>
+  <li>局部渲染:cmd+b(取消局部渲染: ctrl+alt+b)</li>
+  <li>渲染出图: 菜单-render-render image</li>
+</ul>
+
+<h3 id="2d风格渲染参数">2D风格渲染参数</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Diffuse BSDF + Shade to RGB + ColorRamp</code></li>
+</ul>
+
+<h3 id="透明背景">透明背景</h3>
+
+<p>Render Properties - Film - Transparent  打勾</p>
+
+<h2 id="常用快捷键">常用快捷键</h2>
+
+<p>f: fill / alt+f(beauty fill)</p>
+
+<p>grid fill : ctrl/cmd + f then grid fill</p>
+
+<p>挤出: e or ctrl+right mouse button(再按s,沿法线方向挤出)</p>
+
+<p>分别挤出(做手指时):alt+e</p>
+
+<p>连续先边/点: 首顶点,ctrl 尾顶点</p>
+
+<p>切分: k</p>
+
+<p>松弛</p>
+
+<p>合并顶点: alt + m</p>
+
+<p>衰减编辑开关(调整物体形状): o (shift+o 可以变换模式)</p>
+
+<p>雕刻模式smoothly : shift+左键</p>
+
+<p>在空白处添加新点: ctrl/cmd + 右键</p>
+
+<p>移动模型出现的中心点: shift + 右键(中心点归位: shift+s 中心点回到物体中心:ctrl+shift+alt+c)</p>
+
+<p>桥接循环边：ctrl+e</p>
+
+<p>沿法线方向缩放：alt+s</p>
+
+<p>把节点一分为二: v</p>
+
+<p>独显物体某部分: shift+h</p>
+
+<p>反选: cmd+i</p>
+
+<p>使用snap把分享的组件合起(例如手臂和身体)</p>
+
+<p>快速顶点对齐:s-z/y/x-0</p>
+
+<p>选中的物体视图居中: shift+c</p>
+
+<p>物体弯曲:先设定弯曲点(shift+右键), 再shift+w</p>
+
+<p>重新计算法线:shift+n</p>
+
+<p>线框模式：shift+z</p>
+
+<p>delete:x</p>
+
+<p>make face: alt+f</p>
+
+<p>rotate: r</p>
+
+<p>scale: s</p>
+
+<p>move: g</p>
+
+<p>merge: m</p>
+
+<p>change view mode: z</p>
+
+<p>create model: shift+a</p>
+
+<p>exchange edit mode: ctrl+tab or click menu ‘sculpting’</p>
+
+<p>exchange sculpting: shift+space</p>
+
+<p>change brush radius/strenght: f /shift+f</p>
+
+<p>invert brush: ctrl</p>
+
+<p>smooth brush: shift</p>
+
+<p>loop line: alt+left click</p>
+
+<p>dulicate : shift + d</p>
+
+<p>select box: b</p>
+
+<p>zoom area: shift + b</p>
+
+<p>zoom : cmd + left mouse</p>
+
+<p>半透明: alt + z</p>
+
+<p>切分: 编辑模式-右键subdivide</p>
+
+<p>调出插件工具条: n</p>
+
+<p>导入: f12</p>
+
+<p>选择所有相连元素: ctrl+L</p>
+
+<p>擦除: cmd + (三指)</p>
+
+<p>检查面朝向: show overlays - face orientation</p>
+
+<p>法线方向菜单: 编辑模式下选择所有面, alt + n</p>
+
+<p>查看法线方向: 左上 global - 改为 normal</p>
+
+<p>编辑-点模式-alt+左键: 选择相邻点</p>
+
+<p>添加细分: cmd + 2(需要关闭数字键映射)(反细分: modifier - decimate - unsubdivide/edge-unsubdivide)</p>
+
+<p>挤出: 编辑模式-ctrl+右键（沿法线挤出：alt+e）</p>
+
+<p>倒角: ctrl/cmd + b</p>
+
+<p>两个对象合并: ctrl + j (合并后不能单独处理单个对象, 但可以共享modifier</p>
+
+<p>反细分: modifier - decimate - unsubdivide/edge-unsubdivide</p>
+
+<p>内挤出: i (如果再点击B, 可以让镜像边不挤出)</p>
+
+<p>改变曲线控制柄类型:v</p>
+
+<p>正交视图:Numpad-5</p>
+
+
+
+      </section>
+
+
+      <!-- <script type="text/javascript">
+        $(document).ready(function() {
+        $('#toc').toc();
+        });
+      </script> -->
+
+
+
+      <footer>
+      <p><small>BackTo <a href="https://8ku.github.io/note_other">Home</a>  |  To<a href="javascript:scroll(0,0)"> TOP</a></small></p>
+      <!--  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p> -->
+      </footer>
+    </div>
+
+
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+
+  </body>
+</html>

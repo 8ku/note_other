@@ -1,6 +1,5 @@
 theme: jekyll-theme-dinky
 markdown: kramdown
-baseurl: ''
 mathjax_autoNumber: true
 mermaid: true
 chart: true
