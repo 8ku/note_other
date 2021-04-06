@@ -149,6 +149,9 @@ object clip view:
 - **编辑物体内部：alt+b 框选需要编辑内部的区域，再次 alt+b 恢复**
 - **坐标归零: alt+g/r/s**
 - 快速统一法线: 选中需要翻转的法线部分, 在Object Data properties-Normals 下, 勾选 Auto Smooth
+- 快速删除背面
+  - 选择一个面, shift + g 选择所有相似法线面 / 左上菜单 select - select linked - linked flat faces
+  - cmd+ i 反选 删除
 - 在物体模式下应用变换(应用后可以让所有数值归零): ctrl+a
 - **沿法线缩放（各面的法线，只能在编辑模式下使用）：alt+s**
 - 把组合在一起的物件一次性分开：`edit mode-P-by loose parts`
@@ -453,6 +456,28 @@ object clip view:
   - 添加Decimate 精简面
     - 选择 Planar
   - 在Object Properties - Viewport Display - check Wireframe 可查看精简后的面的样子
+  - 清理面
+    - 选择一个面, shift + g 选择所有相似法线面 / 左上菜单 select - select linked - linked flat faces
+    - cmd+ i 反选 删除
+    - 把面分解好(用插件 MACHIN@tools快速切分面) f 合并面
+  - 做路肩
+    - 选择一条边, shift+g - Amount of Faces Around and Edge 
+    - shift+d 复制, p分享为单独的物体
+    - 把出口删除(即线不可以封闭), 转为曲线
+    - 在顶视图, 画一条曲线如下图
+    - ![Snipaste_2021-04-05_18-41-26](Blender.assets/Snipaste_2021-04-05_18-41-26-7619341.jpg)
+    - 选择刚分离出来的曲线 Bevel - Object -选择上一步的曲线
+    - 调整上一步曲线的形状和大小
+    - 在 viewport overlays 中打开 face orientation查看法线方向, 蓝色为上
+    - ![image-20210405210227045](Blender.assets/image-20210405210227045.jpg)
+    - 修复法线方向:
+      - 选择路肩形状曲线, 编辑模式, 选中所有, 左上菜单 - Segments- Switch Direction
+    - 把路肩转为mesh
+    - 
+
+
+
+
 
 ### array的技巧
 
