@@ -15,6 +15,7 @@ bundle update github-pages
 
 - 主页: `jekyll serve --watch`
 - note_other: `bundle exec jekyll serve`
+- gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
 
 
 

@@ -6,6 +6,7 @@
 - 保存: File - Save as / ctrl + s
   - 如果要保留历史记录, 选择 UndoHistory
 - 清除画布/新建: ctrl+n
+- 关闭开始时的文件菜单: 点击左上角 `Light Box` 或者按`,`键
 - 快速换视角: 按住shift
 - 笔刷快捷键: B + 头字母 + 第二个字母
 - Smooth: shift
