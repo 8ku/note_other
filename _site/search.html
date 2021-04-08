@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="/assets/css/syntax.css">
     
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Tags管理 | note_other</title>
+<title>note_other | 书籍以外的各种笔记</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Tags管理" />
+<meta property="og:title" content="note_other" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="书籍以外的各种笔记" />
 <meta property="og:description" content="书籍以外的各种笔记" />
-<link rel="canonical" href="http://localhost:4000/Code/C_Sharp/Unity_C_Sharp/Tags.html" />
-<meta property="og:url" content="http://localhost:4000/Code/C_Sharp/Unity_C_Sharp/Tags.html" />
+<link rel="canonical" href="http://localhost:4000/search.html" />
+<meta property="og:url" content="http://localhost:4000/search.html" />
 <meta property="og:site_name" content="note_other" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags管理" />
+<meta property="twitter:title" content="note_other" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/Code/C_Sharp/Unity_C_Sharp/Tags.html","headline":"Tags管理","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/search.html","headline":"note_other","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -93,22 +93,120 @@
 
       <section>
 
-        <h1 id="tags管理">Tags管理</h1>
+        <div class="home">
 
-<p>用一个单独的脚本管理工程中的tags,把标签名常量化,这样当使用标签时,编译器会自动提示标签名,防止打字出错.</p>
+  
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Tags</span><span class="p">:</span><span class="n">Monobehaviour</span>
-<span class="p">{</span>
-  <span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">ground</span> <span class="p">=</span> <span class="s">"Ground"</span><span class="p">;</span>
-  <span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">player</span> <span class="p">=</span> <span class="s">"Player"</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
 
+  <h1 class="page-heading">Posts</h1>
+
+  <div id="search-searchbar"></div>
+
+  <div class="post-list" id="search-hits">
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+<base href="">
+
+<script>
+const search = instantsearch({
+  appId: 'YL1VF8ZXL2',
+  apiKey: '883eb7b32d107ab889ebdbd54a45d347',
+  indexName: 'jekyll'
+});
+
+const hitTemplate = function(hit) {
+  let date = '';
+  if (hit.date) {
+    date = moment.unix(hit.date).format('MMM D, YYYY');
+  }
+  let url = `${hit.url}#${hit.anchor}`;
+
+  const title = hit._highlightResult.title.value;
+
+  let breadcrumbs = '';
+  if (hit._highlightResult.headings) {
+    breadcrumbs = hit._highlightResult.headings.map(match => {
+      return `<span class="post-breadcrumb">${match.value}</span>`
+    }).join(' > ')
+  }
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="post-item">
+      <span class="post-meta">${date}</span>
+      <h2><a class="post-link" href="${url}">${title}</a></h2>
+      <a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>
+      <div class="post-snippet">${content}</div>
+    </div>
+  `;
+}
+
+
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-searchbar',
+    placeholder: 'Search into posts...',
+    poweredBy: true
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+search.start();
+</script>
+
+<style>
+.ais-search-box {
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.post-item {
+  margin-bottom: 30px;
+}
+.post-link .ais-Highlight {
+  color: #111;
+  font-style: normal;
+  text-decoration: underline;
+}
+.post-breadcrumbs {
+  color: #424242;
+  display: block;
+}
+.post-breadcrumb {
+  font-size: 18px;
+  color: #424242;
+}
+.post-breadcrumb .ais-Highlight {
+  font-weight: bold;
+  font-style: normal;
+}
+.post-snippet .ais-Highlight {
+  color: #2a7ae2;
+  font-style: normal;
+  font-weight: bold;
+}
+.post-snippet img {
+  display: none;
+}
+</style>
+
+
+
+  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
+
+</div>
 
 
       </section>

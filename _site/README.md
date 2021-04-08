@@ -15,6 +15,7 @@
 - [GameHistory](https://8ku.github.io/note_other/GameHistory/summary)
 - [Biology](https://8ku.github.io/note_other/Biology/summary)
 - [Draw](https://8ku.github.io/note_other/Draw/summary)
+- [Search](https://8ku.github.io/note_other/search)
 
 
 
