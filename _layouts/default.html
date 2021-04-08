@@ -32,7 +32,7 @@
         });
     </script>
 
-
+    <script type="text/javascript" src="assets/js/search-box.js"></script>
 
 
     <!--[if lt IE 9]>
@@ -41,11 +41,19 @@
   </head>
   <body>
 
+    
+
+        <div class="search">
+        <i class="material-icons search-icon search-start">search</i>
+        <input type="text" class="search-input" placeholder="Searching..." />
+        <i class="material-icons search-icon search-clear">clear</i>
+        <div class="search-results"></div>
+        </div>
+
     <div class="wrapper">
       <header>
         <h1 class="header"><a href="{{site.baseurl}}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
-
+        <p class="header">{{ site.description | default: site.github.project_tagline }}</p>    
         <ul> 
           <li><a class="header name" href="https://8ku.github.io/note_other/search">Search</a></li>     	
         	<li><a class="header name" href="https://8ku.github.io/note_other/post/Code/summary">Code</a></li>
@@ -59,6 +67,7 @@
         	<li><a class="header name" href="{{ site.baseurl }}/post/Biology/summary">Biology</a></li>
         	<li><a class="header name" href="{{ site.baseurl }}/post/Draw/summary">Draw</a></li>
         </ul>
+
 
         <!--<ul>
           {% if site.show_downloads %}
@@ -80,7 +89,6 @@
       </header>
 
       <div id="toc"></div>
-
       <section>
 
         {{ content }}
