@@ -3,8 +3,8 @@ layout: default
 ---
 # 生物
 
-[BACK](https://8ku.github.io/note_other)
+[BACK]({{ site.baseurl }})
 
-- [BiosafetyLevel](_post/Biology/BiosafetyLevel)
-- [CausesOfDeath](_post/Biology/CausesOfDeath_Global)
+- [BiosafetyLevel]({{ site.baseurl }}/post/Biology/BiosafetyLevel)
+- [CausesOfDeath]({{ site.baseurl }}/post/Biology/CausesOfDeath_Global)
 

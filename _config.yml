@@ -4,6 +4,10 @@ mathjax_autoNumber: true
 mermaid: true
 chart: true
 highlighter: rouge
+
+url: https://8ku.github.io
+baseurl: /note_other
+
 plugins:
   - jekyll-toc
 kramdown:

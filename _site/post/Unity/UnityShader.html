@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <!-- <link rel="stylesheet" href="/note_other/assets/css/syntax.css"> -->
     
 <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>note_other | 书籍以外的各种笔记</title>
@@ -13,19 +13,19 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="书籍以外的各种笔记" />
 <meta property="og:description" content="书籍以外的各种笔记" />
-<link rel="canonical" href="http://localhost:4000/post/Unity/UnityShader.html" />
-<meta property="og:url" content="http://localhost:4000/post/Unity/UnityShader.html" />
+<link rel="canonical" href="http://localhost:4000/note_other/post/Unity/UnityShader.html" />
+<meta property="og:url" content="http://localhost:4000/note_other/post/Unity/UnityShader.html" />
 <meta property="og:site_name" content="note_other" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="note_other" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/post/Unity/UnityShader.html","headline":"note_other","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/note_other/post/Unity/UnityShader.html","headline":"note_other","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
     <!-- 字体自适应放大 -->
-    <link rel="stylesheet" href="/assets/css/style.css?v=17887139f06d3232a4631cb208120abd12a5860b">
-    <script src="/assets/js/scale.fix.js"></script>
+    <link rel="stylesheet" href="/note_other/assets/css/style.css?v=5ed0db587ab89926d85e373f76378d2c678ed42f">
+    <script src="/note_other/assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!-- 显示页内目录 -->
@@ -62,18 +62,17 @@
         <p class="header">书籍以外的各种笔记</p>
 
         <ul> 
-               	
-        	<li><a class="header name" href="https://8ku.github.io/note_other/Code/summary">Code</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/Unity/summary">Unity</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/math/summary">Math</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/RegularExpression/summary">RegularExpression</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/system/summary">System</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/WomensHistory/summary">WomensHistory</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/mythology/summary">Mythology</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/GameHistory/summary">GameHistory</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/Biology/summary">Biology</a></li>
-        	<li><a class="header name" href="https://8ku.github.io/note_other/Draw/summary">Draw</a></li>
-          <li><a class="header name" href="https://8ku.github.io/note_other/search">Search</a></li>
+          <li><a class="header name" href="https://8ku.github.io/note_other/search">Search</a></li>     	
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/Code/summary">Code</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/Unity/summary">Unity</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/math/summary">Math</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/RegularExpression/summary">RegularExpression</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/system/summary">System</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/WomensHistory/summary">WomensHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/mythology/summary">Mythology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/post/GameHistory/summary">GameHistory</a></li>
+        	<li><a class="header name" href="/note_other/post/Biology/summary">Biology</a></li>
+        	<li><a class="header name" href="/note_other/post/Draw/summary">Draw</a></li>
         </ul>
 
         <!--<ul>
@@ -210,7 +209,7 @@
 
 <h3 id="玻璃">玻璃</h3>
 
-<p><img src="UnityShader.assets/Glass_shade_node.jpg" alt="Glass_shade_node" /></p>
+<p><img src="/note_other/post/Unity/UnityShader.assets/Glass_shade_node.jpg" alt="Glass_shade_node" /></p>
 
 <p>其中的<code class="language-plaintext highlighter-rouge">Custom Function</code></p>
 
@@ -324,7 +323,7 @@ graph LR
 A[CustomFunction] &amp; B[NormalVector] --&gt; C[dotproduct]       
 </div>
 
-    <p><img src="UnityShader.assets/ToonShader1.jpg" alt="ToonShader1" /></p>
+    <p><img src="/note_other/post/Unity/UnityShader.assets/ToonShader1.jpg" alt="ToonShader1" /></p>
   </li>
   <li>
     <p>添加一个文件夹 <code class="language-plaintext highlighter-rouge">SubGraphs</code>, 把红框框起的nodes 选中, 右键<code class="language-plaintext highlighter-rouge">convert to sub-graph</code> 放入文件夹, 命名为 <code class="language-plaintext highlighter-rouge">CalculateLight</code></p>
@@ -356,7 +355,7 @@ A[CustomFunction] &amp; B[NormalVector] --&gt; C[dotproduct]
   <li>
     <p><code class="language-plaintext highlighter-rouge">Sample Texture 2D LOD(R) --&gt; Multiply(B)</code></p>
 
-    <p><img src="UnityShader.assets/ToonShader2.jpg" alt="ToonShader2" /></p>
+    <p><img src="/note_other/post/Unity/UnityShader.assets/ToonShader2.jpg" alt="ToonShader2" /></p>
   </li>
   <li>
     <p>选中当前<strong>除CalculateLight以外</strong>所有节点, 右键保存为sub-Graph, 命名为 <code class="language-plaintext highlighter-rouge">CalculateLightingRamp</code></p>
@@ -372,7 +371,7 @@ A[CustomFunction] &amp; B[NormalVector] --&gt; C[dotproduct]
       <li>
         <p>如果使用颜色而不是贴图做漫反射表面的话, 添加 Color 节点</p>
 
-        <p><img src="UnityShader.assets/ToonShader2-1.jpg" alt="ToonShader2-1" /></p>
+        <p><img src="/note_other/post/Unity/UnityShader.assets/ToonShader2-1.jpg" alt="ToonShader2-1" /></p>
       </li>
     </ul>
   </li>
@@ -462,7 +461,7 @@ void CalculateMainLight_float(float3 WorldPos, out float3 Direction, out float3 
   <li>
     <p><code class="language-plaintext highlighter-rouge">CalculateLight</code> 新增两个<code class="language-plaintext highlighter-rouge">Multiply</code>节点, 连接如下</p>
 
-    <p><img src="UnityShader.assets/ToonShader3.jpg" alt="ToonShader3" /></p>
+    <p><img src="/note_other/post/Unity/UnityShader.assets/ToonShader3.jpg" alt="ToonShader3" /></p>
   </li>
   <li><code class="language-plaintext highlighter-rouge">Toon Shader - Blackboard</code> 添加3个 <code class="language-plaintext highlighter-rouge">Boolean</code>
     <ul>
@@ -511,7 +510,7 @@ void CalculateMainLight_float(float3 WorldPos, out float3 Direction, out float3 
           <li>把红框中除<code class="language-plaintext highlighter-rouge">Smoothness</code>以外的三个节点做成sub_graph, <code class="language-plaintext highlighter-rouge">AdjustSmoothness</code></li>
         </ul>
 
-        <p><img src="UnityShader.assets/ToonShader4.jpg" alt="ToonShader4" /></p>
+        <p><img src="/note_other/post/Unity/UnityShader.assets/ToonShader4.jpg" alt="ToonShader4" /></p>
       </li>
       <li>
         <p>进入<code class="language-plaintext highlighter-rouge">CalculateMainLight</code>, 把Out_Vector1的两个参数改为<code class="language-plaintext highlighter-rouge">Color(3)</code>  <code class="language-plaintext highlighter-rouge">Diffuse(1)</code></p>

@@ -1,7 +1,7 @@
 # 女性历史
 
-[BACK](https://8ku.github.io/note_other)
+[BACK]({{ site.baseurl }})
 
-- [女权运动时间轴](_post/WomensHistory/feminism_timeline.html)
-- [GlobalGenderGap](_post/WomensHistory/GlobalGenderGap)
+- [女权运动时间轴]({{ site.baseurl }}/post/WomensHistory/feminism_timeline.html)
+- [GlobalGenderGap]({{ site.baseurl }}/post/WomensHistory/GlobalGenderGap)
 

@@ -1,6 +1,6 @@
 # Draw
 
-[BACK](https://8ku.github.io/note_other)
+[BACK]({{ site.baseurl }})
 
-- [Gesture](_post/Draw/Gesture)
+- [Gesture]({{ site.baseurl }}/post/Draw/Gesture)
 

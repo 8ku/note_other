@@ -1,9 +1,9 @@
 # 神话
 
-[BACK](https://8ku.github.io/note_other)
+[BACK]({{ site.baseurl }})
 
 - 北欧
-  - [北欧神话](_post/mythology/Nordic/nordic)
+  - [北欧神话]({{ site.baseurl }}/post/mythology/Nordic/nordic)
 - 古希腊
-  - [古希腊](_post/mythology/AncientGreece/ancientgreece)
+  - [古希腊]({{ site.baseurl }}/post/mythology/AncientGreece/ancientgreece)
 

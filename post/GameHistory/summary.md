@@ -1,9 +1,9 @@
 # 游戏史
 
-[BACK](https://8ku.github.io/note_other)
+[BACK]({{ site.baseurl }})
 
-- [Game History](_post/GameHistory/gameHistory)
-- [Video Game Genre](_post/GameHistory/VideoGameGenre)
+- [Game History]({{ site.baseurl }}/post/GameHistory/gameHistory)
+- [Video Game Genre]({{ site.baseurl }}/post/GameHistory/VideoGameGenre)
 
 
 
