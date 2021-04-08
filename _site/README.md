@@ -4,18 +4,18 @@
 书籍以外的各种笔记
 
 ### 目录
-
-- [Code](https://8ku.github.io/note_other/Code/summary)
-- [Unity](https://8ku.github.io/note_other/Unity/summary)
-- [Math](https://8ku.github.io/note_other/math/summary)
-- [RegularExpression](https://8ku.github.io/note_other/RegularExpression/summary)
-- [System](https://8ku.github.io/note_other/system/summary)
-- [WomenHistory](https://8ku.github.io/note_other/WomensHistory/summary)
-- [Mythology](https://8ku.github.io/note_other/mythology/summary)
-- [GameHistory](https://8ku.github.io/note_other/GameHistory/summary)
-- [Biology](https://8ku.github.io/note_other/Biology/summary)
-- [Draw](https://8ku.github.io/note_other/Draw/summary)
 - [Search](https://8ku.github.io/note_other/search)
+- [Code](/_post/Code/summary)
+- [Unity](/_post/Unity/summary)
+- [Math](/_post/math/summary)
+- [RegularExpression](/_post/RegularExpression/summary)
+- [System](/_post/system/summary)
+- [WomenHistory](/_post/WomensHistory/summary)
+- [Mythology](/_post/mythology/summary)
+- [GameHistory](/_post/GameHistory/summary)
+- [Biology](/_post/Biology/summary)
+- [Draw](/_post/Draw/summary)
+
 
 
 
@@ -68,5 +68,5 @@
     </head>
     ```
   
-    
+- 使用了 [algolia搜索服务](https://www.algolia.com/)
 
