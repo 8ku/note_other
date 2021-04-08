@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # 生物
 
 [BACK](https://8ku.github.io/note_other)
