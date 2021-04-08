@@ -10,6 +10,8 @@ baseurl: /note_other
 
 plugins:
   - jekyll-toc
+  - jeky-feed
+
 kramdown:
   input:  GFM
   # https://github.com/jekyll/jekyll/pull/4090
