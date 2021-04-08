@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>调用 class | note_other</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="调用 class" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="书籍以外的各种笔记" />
+<meta property="og:description" content="书籍以外的各种笔记" />
+<link rel="canonical" href="http://localhost:4000/post/Code/C_Sharp/Unity_C_Sharp/transferClass.html" />
+<meta property="og:url" content="http://localhost:4000/post/Code/C_Sharp/Unity_C_Sharp/transferClass.html" />
+<meta property="og:site_name" content="note_other" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="调用 class" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/post/Code/C_Sharp/Unity_C_Sharp/transferClass.html","headline":"调用 class","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- 字体自适应放大 -->
+    <link rel="stylesheet" href="/assets/css/style.css?v=17887139f06d3232a4631cb208120abd12a5860b">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- 显示页内目录 -->
+    <!-- <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/jquery-3.5.1.min.js" type="text/javascript"></script> 
+    <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/toc.js" type="text/javascript"></script> -->
+
+    <!-- 搜索框图标引用 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+	<!-- 显示数学公式 -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <header>
+        <h1 class="header">note_other</h1>
+        <p class="header">书籍以外的各种笔记</p>
+
+        <ul> 
+               	
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Code/summary">Code</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Unity/summary">Unity</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/math/summary">Math</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/RegularExpression/summary">RegularExpression</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/system/summary">System</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/WomensHistory/summary">WomensHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/mythology/summary">Mythology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/GameHistory/summary">GameHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Biology/summary">Biology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Draw/summary">Draw</a></li>
+          <li><a class="header name" href="https://8ku.github.io/note_other/search">Search</a></li>
+        </ul>
+
+        <!--<ul>
+          
+          <li><a class="buttons github" href="https://github.com/8ku/note_other">View On GitHub</a></li>
+        </ul> 
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/8ku">8ku</a></p>
+        
+
+         -->
+      </header>
+
+      <div id="toc"></div>
+
+      <section>
+
+        <h2 id="调用-class">调用 class</h2>
+
+<p>父级 class</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Father</span><span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+  <span class="k">protected</span> <span class="n">Animator</span> <span class="n">anime</span><span class="p">;</span> <span class="c1">//protected 表示只有子级可调用</span>
+  
+  <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="c1">//protected 表示只有子级可调用，子级需要可重新编写 start，所以要加 virtual</span>
+  <span class="p">{</span>
+    <span class="n">anime</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;();</span>
+  <span class="p">}</span>
+  
+  <span class="k">public</span> <span class="k">void</span> <span class="nf">Death</span><span class="p">()</span> <span class="c1">//需要公开方法</span>
+  <span class="p">{</span>
+    <span class="nf">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>子级 class</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Son</span> <span class="p">:</span> <span class="n">Father</span>
+<span class="p">{</span>
+  <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="c1">//使用主类的标准写法,override 重写</span>
+  <span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span> <span class="c1">//使用主类时，需要在此用 base 调用 </span>
+        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
+        <span class="c1">// anime = GetComponent&lt;Animator&gt;();</span>
+        <span class="n">coll</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Collider2D</span><span class="p">&gt;();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>引用时</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">//引用另一个 class name is Enemy_frog 的脚本文件，引用后可调用此脚本里的所有组件和代码</span>
+<span class="n">Father</span> <span class="n">father</span> <span class="p">=</span> <span class="n">collision</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Father</span><span class="p">&gt;();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+
+
+      </section>
+
+
+      <!-- <script type="text/javascript">
+        $(document).ready(function() {
+        $('#toc').toc();
+        });
+      </script> -->
+
+
+
+      <footer>
+      <p><small>BackTo <a href="https://8ku.github.io/note_other">Home</a>  |  To<a href="javascript:scroll(0,0)"> TOP</a></small></p>
+      <!--  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p> -->
+      </footer>
+    </div>
+
+
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+
+  </body>
+</html>

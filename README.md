@@ -4,7 +4,6 @@
 书籍以外的各种笔记
 
 ### 目录
-- [Search](https://8ku.github.io/note_other/search)
 - [Code](/_post/Code/summary)
 - [Unity](/_post/Unity/summary)
 - [Math](/_post/math/summary)

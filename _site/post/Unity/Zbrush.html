@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>note_other | 书籍以外的各种笔记</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="note_other" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="书籍以外的各种笔记" />
+<meta property="og:description" content="书籍以外的各种笔记" />
+<link rel="canonical" href="http://localhost:4000/post/Unity/Zbrush.html" />
+<meta property="og:url" content="http://localhost:4000/post/Unity/Zbrush.html" />
+<meta property="og:site_name" content="note_other" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="note_other" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/post/Unity/Zbrush.html","headline":"note_other","description":"书籍以外的各种笔记","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- 字体自适应放大 -->
+    <link rel="stylesheet" href="/assets/css/style.css?v=17887139f06d3232a4631cb208120abd12a5860b">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- 显示页内目录 -->
+    <!-- <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/jquery-3.5.1.min.js" type="text/javascript"></script> 
+    <script src="https://raw.githubusercontent.com/8ku/note_other/master/_js/toc.js" type="text/javascript"></script> -->
+
+    <!-- 搜索框图标引用 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+	<!-- 显示数学公式 -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <header>
+        <h1 class="header">note_other</h1>
+        <p class="header">书籍以外的各种笔记</p>
+
+        <ul> 
+               	
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Code/summary">Code</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Unity/summary">Unity</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/math/summary">Math</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/RegularExpression/summary">RegularExpression</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/system/summary">System</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/WomensHistory/summary">WomensHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/mythology/summary">Mythology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/GameHistory/summary">GameHistory</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Biology/summary">Biology</a></li>
+        	<li><a class="header name" href="https://8ku.github.io/note_other/Draw/summary">Draw</a></li>
+          <li><a class="header name" href="https://8ku.github.io/note_other/search">Search</a></li>
+        </ul>
+
+        <!--<ul>
+          
+          <li><a class="buttons github" href="https://github.com/8ku/note_other">View On GitHub</a></li>
+        </ul> 
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/8ku">8ku</a></p>
+        
+
+         -->
+      </header>
+
+      <div id="toc"></div>
+
+      <section>
+
+        <ul id="markdown-toc">
+  <li><a href="#快捷键" id="markdown-toc-快捷键">快捷键</a></li>
+  <li><a href="#常用笔刷" id="markdown-toc-常用笔刷">常用笔刷</a></li>
+  <li><a href="#容易误触的地方" id="markdown-toc-容易误触的地方">容易误触的地方</a></li>
+  <li><a href="#技巧" id="markdown-toc-技巧">技巧</a>    <ul>
+      <li><a href="#重新布线" id="markdown-toc-重新布线">重新布线</a></li>
+      <li><a href="#重新补全对称默认左对称右" id="markdown-toc-重新补全对称默认左对称右">重新补全对称(默认左对称右)</a></li>
+      <li><a href="#镜像" id="markdown-toc-镜像">镜像</a></li>
+      <li><a href="#添加部件例如眼球" id="markdown-toc-添加部件例如眼球">添加部件(例如眼球)</a></li>
+      <li><a href="#新开模型" id="markdown-toc-新开模型">新开模型</a></li>
+      <li><a href="#radio-symmetry" id="markdown-toc-radio-symmetry">Radio Symmetry</a></li>
+      <li><a href="#独显" id="markdown-toc-独显">独显</a></li>
+      <li><a href="#分离部分成为新的subtool" id="markdown-toc-分离部分成为新的subtool">分离部分成为新的subtool</a></li>
+      <li><a href="#合并subtotalmerge" id="markdown-toc-合并subtotalmerge">合并subtotal(merge)</a></li>
+      <li><a href="#图层管理" id="markdown-toc-图层管理">图层管理</a></li>
+      <li><a href="#快速创建身体" id="markdown-toc-快速创建身体">快速创建身体</a></li>
+    </ul>
+  </li>
+  <li><a href="#优势" id="markdown-toc-优势">优势</a></li>
+</ul>
+
+<h2 id="快捷键">快捷键</h2>
+
+<ul>
+  <li>保存: File - Save as / ctrl + s
+    <ul>
+      <li>如果要保留历史记录, 选择 UndoHistory</li>
+    </ul>
+  </li>
+  <li>清除画布/新建: ctrl+n</li>
+  <li>关闭开始时的文件菜单: 点击左上角 <code class="language-plaintext highlighter-rouge">Light Box</code> 或者按<code class="language-plaintext highlighter-rouge">,</code>键</li>
+  <li>快速换视角: 按住shift</li>
+  <li>笔刷快捷键: B + 头字母 + 第二个字母</li>
+  <li>Smooth: shift</li>
+  <li>笔刷反向: Alt</li>
+  <li>查看面线: shift+f</li>
+  <li>添加细分: 光标放到要细分的面上, ctrl+d</li>
+  <li>减少细分: shift+d</li>
+  <li>切开菜单: shift+ctrl 在左上笔刷处点击选择
+    <ul>
+      <li>空白处shift+鼠标左键</li>
+    </ul>
+  </li>
+  <li>打开对称: 顶部菜单 - Transform - Active Symmery 或 X</li>
+  <li>把显示的部分mark: cmd+w</li>
+  <li><strong>独显组</strong>
+    <ul>
+      <li>shift+f 切换到网格模式</li>
+      <li>在组上(用颜色区分) cmd+shift+鼠标左键点击</li>
+    </ul>
+  </li>
+  <li>mask: 按住cmd 用鼠标左键画(<strong>被mask的部分不会被修改, 起保护作用</strong>)
+    <ul>
+      <li>取消mask: cmd 在空白处框选</li>
+      <li>减选mask: cmd+alt 鼠标左键画</li>
+      <li>soft mask: 按住cmd, 点击mask</li>
+      <li>反转mask部分:  空白处 cmd+鼠标左键点击</li>
+      <li><strong>mask菜单: 右侧菜单 - Masking</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="常用笔刷">常用笔刷</h2>
+
+<ul>
+  <li>Move</li>
+  <li>ClayBuildup: 添加粘土</li>
+  <li>DamStandard: 凹槽</li>
+  <li>TrimDynamic: 平面化</li>
+  <li></li>
+</ul>
+
+<h2 id="容易误触的地方">容易误触的地方</h2>
+
+<ul>
+  <li><strong>Zadd 和 Sub 的切换</strong></li>
+  <li>上下滚动右侧工具栏: 当光标变成上下移动时, 按住ctrl(mac下也是ctrl) 鼠标左键</li>
+</ul>
+
+<h2 id="技巧">技巧</h2>
+
+<h3 id="重新布线">重新布线</h3>
+
+<p>右侧菜单 Geometry - DynaMesh</p>
+
+<ul>
+  <li>如果 DynaMesh 打开, 在增加新形状时, 在空白处 cmd+鼠标左键 可以重新布线</li>
+  <li><strong>只在建模初期塑形时使用, 不然会整个模型不断增加面</strong></li>
+</ul>
+
+<h3 id="重新补全对称默认左对称右">重新补全对称(默认左对称右)</h3>
+
+<p>如果不小心删除对称的一边的某些形状, 右侧菜单 Geometry - Modify Topology - Mirror And Weld</p>
+
+<h3 id="镜像">镜像</h3>
+
+<p>右侧菜单 Deformation - Mirror</p>
+
+<h3 id="添加部件例如眼球">添加部件(例如眼球)</h3>
+
+<p>Subtool - Append</p>
+
+<ul>
+  <li>
+    <p>切换不同的Subtool : 按住 alt 点击部件</p>
+  </li>
+  <li>移动整个部件 : 顶部菜单 Move 快捷键 W (切换回draw: Q)</li>
+  <li>放大/缩小整个部件: 切换到 Move/Scale 模式, 按住中间的正方形</li>
+</ul>
+
+<h3 id="新开模型">新开模型</h3>
+
+<p>右侧选择一个模型, 右顶工具栏 Make PolyMesh3D</p>
+
+<h3 id="radio-symmetry">Radio Symmetry</h3>
+
+<p>顶部菜单 Transform - Symmetry - (R)</p>
+
+<h3 id="独显">独显</h3>
+
+<p><strong>独显Subtool</strong></p>
+
+<p>在右侧工具栏打开solo(滑到最下面, 倒数第2个)</p>
+
+<p>设置快捷方式:</p>
+
+<ul>
+  <li>Preferences - Edit - Allow Click to Solo</li>
+  <li>在空白处点击鼠标左键</li>
+</ul>
+
+<p><strong>独显部分</strong></p>
+
+<p>shift+cmd 选择 Select Rect</p>
+
+<p>在物体上按住 shift+cmd+鼠标左键, 会独显选中部分</p>
+
+<p>翻转独显部分: 在空白处 shift+cmd+鼠标左键框选(框选空白)</p>
+
+<p>隐藏选中部分: shift+cmd+alt+鼠标左键框选</p>
+
+<p>退出独显: 在空白处 shift+cmd+鼠标左键点击</p>
+
+<h3 id="分离部分成为新的subtool">分离部分成为新的subtool</h3>
+
+<ul>
+  <li>用shift+cmd+左键框选部分
+    <ul>
+      <li>cmd+鼠标左键 mask 部分</li>
+    </ul>
+  </li>
+  <li>cmd+w 分配组</li>
+  <li>右侧菜单 Subtool - Split - Groups Split</li>
+</ul>
+
+<h3 id="合并subtotalmerge">合并subtotal(merge)</h3>
+
+<p>右侧菜单 Subtool - Merge</p>
+
+<ul>
+  <li>激活 UV , merge时会保留各部分的UV</li>
+  <li>选择一种merge方式</li>
+</ul>
+
+<h3 id="图层管理">图层管理</h3>
+
+<p>右侧菜单 - Layers</p>
+
+<ul>
+  <li>新增一个layer, 注意右侧 Rec 是打开的状态</li>
+  <li>修改模型</li>
+  <li>把 Rec 关掉</li>
+</ul>
+
+<h3 id="快速创建身体">快速创建身体</h3>
+
+<p>使用ZSphere球</p>
+
+<p>预览mesh: A</p>
+
+<p>转为可雕刻模式:</p>
+
+<ul>
+  <li>A</li>
+  <li>右侧菜单 Make PlyMesh3D(不可逆转, 慎重)</li>
+</ul>
+
+<h2 id="优势">优势</h2>
+
+<ul>
+  <li>可以重做10,000步动作</li>
+</ul>
+
+
+
+      </section>
+
+
+      <!-- <script type="text/javascript">
+        $(document).ready(function() {
+        $('#toc').toc();
+        });
+      </script> -->
+
+
+
+      <footer>
+      <p><small>BackTo <a href="https://8ku.github.io/note_other">Home</a>  |  To<a href="javascript:scroll(0,0)"> TOP</a></small></p>
+      <!--  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p> -->
+      </footer>
+    </div>
+
+
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+
+  </body>
+</html>
