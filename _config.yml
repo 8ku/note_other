@@ -22,3 +22,9 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+
+
+algolia:
+  application_id: 'YL1VF8ZXL2' 
+  index_name: jekyll # You can replace that with whatever name you want  
+  search_only_api_key: 883eb7b32d107ab889ebdbd54a45d347  
