@@ -116,6 +116,7 @@ object clip view:
 
 - **选择快捷键: shift+alt+鼠标左键** (当选择多个重叠物体时好用)
 - 单独显示选中物体: /
+- 选择所有复制对象 select all dulplicates linked objects: menu --> select --> Linked --> Object Data
 - 切换坐标模式(世界坐标/局部坐标): <
 - 切换点对齐模式: >
 - 打开磁吸: shift+tab

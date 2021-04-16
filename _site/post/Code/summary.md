@@ -25,6 +25,10 @@
 
   - [Tableau]({{ site.baseurl }}/post/Code/Tableau/Tableau)
   
+- TiddlerWiki
+
+  - [TiddlerWiki]({{ site.baseurl }}/post/Code/TiddlerWiki/8kuNoteBook_TiddyWiki.html)
+  
 - VBA
 
   - [VBA]({{ site.baseurl }}/post/Code/VBA/vba)
