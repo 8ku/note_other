@@ -4,4 +4,5 @@
 {: toc}
 轻量级单一网页笔记本
 
-[查看示例]()
+[查看示例](https://www.bakumatata.com/note_other/Archives/8kuNoteBook_TiddlerWiki.html)
+

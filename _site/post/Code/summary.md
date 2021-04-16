@@ -27,7 +27,7 @@
   
 - TiddlerWiki
 
-  - [TiddlerWiki]({{ site.baseurl }}/post/Code/TiddlerWiki/8kuNoteBook_TiddyWiki.html)
+  - [TiddlerWiki]({{ site.baseurl }}/post/Code/TiddlerWiki/Tiddlerwiki)
   
 - VBA
 
