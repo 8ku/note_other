@@ -208,3 +208,13 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - [下载](https://github.com/MustangYM/WeChatExtension-ForMac)
 - 使用第二种方式安装
 - `omw -n`
+
+## 卸载包
+
+- 安装brew: https://brew.sh/
+- 安装包: `brew install wget`
+- 查询包: `brew search /wge*/
+- 列出已安装软件: `brew list`
+- 更新brew: `brew update`
+- 卸载包: `brew uninstall wget`
+
