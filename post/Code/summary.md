@@ -25,9 +25,9 @@
 
   - [Tableau]({{ site.baseurl }}/post/Code/Tableau/Tableau)
   
-- TiddlerWiki
+- TiddlyWiki
 
-  - [TiddlerWiki]({{ site.baseurl }}/post/Code/TiddlerWiki/Tiddlerwiki)
+  - [TiddlyWiki]({{ site.baseurl }}/post/Code/TiddlyWiki/Tiddlywiki)
   
 - VBA
 
