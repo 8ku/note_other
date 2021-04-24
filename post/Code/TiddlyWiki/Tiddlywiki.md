@@ -22,6 +22,10 @@
 
 
 
+### PopupFootnotes
+
+- [安装](http://braintest.tiddlyspot.com/#PopupFootnotes)
+
 简易教程:
 
 - 导入插件
@@ -67,5 +71,3 @@
 ### Context search
 
 - [下载地址](http://contextplugin.tiddlyspot.com/)
-
-- 只能高亮代码块里的文本
