@@ -11,7 +11,7 @@
       <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       <script>mermaid.initialize({startOnLoad:true});</script>
 </head>
-# Blender Node
+# Blender Animation
 
 * TOC
 {: toc}
@@ -56,6 +56,15 @@
 - 右侧 新建动作
 - 全选所有关键帧和Summary里的标签 x 清空
 - pose mode 把人物动作复原
+
+### 渲染视频动画
+
+- Output Properties(像拍立得一样的图标)
+  - Output: 选择一路径
+  - File Format: FFmpeg Video
+- Ctrl+F12 渲染动画
+
+
 
 
 
@@ -109,6 +118,35 @@
 | Attack-Bite  | 14 or fewer |            |
 | Attack-Punch | 14 or fewer |            |
 | Attack-Kick  | 14 or fewer |            |
+
+
+
+## 特效
+
+### 化灰特效 Dust Effect / Disntegration 
+
+- 模型应用细分(越多越细)
+- 模型添加 `ParticleSettings`
+  - Emission:
+    - Frame End: 30
+    - Lifetime: 90
+  - Source:
+    - Emit From: Faces
+    - Distribution: Grid
+    - ✔ Invert Grid / Hexagonal Grid
+    - Resolution: 100 or more
+  - Render
+    - Render As : None
+  - Field Weights
+    - Gravity: 0
+- 模型添加 `Explode`
+  - 取消勾选 `Dead`
+- 添加`Wind`
+  - Settings:
+    - Shape: Plane
+    - Strength: 10 or more or less
+    - Flow: 3
+- 添加`Turbulence`
 
 
 
