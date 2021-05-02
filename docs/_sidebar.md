@@ -1,4 +1,4 @@
-- [Home](readme)
+- [Home](/)
 - [Code](Code/summary)
 - [Unity](Unity/summary)
 - [Math](Math/summary)

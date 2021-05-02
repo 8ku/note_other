@@ -1,20 +1,7 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
-</head>
 # Markdown输入数学公式及图表
 
-* TOC
-{:toc}
+
+
 
 [参考](https://www.jianshu.com/p/e74eb43960a1)
 
@@ -319,4 +306,3 @@ pie title Key elements in Product X
       "Magnesium" : 10.01
       "Iron" :  5
 </div>    
-

@@ -1,4 +1,4 @@
-- [Summary](/code/summary)
+- [Summary](/Code/summary)
 
 - Python
   - [Python](/Code/Python/Python)
