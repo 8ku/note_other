@@ -1,7 +1,7 @@
 # C#
 
-* TOC
-{:toc}
+
+
 
 ## 基本常识
 
@@ -23,7 +23,7 @@
 
   - 当把一个基类构造给派生类时，先生成基类，再生成派生类
 
-    ```c#
+    ```csharp
     public abstract class A
         {
             public A() { Console.WriteLine('A'); }
@@ -52,7 +52,7 @@
 
     - 抽象方法声明不提供实际实现，因此没有方法主体，不需要有大括号
 
-      ```c#
+      ```csharp
       public abstract void MyMethod();
       ```
 
@@ -88,7 +88,7 @@
 
 基本格式：
 
-~~~c#
+```csharp
 using System; //space type
 
 namespace simple //sign space name
@@ -110,7 +110,7 @@ namespace simple //sign space name
         }
     }
 }
-~~~
+```
 
 - 每个C#程序必须有一个类带有Main方法。
 
@@ -129,19 +129,19 @@ namespace simple //sign space name
 
     - WriteLine方法：和Write一样，但会在每个输出字符串后添加一个换行符(可以有1个以上的参数，参数用逗号分隔，第一个参数必须总是字符串——格式字符串，格式字符串可以包含替代标记)
 
-    - ~~~c#
+    - ```csharp
       Console.WriteLine("Two sample integers are {0} and {1}.",3,6);
       > Two sample integers are 3 and 6.
-      ~~~
+      ```
 
     - 标记不能试图引用超出替换值列表长度以外位置的值。如果引用了，不会编译错误，但会运行错误
 
     - **对齐说明符**：{0，10} 表示对齐，正数表示右对齐，负数表示左对齐，整数表示字段使用字符的最少数量，0为索引值，表示列表中的第0项，10表示在10个字符的字段中右对齐，如果值超过10，会报错
 
-    - ~~~c#
+    - ```csharp
       Console.WriteLine("{1,10}",500,600);
       >       600 //从第10个字符开始往左显示值，即600前面有7个空格
-      ~~~
+      ```
 
     - **格式字段**：指定数字应该以哪种形式表示，应该被当做货币、十进制数字、十六进制数字还是定点符号
 
@@ -153,7 +153,7 @@ namespace simple //sign space name
 
         - 精度说明符可选，由1~2位数字组成，它的实际意义取决于格式说明符
 
-        - ~~~c#
+        - ```csharp
           Console.WriteLine("{0:F4}",12.345678); 
           /* 
           0:索引
@@ -161,7 +161,7 @@ namespace simple //sign space name
           4：4位小数的定点数
           */
           > 12.3457
-          ~~~
+          ```
 
         - 标准数字格式说明符
 
@@ -275,10 +275,10 @@ C#程序是一组类型声明。
 1. 多变量声明中的变量必须类型相同
 2. 变量名必须用逗号分隔，可以在变量名后包含初始化语句
 
-~~~c#
+```csharp
 int var3=7,var4,var5=3;
 double var6,var7=6.52;
-~~~
+```
 
 ## 静态类型和dynamic关键字
 
@@ -327,12 +327,12 @@ double var6,var7=6.52;
 - 类的成员
 - 类的特征
 
-~~~c#
+```csharp
 class MyExcellentClass //类声明
 {
 	[特性] [修饰符] 核心声明
 }
-~~~
+```
 
 - 修饰符
   - 如果有修饰符，必须放在核心声明之前
@@ -349,9 +349,9 @@ class MyExcellentClass //类声明
 
   - 可以被写入、读取
 
-~~~c#
+```csharp
 int Identifier;  //int:类型  Identifier:字段名
-~~~
+```
 
   - 字段初始化值必须是编译时可确定的，如果没有初始化语句，字段的值会被编译器设为默认值，由字段类型决定默认值。
 
@@ -366,7 +366,7 @@ int Identifier;  //int:类型  Identifier:字段名
     - 参数列表：至少由一对空的圆括号组成，如果有参数，将被列在圆括号中间
     - 方法体：由一对大括号组成，大括号内包含执行代码
 
-  ~~~c#
+  ```csharp
   class SimpleClass
   
   {
@@ -381,7 +381,7 @@ int Identifier;  //int:类型  Identifier:字段名
       }
   
   }
-  ~~~
+  ```
 
   - C#没有全局函数声明在类型声明的外部。
 
@@ -406,7 +406,7 @@ int Identifier;  //int:类型  Identifier:字段名
 
   ![image-20200101124417980](C_Sharp.assets/image-20200101124417980.png)
 
-  ```c#
+  ```csharp
   using System;
    
   class D
@@ -442,7 +442,7 @@ int Identifier;  //int:类型  Identifier:字段名
 
 - 从类的外部访问静态成员必须使用类名
 
-  ```c#
+  ```csharp
   using System;
   
   class D
@@ -471,7 +471,7 @@ int Identifier;  //int:类型  Identifier:字段名
 - **构造函数的名称和类名相同**
 - **构造函数不能有返回值，不能用 void (void有返回值)**
 
-```c#
+```csharp
 class Class1  
 {
   int Id;  //定义一个int字段
@@ -527,13 +527,13 @@ class Program
 	- 哪种类型的数据可以传递给方法或从方法返回，以及应如何处理这些数据
 - 方法体：包含可执行的语句序列
 
-~~~c#
+```csharp
 Int MyMethod ( int part1, string part2 )   //方法头  int:返回类型。MyMethod：方法名称   （int ）：参数列表
 {                       //方法体
 		语句1
 		语句2
 }
-~~~
+```
 
 ### 方法体
 
@@ -568,7 +568,7 @@ var 关键字表示任何可以初始化语句的类型，不是特定类型变�
 - C#没有全局常量
 - 常量不能声明为 static
 
-```c#
+```csharp
 class MyClass
 {
   const int IntVal = 100;  //定义int类型常量，值为100 const:常量关键字
@@ -593,7 +593,7 @@ class MyClass
   - 拥有一个与属性类型相同的返回类型
   - 只有 get 访问器的属性称为<u>只读属性</u>。只属性是一种安全的，把一项数据从类或类的实例中传出的方法
 
-```c#
+```csharp
 int MyValue //int:属性类型   MyValue:属性名
 {
   set //隐式参数名称为 value 
@@ -628,7 +628,7 @@ int MyValue //int:属性类型   MyValue:属性名
 	
 	- continue 到当前循环的底部，满足 continue 的条件会被跳过，继续执行循环，类似玩牌中的“pass”，当满足 continue 条件的情况都会 pass
 	
-	  ```c#
+	  ```csharp
 	  int a = 1;
 	  while (true)
 	  {
@@ -653,7 +653,7 @@ int MyValue //int:属性类型   MyValue:属性名
 
 可以从方法体的内部调用其他方法。
 
-```c#
+```csharp
 class MyClass
 {
 	void PrintDateAndTime()     //声明方法
@@ -679,14 +679,14 @@ class MyClass
 - 要返回值，方法必须在方法名前面声明一个返回类型
 - 如果方法不返回值，它必须声明void返回类型
 
-```c#
+```csharp
 int GetHour()   {...}    //int:返回类型
 void DisplayHour()  {...}   //void:不返回值
 ```
 
 声明了返回类型的方法必须使用下面形式的返回语句从方法中返回一个值。返回语句包括关键字**return**及后面的表达式。每一条贯穿方法的路径都必须以一条这种形式的**return**语句结束。
 
-```c#
+```csharp
 class MyClass
 {
   public int GetHour()     //int:返回类型
@@ -715,7 +715,7 @@ class Program
 - 可以在任何时候使用下面形式的返回语句退出方法，不带参数：`return`
 - 这种形式的返回语句只能用于用void声明的方法
 
-```c#
+```csharp
 class MyClass
 {
   void TimeUpdate()
@@ -749,7 +749,7 @@ class MyClass
 
   - 形参是本地变量，它声明在方法的参数列表中，而不是在方法体中。
 
-    ```c#
+    ```csharp
     public void PrintSum(int x,float y)  //int x,float y:形参声明
     ```
 
@@ -767,7 +767,7 @@ class MyClass
 
   - 每一个实参必须与对应形参的类型匹配，或是编译器必须能够把实参隐式转换为那个类型
 
-    ```c#
+    ```csharp
     PrintSum(5,someInt);  //5:表达式 someInt:int类型变量
     ```
 
@@ -780,7 +780,7 @@ class MyClass
 
 在把变量用作实参之前，变量必须被赋值。
 
-```c#
+```csharp
 class MyClass
 {
   public int Val = 20;
@@ -811,7 +811,7 @@ class Program
 - 使用引用参数时，必须在方法的**声明**和**调用**中都使用 ref 修饰符。
 - 实参必须是变量，在用作实参前必须被赋值。
 
-```c#
+```csharp
 class MyClass
 {
   public int Val = 20;
@@ -843,7 +843,7 @@ class Program
 -  在方法内部，输出参数在能够被读取之前必须被赋值，所以参数的初始值是无用 的，也没必要在方法调用前为实参赋值
 - 在方法返回之前，方法内部贯穿的任何可能路径都必须为所有输出参数进行一次赋值
 
-```c#
+```csharp
 class MyClass
 {
     public int Val = 20;
@@ -881,17 +881,17 @@ class Program
 - 数组使用一个数字索引进行访问
 - 数组是一个引用类型
 
-```c#
+```csharp
 void ListInts( params int[] inVals ) // params:修饰符 int[]：int型参数数组 inVals:参数名称
 ```
 
 - 构造一个数组
 
-  ```c#
+  ```csharp
   int[] hps = new int[10];  // 创建一个有10个元素的数组
   int [] hps = new int[4]{1,2,3,6}; // 创建一个有4个元素的数组并赋值
   ```
-```c#
+```csharp
 // 遍历数组
 for(int i = 0; i < 4; i++) // 需要先知道数组长度
   {
@@ -899,7 +899,7 @@ for(int i = 0; i < 4; i++) // 需要先知道数组长度
   }
 ```
 
-  ```c#
+  ```csharp
   for(int i = 0; i < hps.length; i++) // 用数组的长度来遍历，不需要事先知道数组长度
   {
     print(hps[i]);
@@ -908,7 +908,7 @@ for(int i = 0; i < 4; i++) // 需要先知道数组长度
 
 参数数组举例
 
-```c#
+```csharp
 
 ```
 
@@ -928,7 +928,7 @@ for(int i = 0; i < 4; i++) // 需要先知道数组长度
 
 如果给枚举值赋值，下一个值会+1.
 
-```c#
+```csharp
 enum RoleType  //写在类的外面，可以直接调用
 {
 	man = 4,
@@ -948,7 +948,7 @@ public class test : MonoBehaviour
 
 ### 把枚举单独做成库--未完成
 
-```c#
+```csharp
 using UnityEngine;
 using System.Collections;
 
@@ -978,7 +978,7 @@ switch 只能判断单个值，不能判断范围，如果条件为范围，不�
 
 
 
-```c#
+```csharp
 switch(表达式/变量)
 {
   case 值1:语句块1;
@@ -990,7 +990,7 @@ switch(表达式/变量)
 }
 ```
 
-```c#
+```csharp
 if(条件)
 {
   语句1；
@@ -1007,7 +1007,7 @@ else
 
 ### ++/--
 
-```c#
+```csharp
 int z = 20;
 z++; //z=21
 int y = z; //y = new z = 21
@@ -1018,7 +1018,7 @@ Console.WriteLine(z + ":" + y + ":" + x); //22:21:21
 
 ### 监控用户输入 , 转换为相应类型
 
-```c#
+```csharp
 string str = Console.ReadLine(); //用 ReadLine 来监控用户输入
 int num = Convert.ToInt32(str); // 用 Convert 转换用户输入
 Console.WriteLine(num); 
@@ -1026,7 +1026,7 @@ Console.WriteLine(num);
 
 判断用户输入的是否为某个类型,是,输出结果,不是,提示
 
-```c#
+```csharp
 using System;
 namespace C_Sharp_test
 {
@@ -1053,7 +1053,7 @@ namespace C_Sharp_test
 
 
 
-```c#
+```csharp
 // 根据用户输入的字符判断是什么字符，只能输入一个字符
 public static void Main()
         {
@@ -1068,7 +1068,7 @@ public static void Main()
 
 
 
-```c#
+```csharp
 // 判断用户输入的字符
 string str = Console.ReadLine();
 char[] c = str.ToCharArray(); // 用一个数组来放输入的字符
@@ -1124,7 +1124,7 @@ for (int i = 0; i < str.Length; i++)
 
 需要引用 System.Linq
 
-```c#
+```csharp
 using System;
 using System.Linq;
 
@@ -1148,7 +1148,7 @@ namespace C_Sharp_test
 
 ### 乘方/开方、e的次方、对数log、正弦sin、余弦cos、正切tan、绝对值abs、PI、E
 
-```c#
+```csharp
 double num = Convert.ToDouble(a);
 
 //平方 Math.Pow(double 底数,double 几次方)
@@ -1182,7 +1182,7 @@ public const double PI = 3.1415926535897931;
 
 给输入的数字排序：针对一种类型
 
-```c#
+```csharp
 string input = Console.ReaLine(); //存储用户输入的字符
 string[] splitString = input.Split(' '); //定义一个数组，按空格把用户的输入分组存入
 int[] numArray = new int[splitString.Length]; //新建一个数组用于记录 splitString 中数据的位置，把 splitString 中数据的编号存到一个整数数组中，每个字符占一个位置，同时 numArray 中的字符的值都为0
@@ -1216,7 +1216,7 @@ for (int i = 0; i< numArray.Length; i++)
 
 最大为 e,开始第二轮循环，直到所有数字交换完位置。
 
-```c#
+```csharp
 string input = Console.ReadLine();
             string[] str = input.Split(' ');
             int[] numArray = new int[str.Length];
@@ -1243,7 +1243,7 @@ string input = Console.ReadLine();
 
 ### 在一个有序列表中插入值并保持排序
 
-```c#
+```csharp
 int[] num = { 4, 8, 12, 17, 30 };
             int x = Convert.ToInt32(Console.ReadLine());
             int index = 0; //给 num 计数
@@ -1278,7 +1278,7 @@ int[] num = { 4, 8, 12, 17, 30 };
 
 ### 方法定义和使用
 
-```c#
+```csharp
 //以求一个数的所有因子为例,定义一个方法
 
 static int[] GetDivisor( int number) //定义一个判断并接收因子的方法，方法的类型为 int 数组，即返回值必须为 int 数组类型
@@ -1340,7 +1340,7 @@ static void Main()
 
 结构体中的成员也不能声明为 protected。
 
-```c#
+```csharp
 enum Direction
 {
   West,

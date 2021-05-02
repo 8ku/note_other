@@ -62,7 +62,7 @@ Unity 序列化过程不走 .NET 的方法，用 Unity 内部的方法。
     - 适用于游戏存档
     - json 最好建立在对应不同文件夹下
 
-```c#
+```csharp
 //以存储角色信息为例
 
 using System.Collections;

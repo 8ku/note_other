@@ -2,7 +2,7 @@
 
 ## 随机生成敌人
 
-```c#
+```csharp
 public class TargetManager : MonoBehaviour {
     public static TargetManager _intance;
 

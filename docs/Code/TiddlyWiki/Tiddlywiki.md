@@ -2,11 +2,9 @@
 
 # Tiddly Wiki
 
-* TOC
-{: toc}
 轻量级单一网页笔记本
 
-[查看示例](https://www.bakumatata.com/note_other/Archives/8kuNoteBook_TiddlyWiki.html)
+[查看示例](http://htmlpreview.github.io/?https://github.com/8ku/note_other/blob/master/Archives/8kuNoteBook_TiddlyWiki.html)
 
 [更新](https://tiddlywiki.com/upgrade.html)
 

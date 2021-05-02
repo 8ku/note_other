@@ -12,7 +12,7 @@
 - **.yaml**
 - **.fnt**
 
-```c#
+```csharp
 //定义一个显示文本的text组件
 public Text textLabel;
 //定义一个显示说话人头像的image

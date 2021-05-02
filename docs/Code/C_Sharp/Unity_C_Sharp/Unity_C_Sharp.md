@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
 - 要访问类中的值，值必须是公开的
 
-  ```c#
+  ```csharp
   public class someting:MonoBehaviour
   {
     void Start()
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
 可自定义命名空间和类，并在代码中引用
 
-```c#
+```csharp
 using MyGame; //声明命名空间
 
 public class Player:MonoBehaviour
@@ -100,7 +100,7 @@ namespace MyGame //定义命名空间
 
 结构体和类（class）不同，结构体中的值不能单独修改，要整体赋值。例如
 
-```c#
+```csharp
 transform.position = new Vector3(3, 3, 3);
 transform.position.x = 10; //报错，不能直接修改值
 
@@ -119,7 +119,7 @@ MonoBahaviour 是所有Unity 脚本的基类。
 
 ### 使用Debug来显示操作情况
 
-```c#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -148,7 +148,7 @@ public class BasicController : MonoBehaviour
 
 ## 移动，跳跃，动画
 
-```c#
+```csharp
 public RigidBody2D rb;  //定义一个刚体，改名为 rb ，保存后，在图形界面上把 player 的刚体拖到这里绑定
 public Animator anime; //把动画控制器绑定角色
 publie Collider2D coll; //定义碰撞体
@@ -219,7 +219,7 @@ Vector3.Distance(目标位置,起始位置)
 
 1. 2D
 
-```c#
+```csharp
 public Transform player; // 取得跟随对象的位置
 
 void Update()
@@ -232,7 +232,7 @@ void Update()
 
 脚本挂在相机上
 
-```c#
+```csharp
 public Transform player; // 取得跟随对象的位置
 [SerializeField] //显示私有变量，能在Inspector中编辑
 private Vector3 offset; // 设置初始距离
@@ -253,7 +253,7 @@ void Update()
 
 ## for/while 循环销毁子物体
 
-```c#
+```csharp
 void Start()
 {
 	// Transform 是 Unity 的一种内置类型，获得这个主体下的所有子级
@@ -272,7 +272,7 @@ void Start()
 
 while 语句：
 
-```c#
+```csharp
 void Start()
 {
   Transform[] children = transform.GetComponentsInChildren<Transform>();
@@ -293,7 +293,7 @@ void Start()
 
 也称为只读循环，相比 for 循环更简洁，只能遍历，不能修改值。
 
-```c#
+```csharp
 public class HeroType : MonoBehaviour
 {
     void Start()
@@ -319,7 +319,7 @@ public class HeroType : MonoBehaviour
 
 通过 transform 组件获取物体，因为所有物体都有 transform 组件，所以可以用 transform 代表物体本身
 
-```c#
+```csharp
 Transform t = GetComponent<Transform>(); //Transform:组件类型,transform 是内置组件，可以不用用 get 来访问
 
 Transform t = GetComponentInChildren<Transform>(); //获取子物件组件
@@ -327,7 +327,7 @@ Transform t = GetComponentInChildren<Transform>(); //获取子物件组件
 
 获取子物体
 
-```c#
+```csharp
 transform.Find("子级/孙级");
 ```
 
@@ -335,7 +335,7 @@ transform.Find("子级/孙级");
 
 1. 获取物体 game object
 
-```c#
+```csharp
 public GameObject someone;  //先定义一个参数，把要获取的物体拖拽进来
 
 void Start()
@@ -351,7 +351,7 @@ void Start()
 
    查询 Unity 核心模块：文档 `UnityEngine.CoreModule`
 
-```c#
+```csharp
 public class somethin; //找脚本就直接定义脚本，找组件就定义组件，组件必须存在 
 private Transform something; //transform 是 Unity 的核心模块，可以直接定义
 
@@ -364,13 +364,13 @@ void Start()
 
 3. 通过 gameObject 的 Find 方法查找物体，如果有多个同名物品，只会返回第一个，效率很低，不推荐使用
 
-```c#
+```csharp
 GameObject go = GameObject.Find("Main Camera");
 ```
 
 4. 通过标签查找物体
 
-```c#
+```csharp
 GameObject go = GameObject.FindWithTag("Player"); //根据 tag 名称返回active 的第一个结果
 GameObject go = GameObject.FindGameObjectsWithTag("Player"); //返回这个 Tag 的列表，顺序随机
 FindObjectOfType<PlayerController>().CherryCount(); //根据 object 的名称查找
@@ -379,7 +379,7 @@ foreach(GameObject i in go){print(i);} //可以用 foreach 来查看找到的项
 
 5. 通过单例化调用脚本，不太喜欢，static 感觉有限制，后期学ECS
 
-```c#
+```csharp
 public class something: MonoBehavious
 {
   //把该脚本单例化，就可以从别的角色直接调用该脚本下的方法和值,单例化必须保证一个类只有一个实例,并提供一个全局访问点
@@ -394,7 +394,7 @@ public class something: MonoBehavious
 
 **单例模式的注意点**
 
-```c#
+```csharp
 //定义一个静态变量来保存类的实例,此例的类名为 Singleton
 private static Singleton instance;
 
@@ -428,7 +428,7 @@ public static Singleton GetInstance()
 
 
 
-```c#
+```csharp
 //调用的脚本
 something.instance.function();
 ```
@@ -439,7 +439,7 @@ something.instance.function();
 
 只有视图面板上可以勾选的组件可以被启/禁用
 
-```c#
+```csharp
 void Start()
 {
   BoxCollider2D coll = GetComponent<BoxCollider2D>(); //获取物体组件
@@ -451,7 +451,7 @@ void Start()
 
 ## 实例化
 
-```c#
+```csharp
 public GameObject bullet; //建一个游戏物体，把要实例化的物体拖拽进来
 
 void Update()
@@ -482,7 +482,7 @@ singleton会隐藏脚本依赖, 如果脚本里的方法有依赖, 会使问题�
 
 Current vector is unchanged .
 
-```c#
+```csharp
 Vector2 direction = new Vector2(x,y).normalized;
 Move(direction);
 ```
@@ -493,13 +493,13 @@ Move(direction);
 
 ## Input
 
-```c#
+```csharp
 Input.GetMouseButtonDown(0); //0:鼠标左键，1：鼠标右键，2：鼠标中键
 ```
 
 
 
-```c#
+```csharp
 // 用按键给物体的运动加速
 cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
 ```
@@ -516,7 +516,7 @@ cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
   - a - b ：b 向 a 运动
   - b - a：a 向 b 运动
 
-  ```c#
+  ```csharp
   private Transform b;
   
   void Start()
@@ -532,7 +532,7 @@ cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
 
 - 跟随运动
 
-  ```c#
+  ```csharp
   transform.parent = b; //指定物体为父级
   ```
 
@@ -540,7 +540,7 @@ cube.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal"));
 
 ## 碰撞
 
-```c#
+```csharp
 private void OnCollisionEnter(Collider2D collision)
 {
   print(collision.collider.name); //获取碰撞物体的名字
@@ -551,7 +551,7 @@ private void OnCollisionEnter(Collider2D collision)
 
 ## 触发区域
 
-```c#
+```csharp
 private void OnTriggerEnter(Collider other) //此方法不需要更改方法，只编辑返回值就可以
     {
         print("opps! " + other.name); //获取碰到的触发物体的名字
@@ -564,7 +564,7 @@ private void OnTriggerEnter(Collider other) //此方法不需要更改方法，�
   - int : Return a random integer number between `min` [inclusive] and `max` [exclusive]
   - float：Return a random float number between  ` min `  [inclusive] and ` max ` [inclusive]
 
-```c#
+```csharp
 public class ExampleClass : MonoBehaviour
 {
     public GameObject prefab;
@@ -579,7 +579,7 @@ public class ExampleClass : MonoBehaviour
 
 - ` Random.InitState(int seed);  `
 
-```c#
+```csharp
 private float[] noiseValues;
     void Start()
     {
@@ -596,7 +596,7 @@ private float[] noiseValues;
 
 - ` Random.insideUnitCircle ` 在一个半径为1的圆的范围内随机生成
 
-  ```c#
+  ```csharp
   transform.position = Random.insideUnitCircle * 5;
   ```
 
@@ -606,7 +606,7 @@ private float[] noiseValues;
 
 ## 显示分数
 
-```c#
+```csharp
 using UnityEngine.UI; // 要用 text 组件显示分数 ，text 在 UI Module 下
 
 public Text scoreText; // 定义一个变量放 text 组件
@@ -624,7 +624,7 @@ void Update()
 
 ## 重载/切换场景
 
-```c#
+```csharp
 using UnityEngine.SceneManagement; //需要调用场景管理 Module
 
 void Update()
@@ -635,7 +635,7 @@ void Update()
 
 - 显示场景加载进度 ` SceneManager.LoadSceneAsync `
 
-```c#
+```csharp
 using UnityEngine.SceneManagement;
 public class Example : MonoBehaviour
 {
@@ -679,7 +679,7 @@ public class Example : MonoBehaviour
 
 - ` Time.realtimeSinceStartup` ：用于测试性能耗费时间。
 
-  ```c#
+  ```csharp
   float time1 = Time.realtimeSinceStartup;
   for (int i = 0; i< 10; i++)
   {
@@ -693,7 +693,7 @@ public class Example : MonoBehaviour
 
 1.  ` GameObject.BroadcastMessage` ：给一个对象及其所有子对象发送消息（脚本挂在父物体上）
 
-```c#
+```csharp
 // 发消息的对象
 public GameObject Receiver; //需要先指定一个接收者
 
@@ -705,7 +705,7 @@ void Start()
 
 
 
-```c#
+```csharp
 // 接收消息的对象
 
 void ApplyDamage() // 直接引用方法
@@ -716,14 +716,14 @@ void ApplyDamage() // 直接引用方法
 
 2. `GameObject.SendMessage` ：只给当前接收者发送消息，不会同时给子物体发送。
 
-```c#
+```csharp
 //发送消息方，通过 sendmessage 来触发方法
 collision.SendMessage("Die");
 ```
 
 
 
-```c#
+```csharp
 //接收消息方,有一个方法就可以
 public void Die()
 {
@@ -742,7 +742,7 @@ public void Die()
 - **[必须]**使用 ` yield return ` 来停止并返回参数。
 - IEnumerator：迭代器
 
-```c#
+```csharp
 public class time : MonoBehaviour
 {
     public GameObject cube; //指定一个游戏物体
@@ -780,7 +780,7 @@ public class time : MonoBehaviour
 
 - Clamp：范围值，如果当前值大于范围最小值，取最小，当前值大于范围最大值，取最大。
 
-  ```c#
+  ```csharp
   private int hp = 100;
   void TakeDamage()
   {
@@ -800,7 +800,7 @@ public class time : MonoBehaviour
 
 用于改变旋转的角度。
 
-```c#
+```csharp
 public Transform cube;
 // 设置物体的角度方法1:直接使用欧拉角
 cube.eulerAngles = new Vector3(45, 45, 45);
@@ -811,7 +811,7 @@ cube.rotaiton = Quaternion.Euler(transform.eulerAngles+bullectEulerAngles);
 
 - LookRotation：让控制角色面向目标
 
-```c#
+```csharp
 public Transform Player;
 public Transform Enemy;
 
@@ -826,7 +826,7 @@ void  Update()
 
 - Slerp：球面插值，在插值中加入曲率，更平缓
 
-```c#
+```csharp
 private void Update()
     {
         Vector3 direction = Player.position - Enemy.position; //注意方向
@@ -841,7 +841,7 @@ private void Update()
 
 - 用 rigidbody 控制物体的移动和旋转要比 Transform 更快，如果物体有刚体时
 
-```c#
+```csharp
 public Rigidbody Player; //定义 rigidbody
 Rigidbody Player; //也可以不 public rigidbody
 Vector3 v3;
@@ -868,7 +868,7 @@ void Update()
 
 给运动添加力，力符合力学定律。
 
-```c#
+```csharp
 public int/float force;
 public Rigidbody Player;
 
@@ -888,7 +888,7 @@ void Update()
 
 - 获得鼠标点击的位置，并返回物体的名字
 
-```c#
+```csharp
     private Camera mainCamera;
 
     void Start()
@@ -914,7 +914,7 @@ void Update()
 
 ### 从物体发出射线
 
-```c#
+```csharp
 //从IK脚部发出射线
 RaycastHit hit;
 Ray ray = new Ray(animator.GetIKPosition(AvatarIKGoal.LeftFoot) + Vector3.up, Vector3.down);
@@ -944,7 +944,7 @@ if (objectHit.collider.tag == Tags.npc)
 
 ## 监听GUI 事件
 
-```c#
+```csharp
 using UnityEngine.UI;
 using System;
 using TMPro; //如果使用有 texmeshpro 的组件，需要引用命名空间
@@ -993,7 +993,7 @@ void toggleIsTrue(bool value)
 
 挂在哪个物体上就只能控制当前物体。
 
-```c#
+```csharp
 using UnityEngine UI;
 using UnityEngine.EventSystems; //要引用 event systems 才能使用里面的事件方法
 
@@ -1010,7 +1010,7 @@ public class time : MonoBehaviour, IPointerDownHandler // Called when a pointer 
 
 不经过 rigidbody 控制物体的运动。
 
-```c#
+```csharp
 // 脚本名字不可以重名，有一个组件为 CharacterController，脚本不可命名为CharacterController。
 public float Speed = 3;
 private CharacterController cc;
@@ -1034,7 +1034,7 @@ private void Update()
 
 把一个物体的 mech 修改成另一个物体的。
 
-```c#
+```csharp
 public Mesh mesh;
 
 void Start()
@@ -1046,7 +1046,7 @@ void Start()
 
 ## Material
 
-```c#
+```csharp
 //用  MeshRenderer 里的 material 改变物体颜色
 private Material mat;
 
@@ -1063,7 +1063,7 @@ private void Update()
 
 
 
-```c#
+```csharp
 // 把物体颜色变为自定义颜色，因为 Color 是 struct 结构体，不可以单独对结构体内部元素赋值，需要先转换。color 和 vector4 可以互相转换。
 
     private Material mat;
@@ -1082,7 +1082,7 @@ private void Update()
 
 ## 数组
 
-```c#
+```csharp
 public Sprite[] tankSprite; //创建一个公开的 sprite 数组，即可把动画图片拖到数组中
 
 private void Awake()
@@ -1098,7 +1098,7 @@ private void Update()
 
 切换怪物出现次序
 
-```c#
+```csharp
 public GameObject[] Monsters; //创建一个游戏物体组，把游戏物体拖入
 public GameObject activeMonster = null; //创建一个位置放置被随机到的游戏物体
 
@@ -1117,7 +1117,7 @@ private void ActivateMonster()
 
 ## 冻结/解冻游戏
 
-```c#
+```csharp
 // 暂停游戏，冻结时间
 Time.timeScale = 0f;
 Curor.visible = true; // 隐藏鼠标

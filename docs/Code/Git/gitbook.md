@@ -1,9 +1,5 @@
 # Gitbook
 
-* TOC
-  
-  {:toc}
-
 
 
 ## 使用行内HTML CSS样式

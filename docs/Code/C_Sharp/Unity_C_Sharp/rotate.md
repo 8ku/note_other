@@ -2,7 +2,7 @@
 
 ## 设置3D物体的旋转
 
-```c#
+```csharp
 public class GunManager : MonoBehaviour {
 
     private AudioSource gunAudio;

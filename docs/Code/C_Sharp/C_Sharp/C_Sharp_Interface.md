@@ -1,7 +1,7 @@
 # C# Interface
 
-* TOC
-{:toc}
+
+
 ## 快捷键
 
 - 选中所有相同名称: 先选中第一个, alt+shift+分号
@@ -22,7 +22,7 @@
 
 用`interface`定义接口, 按命名习惯以大写字母 I 开头 :
 
-```c#
+```csharp
 //声明接口
 interface IEquatable<T>
 {
@@ -37,7 +37,7 @@ interface IEquatable<T>
 - 默认情况下, 接口成员是公共的
 - 实现接口成员, 实现类的对应成员必须是**公共, 非静态**, 并具有与接口成员**相同名称和签名**.
 
-```c#
+```csharp
 //实现接口
 public class Car:IEquatable<Car>
 {

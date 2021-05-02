@@ -1,6 +1,6 @@
 # 背包系统
 
-```c#
+```csharp
 void ParseItemJson()
 {
   itemList = new List<Item>();

@@ -2,7 +2,7 @@
 
 父级 class
 
-```c#
+```csharp
 public class Father: MonoBehaviour
 {
   protected Animator anime; //protected 表示只有子级可调用
@@ -22,7 +22,7 @@ public class Father: MonoBehaviour
 
 子级 class
 
-```c#
+```csharp
 public class Son : Father
 {
   protected override void Start() //使用主类的标准写法,override 重写
@@ -37,7 +37,7 @@ public class Son : Father
 
 引用时
 
-```c#
+```csharp
 //引用另一个 class name is Enemy_frog 的脚本文件，引用后可调用此脚本里的所有组件和代码
 Father father = collision.gameObject.GetComponent<Father>();
 ```

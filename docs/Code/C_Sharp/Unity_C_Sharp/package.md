@@ -4,7 +4,7 @@
 
 MenuItem 把任何静态方法做到菜单命令中，只有静态方法才能使用 MenuItem 。
 
-```c#
+```csharp
 // MenuItem 有三种构造方法
 public MenuItem(string itemName);
 // isValidateFunction：是否是验证方法
@@ -30,7 +30,7 @@ public MenuItem(string itemName, bool isValidateFunction, int priority);
 | #LEFT/RIGHT/UP/DOWN | left shift... | left shift ... |
 | HOME/END/PGUP/PGDN  | ...           | ...            |
 
-```c#
+```csharp
 # if UNITY_EDITOR
 using UnityEditor;
 # endif
@@ -58,7 +58,7 @@ namespace Baku
 
 用于以 unitypackage 的文件形式导出 assets 到指定目录下。
 
-```c#
+```csharp
 AssetDatabase.ExportPackage(assetPathName, fileName, ExportPackageOptions.Recurse);
 ```
 
@@ -75,7 +75,7 @@ ExportPackageOptions:
 
 方法过时的标记，加上，之后调用该方法编译器会给出提示
 
-```c#
+```csharp
 [Obsolete("方法已过时,请使用xxx方法")]
 public static void functionName(){}
 ```
@@ -88,7 +88,7 @@ public static void functionName(){}
 
 不需要从外部调用的可以设置为 private 。
 
-```c#
+```csharp
 namespace Baku
 {
   public partial class ClassName

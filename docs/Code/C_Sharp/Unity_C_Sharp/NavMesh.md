@@ -1,7 +1,5 @@
 # NavMesh
 
-* TOC
-{:toc}
 ## 坑
 
 ### Agent必须挂在实体上

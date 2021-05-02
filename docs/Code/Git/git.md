@@ -1,7 +1,7 @@
 #  Git
 
-* TOC
-{:toc}
+
+
 
 ## 更新git pages
 
@@ -17,7 +17,9 @@ bundle update github-pages
 - note_other: `bundle exec jekyll serve`
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
 
+### 在线预览 github里的html文件
 
+[把html文件地址粘贴到这个网址里](http://htmlpreview.github.io/)
 
 ## 修改git推送方式
 
@@ -33,32 +35,32 @@ bundle update github-pages
 
 1. 检查现有的推送方式
 
-   ```yaml
+   ```bash
    git remote -v
    ```
 
 2. 从http改为ssh
 
-   ```yaml
+   ```bash
    git remote set-url origin git@github.com:username/xx.git
    ```
 
 3. 从ssh改为http
 
-   ```yaml
+   ```bash
    git remote set-url origin https://github.com/username/xx.git
    ```
 
 4. 查看现在的ssh
 
-   ```yaml
+   ```bash
    cd ~/.ssh
    ls
    ```
 
 5. 生成ssh密钥并显示(加 -o 可以比默认格式更能抗暴力破解)
 
-   ```yaml
+   ```bash
    ssh-keygen -o
    cat ~/.ssh/id_rsa.pub
    ```
@@ -69,14 +71,14 @@ bundle update github-pages
 
 1. 查看配置
 
-```yaml
+```bash
 git config --global --list
 git config --list
 ```
 
 2. 切换账号
 
-```yaml
+```bash
 git config --global user.name "name"
 git config --global user.email "email"
 ```
@@ -94,7 +96,7 @@ id_rsa: 私钥
 
 id_rsa.pub: 公钥
 
-```yaml
+```bash
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_another -C <Git注册邮箱>
 # -t 用来指定加密算法为 rsa；
 # -C 后面是个注释信息，并不一定要和你 Git 账户的邮箱或者 Git 账户名保持一致，只是常常是和你账户邮箱保持一致，这样设置，就能知道这个公钥被绑定在哪个 Git 账户上了。
@@ -102,7 +104,7 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa_another -C <Git注册邮箱>
 
 3. 配置config文件，如果存在，直接打开
 
-```yaml
+```bash
 touch ~/.ssh/config
 # 或者
 open ~/.ssh
@@ -111,7 +113,7 @@ open ~/.ssh
 4. 修改config文件相关信息，注意Host 和Hostname要写主机名
 5. **更换代理软件后(clash/shadowsocks), 要修改`localhost`的端口号,不然无法推送接收.**
 
-```yaml
+```bash
 # localhost端口号要和当前使用的代理端口号一致
 ProxyCommand nc -x localhost:7891 %h %p
 Host github.com
@@ -127,7 +129,7 @@ Host github8ku
 
 5. 测试
 
-```yaml
+```bash
 ssh -vT git@github.com
 #Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
 
@@ -136,7 +138,7 @@ ssh -T github8ku
 
 6. 更改仓库对应的账户
 
-```yaml
+```bash
 #移除全局账户
 git config --global --unset user.name && git config --global --unset user.email
 #到每个仓库根目录, 单独给每个仓库配置账户
@@ -151,7 +153,7 @@ git config --local user.email "someone@email.com"
 
 6. 各种报错的解决方法
 
-```yaml
+```bash
 # 用别名测试ssh被denied(publickey)
 ssh-add -D #清除现保存的密钥,如有必要, 执行此步
 eval "$(ssh-agnent -s)" #启动ssh-agent
@@ -395,7 +397,7 @@ vi ~/.gitconfig
 
 ## 删除本地库
 
-```yaml
+```bash
 #显示本地所有分支
 git branch
 
@@ -453,4 +455,3 @@ rm -rf repositoryname
       <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       <script>mermaid.initialize({startOnLoad:true});</script>
 </head>
-

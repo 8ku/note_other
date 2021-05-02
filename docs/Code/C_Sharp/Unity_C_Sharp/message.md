@@ -14,7 +14,7 @@
 
    Action 封装一个方法，该方法只有一个参数且不返回值。
 
-   ```c#
+   ```csharp
    // 用 Action<object> 可以覆盖 .NET 下的所有类，Action 用于委托
    private static Dictionary<string, Action<object>> RegisteredMsgs = new Dictionary<string, Action<object>>();
    ```
@@ -29,7 +29,7 @@
 
 2. 设定注册方法
 
-   ```c#
+   ```csharp
    // 往字典中添加数据
    public static void Register(string msgName, Action<object> onMsgReceived)
    {
@@ -39,7 +39,7 @@
 
 3. 设定发送方法
 
-   ```c#
+   ```csharp
    // 把字典中 key 值为 msgName 的 value 发送出去
    public static void Send(string msgName, object data)
    {
@@ -49,7 +49,7 @@
 
 4. 设定注销方法
 
-   ```c#
+   ```csharp
    // 从字典中移除 key 值
    public  static void UnRegister(string msgName)
    {
@@ -59,7 +59,7 @@
 
 5. 使用
 
-   ```c#
+   ```csharp
    // 注册
    Register("msg1",)
    ```

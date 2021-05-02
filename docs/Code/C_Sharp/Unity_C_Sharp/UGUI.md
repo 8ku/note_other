@@ -6,13 +6,13 @@
 
 使用 UI 事件需要先引用事件系统
 
-```c#
+```csharp
 using UnityEngine.EventSystems;
 ```
 
 [MonoBehaviour](MonoBehaviour) 里有一个 OnMouseDown 的类可以控制有 collider 属性的物体。
 
-```c#
+```csharp
 void OnMouseDown() //可以直接建一个类
     {
         // Destroy the gameObject after clicking on it
@@ -26,7 +26,7 @@ MainCamera 使用 `Physics Raycaster` 组件，不要用 Graphic Raycaster`，�
 
 使用 Eventsystems 里的 ` IPointerClickHandler ` 可以同时控制3D 和 2D 物体
 
-```c#
+```csharp
 // 3D
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -69,7 +69,7 @@ public class ClickCube : MonoBehaviour,IPointerClickHandler
 
 
 
-```c#
+```csharp
 //2D
 using System.Collections.Generic;
 using UnityEngine;
@@ -123,7 +123,7 @@ public class ClickUI : MonoBehaviour,IPointerClickHandler
 
 `EventSystem.current.IsPointerOverGameObject`
 
-```c#
+```csharp
 // -1表示 left mouse button" (pointerId = -1)
 if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject(-1) == false)
         {
@@ -145,7 +145,7 @@ if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject(-
 
 ### 脚本
 
-- ```c#
+- ```csharp
   public Actions actions;
   //要使用射线, 引入摄像机, 如果有多个摄像机, 用公开变量, 如果只有一个, 用私变量 Cam = Camera.mainCamera;
   publice Camera uiCam; 

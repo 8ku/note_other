@@ -2,7 +2,7 @@
 
 猜数字
 
-```c#
+```csharp
 class MainClass
     {
         static void Main()

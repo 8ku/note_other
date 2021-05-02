@@ -4,7 +4,7 @@ mac 更新 ruby gems也是一个大坑....系统不允许直接写入更新...�
 
 [参考](https://stackoverflow.com/questions/51126403/you-dont-have-write-permissions-for-the-library-ruby-gems-2-3-0-directory-ma)
 
-```yaml
+```bash
 #再安装一个ruby
 brew install chruby ruby-install
 ruby-install ruby

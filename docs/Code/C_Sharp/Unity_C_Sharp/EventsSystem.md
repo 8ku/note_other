@@ -6,7 +6,7 @@
 
 - 在一个空对象上挂脚本 `EventsManager`
 
-- ```c#
+- ```csharp
   using System;
   using System.Collections;
   using System.Collections.Generic;
@@ -55,7 +55,7 @@
 
 - 在检测物体上挂脚本(物品, 武器等), 调用 Events manager
 
-- ```c#
+- ```csharp
   using System;
   using System.Collections;
   using System.Collections.Generic;
@@ -106,7 +106,7 @@
 
 - 在物体下挂个空物体, 加上碰撞体, 勾选is trigger, 放脚本 `TriggerArea`
 
-- ```c#
+- ```csharp
   public class TriggerArea : MonoBehaviour
   {
     public int id;//在面板上修改

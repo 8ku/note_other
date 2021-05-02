@@ -2,7 +2,7 @@
 
 ## 播放动画片段
 
-```c#
+```csharp
 public class MonsterManager : MonoBehaviour {
 
     private Animation anim; //定义一个 animation 组件

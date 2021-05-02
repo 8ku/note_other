@@ -3,7 +3,7 @@
 - 单例化声音管理脚本,可直接在别的脚本调用,不用用每次先找游戏物体,再找身上的脚本的方式来调用
 - 把声音片段序列化, 让private的属性在inspector面板上可见
 
-```c#
+```csharp
 public class SoundManager:MonoBehaviour
 {
   //单例化

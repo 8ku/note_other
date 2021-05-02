@@ -14,6 +14,10 @@
 
 
 
+## 代码高亮指定语言支持
+
+[添加对应的语法js到index.html](https://cdn.jsdelivr.net/npm/prismjs@1/components/)
+
 ## 安装方法
 
 [官方文档](https://docsify.js.org/#/zh-cn/quickstart)

@@ -1,7 +1,7 @@
 # c#
 
-* TOC
-{:toc}
+
+
 
 ## static
 
@@ -16,7 +16,7 @@
 
 参数数组，使用这个关键字你可以直接在调用时传入数组的值，而不需要在调用是重新构造一个数组再传入。
 
-```c#
+```csharp
 // 构造一个 int 类型的参数数组
 public static void UserParams(params int[] list)
 {
@@ -59,7 +59,7 @@ static void Main()
 
 try用于预测可能出现的异常。捕获异常并对异常进行处理，就在catch中实现。不管异常发生与否，都会执行finally里面的语句。
 
-```c#
+```csharp
 static void Main()
         {
             while (true)
@@ -88,7 +88,7 @@ static void Main()
 - 只写属性：只有 set ，没有 get（很少出现）
 - value关键字：用户定义由 set 访问器分配的值
 
-```c#
+```csharp
 class TimePeriod
     {
         private double hours; //设置一个字段接收实参的值
@@ -124,7 +124,7 @@ class TimePeriod
 
 可以作为 expression-bodied 成员实现，不使用 return.
 
-```c#
+```csharp
 class SaleItem
     {
         string _name;
@@ -162,7 +162,7 @@ class SaleItem
 
 ### 自动实现的属性(如果字段中没有逻辑，可以简化)
 
-```c#
+```csharp
 public class SaleItem
 {
    public string Name 
@@ -188,7 +188,7 @@ class Program
 
 派生类调用基类的方法
 
-```c#
+```csharp
 // 派生类中，用 base 来调用基类的构造方法
 // 如果不用 :base，默认会调用基类中的无参构造方法
 public DerivedClass():base()
@@ -214,7 +214,7 @@ public DerivedClass():base()
 - 若要实现接口成员，实现类的对应成员必须是公共、非静态，并且具有与接口成员相同的名称和签名。
 - 一个类或结构可以实现多个接口。一个类可以继承一个基类，还可实现一个或多个接口。
 
-```c#
+```csharp
 // 基类
 class BaseClass
 {
@@ -260,7 +260,7 @@ public class MyClass:Ib,BaseClass
 
 ## 继承的一个例子
 
-```c#
+```csharp
 public class A
     {
         public virtual void Fun1(int i)
@@ -323,7 +323,7 @@ public class A
   - `list<T>`类初始化时必须指定一个类型，int string 或自定class
   - 避免了 ArrayList 会出现的类型不匹配的报错
 
-```c#
+```csharp
 // 创建列表的2种方式，使用泛型 List<T>
 List<int> scoreList = new List<int>();
 var scoreList = new List<int>();
@@ -350,7 +350,7 @@ scoreList.Sort();
 
 关键字 `<T>`，定义时只需要用 T 代表类型，在构造时需要指定 T 的类型
 
-```c#
+```csharp
 public class GenericList<T>
 {
     public void Add(T input) { }
@@ -383,7 +383,7 @@ class TestGenericList
 
 注意 char 和 string 的符号，单引号和双引号
 
-```c#
+```csharp
 string s  = "www.helloworld.com";
 string newS = s.Replace('.','-'); //char 要用 ' '
 string newS = s.Replace(".","---") //string 要用 " "
@@ -408,7 +408,7 @@ StringBuilder是可变类型，指为对象维护一个缓冲区以容纳字符�
 
 ### [特性] Obsolete 方法弃用提示
 
-```c#
+```csharp
 /*在方法上加obsolete关键字可以标记该方法被弃用,标记弃用的方法仍可调用
 如不允许再次调用，在()中加上判断 true ,加上后，调用时程序会报错 */
 [Obsolete("this method is obsolete, pls use NewMethod.",true)]
@@ -417,7 +417,7 @@ static void OldMethod(){}
 
 ### [特性] Conditional 控制方法的调用
 
-```c#
+```csharp
 /*Conditional关键字控制方法的调用
 在文件头用宏（一些组织在一起的命令作为一个单独命令完成一个特定任务）定义一个规则 */
 #define IsTest
@@ -441,7 +441,7 @@ namespace MySpace
 
 ### [特性] DebuggerStepThrough 在调试时跳过该方法
 
-```c#
+```csharp
 //在方法头加上 DebuggerStepThrough 标签，debug step时可跳过该方法
 [DebuggerStepThrough]
 static void Method1(){}
@@ -449,7 +449,7 @@ static void Method1(){}
 
 ### 创建自己的特性类(自定义标签)
 
-```c#
+```csharp
 //特性类是一个类，一般命名以Attribute结尾，且继承自System.Attribute,特性不需要继承，可以设计为封闭的 sealed
 [AttributeUsage(AttributeTargets.Class)] //在特性类上方加标签说明特性可以用在什么类型的元素上，class或mathod或其他
 sealed class MyTestAttribute:System.Attribute
@@ -469,7 +469,7 @@ sealed class MyTestAttribute:System.Attribute
 
 关键字 `Regex`
 
-```c#
+```csharp
 string st = Console.ReadLine(); //接收用户输入的字符串
 string pattern = @"^\d*$"; //用正则表达式定义验证规则，此例为"输入只能是数字",用@让 \保持原意，不要转义，此处加@表示 \d 的原意，字符串中的"\"的原意是转义符，如果不用@，会把 \ 和 d 分开看
 bool isMatcth =  Regex.IsMatch(st, pattern); //判断是否匹配，输出 bool
@@ -479,7 +479,7 @@ Console.WriteLine(isMatcth ? "It's true." : "Just allow number.");
 
 
 
-```c#
+```csharp
 // 检测用户的输入是否合法
 using System.Text.RegularExpressions;
 
@@ -502,7 +502,7 @@ while (true)
 
 
 
-```c#
+```csharp
 while (true)
 {
   string st = Console.ReadLine();
@@ -537,7 +537,7 @@ while (true)
 
 定义委托：`delegate 返回值 方法名（参数）;`
 
-```c#
+```csharp
 //定义委托,如果被委托的方法中指定了输入参数，委托中也有要同类型参数
 public delegate void PrintString(string str);
 
@@ -572,7 +572,7 @@ Action委托是系统内置的委托类型。
 - `Action<T>`封装一个方法，该方法只有一个参数 T 且没有返回值。
 - `Action<int,int string>`   可以有多个参数，最多支持16个，委托和被委托的参数类型及个数要对应。
 
-```c#
+```csharp
 static void PrintString()
 {
   Console.WriteLine("hello");
@@ -597,7 +597,7 @@ static void Main()
 
 Func委托要求指向的方法**必须有返回值**，可以传递0个到16个参数类型，和1个返回类型。
 
-```c#
+```csharp
 static int Test1()
 {
   ruturn 1;
@@ -619,7 +619,7 @@ Console.WriteLine(Text2(2)); // output:hi 2
 
 委托多个对象。
 
-```c#
+```csharp
 //用+=来连接多个委托
 static void Test1(){Console.WriteLine("Test1")};
 static void Test2(){Console.WriteLine("Test2")};
@@ -635,7 +635,7 @@ static void Main(){
 
 在创建委托时创建一个没有名字的方法。
 
-```c#
+```csharp
 Func<int,int,int> a = delegate(int arg1,int arg2)
 {
   return arg1 + arg2;
@@ -650,7 +650,7 @@ lambda表达式不需要声明参数类型。
 
 当参数只有一个时，可以不写小括号，当方法体只有一句时可以不写大括号。
 
-```c#
+```csharp
 Func<int,int,int> a = (arg1,arg2) => {return arg1 + arg2;};
 Func<int,int> a = arg1 => a+1; //23表示返回值，即return = a+1
 ```
@@ -665,7 +665,7 @@ Func<int,int> a = arg1 => a+1; //23表示返回值，即return = a+1
 
 - 动作触发者发布消息
 
-```c#
+```csharp
 Class Teacher
 {
   			//基本属性
@@ -691,7 +691,7 @@ Class Teacher
 
 - 接收者订阅（注册）消息
 
-```c#
+```csharp
 public class student
     {
         private string name;
@@ -714,7 +714,7 @@ public class student
 
 - 实例化
 
-```c#
+```csharp
 class Program
     {
         static void Main()
@@ -735,7 +735,7 @@ class Program
 
 以给雇员薪水排序为例。
 
-```c#
+```csharp
 namespace C_Sharp_test
 {
     class Employee //定义一个自定义类，包含雇员的名字和薪水
@@ -832,7 +832,7 @@ namespace C_Sharp_test
 2. 创建查询
 3. 执行查询
 
-```c#
+```csharp
 //获取数据源list, m 代表数据源列表中的对象
 var IntList = new List<int>() { 1, 2, 3, 56, 22 };
 var res = from m in IntList 
@@ -844,7 +844,7 @@ foreach (int i in res){Console.WriteLine(i);}
 
 ### 查询复杂list对象
 
-```c#
+```csharp
 //建立对象类
 class Student
 {
@@ -874,7 +874,7 @@ class Teacher
 
 单表查询
 
-```c#
+```csharp
 //初始化列表对象
 class Program
 {
@@ -907,7 +907,7 @@ class Program
 
 对单表结果按条件分组 group by
 
-```c#
+```csharp
 var res = from m in StudentList
   				group m in m.FavoriteCourse into newGroup //按FavoriteCourse分组
   				orderby newGroup.Key //newGroup.key=m.favoritecourse
@@ -924,7 +924,7 @@ foreach (var temp in res)
 
 用 .all判断序列是否完全满足指定条件
 
-```c#
+```csharp
 //是否存在满足条件的元素
 bool res = StudentList.Any(m => m.Id == 1);
 //是否序列所有元素都满足条件
@@ -940,7 +940,7 @@ Console.Write(res); //output:True
 
 联合查询会把第一个序列和第二个序列中所有元素合并成一个序列
 
-```c#
+```csharp
 var res = from s in StudentList
   				from t in TeacherList
   				where s.FavoriteCourse == t.Course
@@ -956,7 +956,7 @@ foreach(var human in res)
 
 另一种联合方法 join in，把结果分类
 
-```c#
+```csharp
 var res = from s in StudentList
   				join t in TeacherList
   				on s.FavoriteCourse equals t.Course
@@ -969,20 +969,20 @@ var res = from s in StudentList
 
 ### 文件属性读取操作
 
-```c#
+```csharp
 FileInfo fileInfo = new FileInfo("filename.txt");
 if (fileInfo.Exists == false){fileInfo.Create();}
 ```
 
 ### 文件夹属性读取操作
 
-```c#
+```csharp
 DirectoryInfo dirInfo = new DirectoryInfo("directoryname");
 ```
 
 ### 文件内容读写
 
-```c#
+```csharp
 //读取文本文件
 string[] strArray = File.ReadLines("fileName.txt");
 //适合读取二进制文件
@@ -1043,7 +1043,7 @@ writer.Close();
 
 读取
 
-```c#
+```csharp
 class Skill
 {
   public int Id{get;set;}
@@ -1094,7 +1094,7 @@ class Program
 
 
 
-```c#
+```csharp
 //json文件-object
 {
   "Name":"baku",
@@ -1113,7 +1113,7 @@ class Program
 
 ### 用 LitJson 解析Json
 
-```c#
+```csharp
 using System.IO;
 using LitJson;
 //右键项目-管理NuGet包-LitJson,添加包
@@ -1137,7 +1137,7 @@ foreach (JsonData temp in jsonData)
 
 把json数据用一个类来管理
 
-```c#
+```csharp
 class Skill
 {
   public int id;
@@ -1183,7 +1183,7 @@ class Program
 
 用泛型解析json
 
-```c#
+```csharp
 class Skill
 {
   public int id;
@@ -1238,7 +1238,7 @@ class MainClass
 
 ### 用 Newtonsoft.Json 解析Json
 
-```c#
+```csharp
 //Visual Studio 右键项目-管理NuGet包-Newtonsoft json,添加包
 //Unity package manager - 左上角 Add package from git URL : https://github.com/jilleJr/Newtonsoft.Json-for-Unity.git#upm 
 
