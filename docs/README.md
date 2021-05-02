@@ -2,6 +2,18 @@
 
 因为原主题全文搜索不好用, 更换为docsify.
 
+## 一些额外的语法
+
+### 强调内容 `!> content`
+
+!> important contents
+
+### 普通提示 `?> normal content`
+
+?> normal content
+
+
+
 ## 安装方法
 
 [官方文档](https://docsify.js.org/#/zh-cn/quickstart)
