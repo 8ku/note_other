@@ -1,4 +1,4 @@
-- [Home](/)
+- [Notes Other](/)
 - [Code](Code/summary)
 - [Unity](Unity/summary)
 - [Math](Math/summary)
