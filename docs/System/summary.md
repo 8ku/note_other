@@ -1,8 +1,8 @@
 # 系统快捷键
 
-- [Linux](/system/Linux)
-- [Mac](/system/Mac)
-- [Markdown_flow](/system/markdown_flow)
-- [Windows](/system/Windows)
-- [sublime插件](/system/sublime)
-- [vimium](/system/vimium)
+- [Linux](/System/Linux)
+- [Mac](/System/Mac)
+- [Markdown_flow](/System/markdown_flow)
+- [Windows](/System/Windows)
+- [sublime插件](/System/sublime)
+- [vimium](/System/vimium)
