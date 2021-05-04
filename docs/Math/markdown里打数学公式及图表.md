@@ -237,7 +237,7 @@ $
 
 ## 图表
 
-需要在页头添加以下代码，使用时需要用`<div class = "mermaid”></div>` 包裹图表。
+在docsify inedex.html - header 中添加以下代码:
 
 参考：<a href="https://mermaid-js.github.io/mermaid/#/flowchart">语法说明</a>
 
@@ -247,7 +247,7 @@ $
 <script>mermaid.initialize({ startOnLoad: true });</script>
 ```
 
-
+使用时, 在头部添加 ````mermaid`
 
 ### sequence
 
