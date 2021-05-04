@@ -26,36 +26,6 @@
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
-
-    <script>
-        mermaid.initialize({
-          startOnLoad: false
-        });
-        let id = 0;
-        window.$docsify = {
-          name: 'docsify-katex',
-          repo: 'https://github.com/upupming/docsify-katex',
-
-          loadSidebar: true,
-          maxLevel: 4,
-          subMaxLevel: 3,
-          noEmoji: true,
-
-          markdown: {
-            renderer: {
-              code: function (code, lang) {
-                if (lang === "mermaid") {
-                  return (
-                    '<div class="mermaid">' + mermaid.render('mermaid-svg-' + id++, code) + "</div>"
-                  );
-                }
-                return this.origin.code.apply(this, arguments);
-              }
-            }
-          }
-        }
-    </script>
-
     <script>
         if (typeof navigator.serviceWorker !== 'undefined') {
         navigator.serviceWorker.register('sw.js')
@@ -63,21 +33,25 @@
     </script>
     
     <script>
-    window.$docsify = {
-        loadSidebar: true, //显示侧边栏
-        oadSidebar: 'summary.md', //次级目录默认跳转到summary
-        subMaxLevel: 3, //页内导航默认到3级
-        name: 'Notes Other', //网站标题
-        search: {
-          noData: {
-            '/': 'No results!',
+        mermaid.initialize({
+          startOnLoad: false
+        });
+        let id = 0;
+        window.$docsify = {
+            loadSidebar: true, //显示侧边栏
+            oadSidebar: 'summary.md', //次级目录默认跳转到summary
+            subMaxLevel: 3, //页内导航默认到3级
+            name: 'Notes Other', //网站标题
+            search: {
+              noData: {
+                '/': 'No results!',
+              },
+              paths: 'auto',
+              placeholder: {
+                '/': 'Search',
+              },
           },
-          paths: 'auto',
-          placeholder: {
-            '/': 'Search',
-          },
-      },
-    }
+        }
     </script>
 
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
