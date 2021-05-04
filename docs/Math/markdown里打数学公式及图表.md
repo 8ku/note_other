@@ -2,18 +2,33 @@
 
 
 
+[语法参考](https://www.jianshu.com/p/e74eb43960a1)
 
-[参考](https://www.jianshu.com/p/e74eb43960a1)
+[KaTeX 语法](https://katex.org/docs/supported.html)
+
+## 载入插件
+
+docsify中使用KaTeX的方法:
+
+```html
+<!--在index.html - body 最后添加-->
+<script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+```
+
+
+
+
 
 ## 插入方式
 
 ### 行间插入或左对齐
 
-一个$
+一个\$
 
 ### 新行写入
 
-两个$$
+两个\$\$
 
 ## 基本类型
 
@@ -21,15 +36,15 @@
 
 $x_1$: `x_1`
 
-$$x_1^2$$: `x_1^2`
+$x_1^2$: `x_1^2`
 
-$$x^2_1$$: `x^2_1`
+$x^2_1$: `x^2_1`
 
-$$x_{22}^{(n)}$$:   `x_{22}^{(n)}`
+$x_{22}^{(n)}$:   `x_{22}^{(n)}`
 
-$${}^*x^*$$: `{}^*x^*`
+${}^*x^*$: `{}^*x^*`
 
-$$x_{balabala}^{bala}$$:  `x_{balabala}^{bala}`
+$x_{balabala}^{bala}$:  `x_{balabala}^{bala}`
 
 上标用 ^ 后接体现，下标用 _ 后接体现，多于一位要用 { } 包裹
 
@@ -45,9 +60,9 @@ $$x_{balabala}^{bala}$$:  `x_{balabala}^{bala}`
 
 $\overline{xyz}$
 
-$$\frac{x+y}{2}$$：`\frac{x+y}{2}`  
+$\frac{x+y}{2}$：`\frac{x+y}{2}`  
 
-$$\frac{1}{1+\frac{1}{2}}$$： `\frac{1}{1+\frac{1}{2}}`
+$\frac{1}{1+\frac{1}{2}}$： `\frac{1}{1+\frac{1}{2}}`
 
 ### 根式
 
@@ -55,11 +70,11 @@ $$\frac{1}{1+\frac{1}{2}}$$： `\frac{1}{1+\frac{1}{2}}`
 
 **[ ]：几次根式**
 
-$$\sqrt{2}<\sqrt[3]{3}$$ ：`\sqrt{2}<\sqrt[3]{3}`   
+$\sqrt{2}<\sqrt[3]{3}$ ：`\sqrt{2}<\sqrt[3]{3}`   
 
-$$\sqrt{1+\sqrt[p]{1+a^2}}$$:  `\sqrt{1+\sqrt[p]{1+a^2}}`
+$\sqrt{1+\sqrt[p]{1+a^2}}$:  `\sqrt{1+\sqrt[p]{1+a^2}}`
 
-$$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$:  `\sqrt{1+\sqrt[^p]{1+a^2}}`--和上面的区别在于P的写法
+$\sqrt{1+\sqrt[^p\!]{1+a^2}}$:  `\sqrt{1+\sqrt[^p]{1+a^2}}`--和上面的区别在于P的写法
 
 ### 求和、积分
 
@@ -67,11 +82,11 @@ $$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$:  `\sqrt{1+\sqrt[^p]{1+a^2}}`--和上面的区�
 
 **int：integral 积分**
 
-$$\sum_{k=1}^{n}\frac{1}{k}$$：`\sum_{k=1}^{n}\frac{1}{k}`
+$\sum_{k=1}^{n}\frac{1}{k}$：`\sum_{k=1}^{n}\frac{1}{k}`
 
 $\sum_{k=1}^n\frac{1}{k}$：`\sum_{k=1}^n\frac{1}{k}`
 
-$$\int_a^b f(x)dx$$:  `\int_a^b f(x)dx`
+$\int_a^b f(x)dx$:  `\int_a^b f(x)dx`
 
 $\int_a^b f(x)dx$: `\int_a^b f(x)dx`
 
@@ -95,7 +110,7 @@ $a\qquad b$: `a\qquad b` two quad space 只能有2个，3个q会报错
 
 用 \left 和 \right 后跟界定符来对内容界定
 
-$$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$：`\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)`
+$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$：`\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)`
 
 ### 矩阵
 
@@ -103,23 +118,23 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$：`\left(\sum_{k=\frac{1}
 
 **矩阵中括号不能直接写括号符号，需要用文字**
 
-$$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$$：`\begin{matrix}1 & 2\\\\3 &4\end{matrix}`
+$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$：`\begin{matrix}1 & 2\\\\3 &4\end{matrix}`
 
-$$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$$: `\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}`
+$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$: `\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}`
 
-$$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$$:  `\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}`
+$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$:  `\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}`
 
-$$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$$:  `\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}`
+$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$:  `\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}`
 
-$$\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}$$:  `\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}`
+$\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}$:  `\begin{vmatrix}1 & 2\\\\3 &4\end{vmatrix}`
 
-$$\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|$$:  `\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|`
+$\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|$:  `\left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right|`
 
-$$\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}$$:  `\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}`
+$\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}$:  `\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}`
 
 ### 排版数组
 
-$$\mathbf{X} = \left( \begin{array}{ccc} x\_{11} & x\_{12} & \ldots \\\\ x\_{21} & x\_{22} & \ldots \\\\ \vdots & \vdots & \ddots \end{array} \right)$$:   
+$\mathbf{X} = \left( \begin{array}{ccc} x\_{11} & x\_{12} & \ldots \\\\ x\_{21} & x\_{22} & \ldots \\\\ \vdots & \vdots & \ddots \end{array} \right)$:   
 
 ```
 \mathbf{X} = 
@@ -141,19 +156,19 @@ x = y + z
 $$
 
 ```
-$$
+$
 \begin{gather}
 a = b+c+d \\\\
 x = y+z
 \end{gather}
-$$
+$
 
-$$
+$
 \begin{align}
 a &= b+c+d \\\\
 x &= y+z
 \end{align}
-$$
+$
 ```
 
 ### 分段函数
@@ -166,12 +181,12 @@ x,\quad x>0
 $$
 
 ```
-$$
+$
 y=\begin{cases}
 -x,\quad x\leq 0 \\\\
 x,\quad x>0
 \end{cases}
-$$
+$
 ```
 
 ## 数组的其他使用
@@ -187,13 +202,13 @@ $$
 $$
 
 ```
-$$
+$
 \left(\begin{array}{|c|c|}
 1 & 2 \\\\
 \\hline
 3 & 4
 \end{array}\right)
-$$
+$
 ```
 
 ### 制表
@@ -209,7 +224,7 @@ $$
 $$
 
 ```
-$$
+$
 \begin{array}{|c|c|}
 \hline
 {1111111111} & 2 \\\\
@@ -217,7 +232,7 @@ $$
 3 & 4 \\\\
 \hline
 \end{array}
-$$
+$
 ```
 
 ## 图表
@@ -226,39 +241,41 @@ $$
 
 参考：<a href="https://mermaid-js.github.io/mermaid/#/flowchart">语法说明</a>
 
-```javascript
-<script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+```html
+<script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+<script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
 ```
 
 
 
 ### sequence
 
-<div class="mermaid">
+```mermaid
 sequenceDiagram
     Alice->Bob: Hello Bob, how are you?
     Note right of Bob: Bob thinks
     Bob-->Alice: I am good thanks!
-</div>
+```
+
 
 
 ### mermaid - flowchat
 
-<div class="mermaid">
+```mermaid
 graph LR
 A[Hard edge] -->B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
-</div>
+```
+
 
 
 
 ### mermaid - class diagrams
 
-
-<div class="mermaid">
+```mermaid
 classDiagram
       Animal <|-- Duck
       Animal <|-- Fish
@@ -280,12 +297,13 @@ classDiagram
           +bool is_wild
           +run()
       }
- </div>     
+```
+
 
 
 ### mermaid - state diagrams
 
-<div class="mermaid">
+```mermaid
 stateDiagram
       [*] --> Still
       Still --> [*]
@@ -293,16 +311,18 @@ stateDiagram
       Moving --> Still
       Moving --> Crash
       Crash --> [*]
-</div>   
+```
+
 
 
 
 ### mermaid - pie charts
 
-<div class="mermaid">
+```mermaid
 pie title Key elements in Product X
       "Calcium" : 42.96
       "Potassium" : 50.05
       "Magnesium" : 10.01
       "Iron" :  5
-</div>    
+```
+

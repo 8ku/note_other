@@ -11,17 +11,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
     <!-- 显示图表 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css" integrity="sha384-L+Gq2Cso/Y2x8fX4wausgiZT8z0QPZz7OqPuz4YqAycQJyrJT9NRLpjFBD6zlOia" crossorigin="anonymous">
-
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.js" integrity="sha384-z64WtjpyrKFsxox9eI4SI8eM9toXdoYeWb5Qh+8PO+eG54Bv9BZqf9xNhlcLf/sA" crossorigin="anonymous"></script>
-
-    <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
-
-    <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+    <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
 
 
 </head>
@@ -39,13 +31,9 @@
     </script>
     
     <script>
-        mermaid.initialize({
-          startOnLoad: false
-        });
-        let id = 0;
         window.$docsify = {
             loadSidebar: true, //显示侧边栏
-            oadSidebar: 'summary.md', //次级目录默认跳转到summary
+            loadSidebar: 'summary.md', //次级目录默认跳转到summary
             subMaxLevel: 3, //页内导航默认到3级
             name: 'Notes Other', //网站标题
             search: {
@@ -57,6 +45,18 @@
                 '/': 'Search',
               },
           },
+          markdown: {
+            renderer: {
+              code: function(code, lang) {
+                if (lang === "mermaid") {
+                  return (
+                    '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
+                  );
+                }
+                return this.origin.code.apply(this, arguments);
+              }
+            }
+          }
         }
     </script>
 
@@ -64,7 +64,10 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=String.prototype.normalize"></script>
 
-    
+    <!-- 显示数学公式 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
 
     <!-- 图片缩放 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
