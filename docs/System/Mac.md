@@ -10,6 +10,7 @@
 | 查看                                          | ls                                                           |
 | 打开文件夹                                    | open fileFolderName///                                       |
 | 打开当前文件夹                                | open .                                                       |
+| 查看隐藏文件                                  | shift+cmd+.(句号)                                            |
 | 使用系统preview查看多张图片                   | open *                                                       |
 | 查看-隐藏                                     | ls -a                                                        |
 | 创建目录                                      | mkdir (make directory)                                       |

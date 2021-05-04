@@ -1,7 +1,7 @@
 # 基本概念
 
-* TOC
-{:toc}
+
+
 ## 解除中国特供版Unity Hub
 
 - 设置代理
@@ -30,6 +30,20 @@ chmod +x launchUnityHub.command
 
 - [从官网下载离线版文档](https://docs.unity3d.com/Manual/UnityManual.html)，左侧 Unity User Manual - Offline documentation
 - 把本地保存路径复制，在浏览器打开，在最后补上 index.html
+
+
+
+## 本地package文件夹位置
+
+```bash
+open ~/Library/Unity/Asset Store-5.x
+```
+
+
+
+
+
+
 
 ## 和 Unreal 对比
 
