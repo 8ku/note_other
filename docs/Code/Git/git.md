@@ -13,8 +13,8 @@ bundle update github-pages
 
 ## 本地预览
 
-- 主页: `jekyll serve --watch`
-- note_other: `bundle exec jekyll serve`
+- 主页: `jekyll serve --watch` or `bundle exec jekyll serve`
+- note_other: `docsify serve docs`
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
 
 ### 在线预览 github里的html文件
