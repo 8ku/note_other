@@ -51,6 +51,7 @@
 | 强制退出程序                                  | cmd+option+esc                                               |
 | 查看程序使用的内存                            | `top -o MEM`                                                 |
 | 停止运行命令                                  | ctrl+c                                                       |
+| 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
 
 
 
