@@ -12,6 +12,12 @@ your text
 </div>
 ```
 
+<span style="border-style:solid;border-width:2px 0px;border-color:powderblue:padding:10px;margin-bottom:10px;">
+效果
+</span>
+
+
+
 [可直接使用名称的颜色参考](https://www.w3schools.com/colors/colors_names.asp)
 
 ### div 半透明背景色
@@ -24,6 +30,13 @@ your text
   ddd
 </div>
 ```
+
+<span style=
+    "background:rgba(0,0,0,0.05);
+     padding:10px;
+     color:red;">
+  效果
+</span>
 
 
 
@@ -81,6 +94,28 @@ your <span style="background-color:red;">text</span>
 ```
 
 
+
+### 高亮另一种效果
+
+```html
+<span style="box-shadow:inset 0 -10px 0 yellow, 0 2px 0 yellow;font-weight:bold;"></span>
+```
+
+<span style="box-shadow:inset 0 -10px 0 yellow, 0 2px 0 yellow;font-weight:bold;">效果</span>
+
+
+
+### 涂黑效果
+
+```html
+<a style="color:black;background-color:black"
+   onMouseOver="this.style.color='#fff';this.style.backgroundColor='#000'"
+   onMouseOut="this.style.color='#000';this.style.backgroundColor='#000'" >Text</a>
+```
+
+<a style="color:black;background-color:black"
+   onMouseOver="this.style.color='#fff';this.style.backgroundColor='#000'"
+   onMouseOut="this.style.color='#000';this.style.backgroundColor='#000'" >效果</a>
 
 ### Markdown字体颜色大小设置
 
