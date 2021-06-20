@@ -8,5 +8,4 @@
 - [Game History](GameHistory/summary)
 - [Biology](Biology/summary)
 - [Draw](Draw/summary)
-- [Art](Art/summary)
 
