@@ -13,8 +13,8 @@
 </head>
 # Blender Physics
 
-* TOC
-{: toc}
+
+
 ## 流体动画
 
 - 新建一个立方体(球体等)做为液体发射器
@@ -43,4 +43,54 @@
     - 如果无效果, 把 resolution Division数字加大
   - Bake Mesh, 如果不Bake, 空间会不透明
 - 导出为 `.abc`
+
+
+
+## 布娃娃 ragdoll
+
+### 手脚
+
+- 把要脱离的部分和父级解除绑定关系，在本例中为**手部和脚部骨骼**
+- 把解除的部分和原父级用IK连接
+- 新建`Mesh-single vert`，沿手脚按关节挤出，命名为`ragdoll_line`
+  - 全选，沿y轴挤出一点（为了可视，线看不清）
+  - 镜像得到右侧手脚
+  - 给手脚和手脚尖的顶点建立顶点组`hand.L`, `hand_end.L`, `hand.R`, `hand_end.R` 等
+  - 两边肩部建顶点组`pin`
+- 给`ragdoll_line`添加布料模拟器
+  - `Shape-Pin Group` 选择`pin`组
+  - 勾选`Object Collisions`
+- 在`Pose mode`下，把`ragdoll_line`绑定为脊柱（`spine`的上一节）的子集：在`Pose Mode`下，选中`spine.001`， `set parent to bone`
+  - 点击`play`，移动`spine`看效果
+- 给手脚的骨骼建立`bone constraint-Copy Location`  `Damped Track`
+  - `Copy Location`
+    - `Target` : `regdoll_line`
+    - `Vertex Group` : `hand.L`
+  -  `Damped Track`
+    -  `Target` : `regdoll_line`
+    - `Vertex Group` : `hand_end.L`
+  - 点击`play`看效果
+
+### 头部
+
+- 新建 `Mesh-single vert`，命名为`ragdoll_head`
+  - 添加一个顶点组`head`
+  - 添加`Soft Body`模拟器
+    - 修改参数`Object-mass` : 0.5kg
+- 把顶点绑定为脖子骨骼的子对象：在`Pose Mode`下，选中脖子， `set parent to bone`
+- 给头部骨骼添加`bone constraint-Damped Track`
+  - `Target` : `ragdoll_head`
+  - `Vertex Group` : `head`
+- 点击`play`看效果
+
+
+
+### 制作碰撞体
+
+- 在大腿、身体、头部位置新建立方体，给立方体添加碰撞体模拟器
+- 绑定到对应的骨骼上 `set parent to bone`
+- 把碰撞体建组`Collisions`
+- `ragdoll`的布料模拟器下`Collisions`
+  - 勾选`Object Collisions`
+    - `Collision Collection` ：`Collisions`
 
