@@ -1,6 +1,3 @@
-* TOC
-{:toc}
-
 ## 快捷键
 
 - 保存: File - Save as / ctrl + s
@@ -27,6 +24,9 @@
   - soft mask: 按住cmd, 点击mask
   - 反转mask部分:  空白处 cmd+鼠标左键点击
   - **mask菜单: 右侧菜单 - Masking**
+- 缩放视图
+  - 鼠标：command+鼠标右键/按住alt，再按住鼠标左键，放开alt，拖动鼠标左键
+  - 数位板：把笔上的按键设置为对应鼠标右键，其余和鼠标一致/按住alt，用笔按住物体，放开alt，挪动笔
 
 ## 常用笔刷
 
@@ -34,7 +34,13 @@
 - ClayBuildup: 添加粘土
 - DamStandard: 凹槽
 - TrimDynamic: 平面化
-- 
+
+### 把常用笔刷固定在屏幕上
+
+- 打开**自定义界面工具**：`Preference-config-enable customize`
+- 把`Brush`菜单固定在左侧菜单中
+- 选择常用笔刷，按住`control+alt(Mac也是control)`拖动到底部
+- `save config`
 
 ## 容易误触的地方
 
@@ -81,11 +87,6 @@ Subtool - Append
 
 在右侧工具栏打开solo(滑到最下面, 倒数第2个)
 
-设置快捷方式:
-
-- Preferences - Edit - Allow Click to Solo
-- 在空白处点击鼠标左键
-
 **独显部分**
 
 shift+cmd 选择 Select Rect 
@@ -130,6 +131,12 @@ shift+cmd 选择 Select Rect
 
 - A
 - 右侧菜单 Make PlyMesh3D(不可逆转, 慎重)
+
+### 其他技巧
+
+* 收起/展开工具栏：双击箭头
+* **设置快捷键**：ctrl+alt，点击图标，按键，最后在`Preferences-Hotkeys-save`
+* **自定义界面工具**：`Preference-config-enable customize`
 
 ## 优势
 
