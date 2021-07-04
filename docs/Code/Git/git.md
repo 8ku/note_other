@@ -16,6 +16,7 @@ bundle update github-pages
 - 主页: `jekyll serve --watch` or `bundle exec jekyll serve`
 - note_other: `docsify serve docs`
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
+- hero：`hexo clean -> hexo g -> hero d`
 
 ### 在线预览 github里的html文件
 
@@ -156,8 +157,12 @@ git config --local user.email "someone@email.com"
 ```bash
 # 用别名测试ssh被denied(publickey)
 ssh-add -D #清除现保存的密钥,如有必要, 执行此步
-eval "$(ssh-agnent -s)" #启动ssh-agent
+eval "$(ssh-agent -s)" #启动ssh-agent
 ssh-add -K ~/.ssh/id_rsa_another
+
+# 用别名测试ssh被denied(publickey)解决方法2，在检查了SSH Keys都有，仓库用户名也正确以后，说明ssh-agent找不到正确的公钥
+eval "$(ssh-agent -s)" #启动ssh-agent
+ssh-add ~/.ssh/id_rsa_name #添加路径
 
 # 提示 Could not open a connection to your authentication agent.
 eval 'ssh-agent'

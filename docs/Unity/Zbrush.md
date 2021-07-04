@@ -1,10 +1,10 @@
 ## 快捷键
 
-- 保存: File - Save as / ctrl + s
-  - 如果要保留历史记录, 选择 UndoHistory
-- 清除画布/新建: ctrl+n
+- 保存: `File - Save as / ctrl + s`
+  - 如果要保留历史记录, 选择 **UndoHistory**
+- 清除画布/新建: `ctrl+n`
 - 关闭开始时的文件菜单: 点击左上角 `Light Box` 或者按`,`键
-- 快速换视角: 按住shift
+- 快速换视角: 按住 shift
 - 笔刷快捷键: B + 头字母 + 第二个字母
 - Smooth: shift
 - 笔刷反向: Alt
@@ -24,6 +24,7 @@
   - soft mask: 按住cmd, 点击mask
   - 反转mask部分:  空白处 cmd+鼠标左键点击
   - **mask菜单: 右侧菜单 - Masking**
+  - 移动mask(在应用前)：cmd+鼠标左键，放开cmd，按住space移动
 - 缩放视图
   - 鼠标：command+鼠标右键/按住alt，再按住鼠标左键，放开alt，拖动鼠标左键
   - 数位板：把笔上的按键设置为对应鼠标右键，其余和鼠标一致/按住alt，用笔按住物体，放开alt，挪动笔
@@ -68,10 +69,15 @@
 
 Subtool - Append
 
-- 切换不同的Subtool : 按住 alt 点击部件
+- 切换不同的Subtool : 按住 alt 点击部件 / 上下箭头
 
 - 移动整个部件 : 顶部菜单 Move 快捷键 W (切换回draw: Q)
+
 - 放大/缩小整个部件: 切换到 Move/Scale 模式, 按住中间的正方形
+
+- 拖动部件层级：直接拖动 / `cmd + 上下箭头`
+
+  
 
 ### 新开模型
 
@@ -89,15 +95,28 @@ Subtool - Append
 
 **独显部分**
 
-shift+cmd 选择 Select Rect 
+1. shift+cmd 选择 Select Rect 
 
-在物体上按住 shift+cmd+鼠标左键, 会独显选中部分
+2. 在物体上按住 shift+cmd+鼠标左键, 会独显选中部分
 
-翻转独显部分: 在空白处 shift+cmd+鼠标左键框选(框选空白)
+- **翻转**独显部分: 在空白处 shift+cmd+鼠标左键框选(框选空白)
 
-隐藏选中部分: shift+cmd+alt+鼠标左键框选
+- 隐藏选中部分: shift+cmd+alt+鼠标左键框选
 
-退出独显: 在空白处 shift+cmd+鼠标左键点击
+- **退出**独显: 在空白处 shift+cmd+鼠标左键点击
+
+**分组独显**
+
+- `shift+cmd`框选显示方法：
+  - shift+cmd 选择显示部分
+  - 点击`Polygroups-GroupVisible`把选择部分成组
+  - 打开网格：图标在Rotate下面（或快捷键shift+f）
+  - `shift+cmd+鼠标左键` 点击不同的颜色分组
+- `Mask`显示方法：
+  - cmd+鼠标左键添加mask
+  - 在mask上`cmd+w`，也会把mask部分成组
+
+
 
 ### 分离部分成为新的subtool
 
@@ -136,7 +155,11 @@ shift+cmd 选择 Select Rect
 
 * 收起/展开工具栏：双击箭头
 * **设置快捷键**：ctrl+alt，点击图标，按键，最后在`Preferences-Hotkeys-save`
-* **自定义界面工具**：`Preference-config-enable customize`
+* **自定义界面工具**：`Preference - config-enable customize`
+* 修改画布大小：`Document - New Document - Save As Startup Doc`
+* 修改画布背景色：`Document - Back - Save As Startup Doc` 按住鼠标左键不动，会吸取界面颜色
+  * 把背景渐变色改为纯色：`Range: 0`
+  * `Save As Startup Doc`
 
 ## 优势
 
