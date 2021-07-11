@@ -94,3 +94,32 @@
   - 勾选`Object Collisions`
     - `Collision Collection` ：`Collisions`
 
+
+
+## 绳摆
+
+### 随绳晃动的小球
+
+- 新建一个mesh的点，拉成直线，细分
+- 加skin修改器
+- 加cloth修改器
+  - Pin Group ： 选择顶点（如果没有组，去给要固定的顶点组建组）
+  - 勾选Object Collisions
+  - 勾选Self Collisions
+- 创建一个悬挂物
+  - `copy location` 
+  - `copy rotation`
+
+### 摆动的球（类似风铃）
+
+- 新建一个mesh作为控制平面
+  - 添加 Rigidbody修改器
+    - Type: Passive
+    - Settings: Animated
+- 新建一个悬挂物
+  - 添加 Rigidbody修改器
+- 先选择悬挂物，再选择控制平面，`Object-Rigid body-Connect`，生成一个`Constraint`
+- 把`Constraint`对齐到控制平面
+  - Type: Point (默认的fixed情况下悬挂物不能动)
+- 选择`Constraint`，再选择控制平面，cmd+p 连接
+
