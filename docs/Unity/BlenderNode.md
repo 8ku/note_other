@@ -13,14 +13,16 @@
 </head>
 # Blender Node
 
-* TOC
-{: toc}
+
+
 ## Themes
 
 ### 改变节点连接线的曲度
 
 - Edit -Preferences-Themes-Node Editor-Noodle Curving
 - 默认为0(直线), 增加节点即增加曲度
+
+
 
 ## Animation Node
 
@@ -52,7 +54,8 @@
 
   ![iShot2021-01-15 18.29.57](BlenderNode.assets/iShot2021-01-15%2018.29.57.jpg)
 
-- 
+
+
 
 ### 技巧
 
@@ -184,3 +187,12 @@
 ![texture_node_brick](BlenderNode.assets/texture_node_brick.jpg)
 
 ![texture_node_brick_result](BlenderNode.assets/texture_node_brick_result.jpg)
+
+
+
+
+
+### 木纹
+
+![wood_node](BlenderNode.assets/wood_node.jpg)
+
