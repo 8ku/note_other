@@ -1,20 +1,9 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
-</head>
+
+
 # Blender
 
-* TOC
-{: toc}
+
+
 
 ## 三方插件
 
@@ -936,16 +925,22 @@ object clip view:
 ### 自发光
 
 - 渲染菜单中, 勾选`Bloom`(显示自发光) `Screen Space Reflections`(显示反射)
+
 - 材质设定
+
+  ````mermaid
+  graph LR
+  A[Fresnel]-->|Fac--Fac|B[ColorRamp]
+  B-->|Color--Fac|C[Mix Shader]
+  D[Emission 衰减]-->|Emission--Shader|C
+  E[Emission 高亮]-->|Emission--Shader|C
+  C-->|Shader--Surface|F[Material Output]
+  ````
   
-   <div class="mermaid">
-      graph LR
-      A[Fresnel]-->|Fac--Fac|B[ColorRamp]
-      B-->|Color--Fac|C[Mix Shader]
-      D[Emission 衰减]-->|Emission--Shader|C
-      E[Emission 高亮]-->|Emission--Shader|C
-      C-->|Shader--Surface|F[Material Output]
-    </div>
+  
+  
+  
+
 
 ### 玻璃材质
 
