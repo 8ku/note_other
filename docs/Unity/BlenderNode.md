@@ -1,16 +1,3 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
-</head>
 # Blender Node
 
 
@@ -196,3 +183,19 @@
 
 ![wood_node](BlenderNode.assets/wood_node.jpg)
 
+
+
+### Cycles渲染下显示Emission效果
+
+- 切换到`Compositing`标签（顶部）
+
+  - 勾选`Use Nodes`
+
+  - ````mermaid
+    graph LR
+    	a["Render Layers(View Layer)"] -- Image --> b["Composite"]
+    	a["Render Layers(View Layer)"] -- Image --> c["Glare(Fog Glow)"] 
+      c -- Image --> d["Viewer"]
+    ````
+
+- 切换到`Rendering`标签，把输出改为`View Layer`
