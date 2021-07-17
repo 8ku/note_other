@@ -1,5 +1,63 @@
 # Gitbook
 
+## 坑
+
+### 安装插件报错
+
+**问题**：用`gitbook build`的时候报错插件没安装
+
+**解决方法**：用 `npm` 命令单独安装插件
+
+```bash
+Error: Couldn't locate plugins "search-plus-pro", Run 'gitbook install' to install plugins from registry.
+
+npm install gitbook-plugin-search-pro
+
+npm install gitbook-plugin-intopic-toc
+```
+
+
+
+## 自定义css
+
+- 更改`book.json`文件，把css指向自定义css文件，注意`styles`段
+
+```json
+{
+  "styles":{
+      "website":"./websiteStyle.css"
+  },
+  "plugins": [
+   "-fontsettings",
+   "-lunr", "-search", "search-pro",	
+    "intopic-toc"
+  ],
+  "pluginsConfig": {
+    "intopic-toc": {
+      "selector": ".markdown-section h2,.markdown-section h3",
+      "visible": true,
+      "label": {
+        "en": "In this article"
+      }
+    }
+  }
+}
+```
+
+- 在根目录下创建`websiteStyle.css`
+
+
+
+### 导出不同版本
+
+```bash
+gitbook pdf
+gitbook epub
+gitbook mobi
+```
+
+
+
 
 
 ## 使用行内HTML CSS样式
