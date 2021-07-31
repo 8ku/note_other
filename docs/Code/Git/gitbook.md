@@ -58,6 +58,41 @@ gitbook mobi
 
 
 
+## 自动生成summary
+
+### [安装](https://github.com/julianxhokaxhiu/gitbook-plugin-summary)
+
+- `book.json`里加入
+
+- ```json
+  {
+    "plugins": [
+      "summary"
+    ]
+  }
+  ```
+
+- `npm install gitbook-plugin-summary`
+
+- 在根目录建文件夹，每个层级添加一个`readme.md`文件，md文件以文件夹名字为一级标题
+
+- `gitbook serve` 看效果
+
+### 优劣势
+
+- 优势
+  - 生成epub时自带层级目录
+- 劣势
+  - 有bug，经常无法生成层级，都是平层
+  - 每级文件夹都要加readme文件，很冗余
+  - readme文件的一级标题必须和文件夹名一致，不然无法生成层级目录，对操作要求高
+
+
+
+## 离线html可点击
+
+在生成的`_book - gitbook - theme.js`中搜索` if(m)for(n.handler&&`，把 `if(m)`改为 `if(false)`
+
 
 
 ## 使用行内HTML CSS样式
