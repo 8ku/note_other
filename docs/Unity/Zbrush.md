@@ -20,7 +20,7 @@
   - 在组上(用颜色区分) cmd+shift+鼠标左键点击  
 - mask: 按住cmd 用鼠标左键画(**被mask的部分不会被修改, 起保护作用**) 
   - 取消mask: cmd 在空白处框选
-  - 减选mask: cmd+alt 鼠标左键画
+  - 减选mask/mask选择框以外部分: cmd+alt 鼠标左键画
   - soft mask: 按住cmd, 点击mask
   - 反转mask部分:  空白处 cmd+鼠标左键点击
   - **mask菜单: 右侧菜单 - Masking**
@@ -55,7 +55,7 @@
 
 右侧菜单 Geometry - DynaMesh
 
-- 如果 DynaMesh 打开, 在增加新形状时, 在空白处 cmd+鼠标左键 可以重新布线
+- 如果 DynaMesh 打开, 在增加新形状时, 在空白处 **cmd+鼠标左键拖拽** 可以重新布线
 - **只在建模初期塑形时使用, 不然会整个模型不断增加面**
 
 ### 重新补全对称(默认左对称右)
@@ -152,15 +152,44 @@ Subtool - Append
 - A
 - 右侧菜单 Make PlyMesh3D(不可逆转, 慎重)
 
+### 创建insertbrush
+
+- 创建模型
+- `Brush - Create - Create InsertBrush`，选择`new`
+- 如果需要像画笔一样连续使用insertbrush：`Stroke - Curve - Curve Mode` 激活
+  - 如果需要首尾连贯不断开：
+    - 把物体分3个group：首，中，尾
+    - 3组连接处最好平整：使用 move工具调整，点击并拖动图中绿色区域，让选中部分在y轴上scale
+    - ![insertBrush](Zbrush.assets/insertBrush.jpg)
+    - `Brush - Modifiers - Weld Points and Stretch`
+    - 如果还是不连贯，调整 Curve Res 和 Max Bend Angle
+
+
+
+### 添加loop edge 环切
+
+- `Brush - Zmodeler`，快捷键 `b-z-m
+- 按空格键，调出菜单，选择`Multiple EdgeLoops`
+- 在需要环切的地方点击并拖动，能拖动出更多或更少的环切线
+
+
+
 ### 其他技巧
 
 * 收起/展开工具栏：双击箭头
 * **设置快捷键**：ctrl+alt，点击图标，按键，最后在`Preferences-Hotkeys-save`
 * **自定义界面工具**：`Preference - config-enable customize`
+* **设置开始界面**：`Document - Save As Startup Doc`
 * 修改画布大小：`Document - New Document - Save As Startup Doc`
 * 修改画布背景色：`Document - Back - Save As Startup Doc` 按住鼠标左键不动，会吸取界面颜色
   * 把背景渐变色改为纯色：`Range: 0`
   * `Save As Startup Doc`
+
+
+
+
+
+
 
 ## 优势
 
