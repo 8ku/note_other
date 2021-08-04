@@ -174,11 +174,22 @@ Subtool - Append
 
 
 
+### bend curve 弯曲物体
+
+- 进入编辑模式，m-move
+- 点击 ⚙︎ 选择 bend curve
+- 点击并拖拽**红色锥体**可以切换镜像的轴（红色x，绿色y，蓝色z）
+- 点击并拖拽顶上**橘色锥体**可增减curve的段数
+- **白色锥体** smooth
+
+
+
 ### 其他技巧
 
 * 收起/展开工具栏：双击箭头
 * **设置快捷键**：ctrl+alt，点击图标，按键，最后在`Preferences-Hotkeys-save`
 * **自定义界面工具**：`Preference - config-enable customize`
+  * 把笔刷固定在界面上：cmd+alt+左键拖拽
 * **设置开始界面**：`Document - Save As Startup Doc`
 * 修改画布大小：`Document - New Document - Save As Startup Doc`
 * 修改画布背景色：`Document - Back - Save As Startup Doc` 按住鼠标左键不动，会吸取界面颜色

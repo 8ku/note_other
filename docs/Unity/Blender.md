@@ -903,6 +903,19 @@ object clip view:
   - 先把两个物品的UV在一张图上展好(位置不能重叠)
   - 勾选 Multiple objects to one texture set
 
+
+
+## Weight Paint
+
+- 渐变：alt+左键拖拽
+- 镭射渐变：ctrl+alt+左键拖拽
+- 笔刷大小：f
+- 调整笔刷Weight：cmd/ctrl+f(weight为1和add效果一样，weight为0时和substract效果一样)
+  - 在骨骼权重上建议**保持weight为0或1，不要有中间态**，使用streight调整强度
+- **勾选工具（右侧有个螺丝刀和扳手的图标）- Options - Auto Normalize and Multi-Paint**
+
+
+
 ## 材质
 
 ### 快捷方式
