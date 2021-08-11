@@ -20,7 +20,7 @@
 
 ## 安装方法
 
-[官方文档](https://docsify.js.org/#/zh-cn/quickstart)
+[官方文档](https://docsify.js.org/#/zh-cn/quickstart) 
 
 全局安装
 
