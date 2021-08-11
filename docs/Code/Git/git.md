@@ -14,7 +14,7 @@ bundle update github-pages
 ## 本地预览
 
 - 主页: `jekyll serve --watch` or `bundle exec jekyll serve`
-- note_other: `docsify serve docs`
+- note_other: `docsify serve docs`，**push前进入在`docs`文件夹下push**
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
 - hero：`hexo clean -> hexo g -> hero d`
 
