@@ -44,6 +44,32 @@
     - 安装后在`General-Pie Menus`里选中`Views Pie’
     - 在`Keymaps`中给`Pie Menus-Views`设置快捷键
     - 在视图中用快捷键呼出, 选择`Smart View Cam`, 会在当前视角下创建一个相机
+- [Blender Guppy](https://blenderguppy.gumroad.com/)
+  - 添加Solidfy
+    - 整体加厚度：Object Mode - Shift+ctrl+x - Edit Draw Mods - S
+      - alt+1/2/3：向外挤出/中间挤出/向内挤出
+    - 给部分面加厚度：Object Mode - Shift+ctrl+x - Get Poly Mesh - Space(空格键确认) - ctrl+RMB move 拖出厚度 -  Space(空格键确认) 
+      - alt+1/2/3：向外挤出/中间挤出/向内挤出
+  - Apply Draw Mods：按住 ctrl 点击，可以选择apply哪些mods
+  - 切割
+    - Edit Mode - Line - alt+x - Mark Sharp
+    - Object Mode - alt+x - Add Weighted Normal
+    - Apply
+  - 在物体上画新物体
+    - 选中目标物体
+    - Object Mode - Shift+ctrl+x - Draw Poly Mesh - (x 打开镜像) - （1/2/3/4切换画笔形状）
+    - shift+c 起点吸附到 3D Cursor 上
+  - 转为曲线
+    - Edit Mode - 选择要转为曲线的线
+    - Object Mode - Shift+ctrl+x - Extras - To Wire Curve
+    - 转为mesh：Object Mode - Shift+ctrl+x - Apply Draw Mods
+  - Knife
+    - Edit Mode - Alt+x - z(穿透) - 鼠标左键拖拽
+  - mirror
+    - Object Mode - Shift+ctrl+x - Reset Mirror 选择物体 - (x/y/z 选择镜像轴)
+  - 布尔
+    - 设置Target Mesh：Object Mode - Shift+ctrl+x - Set As Target
+    - 选择布尔物体，Object Mode - Shift+ctrl+x - Cut/Add/Intr/Slice
 
 ### 烘焙
 
@@ -103,7 +129,7 @@ object clip view:
 
 ## 选择:
 
-- **选择快捷键: shift+alt+鼠标左键** (当选择多个重叠物体时好用)
+- **选择快捷键: alt+鼠标左键** (当选择多个重叠物体时好用)
 - 单独显示选中物体: /
 - 选择所有复制对象 select all dulplicates linked objects: menu --> select --> Linked --> Object Data
 - 切换坐标模式(世界坐标/局部坐标): <
@@ -131,6 +157,7 @@ object clip view:
 - **同时修改xyz的值：按住左键，下拉选中xyz**
 - 灯光方向
   - 主键盘-句号：选择`3D Cursor`，再移动灯光位置
+- 调出上一步设置：F9
 
 ## 物体操作
 
