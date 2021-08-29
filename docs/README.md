@@ -42,6 +42,44 @@ docsify serve docs
 
 
 
+### 主题
+
+```html
+<link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+<link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css">
+<link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css">
+<link rel="stylesheet" href="//unpkg.com/docsify/themes/pure.css">
+```
+
+### 添加自己的css
+
+```html
+<!-- index head 里添加 -->
+<!-- Custom theme stylesheet -->
+<link rel="stylesheet" href="theme-custom.css">
+```
+
+新建`theme-custom.css`
+
+```css
+:root {
+  --base-font-size: 14px;
+  /*--theme-color   : purple;*/
+}
+
+
+.highlight {
+    box-shadow:inset 0 -10px 0 #ffff006e, 0 2px 0 #ffff006e;
+    font-weight:bold;
+}
+
+.wavy {
+    text-decoration: underline wavy red;
+}
+```
+
+
+
 ### mac安装时的权限问题
 
 [参考](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules)
