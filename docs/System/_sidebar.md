@@ -1,6 +1,8 @@
 - [Summary](/System/summary)
 - [Linux](/System/Linux)
-- [Mac](/System/Mac)
+- Mac
+  - [Mac](/System/Mac/Mac)
+  - [Terminal](/System/Mac/Terminal)
 - [Markdown_flow](/System/markdown_flow)
 - [Windows](/System/Windows)
 - [sublime插件](/System/sublime)

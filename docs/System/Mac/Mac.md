@@ -2,7 +2,7 @@
 
 
 
-##基本快捷键
+## 基本快捷键
 
 
 | 功能                                          | 键                                                           |
@@ -217,4 +217,6 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - 列出已安装软件: `brew list`
 - 更新brew: `brew update`
 - 卸载包: `brew uninstall wget`
+
+
 

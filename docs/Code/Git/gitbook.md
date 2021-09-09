@@ -16,6 +16,34 @@ npm install gitbook-plugin-search-pro
 npm install gitbook-plugin-intopic-toc
 ```
 
+### 用gitbook-cli安装gitbook报错
+
+- 安装gitbook-cli `npm install -g gitbook-cli`
+- 安装gitbook `gitbook -V`，会自动安装
+  - 报错`if (cb) cb.apply(this, arguments)`
+- 打开出错的文件，注释掉一下62-64三行
+
+```js
+52 fs.lchmod = chmodFix(fs. Lchmod)
+53
+54 fs. chownsync 二 chownFixSync( fs. chownsync)
+55 fs. fchownsync 二 chownFixSync(fs. fchownsync)
+56 fs. 1chownSync = chownFixSync(fs. 1chownsync)
+57
+58 fs. chmodsync = chmodFixSync( fs. chmodsync)
+59 fs. fchmodsync 二 chmodFixsync(fs. fchmodsync)
+60 fs. Lchmodsync = chmodFixSync(fs. Lchmodsync)
+61
+62 //fs.stat = statFix(fs. stat)
+63 //fs. fstat = statFix(fs. fstat)
+64 //fs.lstat = statFix(fs.lstat)
+65
+```
+
+- 再次`gitbook -V` 安装 gitbook
+
+
+
 
 
 ## 自定义css
