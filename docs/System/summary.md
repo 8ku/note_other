@@ -1,7 +1,7 @@
 # 系统快捷键
 
 - [Linux](/System/Linux)
-- [Mac](/System/Mac)
+- [Mac](/System/Mac/Mac)
 - [Markdown_flow](/System/markdown_flow)
 - [Windows](/System/Windows)
 - [sublime插件](/System/sublime)
