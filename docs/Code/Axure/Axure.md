@@ -64,7 +64,12 @@
       alert (vraag1);
       ```
   
-      
   
   
+  
+
+## 父框架注入代码
+
+- 新建全局变量，变量名随意，变量值写入js代码  `<script> code here</script>`
+- 或者css样式 `<style> #topPanel{display:none;} /*隐藏顶部工具栏*/</style>`
 
