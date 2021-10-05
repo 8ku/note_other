@@ -44,6 +44,8 @@ docsify serve docs
 
 ### 主题
 
+[参考](https://angry-swanson-b4e47b.netlify.app/themes)
+
 ```html
 <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
 <link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css">
