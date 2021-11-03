@@ -454,6 +454,15 @@ object clip view:
   - 进入编辑模式，a全选，ctrl+a 收缩(或 cmd + a + x )
   - 选择单独节点 ctrl+a 调整
   
+- 做树枝-方法2
+
+  - 新建`Grease Pencil - Blank`
+  - 切换到`draw`模式
+  - 坐标选择`Stroke`
+  - 打开`Auto keying`，画树干
+  - 切换到`Object Mode`，covert to path
+  - `alt+s`调整每个部分的粗细
+
 - 做蔓藤
   - 做要放置蔓藤的平面区域（切分会影响生成方向和密度）
   - 做树叶
