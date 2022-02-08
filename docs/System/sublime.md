@@ -10,3 +10,9 @@
 - SublimeLinter
 - Anaconda
 - HTML/CSS/JS Prettify
+
+
+
+## 快捷键
+
+- Multiple selection: command+d

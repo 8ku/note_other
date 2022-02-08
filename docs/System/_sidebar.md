@@ -7,4 +7,5 @@
 - [Windows](/System/Windows)
 - [sublime插件](/System/sublime)
 - [vimium](/System/vimium)
+- [VS Code](/System/vsCode)
 
