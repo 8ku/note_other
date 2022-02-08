@@ -101,11 +101,15 @@ namespace simple //sign space name
             int a = 1;
             long b = 1000000;
             byte c = 12;
+            decimal e = 12.3m; //小数需要在值后添加"m"表示是小数
           	string d = @"lala
           	lalali"; //使用 @ 字符不会识别字符串中的换行符，可以直接换行
-            string path = @"c:\x\x.doc";
-            Console.WriteLine("Hi,there."); //用 @ 可以不用 \ 转义
-          	// \n 换行符
+            string path = @"c:\x\x.doc"; //用 @ 可以不用 \ 转义
+            Console.WriteLine(@"  C:\source\repos(this is where your code gose)");
+            Console.WriteLine("Hi,there."); 
+          	// \n:换行符 \t:制表符
+          
+          	//使用字符串内插将文本和变量值合并 符号为：$，变量用{}包裹
           	Console.WriteLine($"int:{a} \nlong:{b} \nbyte:{c}");                    	
         }
     }
