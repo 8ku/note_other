@@ -1,3 +1,11 @@
+## Interface
+
+![Interface](Zbrush.assets/interface.jpeg)
+
+
+
+
+
 ## 快捷键
 
 - 保存: `File - Save as / ctrl + s`
@@ -29,6 +37,12 @@
   - 鼠标：command+鼠标右键/按住alt，再按住鼠标左键，放开alt，拖动鼠标左键
   - 数位板：把笔上的按键设置为对应鼠标右键，其余和鼠标一致/按住alt，用笔按住物体，放开alt，挪动笔
 - 可见部分打成一组：cmd+w
+- 在同一个 subtool 里复制物件：按住command/ctrl 拖动物体
+- 重复上一步操作：shift+1
+- 删除部分面：
+  - 按住 command+shift+鼠标左键 独显不需要删除的部分
+  - Geometry - Modify Topology - Del Hidden
+
 
 ## 常用笔刷
 
@@ -44,10 +58,18 @@
 - 选择常用笔刷，按住`control+alt(Mac也是control)`拖动到底部
 - `save config`
 
+
+
+
+
 ## 容易误触的地方
 
 - **Zadd 和 Sub 的切换**
 - 上下滚动右侧工具栏: 当光标变成上下移动时, 按住ctrl(mac下也是ctrl) 鼠标左键
+
+
+
+
 
 ## 技巧
 
@@ -102,7 +124,7 @@ Subtool - Append
 
 - **翻转**独显部分: 在空白处 shift+cmd+鼠标左键框选(框选空白)
 
-- 隐藏选中部分: shift+cmd+alt+鼠标左键框选
+- **隐藏**选中部分: shift+cmd+alt+鼠标左键框选
 
 - **退出**独显: 在空白处 shift+cmd+鼠标左键点击
 
@@ -184,6 +206,38 @@ Subtool - Append
 
 
 
+### 自动拓扑
+
+Tool>Geometry>ZRemesher
+
+参数解释：
+
+- **Freeze Mesh Border**[冻结模型边缘]：在优化面数的时候勾选这个可以防止外轮廓变形
+
+- **Freeze Groups Border**[冻结组边缘]：当一个Subtool层中有不同组显示时，会按照组进行重新拓扑。
+
+- **Target Polygons Count**：是面数的控制，默认值是5，代表的面数为5千面，如果您需要一个低模可以将该数值调低。
+
+  
+
+### 显示活动物体的面数
+
+- Preferences - Config - Enable Customize
+- Preferences - Misc ：找到  `ActivePolygons`
+- 同时按住 control + option ，把这一条拖拽到菜单栏
+- Preferences - Config - Disable Customize
+
+
+
+### 布尔
+
+- 打开 `Live Boolean` 
+  - 在菜单栏上点击（位于 LightBox 右侧），或菜单 Render - Render Booleans
+- Append Subtool
+- Subtool - Boolean - Make Boolean Mesh ，会生成一个新的布尔模型
+
+
+
 ### 其他技巧
 
 * 收起/展开工具栏：双击箭头
@@ -195,6 +249,7 @@ Subtool - Append
 * 修改画布背景色：`Document - Back - Save As Startup Doc` 按住鼠标左键不动，会吸取界面颜色
   * 把背景渐变色改为纯色：`Range: 0`
   * `Save As Startup Doc`
+* 模型半透明显示：在右侧工具栏激活 `Transp `功能
 
 
 
