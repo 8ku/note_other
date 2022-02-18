@@ -11,6 +11,7 @@
 - 保存: `File - Save as / ctrl + s`
   - 如果要保留历史记录, 选择 **UndoHistory**
 - 清除画布/新建: `ctrl+n`
+- 物体显示到视图中间： `f`
 - 关闭开始时的文件菜单: 点击左上角 `Light Box` 或者按`,`键
 - 快速换视角: 按住 shift
 - 笔刷快捷键: B + 头字母 + 第二个字母
@@ -37,11 +38,17 @@
   - 鼠标：command+鼠标右键/按住alt，再按住鼠标左键，放开alt，拖动鼠标左键
   - 数位板：把笔上的按键设置为对应鼠标右键，其余和鼠标一致/按住alt，用笔按住物体，放开alt，挪动笔
 - 可见部分打成一组：cmd+w
-- 在同一个 subtool 里复制物件：按住command/ctrl 拖动物体
+- 在同一个 subtool 里复制物件
+  - 按住command/ctrl 拖动物体
 - 重复上一步操作：shift+1
+  - 如果需要连续复制物体，先打开坐标的**图钉功能**
+  - command+拖动 复制
+  - 点击  `1`  重复上一步操作 
+
 - 删除部分面：
   - 按住 command+shift+鼠标左键 独显不需要删除的部分
-  - Geometry - Modify Topology - Del Hidden
+  - Geometry - Modify Topology - Del Hidden（可以拖出来放在更方便的区域）
+- 量尺：`w - y`
 
 
 ## 常用笔刷
@@ -238,6 +245,36 @@ Tool>Geometry>ZRemesher
 
 
 
+### 3d打印准备
+
+#### 调整尺寸并输出
+
+1. 新增一个subtool cube
+2. Zplugin - Scale master
+   1. Set Scene Scale，选择一个单位，一般为 mm
+   2. 设置输出的尺寸
+   3. 点击 `Resize Subtool`
+   4. 选择立方体，点击 `Set Scene Scale`检查立方体是不是设置的尺寸
+3. Zplugin - 3D Print Hub
+   1. Update Size Ratios
+   2. Export to STL
+
+
+
+#### 优化模型面数
+
+1. Layers - Bake All(if you had layers)
+2. Merge subtotals to 1
+3. Remeshing with `Dynamesh`
+4. 降低面数 Zplugin - Decimation Master - Pre-process Current & Decimate Current(先调整参数)
+5. Zplugin - Scale master...
+
+
+
+
+
+
+
 ### 其他技巧
 
 * 收起/展开工具栏：双击箭头
@@ -250,6 +287,7 @@ Tool>Geometry>ZRemesher
   * 把背景渐变色改为纯色：`Range: 0`
   * `Save As Startup Doc`
 * 模型半透明显示：在右侧工具栏激活 `Transp `功能
+* 关闭左上角阴影小窗 Thumbnail：`Preference - Thumbnail`
 
 
 
