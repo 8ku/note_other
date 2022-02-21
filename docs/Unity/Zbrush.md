@@ -11,6 +11,7 @@
 - 保存: `File - Save as / ctrl + s`
   - 如果要保留历史记录, 选择 **UndoHistory**
 - 清除画布/新建: `ctrl+n`
+- 切换正交/透视视图：`p`
 - 物体显示到视图中间： `f`
 - 关闭开始时的文件菜单: 点击左上角 `Light Box` 或者按`,`键
 - 快速换视角: 按住 shift
@@ -44,7 +45,6 @@
   - 如果需要连续复制物体，先打开坐标的**图钉功能**
   - command+拖动 复制
   - 点击  `1`  重复上一步操作 
-
 - 删除部分面：
   - 按住 command+shift+鼠标左键 独显不需要删除的部分
   - Geometry - Modify Topology - Del Hidden（可以拖出来放在更方便的区域）
@@ -271,6 +271,13 @@ Tool>Geometry>ZRemesher
 
 
 
+#### Blender 导出到 Zbrush
+
+- 把每个部件分组 Vertex Groups
+- **Export - obj - ✓Geometry : Polygroups**
+- Brush - import Subtool
+- Subtool - Split - Groups Split
+
 
 
 
@@ -288,8 +295,8 @@ Tool>Geometry>ZRemesher
   * `Save As Startup Doc`
 * 模型半透明显示：在右侧工具栏激活 `Transp `功能
 * 关闭左上角阴影小窗 Thumbnail：`Preference - Thumbnail`
-
-
+* 清除Quick Save数据：`Preference - Quick Save`
+* 应用所有的modifiers：convert to mesh
 
 
 
