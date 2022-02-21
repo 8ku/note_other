@@ -123,3 +123,54 @@
   - Type: Point (默认的fixed情况下悬挂物不能动)
 - 选择`Constraint`，再选择控制平面，cmd+p 连接
 
+
+
+
+
+## 布料物理系统
+
+### 裤子
+
+- 按裤子的形状建立平面
+
+- 细分
+
+- 挤出面，删除面与面之间的面（保留线）
+
+  ![image-20220221140710728](BlenderPhysics.assets/image-20220221140710728.png)
+
+- 给身体加 碰撞体，参数默认
+
+- 裤子加 布料系统
+
+  - sharp：✔︎ Sewing
+  - Collision：Quality：5
+  - Distance：0.01m
+
+- Play 运算
+
+- 添加 `实体` `细分` 修改器可以表现裤缝
+
+  ![image-20220221154655292](BlenderPhysics.assets/image-20220221154655292.png)
+
+
+
+### 枕头
+
+- 新建一个平面，细分
+
+- 挤出一点面，中间环切，S放大一点作为枕头的边缘
+
+  ![image-20220221143917945](BlenderPhysics.assets/image-20220221143917945.png)
+
+- 加布料系统
+  - ✔︎ Pressure: 3
+  - ✔︎ Self Collision
+  - Gravity: 0
+
+### 被子
+
+- 同枕头，边缘删除面，保留线
+- 应用array
+- ✔︎ Pressure: 1.2
+- sharp：✔︎ Sewing
