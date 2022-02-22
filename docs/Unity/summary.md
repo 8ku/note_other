@@ -15,6 +15,7 @@
   - [Blender 2 Unity](/Unity/Blender2Unity)
   - [Blender Physics](/Unity/BlenderPhysics)
   - [Blender Animation](/Unity/BlenderAnimation)
+  - [Blender Sculpting](/Unity/BlenderSculpting)
 - Assets
   - [DOTween](/Unity/Assets/DOTween)
   - [Cinemachine](/Unity/Assets/Cinemachine)

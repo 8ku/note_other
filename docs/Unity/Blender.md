@@ -39,7 +39,7 @@
 - [万物有灵](https://shimo.im/docs/tWhW8QJPHhDqKwr9/)
   - 安装好插件后，在`add-on`中导入预设
   - 使用时，点击`import`可应用
-- [饼图热盒菜单插件](https://machin3.io/MACHIN3tools/docs/#what-is-machin3tools)
+- [饼图热盒菜单插件 MACHIN3tools](https://machin3.io/MACHIN3tools/docs/#what-is-machin3tools)
   - 快速设置相机
     - 安装后在`General-Pie Menus`里选中`Views Pie’
     - 在`Keymaps`中给`Pie Menus-Views`设置快捷键
@@ -104,16 +104,31 @@
   - 在放置的面上画要实例化的轨迹
   - 回车应用
   - 想单独编辑实例时, 选择实例, cmd+a -- make Instances Real 
+- 3D View: Measurelt: 尺寸测量
+  - 在编辑模式下 View 工具栏中显示
+  - Item 菜单下可以删除全部尺寸显示
+
 
 ## 视图操作
 
 - blender说明书：鼠标放在要查询的功能上，按f1（会有快捷键冲突）
+
 - 放大缩小面板：按住ctrl，按住中键在需要放大缩小的面板上，上下滑动
+
 - 调出/收起属性面板：n
+
 - 切换着色模式: z
+
 - 添加视图: 在视图边角LMB拉出(松开鼠标前ESC可取消)
+
 - 合并视图: 在要保留的视图边角(鼠标放到视图中)LMB
+
 - 固定面板：shift+LMB
+
+- 调出编辑模式下面数面板
+
+  ![image-20220222131818164](Blender.assets/image-20220222131818164.png)
+
 - 四视图(quad view)：alt+ctrl+q
   - n调出view面板
   - lock：四视图角度锁定，点击解锁，调整各视图视角，再锁定
