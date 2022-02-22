@@ -195,6 +195,7 @@ echo "ssh-add ~/.ssh/id_rsa  >/dev/null 2>&1" >> ~/.bashrc
 git config -l
 
 #push 的时候报错 “modified:   ../.DS_Store”
+git add .gitignore
 ```
 
 
