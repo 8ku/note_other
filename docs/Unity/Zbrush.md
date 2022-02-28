@@ -198,7 +198,7 @@ Subtool - Append
 ### 添加loop edge 环切
 
 - `Brush - Zmodeler`，快捷键 `b-z-m
-- 按空格键，调出菜单，选择`Multiple EdgeLoops`
+- 按**空格键**，调出菜单，选择`Multiple EdgeLoops`
 - 在需要环切的地方点击并拖动，能拖动出更多或更少的环切线
 
 
