@@ -266,7 +266,7 @@ Tool>Geometry>ZRemesher
 1. Layers - Bake All(if you had layers)
 2. Merge subtotals to 1
 3. Remeshing with `Dynamesh`
-4. 降低面数 Zplugin - Decimation Master - Pre-process Current & Decimate Current(先调整参数)
+4. <span class="highlight">降低面数 Zplugin - Decimation Master - Pre-process Current & Decimate Current(先调整参数)</span>
 5. Zplugin - Scale master...
 
 

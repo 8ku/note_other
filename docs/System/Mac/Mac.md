@@ -54,6 +54,7 @@
 | 停止运行命令                                  | ctrl+c                                                       |
 | 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
 | 切换桌面                                      | ctrl+1~9                                                     |
+| 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
 
 
 
