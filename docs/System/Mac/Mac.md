@@ -223,3 +223,6 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 
 
+### Mac M1芯片下安装
+
+- 安装brew: `arch -arm64 brew install xxx`
