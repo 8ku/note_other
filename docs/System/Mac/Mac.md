@@ -24,6 +24,7 @@
 | 查找                                          | find                                                         |
 | 用正则查找文件                                | find.-name”*.c”-print                                        |
 | 显示当前目录的路径                            | pwd (print working directory)                                |
+| 复制文件路径                                  | Option+Command+C                                             |
 | 列出当前目录下的所有文件                      | ls                                                           |
 | 用默认程序打开文件                            | open                                                         |
 | 显示操作系统信息                              | uname -a/uname                                               |

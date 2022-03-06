@@ -152,7 +152,11 @@ git config --local user.name "name"
 git config --local user.email "someone@email.com"
 ```
 
-6. 各种报错的解决方法
+
+
+
+
+### 各种报错的解决方法
 
 ```bash
 # 用别名测试ssh被denied(publickey)
@@ -189,6 +193,9 @@ echo "ssh-add ~/.ssh/id_rsa  >/dev/null 2>&1" >> ~/.bashrc
 
 #查看本仓库用户信息
 git config -l
+
+#push 的时候报错 “modified:   ../.DS_Store”
+git add .gitignore
 ```
 
 
