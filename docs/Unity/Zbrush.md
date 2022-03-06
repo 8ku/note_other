@@ -181,6 +181,24 @@ Subtool - Append
 - A
 - 右侧菜单 Make PlyMesh3D(不可逆转, 慎重)
 
+
+
+### 画眉毛
+
+- 画笔 `CurveSnapSurface` ![img](Zbrush.assets/image-20220306122450647.png ':size=30%')
+
+  - Stroke: Curve Modifiers -> Curve Snap Distance = 1
+
+    ![img](Zbrush.assets/image-20220306122625269.png ':size=30%')
+
+  - 笔刷调小，画两条线组成眉毛![img](Zbrush.assets/image-20220306123027930.png ':size=30%')
+
+  - 完成后，`Stroke - Curve Functions - Delete`
+
+    ![img](Zbrush.assets/image-20220306123138507.png ':size=30%')
+
+
+
 ### 创建insertbrush
 
 - 创建模型
@@ -198,7 +216,7 @@ Subtool - Append
 ### 添加loop edge 环切
 
 - `Brush - Zmodeler`，快捷键 `b-z-m
-- 按空格键，调出菜单，选择`Multiple EdgeLoops`
+- 按**空格键**，调出菜单，选择`Multiple EdgeLoops`
 - 在需要环切的地方点击并拖动，能拖动出更多或更少的环切线
 
 
@@ -238,10 +256,21 @@ Tool>Geometry>ZRemesher
 
 ### 布尔
 
+#### 方法1：生成一个新模型
+
 - 打开 `Live Boolean` 
   - 在菜单栏上点击（位于 LightBox 右侧），或菜单 Render - Render Booleans
 - Append Subtool
 - Subtool - Boolean - Make Boolean Mesh ，会生成一个新的布尔模型
+
+#### 方法2：生成一个subtool
+
+- 打开 `Live Boolean`
+- <span class="highlight">打开`DynaMesh`，调整好参数</span>
+- 调整需要布尔的组件![image-20220306123844279](Zbrush.assets/image-20220306123844279.png)
+- 选中需要被布尔的组件（例如球）
+- 选择<img src="Zbrush.assets/image-20220306124109858.png" alt="image-20220306124109858" style="zoom:50%;" />
+- ctrl+鼠标左键框选空白处，应用一次Dynamesh
 
 
 
@@ -266,7 +295,7 @@ Tool>Geometry>ZRemesher
 1. Layers - Bake All(if you had layers)
 2. Merge subtotals to 1
 3. Remeshing with `Dynamesh`
-4. 降低面数 Zplugin - Decimation Master - Pre-process Current & Decimate Current(先调整参数)
+4. <span class="highlight">降低面数 Zplugin - Decimation Master - Pre-process Current & Decimate Current(先调整参数)</span>
 5. Zplugin - Scale master...
 
 

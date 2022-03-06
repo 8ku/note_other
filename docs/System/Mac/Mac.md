@@ -54,6 +54,7 @@
 | 停止运行命令                                  | ctrl+c                                                       |
 | 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
 | 切换桌面                                      | ctrl+1~9                                                     |
+| 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
 
 
 
@@ -205,11 +206,7 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - 下载后放到某个文件夹下
 - 打开Dash添加本地文档
 
-## 微信助手
 
-- [下载](https://github.com/MustangYM/WeChatExtension-ForMac)
-- 使用第二种方式安装
-- `omw -n`
 
 ## 卸载包
 
@@ -222,3 +219,35 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 
 
+## Mac M1芯片下安装
+
+- 安装brew: `arch -arm64 brew install xxx`
+
+
+
+## 用ffmpeg转换格式
+
+### 安装
+
+- 非 M1 芯片：`brew install ffmpeg`
+- M1 芯片：`arch -arm64 brew install ffmpeg`
+
+
+
+### 转换
+
+- webm -> gif : `ffmpeg - input.webm -pix_fmt rgb24 output.gif
+
+
+
+## gif压缩 gifsicle
+
+### 安装
+
+- 非 M1 芯片：`brew install gifsicle`
+- M1 芯片：`arch -arm64 brew install gifsicle`
+
+### 压缩
+
+- `gifsicle -i input.gif --colors 24 -o output.gif`
+- `gifsicle -O3 --colors 256 --lossy=30 -o output.gif input.gif`

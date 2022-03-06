@@ -379,13 +379,6 @@ object clip view:
   - 左上角菜单`Mesh-Knife Project`
   - 使用auto merge来把点连接好
   
-- 填补模型上不连续的破洞
-  - 编辑模式-边
-  - 菜单`Select-Select All by Trait-Non Manifold`
-  - F to fill these holes
-  - Ctrl+T 转为三角形填充（这样可以让拐角的图形格式化）
-  - Alt+J 合并三角形为矩形
-  
 - 调整subdivision的强度：使用modifier后，n-item-edges data
 
 - 点倒角：ctrl+shift+b
@@ -539,6 +532,20 @@ object clip view:
   - 新建一个物体，把该物体做为平面的子物体（ctrl+p）
   - 在`Object properties-instancing`里选择`Face`，去掉`Display Instancer`的勾选
   - **应用后让Instances实体化: `Object - Apply - Make Duplicates Real` ** (快捷键 Ctrl+a)
+
+
+
+### 补洞
+
+填补模型上不连续的破洞
+
+- 编辑模式-边
+- 菜单`Select-Select All by Trait-Non Manifold`
+- F to fill these holes
+- Ctrl+T 转为三角形填充（这样可以让拐角的图形格式化）
+- Alt+J 合并三角形为矩形
+
+
 
 ## 人体建模
 
