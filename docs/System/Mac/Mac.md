@@ -251,3 +251,30 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 - `gifsicle -i input.gif --colors 24 -o output.gif`
 - `gifsicle -O3 --colors 256 --lossy=30 -o output.gif input.gif`
+
+
+
+
+
+## 下载整站内容
+
+### 安装 wget
+
+- 非 M1 芯片：`brew install wget`
+- M1 芯片：`arch -arm64 brew install wget`
+
+### 扒站
+
+`wget -c -r -np -k -L https://www.xxxx.com`
+
+深入3层链接 `wget -c -r -np -k -l 3 -L -p xxx.com`
+
+参数解释：
+
+- -c, -continue 接着下载没有下载完的文件
+- -r, -recursive 递归下载
+- -np, -no-parent 不要追溯到父目录
+- -k, -convert-links 转换非相对链接为相对链接
+- -L, -relative 仅仅跟踪相对链接
+- -p, -page-requistes 下载显示HTML文件的所有图片
+
