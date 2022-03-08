@@ -881,14 +881,11 @@ object clip view:
 
 - 雕模
 - 安装bsurfaces
-- 新建一个plane
-- 选择画笔
-- add     surface
-- fn+f9 增加面数
-- 加镜像
-- 加shrinkwrap     把皮往外offset一点,按住shift可以微量调整
-- 打开 吸附至表面(顶上工具栏)
-- 两下g 按住alt 散开移动(两下g: 在表面平滑移动)
+- 点击  `Edit - Bsurfaces - Initialize(Add BSurface mesh)`
+- 使用画笔工具在物体表面画线
+- 点击 `Add Surface`
+- 选择边缘一排的点，点击 `Add Annotation` 继续画线
+- 再次点击 `Add Surface` 把画笔的线转为面
 - 镜像:勾选 clipping, extrude时可以自动合并镜像点
 - 安装looptools     右键,再右键添加到收藏, 可使用q 调出收藏快捷菜单
 - 选择连续几个点:     cmd+左击
