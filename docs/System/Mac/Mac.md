@@ -278,3 +278,13 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - -L, -relative 仅仅跟踪相对链接
 - -p, -page-requistes 下载显示HTML文件的所有图片
 
+
+
+
+
+## Alfred
+
+### 插件
+
+- [Menu-Bar-Search](https://github.com/BenziAhamed/Menu-Bar-Search)
+- [New-Terminal-Window](https://github.com/miromannino/alfred-new-terminal-window)
