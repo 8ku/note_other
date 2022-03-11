@@ -288,3 +288,4 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 - [Menu-Bar-Search](https://github.com/BenziAhamed/Menu-Bar-Search)
 - [New-Terminal-Window](https://github.com/miromannino/alfred-new-terminal-window)
+- [Quick Search-Eudic](https://github.com/huhesper/Quick-Search)
