@@ -14,6 +14,12 @@ bundle update github-pages
 ## 本地预览
 
 - 主页: `jekyll serve --watch` or `bundle exec jekyll serve`
+  - 主页更新双语切换，因调用了 github 不支持的插件，故把生成后的 `_site`文件夹推送到  `sources` 分支，绕过插件检查。方法如下：
+    - 新建 branch `git checkout -b sources`
+    - 把 jekyll 生成的 `_site` 文件夹推送到 `sources` 分支中：`git add _site && git commit -m'new site locate'`
+    - `git subtree push --prefix _site origin sources`
+    - 进入仓库，把 github pages 的分支从 master --> sources
+
 - note_other: `docsify serve docs`，**push前进入在`docs`文件夹下push**
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
 - hero：`hexo clean -> hexo g -> hero d`
