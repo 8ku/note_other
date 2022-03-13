@@ -40,7 +40,7 @@
 | 刷新DNS                                       | sudo killall -HUP mDNSResponder                              |
 | 连续查看图片                                  | 全选所有图片-空格                                            |
 | 安装cli命令行应用                             | 输入chmod +x (拖入cli文件)                                   |
-| 中断运行                                      | **control+d**                                                |
+| 中断运行                                      | **control+c**                                                |
 | 打开表情键盘                                  | alt+cmd+space                                                |
 | 显示隐藏文件                                  | cmd+shift+.                                                  |
 | 将光标后一个字删除                            | Fn+Delete                                                    |
@@ -51,7 +51,6 @@
 | 剪切式粘贴                                    | cmd+option+v                                                 |
 | 强制退出程序                                  | cmd+option+esc                                               |
 | 查看程序使用的内存                            | `top -o MEM`                                                 |
-| 停止运行命令                                  | ctrl+c                                                       |
 | 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
 | 切换桌面                                      | ctrl+1~9                                                     |
 | 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
@@ -251,3 +250,16 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 - `gifsicle -i input.gif --colors 24 -o output.gif`
 - `gifsicle -O3 --colors 256 --lossy=30 -o output.gif input.gif`
+
+
+
+## 在 Terminal 中配置打开文件的应用
+
+### Sublime
+
+- 确认 Sublime 的路径： `open -a /Applications/Sublime\ Text.app`，如果可以打开应用，说明路径没问题
+- 把路径设置到 bash_profile 中
+  - `nano ~/.bash_profile`
+  - `alias subl=“open -a /Applications/Sublime\ Text.app”`
+  - 保存后 refresh bash `source ~/.bash_profile`
+- 可以用 `subl`来打开文件
