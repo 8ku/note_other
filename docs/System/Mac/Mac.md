@@ -253,6 +253,7 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 
 
 
+<<<<<<< HEAD
 ## 在 Terminal 中配置打开文件的应用
 
 ### Sublime
@@ -263,3 +264,40 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
   - `alias subl=“open -a /Applications/Sublime\ Text.app”`
   - 保存后 refresh bash `source ~/.bash_profile`
 - 可以用 `subl`来打开文件
+=======
+
+
+## 下载整站内容
+
+### 安装 wget
+
+- 非 M1 芯片：`brew install wget`
+- M1 芯片：`arch -arm64 brew install wget`
+
+### 扒站
+
+`wget -c -r -np -k -L https://www.xxxx.com`
+
+深入3层链接 `wget -c -r -np -k -l 3 -L -p xxx.com`
+
+参数解释：
+
+- -c, -continue 接着下载没有下载完的文件
+- -r, -recursive 递归下载
+- -np, -no-parent 不要追溯到父目录
+- -k, -convert-links 转换非相对链接为相对链接
+- -L, -relative 仅仅跟踪相对链接
+- -p, -page-requistes 下载显示HTML文件的所有图片
+
+
+
+
+
+## Alfred
+
+### 插件
+
+- [Menu-Bar-Search](https://github.com/BenziAhamed/Menu-Bar-Search)
+- [New-Terminal-Window](https://github.com/miromannino/alfred-new-terminal-window)
+- [Quick Search-Eudic](https://github.com/huhesper/Quick-Search)
+>>>>>>> 0319644d4caa59aa2c598e3436b054b7bd989bf9
