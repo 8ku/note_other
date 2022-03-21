@@ -262,4 +262,4 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - [Menu-Bar-Search](https://github.com/BenziAhamed/Menu-Bar-Search)
 - [New-Terminal-Window](https://github.com/miromannino/alfred-new-terminal-window)
 - [Quick Search-Eudic](https://github.com/huhesper/Quick-Search)
->>>>>>> 0319644d4caa59aa2c598e3436b054b7bd989bf9
+
