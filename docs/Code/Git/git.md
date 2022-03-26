@@ -19,6 +19,7 @@ bundle update github-pages
     - 把 jekyll 生成的 `_site` 文件夹推送到 `sources` 分支中：`git add _site && git commit -m'new site locate'`
     - `git subtree push --prefix _site origin sources`
     - 进入仓库，把 github pages 的分支从 master --> sources
+    - **每次在 `gh-pages` 分支修改后，提交 `_site`部分，commit all, 然后切换到 `master` 分支，执行 `git merge gh-pages`,让 `master` 的内容和 `gh-pages` 一致，再提交 `master` 分支的内容**
 
 - note_other: `docsify serve docs`，**push前进入在`docs`文件夹下push**
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
