@@ -104,7 +104,7 @@ namespace simple //sign space name
             decimal e = 12.3m; //小数需要在值后添加"m"表示是小数
           	string d = @"lala
           	lalali"; //使用 @ 字符不会识别字符串中的换行符，可以直接换行
-            string path = @"c:\x\x.doc"; //用 @ 可以不用 \ 转义
+            string path = @"c:\x\x.doc"; //用 @ 可以不用 \ 转义,在@""中要表示双引号需要使用两个双引号表示一个双引号
             Console.WriteLine(@"  C:\source\repos(this is where your code gose)");
             Console.WriteLine("Hi,there."); 
           	// \n:换行符 \t:制表符
