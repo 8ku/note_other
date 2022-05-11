@@ -976,13 +976,13 @@ public class HeroType:MonoBehaviour
 
 效率比较：分支少时，if 比 switch 效率高，反之 switch 效率高。
 
-switch 只能判断单个值，不能判断范围，如果条件为范围，不能用 switch 。
+switch 只能判断单个值，不能判断范围（[c# 8.0以上版本已经支持范围条件](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements#the-switch-statement)），如果条件为范围，不能用 switch 。
 
-<p style="background-color:red;color:white;">Visual Studio中, 智能填充快捷键为, 把光标放在switch上, alt+enter</p>
+<p style="background-color:red;color:white;">Visual Studio中, 智能填充快捷键为, 把光标放在switch()上, alt+enter</p>
 
 
 
-```csharp
+```c#
 switch(表达式/变量)
 {
   case 值1:语句块1;
@@ -992,9 +992,36 @@ switch(表达式/变量)
   default:语句块3;
     break;
 }
+
+//如果多个case输出一个结果可以这样写
+switch(表达式/变量){
+  case 1:
+  case 2:语句块2;
+    break; 
+}
 ```
 
-```csharp
+
+
+```c#
+// c# 8.0 switch
+int a = Convert.ToInt32(Console.ReadLine());
+int b = convert.ToInt32(Console.ReadLine());
+
+switch((a,b)){
+    case(>0,>0):
+    	Console.Writeline("{0} and {1} above 0.",a,b);
+    	break;
+    case(<=0,<=0):
+    	Console.WriteLine("{0} and {1} below 0.",a,b);
+    	break;
+}
+```
+
+
+
+
+```c#
 if(条件)
 {
   语句1；
