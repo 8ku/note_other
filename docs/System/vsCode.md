@@ -10,3 +10,4 @@
 - Change all same words: `ctrl(command)+shift+L`
 - Format code: `ctrl+i`
 - Duplicate line: `cmd/ctrl+Shift+d`
+- Delete blank line: `shift+Del`
