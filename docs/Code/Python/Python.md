@@ -1,6 +1,23 @@
-# Tips
+## Command
 
-## Python读取文本文件数据
+
+
+|                    | Mac                       | Windows                   |
+| ------------------ | ------------------------- | ------------------------- |
+| 查看Python 版本    | python3 --version         | python --version          |
+| 查看Python安装位置 | which python3             | where python              |
+| 查看包的列表       | pip list                  | pip list                  |
+| 查看包的安装位置   | pip show packageName      | pip show packageName      |
+| 删除包             | pip uninstall packageName | pip uninstall packageName |
+| 删除Python         | 在应用程序中卸载          | 在应用程序中卸载          |
+
+
+
+
+
+## Tips
+
+### Python读取文本文件数据
 
 - 读文本文件格式：`read_csv` , `read_table`
 

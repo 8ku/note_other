@@ -16,6 +16,7 @@
   - [Blender Animation](/Unity/BlenderAnimation)
   - [Blender Sculpting](/Unity/BlenderSculpting)
   - [Blender 3D Print](/Unity/Blender3DPrint)
+  - [Blender Tips](/Unity/BlenderTips)
 - Assets
   - [DOTween](/Unity/Assets/DOTween)
   - [Cinemachine](/Unity/Assets/Cinemachine)

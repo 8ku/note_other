@@ -199,3 +199,15 @@
     ````
 
 - 切换到`Rendering`标签，把输出改为`View Layer`
+
+
+
+
+
+## Geometry Node
+
+### 快捷键
+
+安装 `Node Wrangler`
+
+- (v3.1) 切换连接和非连接（预览）：cmd(ctrl)+alt+右键

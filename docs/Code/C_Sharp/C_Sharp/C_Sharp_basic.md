@@ -623,9 +623,9 @@ int MyValue //int:属性类型   MyValue:属性名
 	- if... else if ...else：对只有一个层次深度的简单类型使用switch/case，但对于更复杂的比较和多个嵌套层次，使用经典的if/else构造。
 	- switch：只能写一个条件,switch/case语句通常速度更快，深度为1级，但当您开始进入2个或更多级别时，switch/case语句开始占用的时间是嵌套if/else语句的2-3倍。
 - 迭代语句：在一个语句块上循环或迭代
-	- for ：在循环次数确定时使用
-	- while：在循环次数不确定时使用
-	- Do
+	- for(){} ：在循环次数确定时使用
+	- while(){}：在循环次数不确定时使用
+	- do{}while(): 和 while 的区别在于先执行一次 do 的方法再执行 while 的条件判断
 	- Foreach
 - 跳转语句：从代码块或方法体内部的一个地方跳转到另一个地方
 	- break 跳出当前循环

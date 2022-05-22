@@ -89,7 +89,7 @@
 - bool tool
 - Curve/Mesh：Extra Objects
 - mesh:F2(可在单点模式下使用F来直接挤出面)
-- Node Wrangler
+- **Node Wrangler**
   - **在输出节点前添加预览节点: 点击输出节点, 按住`shift+ctrl`, 左键点击输出节点前最后一个节点**
   - 重排节点: `shift+=`
   - **添加材质节点：在node mode 下`ctrl+t`**
@@ -107,6 +107,7 @@
 - 3D View: Measurelt: 尺寸测量
   - 在编辑模式下 View 工具栏中显示
   - Item 菜单下可以删除全部尺寸显示
+- Copy Attributes Menu：复制参数
 
 
 ## 视图操作
