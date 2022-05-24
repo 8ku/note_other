@@ -211,3 +211,45 @@
 安装 `Node Wrangler`
 
 - (v3.1) 切换连接和非连接（预览）：cmd(ctrl)+alt+右键
+
+
+
+### 基本思路
+
+```mermaid
+classDiagram
+	direction LR
+	class GroupInput{
+		out: Geometry
+	}
+	class Subdivied Mesh{
+		in: Mesh
+		Level: 2
+		out: Mesh
+	}
+	class Mesh to Points{
+		in: Mesh
+		in: Selection
+	}
+	class Equal{
+		Float
+		Equal
+		in: A
+		out: Result
+	}
+	class Separate XYZ{
+		in:Vecotr
+		out: x
+		out: y
+		out: z
+	}
+	class Normal{
+		out: Normal
+	}
+	GroupInput "1 Geometry"--|> "1 Mesh" Subdivied Mesh
+	Subdivied Mesh "2 Mesh" --|> "2 Mesh" Mesh to Points
+	Equal "3 Result" --|> "3 Selection" Mesh to Points
+	Separate XYZ "4 z" --|> "4 A" Equal
+	Normal "5 Normal" --|> "5 Vector" Separate XYZ
+```
+
