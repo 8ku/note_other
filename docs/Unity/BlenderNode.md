@@ -15,7 +15,7 @@
 
 下载安装插件 [Animation Node](https://animation-nodes.com/)
 
-- **半透明节点表示 输入/输出 为list
+- 半透明节点表示 输入/输出 为list
 
 ### 快捷键
 
@@ -211,6 +211,12 @@
 安装 `Node Wrangler`
 
 - (v3.1) 切换连接和非连接（预览）：cmd(ctrl)+alt+右键
+
+
+
+### 技巧
+
+- 在 Node 面板点击`n`，选择 Group Tab，可以修改 Input 节点的名字，让节点更好识别
 
 
 
