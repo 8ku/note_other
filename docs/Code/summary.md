@@ -41,6 +41,7 @@
     - [C_Sharp_random](/Code/C_Sharp/C_Sharp/C_Sharp_random)
     - [C_Sharp_Interface](/Code/C_Sharp/C_Sharp/C_Sharp_Interface)
     - [C_Sharp_tips](/Code/C_Sharp/C_Sharp/C_Sharp_tips)
+    - [C_Sharp_math](/Code/C_Sharp/C_Sharp/C_Sharp_math)
   - Unity_C_Sharp
     - [Unity_C_Sharp](/Code/C_Sharp/Unity_C_Sharp/Unity_C_Sharp)
     - [Input System](/Code/C_Sharp/Unity_C_Sharp/InputSystem)

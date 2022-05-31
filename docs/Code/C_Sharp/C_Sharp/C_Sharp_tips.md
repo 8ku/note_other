@@ -4,7 +4,7 @@
 
 用`try catch`
 
-```c#
+```csharp
 namespace Csharp01
 {
     class MainClass
@@ -43,7 +43,7 @@ namespace Csharp01
 
 #### Linq 类
 
-```c#
+```csharp
 using System;
 using System.Linq;
 
@@ -69,7 +69,7 @@ namespace Csharp01
 
 #### RNGCryptoServiceProvider 类（生成加密随机数）
 
-```c#
+```csharp
 using System;
 using System.Security.Cryptography;
 
