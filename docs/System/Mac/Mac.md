@@ -123,6 +123,15 @@
 
 
 
+## Xcode errors
+
+- Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionSentinelHostApplications for extension Xcode.DebuggerFoundation.AppExtensionHosts.watchOS of plug-in com.apple.dt.IDEWatchSupportCore...
+  - `sudo xcode-select -s /Library/Developer/CommandLineTools`
+
+
+
+
+
 ## 删除 office 的历史记录
 
 清空下列两个文件中的内容
