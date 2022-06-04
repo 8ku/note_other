@@ -91,6 +91,38 @@
 
 `codesign --force --deep --sign - /Applications/name.app`
 
+
+
+## 清理Xcode缓存
+
+### 清理不使用的device
+
+- ~/Library/Developer/CoreSimulator/Devices
+  - 清理里面所有的文件
+- ～/Library/Developer/Xcode/iOS DeviceSupport
+
+### 清理不需要的文件
+
+- ～/Library/Developter/CoreSimulator/Caches/dyld/..
+  - 删除 dyld 下的文件
+
+### 清理 builded App caches
+
+- ~/Library/Developer/Xcode/DerivedData
+  - 删除目录下的文件
+
+### 清理不需要的归档文件
+
+- ～/Library/Developer/Xcode/Archives
+  - 删除目录下的文件
+
+### 清理 logs
+
+- ~/Library/Developer/Xcode/iOS Device Logs
+  - 删除目录下的文件
+
+
+
 ## 删除 office 的历史记录
 
 清空下列两个文件中的内容
