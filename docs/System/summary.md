@@ -1,5 +1,6 @@
 # 系统快捷键
 
+- [Basic](System/basic)
 - [Linux](/System/Linux)
 - [Mac](/System/Mac/Mac)
 - [Markdown_flow](/System/markdown_flow)

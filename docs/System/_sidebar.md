@@ -1,4 +1,5 @@
 - [Summary](/System/summary)
+- [Basic](System/basic)
 - [Linux](/System/Linux)
 - Mac
   - [Mac](/System/Mac/Mac)
@@ -8,4 +9,3 @@
 - [sublime插件](/System/sublime)
 - [vimium](/System/vimium)
 - [VS Code](/System/vsCode)
-
