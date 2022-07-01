@@ -2,3 +2,4 @@
 - [Game History](/GameHistory/gameHistory)
 - [Video Game Genre](/GameHistory/VideoGameGenre)
 - [Game Development Roles](/GameHistory/gameDevelopmentRoles)
+- [People](/GameHistory/People)
