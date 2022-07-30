@@ -21,8 +21,6 @@ function proxy_off(){
 - 测试 `curl ip.gs`
 - 开启 `proxy_on`，关闭 `proxy_off`
 
-
-
 ## 安装Homebrew
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
@@ -42,8 +40,6 @@ rm -rf ~/.npm
 
 测试node版本 `node -v npm -v` 
 
-
-
 ## 在 Terminal 中配置打开文件的应用
 
 ### Sublime
@@ -54,10 +50,6 @@ rm -rf ~/.npm
   - `alias subl=“open -a /Applications/Sublime\ Text.app”`
   - 保存后 refresh bash `source ~/.bash_profile`
 - 可以用 `subl`来打开文件
-
-
-
-
 
 ## 下载整站内容
 
@@ -80,3 +72,15 @@ rm -rf ~/.npm
 - -k, -convert-links 转换非相对链接为相对链接
 - -L, -relative 仅仅跟踪相对链接
 - -p, -page-requistes 下载显示HTML文件的所有图片
+
+
+
+## ffmpeg
+
+### 基本用法
+
+- 下载安装 
+
+- 转换视频格式
+  
+  - `ffmpeg -i input.mov output.mp4`
