@@ -1,7 +1,4 @@
-#  Git
-
-
-
+# Git
 
 ## 更新git pages
 
@@ -9,20 +6,22 @@
 bundle update github-pages
 ```
 
-
-
 ## 本地预览
 
 - 主页: `jekyll serve --watch` or `bundle exec jekyll serve`
+  
   - 主页更新双语切换，因调用了 github 不支持的插件，故把生成后的 `_site`文件夹推送到  `sources` 分支，绕过插件检查。方法如下：
     - 新建 branch `git checkout -b sources`
+      - 切换到分支 branch `git checkout branchName`
     - 把 jekyll 生成的 `_site` 文件夹推送到 `sources` 分支中：`git add _site && git commit -m'new site locate'`
     - `git subtree push --prefix _site origin sources`
     - 进入仓库，把 github pages 的分支从 master --> sources
     - **每次在 `gh-pages` 分支修改后，提交 `_site`部分，commit all, 然后切换到 `master` 分支，执行 `git merge gh-pages`,让 `master` 的内容和 `gh-pages` 一致，再提交 `master` 分支的内容**
 
 - note_other: `docsify serve docs`，**push前进入在`docs`文件夹下push**
+
 - gitbook: `gitbook install` / `gitbook build` / `gitbook serve`
+
 - hero：`hexo clean -> hexo g -> hero d`
 
 ### 在线预览 github里的html文件
@@ -42,32 +41,32 @@ bundle update github-pages
 [绑定多个二级域名](https://github.com/IcedSoul/wiki/wiki/使用Github-Pages绑定多个二级域名)
 
 1. 检查现有的推送方式
-
+   
    ```bash
    git remote -v
    ```
 
 2. 从http改为ssh
-
+   
    ```bash
    git remote set-url origin git@github.com:username/xx.git
    ```
 
 3. 从ssh改为http
-
+   
    ```bash
    git remote set-url origin https://github.com/username/xx.git
    ```
 
 4. 查看现在的ssh
-
+   
    ```bash
    cd ~/.ssh
    ls
    ```
 
 5. 生成ssh密钥并显示(加 -o 可以比默认格式更能抗暴力破解)
-
+   
    ```bash
    ssh-keygen -o
    cat ~/.ssh/id_rsa.pub
@@ -125,12 +124,12 @@ open ~/.ssh
 # localhost端口号要和当前使用的代理端口号一致
 ProxyCommand nc -x localhost:7891 %h %p
 Host github.com
-	HostName github.com
+    HostName github.com
     IdentityFile ~/.ssh/id_rsa
     User 8ku
 
 Host github8ku
-	HostName github.com
+    HostName github.com
     IdentityFile ~/.ssh/id_rsa_another
     User another
 ```
@@ -158,10 +157,6 @@ git config --global --unset user.name && git config --global --unset user.email
 git config --local user.name "name"
 git config --local user.email "someone@email.com"
 ```
-
-
-
-
 
 ### 各种报错的解决方法
 
@@ -205,8 +200,6 @@ git config -l
 git add .gitignore
 ```
 
-
-
 ### 查看仓库config文件
 
 ```yml
@@ -218,17 +211,15 @@ open config
 url = git@github.com:user/rep.git
 ```
 
-
-
 ### Hexo配置更改
 
 _config.yml的修改
 
 ```yml
 deploy:
-	type: git
-	repo: git@别名:git用户名/仓库地址
-	branch: master
+    type: git
+    repo: git@别名:git用户名/仓库地址
+    branch: master
 ```
 
 修改对应用户名和电邮地址
@@ -239,8 +230,6 @@ git config user.name '之前设置在根目录的'
 git config user.email '之前设置在根目录的'
 ```
 
-
-
 ## 绑定个人域名
 
 1. 买域名（阿里云）
@@ -248,12 +237,11 @@ git config user.email '之前设置在根目录的'
 2. `ping xxx.github.io `得到ip地址
 
 3. 在域名提供商里为域名添加解析，以阿里云为例
-
+   
    1. 点击 '解析'
    2. 添加两条记录
 
 ![image-20200421142956939](git.assets/image-20200421142956939.png)
-
 
 ![image-20200421142921978](git.assets/image-20200421142921978.png)
 
@@ -280,27 +268,25 @@ git config user.email '之前设置在根目录的'
 ### Sparse-checkout 文件设置
 
 - 子目录匹配
-
+  
   - 如果名称前带斜杠，`/docs/`，表示只匹配根目录下的文件目录， 如前不带斜杠，则匹配所有有该目录名称的目录（包括父目录）
 
 - 通配符 *
-
+  
   - 在sparse-checkout文件中支配通配符 * 
-
+    
     ```
     *docs/
     index.*
     *.gif
     ```
-
+  
   - 支持 ！排除
-
+    
     ```
     /*
     !/docs/
     ```
-
-    
 
 ## 删除某个文件夹
 
@@ -317,10 +303,6 @@ git config user.email '之前设置在根目录的'
 - （最好不使用）按Esc，`:wq`,hit Enter
 
 - `git push -u origin master`
-
-  
-
-  
 
   *How to fix Git Error ‘Your local changes to the following files will be overwritten by merge’*
 
@@ -356,7 +338,7 @@ git config user.email '之前设置在根目录的'
 - 代码：`
 - 代码块：三个~
 
-## gitbook 
+## gitbook
 
 ### 安装
 
@@ -412,8 +394,6 @@ vi ~/.gitconfig
    4. enter password again
    5. done.
 
-
-
 ## 删除本地库
 
 ```bash
@@ -438,10 +418,6 @@ cd ..
 #强删文件夹
 rm -rf repositoryname
 ```
-
-
-
-
 
 ## 支持数学公式
 
