@@ -28,6 +28,10 @@ bundle update github-pages
 
 [把html文件地址粘贴到这个网址里](http://htmlpreview.github.io/)
 
+## Git提交命令简化
+
+`git commit -am 'your commit message'`
+
 ## 修改git推送方式
 
 [参考](https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5)
@@ -303,7 +307,7 @@ git config user.email '之前设置在根目录的'
 - （最好不使用）按Esc，`:wq`,hit Enter
 
 - `git push -u origin master`
-
+  
   *How to fix Git Error ‘Your local changes to the following files will be overwritten by merge’*
 
 - `git reset --hard`
