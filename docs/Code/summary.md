@@ -52,7 +52,7 @@
     
     - Basic Action
       
-      - [Basic Actions](/Code/C_Sharp/Unity_C_Sharp/BasicActions)
+      - [Move](/Code/C_Sharp/Unity_C_Sharp/Move)
       - [CharacterController](/Code/C_Sharp/Unity_C_Sharp/CharacterController)
     
     - Animation

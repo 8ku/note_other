@@ -1,20 +1,8 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-      <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
-</head>
+
 # Blender Animation
 
-* TOC
-{: toc}
+
+
 ## 工作流程
 
 ### Blender 中的k帧流程
@@ -64,10 +52,6 @@
   - File Format: FFmpeg Video
 - Ctrl+F12 渲染动画
 
-
-
-
-
 ## K帧快捷键
 
 - 插入帧: i
@@ -97,33 +81,29 @@
   - 复制/粘贴keyframe: ctrl+c  - 切换到粘贴的层 ctrl+v 选择粘贴形式
   - 镜像keyframe: ctrl+m
 
-
-
 ## 基本动作时长
 
 **动画最后一帧应该和第一帧一样, 所以clip的长度应该为 1~(last - 1)**
 
-| Move Name    | Frames      | Demo       |
-| ------------ | ----------- | ---------- |
-| Idle         | 30~40       |            |
-| Run          | 18 or fewer |            |
-| Walk         | 24 or fewer |            |
-| Sneak        | 24 or fewer |            |
-| React        | 15 or fewer | 发觉       |
-| Death        | 15 or fewer |            |
-| Knock down   | 12 or fewer | 被打中     |
+| Move Name    | Frames      | Demo  |
+| ------------ | ----------- | ----- |
+| Idle         | 30~40       |       |
+| Run          | 18 or fewer |       |
+| Walk         | 24 or fewer |       |
+| Sneak        | 24 or fewer |       |
+| React        | 15 or fewer | 发觉    |
+| Death        | 15 or fewer |       |
+| Knock down   | 12 or fewer | 被打中   |
 | Get up       | 30 or fewer | 从地上起来 |
-| Attack-Aim   | 10 or fewer | 攻击别人   |
-| Attack-Shoot | 14 or fewer |            |
-| Attack-Bite  | 14 or fewer |            |
-| Attack-Punch | 14 or fewer |            |
-| Attack-Kick  | 14 or fewer |            |
-
-
+| Attack-Aim   | 10 or fewer | 攻击别人  |
+| Attack-Shoot | 14 or fewer |       |
+| Attack-Bite  | 14 or fewer |       |
+| Attack-Punch | 14 or fewer |       |
+| Attack-Kick  | 14 or fewer |       |
 
 ## 特效
 
-### 化灰特效 Dust Effect / Disntegration 
+### 化灰特效 Dust Effect / Disntegration
 
 - 模型应用细分(越多越细)
 - 模型添加 `ParticleSettings`
@@ -147,10 +127,6 @@
     - Strength: 10 or more or less
     - Flow: 3
 - 添加`Turbulence`
-
-
-
-
 
 ## 坑
 
