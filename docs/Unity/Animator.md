@@ -1,7 +1,5 @@
 # 动画控制
 
-
-
 ## 细节技术
 
 ### 脚不沾地
@@ -39,7 +37,7 @@ public class CharacterIK : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnAnimatorIK(int layerIndex)
@@ -92,27 +90,27 @@ public class CharacterIK : MonoBehaviour
 
     }
 }
-
 ```
-
-
-
-
 
 ## 创建人物动画
 
-- 在人物角色下创建 Animator 组件
-  - 或者 直接创建一个 Animation ，拖到角色下，会自动生成一个 Animator 
-- 在 Assets 下创建 Animation - Player 文件夹，在文件夹中创建 Animator Controller 
-- 把新建的 Controller 拖到人物角色下的 Controller 下绑定
-- window - Animation ( cmd + 6 ) 调出动画窗口，创建新动画
-- 把分割好的动画图片一次性拖到时间轴上，点击最左和最右两个 keyframe 拖拽可以平均拉长（先把图片的Pixel Per Unit 调整到16 ）
-- 在 window - Animator 中把 idle 和 run 做连接
-  - 点击箭头，从 idle 到 run：先在animator 视窗里增加一个变量（例如 running ），再在 inspector - Conditions 中调用 running ，“当 running greater than 0.1, then change state”
-  - **animator里的变量命名规范最好统一**
-  - 如果需要状态马上变化，把 Has Exit Time 去勾，Transition Duration 设置为 0 
-  - 另一个设置为 when running is less than 0.1, then change state.
-  - 在角色的控制脚本中声明 animator，绑定控制器
+- 在人物角色(model)下创建 Animator 组件
+
+- 在 **Assets** 下新建一个 **Animator Controller**
+
+- 角色的 Animator- Controller：放入上一步新建的 controller
+
+- 打开 Animator 菜单
+  
+  - Create State - From New Blend Tree，双击 Blend Tree
+    - Add motion - Add Motion Field
+    - | Motion | Pos X | Pos Y |
+      | ------ | ----- | ----- |
+      | idle   | 0     | 0     |
+      | Walk   | 0     | 0.5   |
+      | Run    | 0     | 1     |
+
+- 编辑 `AnimaotrHandler.cs`
 
 ### [使用blend混合动画](https://docs.unity3d.com/Manual/class-BlendTree.html)
 
@@ -156,7 +154,7 @@ public class CharacterIK : MonoBehaviour
 
 ## 绘制2D 地图
 
--  新建 2D Project - Tilemap
+- 新建 2D Project - Tilemap
 - Windows - 2D - Tile Patette
 - 把地图元素用 Sprite Editor 切好
 - 在 Tile Patette 中新建 palette ，把切好的元素拖入，点击保存

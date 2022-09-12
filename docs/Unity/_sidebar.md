@@ -13,6 +13,7 @@
   - [Blender Node](/Unity/BlenderNode)
   - [Blender 2 Unity](/Unity/Blender2Unity)
   - [Blender Physics](/Unity/BlenderPhysics)
+  - [Blender Rigging](/Unity/BlenderRigging)
   - [Blender Animation](/Unity/BlenderAnimation)
   - [Blender Sculpting](/Unity/BlenderSculpting)
   - [Blender 3D Print](/Unity/Blender3DPrint)

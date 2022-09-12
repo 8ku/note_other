@@ -14,8 +14,9 @@
 # Blender 2 Unity
 
 * TOC
-{: toc}
-## 物理动画到Untiy
+  {: toc}
+  
+  ## 物理动画到Untiy
 
 无法把高级材质(如透明等)带过来
 
@@ -33,3 +34,30 @@
 - 在Unity中直接导入
 - 导入时在模型的`Materials`中更改`Location-Use External Materials`, 这样在Unity中也可编辑模型材质
 
+
+
+## Blender - Mixamo - Unity
+
+- save model as **xxx.FBX**
+
+- Import to Mixamo
+
+- Download model as **FBX for Unity(.Fbx)**, e.g *player.fbx*
+
+- Select a pose, Download as **FBX for Unity(.Fbx)**, **Without Skin**
+
+- Drag model(Download from Mixamo, e.g *player.fbx*) into Unity
+  
+  - Import Settings
+    
+    - Animation Type: **Humanoid**
+    
+    - Avatar Definition: **Create From This Model**
+
+- Drag model with animation(e.g *running.fbx*) into Unity
+  
+  - Import Settings
+    
+    - Animation Type: **Humanoid**
+    
+    - Avatar Definition: **Copy From Other Avatar**
