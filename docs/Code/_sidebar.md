@@ -57,6 +57,7 @@
     - Basic Action
       
       - [Move](/Code/C_Sharp/Unity_C_Sharp/Move)
+      - [Rotation](/Code/C_Sharp/Unity_C_Sharp/Rotation)
       - [CharacterController](/Code/C_Sharp/Unity_C_Sharp/CharacterController)
     
     - Animation
@@ -92,8 +93,6 @@
       - [SoundManager](/Code/C_Sharp/Unity_C_Sharp/SoundManager)
     
     - [Unity_C_Sharp](/Code/C_Sharp/Unity_C_Sharp/Unity_C_Sharp)
-    
-    - [Rotate](/Code/C_Sharp/Unity_C_Sharp/rotate)
     
     - [transferClass](/Code/C_Sharp/Unity_C_Sharp/transferClass)
     

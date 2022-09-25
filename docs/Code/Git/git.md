@@ -28,6 +28,24 @@ bundle update github-pages
 
 [把html文件地址粘贴到这个网址里](http://htmlpreview.github.io/)
 
+ 
+
+## 删除git分支
+
+```git
+# delete remote branch
+git push origin --delete <branch>
+#or
+git push origin -d <branch>
+
+#delete local branch
+git branch --delete <branch>
+#or
+git branch -d <branch>
+```
+
+
+
 ## Git提交命令简化
 
 `git commit -am 'your commit message'`

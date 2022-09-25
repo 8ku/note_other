@@ -1,4 +1,20 @@
-# Rotate
+# Rotation
+
+## Quaternion
+
+| Properties | meaning |
+| ---------- | ------- |
+|            |         |
+
+
+
+| Static Methods   | meaning                                                                                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Quaternion.Euler | Returns a **rotation** that rotates z degrees around the z axis, x degrees around the x axis, and y degrees around the y axis; applied in that order. |
+
+
+
+
 
 ## 设置3D物体的旋转
 
@@ -61,6 +77,4 @@ public class GunManager : MonoBehaviour {
         }      
     }
 }
-
 ```
-

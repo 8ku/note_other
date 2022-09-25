@@ -5,6 +5,7 @@
   - [GUI](/Unity/GUI)
   - [Package](/Unity/Package)
   - [Physics](/Unity/Physics)
+  - [Items](/Unity/Items)
   - [Prefabs](/Unity/Prefabs)
   - [Shortcuts](/Unity/Shortcuts)
   - [Animator](/Unity/Animator)

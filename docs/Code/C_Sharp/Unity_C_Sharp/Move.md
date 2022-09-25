@@ -38,18 +38,29 @@
 
 ```mermaid
 flowchart TB
-i[script: InputHandler] 
+ih[script: InputHandler] 
+ah[script: AnimatorHandler]
+ch[script: CameraHandler]
 pl[script: PlayerLocomotion]
 c[component: Capsule Collider]
 r[component: Rigidbody]
 pc[script: PlayerController]
 
-pc -->i
+
+pc -->ih
 
 subgraph player
-i -->pl
+ih -->pl
+ah-->pl
 c
 r
+    subgraph playerPrefab
+        ah
+    end
+end
+
+subgraph camera
+ch-->ih  
 end
 ```
 
