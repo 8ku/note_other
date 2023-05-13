@@ -27,6 +27,9 @@
 | 模糊匹配                      | dir /S filename*                                             |
 | 查看当前位置的文件/文件夹列表 | dir /b<br />dir *                                            |
 | 打开文件                      | start filename                                               |
+| 打开文件夹                    | start foldername                                             |
+| 打开当前路径                  | start .                                                      |
+| 运行 exe 文件                 | xxx.exe                                                      |
 
 
 

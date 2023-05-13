@@ -11,9 +11,11 @@
 docsify中使用KaTeX的方法:
 
 ```html
-<!--在index.html - body 最后添加-->
+<!--在index.html - head 添加-->
+<script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+<script src="//cdn.jsdelivr.net/npm/marked@4"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
 ```
 
 
@@ -237,25 +239,21 @@ $
 
 ## 图表
 
-在docsify inedex.html - header 中添加以下代码:
+插件地址：https://docsify.js.org/#/awesome?id=plugins
 
 参考：<a href="https://mermaid-js.github.io/mermaid/#/flowchart">语法说明</a>
 
-```html
-<script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
-<script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
-```
 
-使用时, 在头部添加 ````mermaid`
+
+使用时, 在头部添加 `mermaid`
 
 ### sequence
 
 ```mermaid
 sequenceDiagram
-    Alice->Bob: Hello Bob, how are you?
-    Note right of Bob: Bob thinks
-    Bob-->Alice: I am good thanks!
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great
+    Alice->>John: See you later
 ```
 
 
@@ -324,5 +322,18 @@ pie title Key elements in Product X
       "Potassium" : 50.05
       "Magnesium" : 10.01
       "Iron" :  5
+```
+
+
+
+### mermaid - timeline
+
+```mermaid
+timeline
+    title History of Social Media Platform
+    2002 : LinkedIn
+    2004 : Facebook : Google
+    2005 : Youtube
+    2006 : Twitter
 ```
 

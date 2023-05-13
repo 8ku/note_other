@@ -2,6 +2,8 @@
 
 因为原主题全文搜索不好用, 更换为docsify.
 
+[插件地址](https://docsify.js.org/#/awesome?id=plugins)
+
 ## 一些额外的语法
 
 ### 强调内容 `!> content`
