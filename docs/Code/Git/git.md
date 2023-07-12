@@ -30,6 +30,20 @@ bundle update github-pages
 
  
 
+
+
+## 切换远程仓库地址
+
+```
+# check remote repository
+git remote -v
+
+# change remote repository, e.g. git@github.com:8ku/xxx
+git remote set-url origin URL
+```
+
+
+
 ## 删除git分支
 
 ```git
@@ -63,32 +77,32 @@ git branch -d <branch>
 [绑定多个二级域名](https://github.com/IcedSoul/wiki/wiki/使用Github-Pages绑定多个二级域名)
 
 1. 检查现有的推送方式
-   
+  
    ```bash
    git remote -v
    ```
 
 2. 从http改为ssh
-   
+  
    ```bash
    git remote set-url origin git@github.com:username/xx.git
    ```
 
 3. 从ssh改为http
-   
+  
    ```bash
    git remote set-url origin https://github.com/username/xx.git
    ```
 
 4. 查看现在的ssh
-   
+  
    ```bash
    cd ~/.ssh
    ls
    ```
 
 5. 生成ssh密钥并显示(加 -o 可以比默认格式更能抗暴力破解)
-   
+  
    ```bash
    ssh-keygen -o
    cat ~/.ssh/id_rsa.pub
@@ -259,7 +273,7 @@ git config user.email '之前设置在根目录的'
 2. `ping xxx.github.io `得到ip地址
 
 3. 在域名提供商里为域名添加解析，以阿里云为例
-   
+  
    1. 点击 '解析'
    2. 添加两条记录
 
