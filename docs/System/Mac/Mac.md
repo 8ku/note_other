@@ -2,55 +2,56 @@
 
 ## 基本快捷键
 
-| 功能                        | 键                                                                                                                                                                                                                                                                                |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 查看                        | ls                                                                                                                                                                                                                                                                               |
-| 打开文件夹                     | open fileFolderName///                                                                                                                                                                                                                                                           |
-| 打开当前文件夹                   | open .                                                                                                                                                                                                                                                                           |
-| 查看隐藏文件                    | shift+cmd+.(句号)                                                                                                                                                                                                                                                                  |
-| 使用系统preview查看多张图片         | open *                                                                                                                                                                                                                                                                           |
-| 查看-隐藏                     | ls -a                                                                                                                                                                                                                                                                            |
-| 创建目录                      | mkdir (make directory)                                                                                                                                                                                                                                                           |
-| 进入目录                      | mkdir                                                                                                                                                                                                                                                                            |
-| 返回上级目录                    | cd ..                                                                                                                                                                                                                                                                            |
-| 返回根目录                     | cd /                                                                                                                                                                                                                                                                             |
-| 删除目录(空目录)                 | rmdir test (remove directory)                                                                                                                                                                                                                                                    |
-| 删除非空目录(加 -rf直接删除，不出现在回收站） | rm -rf test （remove force)                                                                                                                                                                                                                                                       |
-| 创建文件                      | touch 文件名                                                                                                                                                                                                                                                                        |
-| 拷贝                        | cp                                                                                                                                                                                                                                                                               |
-| 查找                        | find                                                                                                                                                                                                                                                                             |
-| 用正则查找文件                   | find.-name”*.c”-print                                                                                                                                                                                                                                                            |
-| 显示当前目录的路径                 | pwd (print working directory)                                                                                                                                                                                                                                                    |
-| 复制文件路径                    | Option+Command+C                                                                                                                                                                                                                                                                 |
-| 列出当前目录下的所有文件              | ls                                                                                                                                                                                                                                                                               |
-| 用默认程序打开文件                 | open                                                                                                                                                                                                                                                                             |
-| 显示操作系统信息                  | uname -a/uname                                                                                                                                                                                                                                                                   |
-| 清除屏幕或窗口内容                 | clear                                                                                                                                                                                                                                                                            |
-| 显示当前所有设置过的环境变量            | env                                                                                                                                                                                                                                                                              |
-| 列出当前登录过的所有用户              | who                                                                                                                                                                                                                                                                              |
-| 显示当前正在操作的用户名              | whoami                                                                                                                                                                                                                                                                           |
-| 显示终端或伪终端的名称               | tty                                                                                                                                                                                                                                                                              |
-| 查询磁盘使用情况                  | du/du -k subdir                                                                                                                                                                                                                                                                  |
-| 显示文件系统的总空间和可用空间           | df <br />df/tmp                                                                                                                                                                                                                                                                  |
-| 显示当前系统活动的总信息              | w                                                                                                                                                                                                                                                                                |
-| 执行.sh文件                   | ./aa.sh                                                                                                                                                                                                                                                                          |
-| 刷新DNS                     | sudo killall -HUP mDNSResponder                                                                                                                                                                                                                                                  |
-| 连续查看图片                    | 全选所有图片-空格                                                                                                                                                                                                                                                                        |
-| 安装cli命令行应用                | 输入chmod +x (拖入cli文件)                                                                                                                                                                                                                                                             |
-| 中断运行                      | **control+c**                                                                                                                                                                                                                                                                    |
-| 打开表情键盘                    | alt+cmd+space                                                                                                                                                                                                                                                                    |
-| 显示隐藏文件                    | cmd+shift+.                                                                                                                                                                                                                                                                      |
-| 将光标后一个字删除                 | Fn+Delete                                                                                                                                                                                                                                                                        |
-| 批量修改文件名(方法1)              | 选择需要修改的文件<br />在其中一个上点右键:<br />根据自己的需要修改                                                                                                                                                                                                                                         |
-| 批量修改文件名(方法2)              | 安装rename脚本`brew install rename`<br />使用命令`rename ’s/oldname/newname/’ *.png`<br />说明: s是关键词, 前一个参数的引号中为文件名中要替换的部分(替换前/替换后), 后一个参数中代表通配文件名的规则*<br />支持Perl通配符: 把所有文件名结尾添加后缀`rename ’s/$/.txt/’`<br />批量删除文件名 `rename ’s/.txt//’<br />正则匹配部分文件名 `rename 's/text([1-9]).txt/.txt/'` |
-| 显示文件简介                    | cmd+i                                                                                                                                                                                                                                                                            |
-| 显示资源库                     | finder--> 单击菜单栏的’前往’ 按下option<br />或终端中输入`chflags nohidden ~/Library/`-显示 `chflags hidden ~/Library/`-隐藏                                                                                                                                                                         |
-| 剪切式粘贴                     | cmd+option+v                                                                                                                                                                                                                                                                     |
-| 强制退出程序                    | cmd+option+esc                                                                                                                                                                                                                                                                   |
-| 查看程序使用的内存                 | `top -o MEM`                                                                                                                                                                                                                                                                     |
-| 查看chrome cookie列表         | `chrome://settings/siteData`                                                                                                                                                                                                                                                     |
-| 切换桌面                      | ctrl+1~9                                                                                                                                                                                                                                                                         |
-| 用命令行查看压缩文件包里的信息           | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                                                                                                                                                                                                                                       |
+| 功能                                          | 键                                                           |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| 查看                                          | ls                                                           |
+| 打开文件夹                                    | open fileFolderName///                                       |
+| 打开当前文件夹                                | open .                                                       |
+| 查看隐藏文件                                  | shift+cmd+.(句号)                                            |
+| 使用系统preview查看多张图片                   | open *                                                       |
+| 查看-隐藏                                     | ls -a                                                        |
+| 查看文件夹大小                                | du -sh path (display **disk usage**, **specified human-readable**) |
+| 创建目录                                      | mkdir (make directory)                                       |
+| 进入目录                                      | mkdir                                                        |
+| 返回上级目录                                  | cd ..                                                        |
+| 返回根目录                                    | cd /                                                         |
+| 删除目录(空目录)                              | rmdir test (remove directory)                                |
+| 删除非空目录(加 -rf直接删除，不出现在回收站） | rm -rf test （remove force)                                  |
+| 创建文件                                      | touch 文件名                                                 |
+| 拷贝                                          | cp                                                           |
+| 查找                                          | find                                                         |
+| 用正则查找文件                                | find.-name”*.c”-print                                        |
+| 显示当前目录的路径                            | pwd (print working directory)                                |
+| 复制文件路径                                  | Option+Command+C                                             |
+| 列出当前目录下的所有文件                      | ls                                                           |
+| 用默认程序打开文件                            | open                                                         |
+| 显示操作系统信息                              | uname -a/uname                                               |
+| 清除屏幕或窗口内容                            | clear                                                        |
+| 显示当前所有设置过的环境变量                  | env                                                          |
+| 列出当前登录过的所有用户                      | who                                                          |
+| 显示当前正在操作的用户名                      | whoami                                                       |
+| 显示终端或伪终端的名称                        | tty                                                          |
+| 查询磁盘使用情况                              | du/du -k subdir                                              |
+| 显示文件系统的总空间和可用空间                | df <br />df/tmp                                              |
+| 显示当前系统活动的总信息                      | w                                                            |
+| 执行.sh文件                                   | ./aa.sh                                                      |
+| 刷新DNS                                       | sudo killall -HUP mDNSResponder                              |
+| 连续查看图片                                  | 全选所有图片-空格                                            |
+| 安装cli命令行应用                             | 输入chmod +x (拖入cli文件)                                   |
+| 中断运行                                      | **control+c**                                                |
+| 打开表情键盘                                  | alt+cmd+space                                                |
+| 显示隐藏文件                                  | cmd+shift+.                                                  |
+| 将光标后一个字删除                            | Fn+Delete                                                    |
+| 批量修改文件名(方法1)                         | 选择需要修改的文件<br />在其中一个上点右键:<br />根据自己的需要修改 |
+| 批量修改文件名(方法2)                         | 安装rename脚本`brew install rename`<br />使用命令`rename ’s/oldname/newname/’ *.png`<br />说明: s是关键词, 前一个参数的引号中为文件名中要替换的部分(替换前/替换后), 后一个参数中代表通配文件名的规则*<br />支持Perl通配符: 把所有文件名结尾添加后缀`rename ’s/$/.txt/’`<br />批量删除文件名 `rename ’s/.txt//’<br />正则匹配部分文件名 `rename 's/text([1-9]).txt/.txt/'` |
+| 显示文件简介                                  | cmd+i                                                        |
+| 显示资源库                                    | finder--> 单击菜单栏的’前往’ 按下option<br />或终端中输入`chflags nohidden ~/Library/`-显示 `chflags hidden ~/Library/`-隐藏 |
+| 剪切式粘贴                                    | cmd+option+v                                                 |
+| 强制退出程序                                  | cmd+option+esc                                               |
+| 查看程序使用的内存                            | `top -o MEM`                                                 |
+| 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
+| 切换桌面                                      | ctrl+1~9                                                     |
+| 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
 
 ## macOS 键符号查找
 
