@@ -52,6 +52,7 @@
 | 查看chrome cookie列表                         | `chrome://settings/siteData`                                 |
 | 切换桌面                                      | ctrl+1~9                                                     |
 | 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
+| 显示当前机器温度                              | sudo powermetrics --samplers smc \|grep -i "CPU die temperature" |
 
 ## macOS 键符号查找
 
