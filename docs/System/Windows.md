@@ -4,7 +4,7 @@
 
 | 功能                           | 键                                                           |
 | ------------------------------ | ------------------------------------------------------------ |
-| 在当前目录下新建文件           | cd .>a.文件类型                                              |
+| 在当前目录下新建文件           | `copy nul emptyfile.txt`<br />`type nul > emptyfile.txt`     |
 | 刷新DNS                        | cmd   ipconfig /flushdns                                     |
 | 强制关闭程序                   | - 任务管理器-详细信息：找到程序的PID<br />- cmd - `tskill PID` |
 | 查看本机ip                     | `curl ipinfo.io` <br />`ipconfig/all`<br />或者使用在线网站  |
