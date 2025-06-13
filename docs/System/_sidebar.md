@@ -4,6 +4,7 @@
 - Mac
   - [Mac](/System/Mac/Mac)
   - [Terminal](/System/Mac/Terminal)
+  - [yt-dlp](/System/Mac/yt-dlp)
 - [Markdown_flow](/System/markdown_flow)
 - [Windows](/System/Windows)
 - [sublime插件](/System/sublime)
