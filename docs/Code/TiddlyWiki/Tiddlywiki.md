@@ -8,6 +8,45 @@
 
 [更新](https://tiddlywiki.com/upgrade.html)
 
+
+
+## Tips
+
+### Pass value into html
+
+using “\$()$” cover the value, and “```” to pass value, like 3 dots after “**source=**”.
+
+```js
+\procedure .link-with-icon(url, domain, text)
+<a href=<<url>>>
+  <$image
+    source=```https://www.google.com/s2/favicons?sz=16&domain=$(domain)$```
+    width=16 height=16/>
+  <<text>>
+</a>
+\end
+```
+
+### Define and Call a macro
+
+```js
+/* define */
+\define gethostname(url)
+<$set name="protocol-removed" filter="[<__url__>splitregexp[://]nth[2]]">
+<$set name="hostname" filter="[<protocol-removed>splitregexp[/]first[]splitregexp[\?]first[]splitregexp[#]first[]]">
+<<hostname>>
+</$set>
+</$set>
+\end
+
+/* Call */
+<$macrocall $name="gethostname" url="https://www.google.com/search?q=ab"/>
+```
+
+
+
+
+
 ## 插件
 
 ### TiddlyMap
