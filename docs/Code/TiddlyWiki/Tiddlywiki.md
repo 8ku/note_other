@@ -45,6 +45,75 @@ using “\$()$” cover the value, and “```” to pass value, like 3 dots afte
 
 
 
+### Customize Timeline Height 
+
+```html
+<style>
+  [data-tiddler-title="<<currentTiddler>>"] {
+    p .timelineC {
+      height: 300px !important;
+    }
+  }
+</style>
+
+<p>
+<div class="timelineC">
+
+<$visjstimeline filter="[tag[TimeLine]]+[tag[tag]]-[tag[img]]" groupTags="[[tag]]"  navpad startDateField="start" endDateField="end" tipFormat="YYYY">
+
+</div>
+</p>
+
+```
+
+### Add Search Bar to Snippets List
+
+1. Search this tiddler `$:/core/ui/EditorToolbar/stamp-dropdown`
+
+```tiddlywiki
+<$edit-text
+  class="search-snippet"
+  tiddler="$:/temp/snippet-search"
+  tag="input"
+  placeholder="Search snippets…"
+/>
+
+
+<$macrocall
+  $name="list-tagged-draggable"
+  tag="$:/tags/TextEditor/Snippet" subFilter="!is[draft]get[caption]search{$:/temp/snippet-search}"
+  itemTemplate="$:/core/ui/EditorToolbar/StampDropdown/ItemTemplate"
+/>
+
+----
+
+<$button tag="a">
+
+<$action-sendmessage
+	$message="tm-new-tiddler"
+	tags="$:/tags/TextEditor/Snippet"
+	caption={{$:/language/Buttons/Stamp/New/Title}}
+	text={{$:/language/Buttons/Stamp/New/Text}}
+/>
+
+<$action-deletetiddler
+	$tiddler=<<dropdown-state>>
+/>
+
+<em>
+
+<$text text={{$:/language/Buttons/Stamp/Caption/New}}/>
+
+</em>
+
+</$button>
+
+```
+
+
+
+
+
 ## 更新版本后需要修改的地方
 
 After updated very old version to the latest verion, something need to modified.
