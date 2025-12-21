@@ -76,6 +76,7 @@ using “\$()$” cover the value, and “```” to pass value, like 3 dots afte
   tiddler="$:/temp/snippet-search"
   tag="input"
   placeholder="Search snippets…"
+  focus="yes"
 />
 
 
@@ -84,6 +85,8 @@ using “\$()$” cover the value, and “```” to pass value, like 3 dots afte
   tag="$:/tags/TextEditor/Snippet" subFilter="!is[draft]get[caption]search{$:/temp/snippet-search}"
   itemTemplate="$:/core/ui/EditorToolbar/StampDropdown/ItemTemplate"
 />
+
+
 
 ----
 
@@ -124,10 +127,11 @@ After updated very old version to the latest verion, something need to modified.
 
 ### Create Search Bar to TopBar
 
-```tiddlywiki
-// title: $:/themes/jd/Mono/TopBarSegments/search
-// tag: $:/tags/TopRightBar
+title: `$:/themes/jd/Mono/TopBarSegments/search`
 
+tag: `$:/tags/TopRightBar`
+
+```tiddlywiki
 \define NewTidActions(searcharea)
 <$action-createtiddler $basetitle={{$searcharea$}} $savetitle="$:/temp/NewTidTitle"/>
 <$action-sendmessage $message="tm-edit-tiddler" $param={{$:/temp/NewTidTitle}}/>
@@ -201,10 +205,11 @@ After updated very old version to the latest verion, something need to modified.
 
 ### Overwrite vanilla base
 
-```tiddlywiki
-// title: $:/themes/tiddlywiki/vanilla/base
-// tag: $:/tags/Stylesheet
+title: `$:/themes/tiddlywiki/vanilla/base`
 
+tag: `$:/themes/tiddlywiki/vanilla/base`
+
+```tiddlywiki
 \define custom-background-datauri()
 <$set name="background" value={{$:/themes/tiddlywiki/vanilla/settings/backgroundimage}}>
 <$list filter="[<background>is[image]]">
@@ -3514,10 +3519,11 @@ span.tc-translink > a:first-child {
 
 ### Overwrite Vanilla Palettes
 
-```tiddlywiki
-//title: $:/palettes/Vanilla
-//tag: $:/tags/Palette
+title: `$:/palettes/Vanilla`
 
+tag: `$:/palettes/Vanilla`
+
+```tiddlywiki
 topbar-color: #f4f4f4
 alert-background: #ffe476
 alert-border: #b99e2f
