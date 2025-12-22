@@ -3664,6 +3664,35 @@ wikilist-button-foreground: #000
 
 
 
+### Fix Sticky Title Bug
+
+Search tiddler: `$:/themes/tiddlywiki/vanilla/sticky`
+
+```tiddlywiki
+<$reveal state="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="match" text="yes">
+``
+.tc-tiddler-title {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -o-sticky;
+	position: -ms-sticky;
+	position: sticky;
+	top: 0px;
+	background: ``<<colour tiddler-background>>``;
+	z-index: 500;
+}
+
+``
+<$list filter="[range[100]]">
+`.tc-story-river .tc-tiddler-frame:nth-child(100n+`<$text text=<<currentTiddler>>/>`) {
+z-index: `<$text text={{{ [[200]subtract<currentTiddler>] }}}/>`;
+}
+`
+</$list>
+</$reveal>
+
+```
+
 
 
 
