@@ -54,6 +54,22 @@
 | 用命令行查看压缩文件包里的信息                | `zipinfo xxxx.zip`<br />`unzip -l xxx.zip`                   |
 | 显示当前机器温度                              | sudo powermetrics --samplers smc \|grep -i "CPU die temperature" |
 
+
+
+### Typeing Pinyin With Tone Marks
+
+• 1st tone: ⌥ (option) + a
+
+• 2nd tone: ⌥ (option) + e
+
+• 3rd tone: ⌥ (option) + v
+
+• 4th tone: ⌥ (option) + ~
+
+
+
+
+
 ## macOS 键符号查找
 
 | 符号   | 键                      |
@@ -269,41 +285,3 @@ fd -E ‘*.js’ -tf . source/lib/fatclick
 - `gifsicle -i input.gif --colors 24 -o output.gif`
 - `gifsicle -O3 --colors 256 --lossy=30 -o output.gif input.gif`
 
-## Alfred
-
-### 插件
-
-- [Menu-Bar-Search](https://github.com/BenziAhamed/Menu-Bar-Search)
-- [New-Terminal-Window](https://github.com/miromannino/alfred-new-terminal-window)
-- [alfred-eudic-workflow](https://github.com/hanleylee/alfred-eudic-workflow))
-
-### 技巧
-
-#### 文件搜索
-
-- 打开：open filename/spacebar filename
-- 查找：find filename + enter
-- 查找文件内容：in string
-
-#### 文件导航
-
-- 进入Mac根目录：/
-- 进入用户目录：～
-
-#### 多文件操作
-
-- 搜索到内容
-- Alt + Up：从Alfred搜索结果列表中添加文件到文件缓存区中
-- Alt + Down：添加当前文件到文件缓存区中，并移动到下一个条目
-- Alt + Left：移除文件缓存区中的上一个文件
-- Alt + Right：打开动作面板，对文件缓存区中的文件进行相应操作
-- Alt + delete：删除文件缓存区中的所有条目
-
-#### 文件预览
-
-- Shift
-
-#### 文件操作
-
-- 默认：cmd+option+\
-  - 修改：Universal Actions - Selction Hotkey，可以修改为 cmd+/
