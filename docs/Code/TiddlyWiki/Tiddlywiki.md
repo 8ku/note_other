@@ -115,6 +115,62 @@ using “\$()$” cover the value, and “```” to pass value, like 3 dots afte
 
 
 
+### Auto Flip Tooltip
+
+1. Create a new tiddler, type `application/javascript`
+
+2. Set Module-type `startup` (⚠️ **crucial** step, doesn’t work if the module-type is empty or not `startup`)
+
+3. Paste it into content:
+
+   ```tiddlywiki
+   (function () {
+     document.addEventListener("mousemove", function (e) {
+       const tooltip = e.target.closest(".refnotes-tooltip");
+       if (!tooltip) return;
+   
+       const popup = tooltip.querySelector(".refnotes-tooltiptext");
+       if (!popup) return;
+   
+       const mouseY = e.clientY;
+       const windowHeight = window.innerHeight;
+   
+       const spaceAbove = mouseY;
+       const spaceBelow = windowHeight - mouseY;
+   
+       // console.log("Space above:", spaceAbove, "Space below:", spaceBelow); // Debug
+   
+       popup.style.top = "";
+       popup.style.bottom = "";
+   
+       if (spaceAbove < 300 && spaceBelow > spaceAbove) {
+         popup.style.top = "100%";
+         popup.style.bottom = "auto";
+         // console.log("Showing BELOW");
+       } else {
+         popup.style.bottom = "100%";
+         popup.style.top = "auto";
+         // console.log("Showing ABOVE");
+       }
+     });
+   })();
+   ```
+
+4. Create a new stylesheet, title it like `Footnote Stylesheet`, tag `$:/tags/Stylesheet`
+
+5. Paste it
+
+   ```tiddlywiki
+   .refnotes-tooltiptext {
+      z-index: 500 !important;
+      box-shadow: none !important;
+      left: 50% !important;
+      border: 1px solid #cccccc;
+   }
+   ```
+
+   
+
 
 
 ## 更新版本后需要修改的地方
