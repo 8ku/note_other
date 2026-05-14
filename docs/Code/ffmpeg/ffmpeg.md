@@ -10,10 +10,27 @@
 
 ### 转换格式
 
-`./ffmpeg -i input.mov output.mp4`
+* To **Mp4**: `ffmpeg -i input.mov output.mp4`
+
+* Mp4 to **mp3**: `ffmpeg -i input.mp4 -b:a 192k -vn output.mp3`
 
 
 
 ### 压缩
 
-`./ffmpeg -i input.mp4 -vcodec h264 -acodec aac output.mp4`
+* **Video**: `ffmpeg -i input.mp4 -vcodec h264 -acodec aac output.mp4`
+* **Audio**(compress to 96k): `ffmpeg -i input.mp4 -b:a 96k -map a out.mp3`
+
+
+
+## 裁剪长度
+
+* `ffmpeg -ss startSec -i input.mp4 -t length output.mp4`
+
+
+
+## yt-dlp
+
+### Download
+
+* **Audio** Only: `yt-dlp -x “url”`
