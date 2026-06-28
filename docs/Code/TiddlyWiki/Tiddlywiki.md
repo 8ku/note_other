@@ -263,7 +263,7 @@ tag: `$:/tags/TopRightBar`
 
 title: `$:/themes/tiddlywiki/vanilla/base`
 
-tag: `$:/themes/tiddlywiki/vanilla/base`
+tag: `$:/tags/Stylesheet`
 
 ```tiddlywiki
 \define custom-background-datauri()
@@ -3722,7 +3722,8 @@ wikilist-button-foreground: #000
 
 ### Fix Sticky Title Bug
 
-Search tiddler: `$:/themes/tiddlywiki/vanilla/sticky`
+1. Search tiddler: `$:/themes/tiddlywiki/vanilla/sticky` and overried it.
+2. Add a custom field: `code-body`, value `yes`.
 
 ```tiddlywiki
 <$reveal state="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="match" text="yes">
