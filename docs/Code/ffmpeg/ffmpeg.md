@@ -34,7 +34,7 @@
 1. Convert each mp3 file to m4b file:
 
    ```cmd
-   for %i in (*.mp3) do ffmpeg -i "%i" -vn -c:a aac -b:a 192k "%~ni.m4b"`
+   for %i in (*.mp3) do ffmpeg -i "%i" -vn -c:a aac -b:a 192k "%~ni.m4b"
    ```
 
 2. Create list of those m4b files: 
