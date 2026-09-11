@@ -29,6 +29,16 @@
 
 
 
+### Concatenate mp4 files (Windows)
+
+1. **Create files list**(Windows):  `(echo file 'first file.mp4' & echo file 'second file.mp4' )>list.txt`
+
+2. Concatenate them: `ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4`
+
+3. **Add cover.jpg to the video**: `ffmpeg -i input.mp4 -i cover.jpg -map 0 -map 1 -c copy -disposition:v:1 attached_pic output.mp4`
+
+
+
 ### Convert mp3s to audiobook format
 
 1. Convert each mp3 file to m4b file:
