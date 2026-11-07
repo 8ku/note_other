@@ -247,19 +247,96 @@
    for f in *.m4b; do echo "file '$f'"; done > list.txt
    ```
 
-3. Merge them to one m4b file:
+3. Create Chapters list:
+
+   ```python
+   import os
+   import glob
+   import subprocess
+   import json
+   
+   # Update this path if your ffprobe is located elsewhere (e.g., '/usr/local/bin/ffprobe')
+   FFPROBE_PATH = '/usr/local/bin/ffprobe'
+   
+   def get_audio_info(filename):
+       """Uses ffprobe to get duration in ms and internal metadata title from an MP3 file."""
+       cmd = [
+           FFPROBE_PATH, '-v', 'quiet',
+           '-print_format', 'json',
+           '-show_format', filename
+       ]
+       result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+   
+       try:
+           data = json.loads(result.stdout)
+           format_info = data.get('format', {})
+   
+           # Get duration in seconds and convert to milliseconds
+           duration_sec = float(format_info.get('duration', 0))
+           duration_ms = int(duration_sec * 1000)
+   
+           # Extract internal metadata title (checking both lowercase and uppercase tag keys)
+           tags = format_info.get('tags', {})
+           title = tags.get('title') or tags.get('TITLE') or tags.get('Title')
+   
+           # Fallback to filename if no metadata title exists inside the MP3
+           if not title:
+               title = os.path.splitext(os.path.basename(filename))[0]
+   
+           return duration_ms, title
+   
+       except Exception:
+           # Fallback if ffprobe parsing fails
+           duration_ms = 0
+           title = os.path.splitext(os.path.basename(filename))[0]
+           return duration_ms, title
+   
+   # Find all mp3 files in alphabetical order
+   mp3_files = sorted(glob.glob("*.mp3"))
+   current_time_ms = 0
+   
+   with open("chapters.txt", "w") as f:
+       f.write("FFMETADATA1\n")
+   
+       for file in mp3_files:
+           duration_ms, title = get_audio_info(file)
+           end_time_ms = current_time_ms + duration_ms
+   
+           f.write("[CHAPTER]\n")
+           f.write("TIMEBASE=1/1000\n")
+           f.write(f"START={current_time_ms}\n")
+           f.write(f"END={end_time_ms}\n")
+           f.write(f"title={title}\n")
+   
+           current_time_ms = end_time_ms
+   
+   print("chapters.txt generated successfully using internal metadata titles!")
+   
+   ```
+
+   
+
+4. Merge them to one m4b file:
 
    ```
-   ffmpeg -f concat -safe 0 -i list.txt -c:a aac -b:a 192k "output.m4b"
+   ffmpeg -f concat -safe 0 -i list.txt -f ffmetadata -i chapters.txt -map_chapters 1 -c:a aac -b:a 192k "output_with_chapters.m4b"
    ```
 
-4. Add cover image:
+5. Add cover image:
 
    ```
    ffmpeg -i output.m4b -i cover.jpg -map 0:a -map 1:v -c:a copy -c:v copy -disposition:v attached_pic -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" output_cover.m4b
    ```
 
+6. Add Chapters to an already Merged `.m4b` file
+
+   ```
+   ffmpeg -i output.m4b -f ffmetadata -i chapters.txt -map_chapters 1 -c copy "output_with_chapters.m4b"
+   ```
+
    
+
+
 
 
 
