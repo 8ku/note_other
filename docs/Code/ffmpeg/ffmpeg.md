@@ -29,17 +29,23 @@
 
 
 
-### Concatenate mp4 files (Windows)
+### Concatenate mp4 files
 
-1. **Create files list**(Windows):  `(echo file 'first file.mp4' & echo file 'second file.mp4' )>list.txt`
+#### Windows
+
+1. **Create files list**:  `(echo file 'first file.mp4' & echo file 'second file.mp4' )>list.txt`
 
 2. Concatenate them: `ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4`
 
 3. **Add cover.jpg to the video**: `ffmpeg -i input.mp4 -i cover.jpg -map 0 -map 1 -c copy -disposition:v:1 attached_pic output.mp4`
 
+#### Mac
 
+1. Create files list: `for f in *.mp3; do echo "file '$f'"; done > list.txt`
 
 ### Convert mp3s to audiobook format
+
+#### Windows
 
 1. Convert each mp3 file to m4b file:
 
@@ -226,8 +232,36 @@
    ```
    
    
+
+#### Mac
+
+1. Convert each mp3 file to m4b file: 
+
+   ```
+   for f in *.mp3; do ffmpeg -i "$f" -vn -c:a aac -b:a 192k "${f%.mp3}.m4b"; done
+   ```
+
+2. Create list of those m4b files: 
+
+   ```
+   for f in *.m4b; do echo "file '$f'"; done > list.txt
+   ```
+
+3. Merge them to one m4b file:
+
+   ```
+   ffmpeg -f concat -safe 0 -i list.txt -c:a aac -b:a 192k "output.m4b"
+   ```
+
+4. Add cover image:
+
+   ```
+   ffmpeg -i output.m4b -i cover.jpg -map 0:a -map 1:v -c:a copy -c:v copy -disposition:v attached_pic -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" output_cover.m4b
+   ```
+
    
-   
+
+
 
 
 
