@@ -325,7 +325,7 @@
 5. Add cover image:
 
    ```
-   ffmpeg -i output.m4b -i cover.jpg -map 0:a -map 1:v -c:a copy -c:v copy -disposition:v attached_pic -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" output_cover.m4b
+   ffmpeg -i output_with_chapters.m4b -i cover.jpg -map 0:a -map 1:v -c:a copy -c:v copy -disposition:v attached_pic -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" output_cover.m4b
    ```
 
 6. Add Chapters to an already Merged `.m4b` file
